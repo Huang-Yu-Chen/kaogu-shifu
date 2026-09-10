@@ -1,0 +1,5856 @@
+{
+  "title": "Block 1 嚴格考古地圖",
+  "updated": "2026-09-10",
+  "definition": "跨不同年份，題幹與實質選項幾乎相同才算；正反問、選項重排與微小措辭差異可合併。只考同概念、疾病或章節不算。",
+  "metricDefinitions": {
+    "coverage": "重複實例涵蓋率：所有可比較題目中，位於至少一個跨年同題群的題目比例；包含該群第一次出現。",
+    "archetype": "重複題型率：把同一群折成一個 canonical 題型後，曾跨年重出的題型占全部獨立題型的比例。",
+    "rolling": "往年直接命中率：由第二個可比較年份起，該題在更早可比較年份已出現的比例；基準年不進分母。"
+  },
+  "subjects": [
+    {
+      "id": "pathology",
+      "order": 1,
+      "name": "病理學",
+      "eyebrow": "PATHOLOGY",
+      "accent": "#c4573f",
+      "soft": "#f7e7e1",
+      "scope": "B05–B10，共 151 題可判讀題目",
+      "scopeNote": "此病理學 PDF 只有 B05-B10 六份完整逐年考卷；PDF 前段『舊考古』為按教師/章節重編的題庫，沒有可恢復的原始年份與原卷題號。 159 個題號槽中另有 8 題亡佚或明示非本次範圍，未放入可判讀分母。",
+      "metrics": {
+        "total": 151,
+        "repeatInstances": 68,
+        "coverage": 45.0,
+        "repeatGroups": 28,
+        "uniqueTypes": 111,
+        "archetypeRate": 25.2,
+        "unresolved": 8,
+        "rolling": {
+          "baseline": "B05",
+          "eligible": 127,
+          "hits": 40,
+          "percent": 31.5,
+          "byYear": [
+            {
+              "year": "B05",
+              "hits": null,
+              "rate": null
+            },
+            {
+              "year": "B06",
+              "hits": 3,
+              "rate": 12.0
+            },
+            {
+              "year": "B07",
+              "hits": 21,
+              "rate": 63.6
+            },
+            {
+              "year": "B08",
+              "hits": 6,
+              "rate": 31.6
+            },
+            {
+              "year": "B09",
+              "hits": 5,
+              "rate": 19.2
+            },
+            {
+              "year": "B10",
+              "hits": 5,
+              "rate": 20.8
+            }
+          ]
+        }
+      },
+      "years": [
+        {
+          "year": "B05",
+          "total": 24,
+          "repeat": 8,
+          "coverage": 33.3,
+          "note": ""
+        },
+        {
+          "year": "B06",
+          "total": 25,
+          "repeat": 19,
+          "coverage": 76.0,
+          "note": "另排除 5 題亡佚／非本次範圍"
+        },
+        {
+          "year": "B07",
+          "total": 33,
+          "repeat": 22,
+          "coverage": 66.7,
+          "note": "另排除 2 題亡佚／非本次範圍"
+        },
+        {
+          "year": "B08",
+          "total": 19,
+          "repeat": 8,
+          "coverage": 42.1,
+          "note": "另排除 1 題亡佚／非本次範圍"
+        },
+        {
+          "year": "B09",
+          "total": 26,
+          "repeat": 6,
+          "coverage": 23.1,
+          "note": ""
+        },
+        {
+          "year": "B10",
+          "total": 24,
+          "repeat": 5,
+          "coverage": 20.8,
+          "note": ""
+        }
+      ],
+      "repeatGroups": [
+        {
+          "id": "PATH-R01",
+          "title": "解剖病理執業範圍：找出不屬於 anatomical pathology 者",
+          "recognition": "Surgical pathology、forensic pathology、cytopathology 屬解剖病理；medical genetics／chemical pathology 為排除項。",
+          "matchType": "高度一致",
+          "basis": "三題同為 anatomical pathology 的 except 題，B07 與 B08 題幹、四選項實質相同；B05 僅把 chemical pathology 換成 medical genetics。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 1,
+              "label": "B05 第1題",
+              "page": 43,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 1,
+              "label": "B07 第1題",
+              "page": 54,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 1,
+              "label": "B08 第1題",
+              "page": 61,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／鄭永銘老師－緒論 Q2（不納入率的分母或分子）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R02",
+          "title": "hospital autopsy 的根本目的",
+          "recognition": "Understanding of diseases。",
+          "matchType": "高度一致",
+          "basis": "題幹與四個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 4,
+              "label": "B06 第4題",
+              "page": 49,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 4,
+              "label": "B07 第4題",
+              "page": 54,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R03",
+          "title": "autopsy 字義為 see for oneself",
+          "recognition": "Autopsy = see for oneself。",
+          "matchType": "高度一致",
+          "basis": "B06/B07/B08 是同義定義題；B05 將 term→definition 反向改成 definition→term，核心命題完全相同。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 4,
+              "label": "B05 第4題",
+              "page": 43,
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 5,
+              "label": "B06 第5題",
+              "page": 49,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 5,
+              "label": "B07 第5題",
+              "page": 54,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 3,
+              "label": "B08 第3題",
+              "page": 61,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／吳木榮老師－病理解剖 Q22（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R04",
+          "title": "hospital autopsy 必須取得本人或家屬同意",
+          "recognition": "Consent of the patient/family member。",
+          "matchType": "高度一致",
+          "basis": "同一題幹，正確選項僅有單複數及措辭差異。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 6,
+              "label": "B06 第6題",
+              "page": 49,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 6,
+              "label": "B07 第6題",
+              "page": 54,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／吳木榮老師－病理解剖 Q7、Q12（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R05",
+          "title": "病理檢體 gene amplification 的常用偵測法",
+          "recognition": "Fluorescent in situ hybridization (FISH)。",
+          "matchType": "高度一致",
+          "basis": "三題同問 gene amplification 的最常用方法；正確答案相同，僅替換少數干擾選項。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 1,
+              "label": "B06 第1題",
+              "page": 49,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 2,
+              "label": "B07 第2題",
+              "page": 54,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 2,
+              "label": "B08 第2題",
+              "page": 61,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R06",
+          "title": "ferroptosis 的錯誤特徵：non-lytic cell death",
+          "recognition": "Ferroptosis 與 iron、ROS、膜破裂及發炎相關，因此 non-lytic 為錯。",
+          "matchType": "高度一致",
+          "basis": "題幹及四選項完全相同，只把 not a feature 改成 not true。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 7,
+              "label": "B06 第7題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 7,
+              "label": "B07 第7題",
+              "page": 55,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R07",
+          "title": "autophagy：misfolded protein、癌症、神經退化與雙層膜",
+          "recognition": "多數 misfolded proteins 由 ubiquitin-proteasome system 清除；autophagosome 為雙層膜。",
+          "matchType": "高度一致",
+          "basis": "B06/B07 四選項逐字相同；B10 重排並反向改寫同四個命題（且形成兩個錯誤選項）。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 8,
+              "label": "B06 第8題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 8,
+              "label": "B07 第8題",
+              "page": 55,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 9,
+              "label": "B10 第9題",
+              "page": 71,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R08",
+          "title": "Annexin V 辨識 apoptotic cell 的 phosphatidylserine",
+          "recognition": "Phosphatidylserine。",
+          "matchType": "高度一致",
+          "basis": "題幹及 Propidium iodide／phosphatidylserine／DAMP／DNA 四選項逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 9,
+              "label": "B06 第9題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 5,
+              "label": "B08 第5題",
+              "page": 61,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R09",
+          "title": "tuberculosis 的典型壞死型態",
+          "recognition": "Caseous/caseating necrosis。",
+          "matchType": "高度一致",
+          "basis": "四題均直接問 TB 對應的壞死型態；B06 題本只保留正確選項，但詳解確認原命題。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 10,
+              "label": "B06 第10題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 11,
+              "label": "B07 第11題",
+              "page": 55,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 8,
+              "label": "B09 第8題",
+              "page": 66,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 4,
+              "label": "B10 第4題",
+              "page": 71,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R10",
+          "title": "不可逆細胞傷害：plasma membrane rupture",
+          "recognition": "Plasma membrane rupture；cell swelling、surface blebbing、myelin figure 可見於 reversible injury。",
+          "matchType": "高度一致",
+          "basis": "三題用相同選項組找出不可逆／非可逆變化，僅正反問及形態括註不同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 11,
+              "label": "B06 第11題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 12,
+              "label": "B07 第12題",
+              "page": 55,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 6,
+              "label": "B09 第6題",
+              "page": 65,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／袁章祖老師－細胞病理 Q34（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R11",
+          "title": "steatosis 的累積物為 triglyceride",
+          "recognition": "Triglyceride。",
+          "matchType": "高度一致",
+          "basis": "三題均以 steatosis 搭配 lipofuscin／triglyceride／cholesterol 等相同選項辨識累積物；B09/B10 幾乎逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 12,
+              "label": "B06 第12題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 11,
+              "label": "B09 第11題",
+              "page": 66,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 10,
+              "label": "B10 第10題",
+              "page": 72,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R12",
+          "title": "Barrett esophagus 的 adaptation 為 metaplasia",
+          "recognition": "Metaplasia。",
+          "matchType": "高度一致",
+          "basis": "題幹與四個 adaptation 選項完全相同，只更換選項順序。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 6,
+              "label": "B05 第6題",
+              "page": 43,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 10,
+              "label": "B07 第10題",
+              "page": 55,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／袁章祖老師－細胞病理 Q49（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R13",
+          "title": "extrinsic apoptosis 不包含 apoptosome",
+          "recognition": "Apoptosome；FasL、FADD、caspase-8 為 extrinsic pathway。",
+          "matchType": "高度一致",
+          "basis": "題幹與四選項完全相同，僅加入 mainly 一字。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 8,
+              "label": "B05 第8題",
+              "page": 44,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 14,
+              "label": "B07 第14題",
+              "page": 56,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／袁章祖老師－細胞病理 Q51（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R14",
+          "title": "白血球 extravasation 的 adhesion-molecule 配對",
+          "recognition": "Rolling：selectin–sialyl-Lewis X；transmigration：PECAM-1/CD31–CD31。",
+          "matchType": "高度一致",
+          "basis": "題幹及四個配對命題逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 13,
+              "label": "B06 第13題",
+              "page": 50,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 15,
+              "label": "B07 第15題",
+              "page": 56,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R15",
+          "title": "NSAIDs 抑制 cyclooxygenase",
+          "recognition": "Cyclooxygenase (COX)。",
+          "matchType": "高度一致",
+          "basis": "同問 NSAIDs/aspirin 抑制哪個 arachidonic-acid-metabolite 酵素，選項實質相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 14,
+              "label": "B06 第14題",
+              "page": 51,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 17,
+              "label": "B07 第17題",
+              "page": 56,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／謝明書老師－急慢性發炎 Q10（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R16",
+          "title": "neutrophil extracellular traps (NETs) 的組成與功能",
+          "recognition": "NETs 是抗菌機制，含 chromatin 與 granule enzymes；與自體免疫／血栓相關，微生物 DNase 可抗 NETs。",
+          "matchType": "高度一致",
+          "basis": "題幹與四個敘述逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 16,
+              "label": "B06 第16題",
+              "page": 51,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 19,
+              "label": "B07 第19題",
+              "page": 56,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／謝明書老師－急慢性發炎 Q18（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R17",
+          "title": "acute inflammation 型態不包含 granulomatous inflammation",
+          "recognition": "Granulomatous inflammation 屬慢性發炎。",
+          "matchType": "高度一致",
+          "basis": "同一 except 題及同一組 suppurative／fibrinous／serous／granulomatous 選項；僅 fibrinous 的 OCR/用字有差。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 18,
+              "label": "B06 第18題",
+              "page": 51,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 21,
+              "label": "B07 第21題",
+              "page": 57,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／謝明書老師－急慢性發炎 Q17（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R18",
+          "title": "chronic inflammation 三特徵",
+          "recognition": "Mononuclear-cell infiltration、tissue destruction、repair/fibrosis。",
+          "matchType": "高度一致",
+          "basis": "兩題同以三個慢性發炎特徵及『以上皆是』作答，僅將 tissue destruction 換成 granulomatous inflammation。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 19,
+              "label": "B06 第19題",
+              "page": 51,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 23,
+              "label": "B07 第23題",
+              "page": 57,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／謝明書老師－急慢性發炎 Q16（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R19",
+          "title": "M1/M2 macrophage 的活化訊號與功能",
+          "recognition": "IFN-γ 活化 M1（發炎、殺菌）；IL-4/IL-13 活化 M2（TGF-β、修復）。",
+          "matchType": "高度一致",
+          "basis": "兩題以正反問重排同一組 M1/M2 訊號與功能命題。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 20,
+              "label": "B06 第20題",
+              "page": 51,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 24,
+              "label": "B07 第24題",
+              "page": 57,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R20",
+          "title": "metastatic calcification 的非常見部位",
+          "recognition": "Pulmonary artery；常見部位包含胃、腎、肺。",
+          "matchType": "高度一致",
+          "basis": "題幹與 stomach／kidney／pulmonary artery／lung 四選項完全相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 9,
+              "label": "B07 第9題",
+              "page": 55,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 6,
+              "label": "B08 第6題",
+              "page": 61,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／袁章祖老師－細胞病理 Q40（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R22",
+          "title": "acute inflammation 中 neutrophil 的時間、NET 與殺菌機制",
+          "recognition": "Neutrophil 可形成 NET，主要以 ROS/MPO 殺菌；iNOS/NO 主要為 macrophage。",
+          "matchType": "高度一致",
+          "basis": "題幹與四個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 15,
+              "label": "B09 第15題",
+              "page": 67,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 13,
+              "label": "B10 第13題",
+              "page": 72,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R23",
+          "title": "anti-thrombotic factors：Protein C、thrombomodulin、t-PA、heparin-like molecule",
+          "recognition": "Protein C、thrombomodulin、t-PA、heparin-like molecules 為抗血栓；tissue factor 促凝。",
+          "matchType": "高度一致",
+          "basis": "三題題幹相同，五個實質選項完全相同；B09 只交換第 4/5 項順序。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 20,
+              "label": "B05 第20題",
+              "page": 46,
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 25,
+              "label": "B06 第25題",
+              "page": 53,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 22,
+              "label": "B09 第22題",
+              "page": 68,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R24",
+          "title": "hypercoagulability 五項組合題（Prothrombin/Trousseau/CHF/出血疾病）",
+          "recognition": "Prothrombin mutation、Trousseau syndrome、CHF 會促栓；Bernard-Soulier/vWD 不會，APS 會。",
+          "matchType": "高度一致",
+          "basis": "題幹相同，五個命題中四個逐項重用；僅將 vWD 換成 antiphospholipid syndrome。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 24,
+              "label": "B06 第24題",
+              "page": 52,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 30,
+              "label": "B07 第30題",
+              "page": 58,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／連晃駿老師－血行動力學 Q16、Q17（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R25",
+          "title": "right heart failure 的 signs/findings 組合題",
+          "recognition": "Central venous pressure 上升、肝中央區鬱血/nutmeg liver、下肢 pitting edema；肺水腫/呼吸困難偏左心衰竭。",
+          "matchType": "高度一致",
+          "basis": "三題題幹相同，五個命題中四個相同或為同義病理（nutmeg liver = centrizonal congestion），僅更換一個干擾項。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 18,
+              "label": "B05 第18題",
+              "page": 46,
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 23,
+              "label": "B06 第23題",
+              "page": 52,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 35,
+              "label": "B07 第35題",
+              "page": 60,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／連晃駿老師－血行動力學 Q15（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R26",
+          "title": "thromboembolism 的結果／病理變化組合題",
+          "recognition": "可見 infarction、coagulative necrosis（CNS 可 liquefactive）；caseous necrosis 非栓塞所致，Caisson disease 為 air embolism。",
+          "matchType": "高度一致",
+          "basis": "三題題幹同義，五個選項中至少四個逐項相同；B05/B08 五項完全相同，B07 只以 red infarct 替換 white infarct。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 19,
+              "label": "B05 第19題",
+              "page": 46,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 34,
+              "label": "B07 第34題",
+              "page": 59,
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 16,
+              "label": "B08 第16題",
+              "page": 63,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／連晃駿老師－血行動力學 Q20（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R27",
+          "title": "shock、DIC、arterial thrombosis 的五敘述綜合題",
+          "recognition": "Shock 可高血糖；大範圍 MI 的 cardiogenic shock 預後差；DIC 可出血；arterial thrombosis 常由 endothelial injury；hypovolemic shock 早期皮膚冷白。",
+          "matchType": "高度一致",
+          "basis": "兩題前四個命題幾乎逐字相同，第五項只更換 shock 類型與 warm/cool。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 22,
+              "label": "B05 第22題",
+              "page": 47,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 33,
+              "label": "B07 第33題",
+              "page": 59,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／連晃駿老師－血行動力學 Q22（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R28",
+          "title": "cirrhosis edema、shock ATN、DIC、arterial thrombosis、GLUT-4 綜合題",
+          "recognition": "Cirrhosis 以 hypoalbuminemia 致 edema；shock 可 ATN；DIC 初期高凝；arterial thrombosis 常見 endothelial injury；GLUT-4 下降促高血糖。",
+          "matchType": "高度一致",
+          "basis": "五個命題一一對應；B08 把第 1/5 項以相反方向寫成錯誤敘述，B09 改回正向。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 17,
+              "label": "B08 第17題",
+              "page": 64,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 24,
+              "label": "B09 第24題",
+              "page": 69,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R29",
+          "title": "pure left heart failure 的 findings 組合題",
+          "recognition": "Pulmonary congestion/edema 與 brown induration；CVP 增加、肝中央區鬱血、下肢水腫偏右心衰竭。",
+          "matchType": "高度一致",
+          "basis": "兩題均以同一組左右心衰竭病理辨識純左心衰竭；五項逐項同義，僅將 brown induration 改寫為 pulmonary congestion。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 18,
+              "label": "B08 第18題",
+              "page": 64,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 24,
+              "label": "B10 第24題",
+              "page": 74,
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "舊考古／連晃駿老師－血行動力學 Q14（不納入率）"
+          ],
+          "warning": "",
+          "counted": true
+        }
+      ],
+      "supplementaryGroups": [],
+      "nonRepeatTopics": [
+        {
+          "id": "PATH-N01",
+          "title": "病理解剖與診斷病理實務",
+          "count": 11,
+          "points": [
+            "autopsy 的完整檢查定義、合法場所、時間與呼吸防護",
+            "解剖率下降、台大醫院解剖的教學／研究用途與 brain autopsy 目的",
+            "蛋白表現以 immunohistochemistry 偵測；pathology 字源"
+          ],
+          "refs": [
+            "B05-Q02",
+            "B05-Q03",
+            "B05-Q05",
+            "B06-Q03",
+            "B07-Q03",
+            "B09-Q01",
+            "B09-Q02",
+            "B09-Q03",
+            "B09-Q04",
+            "B10-Q01",
+            "B10-Q02"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N02",
+          "title": "細胞適應、傷害、死亡與胞內累積",
+          "count": 16,
+          "points": [
+            "cell injury 的 Ca2+ 來源、ROS、膜與胞器形態",
+            "apoptosis／necroptosis／pyroptosis／ferroptosis 的核心分子",
+            "BAX/BAK、BCL-2、BH3-only sensor 與 unfolded-protein response",
+            "hypertrophy／hyperplasia／atrophy，以及 hemosiderin、LC3、sirtuin"
+          ],
+          "refs": [
+            "B05-Q07",
+            "B05-Q09",
+            "B07-Q13",
+            "B08-Q04",
+            "B08-Q07",
+            "B08-Q08",
+            "B09-Q05",
+            "B09-Q07",
+            "B09-Q09",
+            "B09-Q10",
+            "B09-Q12",
+            "B10-Q03",
+            "B10-Q05",
+            "B10-Q06",
+            "B10-Q07",
+            "B10-Q08"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N03",
+          "title": "急性發炎：血管反應、白血球募集與殺菌",
+          "count": 10,
+          "points": [
+            "vasodilation、permeability、exudate 與血流減慢",
+            "integrin/ICAM 所介導的 stable adhesion",
+            "phagocyte oxidase、MPO、NO 與 chronic granulomatous disease"
+          ],
+          "refs": [
+            "B05-Q10",
+            "B05-Q11",
+            "B05-Q12",
+            "B05-Q13",
+            "B05-Q15",
+            "B08-Q10",
+            "B09-Q13",
+            "B10-Q11",
+            "B09-Q14",
+            "B10-Q12"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N04",
+          "title": "發炎介質、先天免疫與全身效應",
+          "count": 8,
+          "points": [
+            "histamine、bradykinin、TNF/IL-1、C3a/C5a 的血管、疼痛、發燒與趨化作用",
+            "COX/LOX 產物、lipoxin 與 steroid/NSAID 的作用點",
+            "PAMP、eosinophil 與 type-I hypersensitivity/anaphylaxis"
+          ],
+          "refs": [
+            "B05-Q14",
+            "B07-Q16",
+            "B07-Q18",
+            "B08-Q09",
+            "B08-Q19",
+            "B09-Q17",
+            "B10-Q14",
+            "B10-Q15"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N05",
+          "title": "發炎型態、慢性發炎與細胞圖譜",
+          "count": 8,
+          "points": [
+            "serous、fibrinous、suppurative inflammation 與 exudate 的差異",
+            "急慢性發炎常見細胞、M1/M2 轉換與病原體造成的反應型態",
+            "細菌性腹膜炎為高蛋白、高白血球的 exudate"
+          ],
+          "refs": [
+            "B05-Q16",
+            "B07-Q25",
+            "B07-Q27",
+            "B08-Q11",
+            "B08-Q12",
+            "B09-Q16",
+            "B09-Q18",
+            "B10-Q18"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N06",
+          "title": "肉芽腫性發炎與組織修復",
+          "count": 9,
+          "points": [
+            "granuloma 與 granulation tissue 的辨別；TB 的 Langhans giant cell/caseation",
+            "angiogenesis 的 VEGF 與 Dll4/Notch tip–stalk cell 分化",
+            "TGF-β、collagen deposition、hypertrophic scar、keloid 與 contraction"
+          ],
+          "refs": [
+            "B07-Q22",
+            "B07-Q26",
+            "B07-Q28",
+            "B08-Q13",
+            "B08-Q14",
+            "B09-Q19",
+            "B09-Q20",
+            "B10-Q16",
+            "B10-Q17"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N07",
+          "title": "水腫、充血、肝硬化與心衰竭",
+          "count": 4,
+          "points": [
+            "hydrostatic pressure、hypoalbuminemia、lymphatic obstruction 與 inflammation 的水腫機轉",
+            "肝硬化的 portal hypertension、ascites、splenomegaly",
+            "右心衰竭的肝鬱血與下肢水腫（B09 題選項集合與重複群差異較大，故保守列非考古）"
+          ],
+          "refs": [
+            "B06-Q26",
+            "B07-Q31",
+            "B09-Q21",
+            "B10-Q22"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N08",
+          "title": "血栓、栓塞、梗塞與抗凝機制",
+          "count": 12,
+          "points": [
+            "Virchow triad、Factor V Leiden、prothrombin mutation、Trousseau/APS/HIT",
+            "Protein C/S、thrombomodulin、TFPI、antithrombin、t-PA 與 PAI/PF4",
+            "red/white infarct、Lines of Zahn、fat/air/amniotic embolism 與 saddle embolus"
+          ],
+          "refs": [
+            "B05-Q17",
+            "B05-Q23",
+            "B05-Q24",
+            "B06-Q27",
+            "B06-Q30",
+            "B07-Q32",
+            "B08-Q15",
+            "B09-Q25",
+            "B09-Q26",
+            "B10-Q20",
+            "B10-Q21",
+            "B10-Q23"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N09",
+          "title": "休克、DIC 與敗血性休克",
+          "count": 4,
+          "points": [
+            "shock 的 ischemic encephalopathy、diffuse alveolar damage、ATN、centrizonal necrosis",
+            "septic shock 的 PAMP/內皮活化、DIC、peripheral pooling、myocardial depression",
+            "GLUT-4 受損、insulin resistance 與 stress-hormone gluconeogenesis 所致高血糖"
+          ],
+          "refs": [
+            "B05-Q21",
+            "B06-Q28",
+            "B09-Q23",
+            "B10-Q19"
+          ],
+          "note": ""
+        },
+        {
+          "id": "PATH-N10",
+          "title": "腫瘤與感染病因",
+          "count": 1,
+          "points": [
+            "Helicobacter pylori 與 gastric lymphoma 的關聯。"
+          ],
+          "refs": [
+            "B06-Q02"
+          ],
+          "note": ""
+        }
+      ],
+      "exclusions": [
+        {
+          "title": "二次嚴格稽核：白血球遷移題不合併",
+          "reason": "B09 第14題與 B10 第12題僅 Rolling/selectin、Adhesion/integrin 兩項相同；其餘兩項換成不同機制，未達『幾乎同題』。",
+          "refs": [
+            "B09 第14題",
+            "B10 第12題"
+          ]
+        },
+        {
+          "title": "原檔缺題，保守不判",
+          "reason": "題本/詳解明示題幹或選項缺失；雖有些殘存答案看似對應其他年度（例如 Dll4/Notch），仍不據此判為重複。",
+          "refs": [
+            "B06-Q15",
+            "B06-Q17",
+            "B06-Q21",
+            "B06-Q22",
+            "B06-Q29",
+            "B07-Q20",
+            "B07-Q29"
+          ]
+        },
+        {
+          "title": "編者重建題，不作同題依據",
+          "reason": "題幹由共筆編者依舊題推測重建，非完整原題；保守列非考古。",
+          "refs": [
+            "B06-Q26",
+            "B06-Q27",
+            "B06-Q28"
+          ]
+        },
+        {
+          "title": "答案欄有歧義",
+          "reason": "B05-Q05 的答案欄與詳解對 decline of autopsy 的敘述有張力；B10-Q09 詳解判 A/D 皆錯。這些不影響重複判定，但網頁不宜呈現單一無保留答案。",
+          "refs": [
+            "B05-Q05",
+            "B10-Q09"
+          ]
+        },
+        {
+          "title": "原題選項不完整",
+          "reason": "B07-Q35 缺作答組合選項、B10-Q15 只存一個選項、B10-Q22 有兩個選項亡佚；仍依可見題幹/命題保留於分母。",
+          "refs": [
+            "B07-Q35",
+            "B10-Q15",
+            "B10-Q22"
+          ]
+        },
+        {
+          "title": "同章節但未達近乎相同",
+          "reason": "這些題與已列群或彼此共享同一章節/選項池，但實質命題重疊不足 75%，故按使用者的嚴格定義排除，不灌高考古率。",
+          "refs": [
+            "B07-Q32",
+            "B08-Q15",
+            "B10-Q23",
+            "B05-Q17",
+            "B09-Q26",
+            "B10-Q21",
+            "B09-Q21",
+            "B09-Q25",
+            "B10-Q20",
+            "B06-Q26",
+            "B10-Q22",
+            "B06-Q28",
+            "B09-Q23",
+            "B10-Q19"
+          ]
+        },
+        {
+          "title": "無年份舊題庫只作佐證",
+          "reason": "『舊考古』共含緒論3、病理解剖23、細胞病理51、急慢性發炎32、組織修復30、血行動力學25 個分類題；因無原始年份，不進 159 題分母與 70 題分子。",
+          "refs": []
+        }
+      ],
+      "methodNotes": [
+        "以題本 PDF 的原始年份與題號為索引，逐題建立 canonical_id；題本頁碼亦保留供網頁回查。",
+        "先用 pdfplumber 逐頁抽字，再將疑似重複群回看題本原文，並以詳解的答案與理由核對命題是否相同。",
+        "只有不同明確年份的重複才進 repeat_groups；同一年內或只在無年份『舊考古』出現者不列入考古率。",
+        "『舊考古』只作早期佐證，引用格式為章節/分類題號；絕不把分類題號偽裝成原卷題號。",
+        "所有 159 個逐年題目實例均且僅被分到一個重複群或一個非重複主題，coverage assertion 已通過。",
+        "二次嚴格稽核另移除 PATH-R21；頁面指標已按 28 群／68 題重算。"
+      ],
+      "sources": [
+        {
+          "label": "考古題本",
+          "path": "1_病理學/B11病理學block 1考古題本.pdf"
+        },
+        {
+          "label": "考古詳解",
+          "path": "1_病理學/B11病理學block 1考古詳解.pdf"
+        }
+      ]
+    },
+    {
+      "id": "clinical",
+      "order": 2,
+      "name": "臨床醫學",
+      "eyebrow": "CLINICAL MEDICINE",
+      "accent": "#287a78",
+      "soft": "#dff1ee",
+      "scope": "B03–B10，共 164 題可判讀題目",
+      "scopeNote": "B03 有完整年度、可恢復原題號，因此正式納入；170 個題號槽中有 6 題因原 PDF 題幹／選項不足而另列未決，不進可判讀分母。更早按講次重編且無原卷題號的分類題庫也不進分母。",
+      "metrics": {
+        "total": 164,
+        "repeatInstances": 91,
+        "coverage": 55.5,
+        "repeatGroups": 31,
+        "uniqueTypes": 104,
+        "archetypeRate": 29.8,
+        "unresolved": 6,
+        "rolling": {
+          "baseline": "B03",
+          "eligible": 134,
+          "hits": 60,
+          "percent": 44.8,
+          "byYear": [
+            {
+              "year": "B03",
+              "hits": null,
+              "rate": null
+            },
+            {
+              "year": "B04",
+              "hits": 7,
+              "rate": 36.8
+            },
+            {
+              "year": "B05",
+              "hits": 8,
+              "rate": 44.4
+            },
+            {
+              "year": "B06",
+              "hits": 9,
+              "rate": 50.0
+            },
+            {
+              "year": "B07",
+              "hits": 6,
+              "rate": 28.6
+            },
+            {
+              "year": "B08",
+              "hits": 7,
+              "rate": 53.8
+            },
+            {
+              "year": "B09",
+              "hits": 8,
+              "rate": 38.1
+            },
+            {
+              "year": "B10",
+              "hits": 15,
+              "rate": 62.5
+            }
+          ]
+        }
+      },
+      "years": [
+        {
+          "year": "B03",
+          "total": 30,
+          "repeat": 11,
+          "coverage": 36.7,
+          "note": "2 題是非＋28 題選擇題"
+        },
+        {
+          "year": "B04",
+          "total": 19,
+          "repeat": 9,
+          "coverage": 47.4,
+          "note": ""
+        },
+        {
+          "year": "B05",
+          "total": 18,
+          "repeat": 12,
+          "coverage": 66.7,
+          "note": ""
+        },
+        {
+          "year": "B06",
+          "total": 18,
+          "repeat": 12,
+          "coverage": 66.7,
+          "note": "未決 5 題"
+        },
+        {
+          "year": "B07",
+          "total": 21,
+          "repeat": 11,
+          "coverage": 52.4,
+          "note": "未決 1 題"
+        },
+        {
+          "year": "B08",
+          "total": 13,
+          "repeat": 7,
+          "coverage": 53.8,
+          "note": ""
+        },
+        {
+          "year": "B09",
+          "total": 21,
+          "repeat": 14,
+          "coverage": 66.7,
+          "note": ""
+        },
+        {
+          "year": "B10",
+          "total": 24,
+          "repeat": 15,
+          "coverage": 62.5,
+          "note": ""
+        }
+      ],
+      "repeatGroups": [
+        {
+          "id": "CL-R06",
+          "title": "侵入性治療後：非 catabolic hormone",
+          "recognition": "Glucagon、growth hormone、cortisol、catecholamine 中何者不是分解代謝賀爾蒙／不會上升。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "選項核心固定且正解皆為 growth hormone；「何者非 catabolic」與「侵入性治療後何者不增加」為允許的正反改寫。B10 的 Growth factor 為原題文字變體。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 13,
+              "section": "multiple_choice",
+              "label": "B03 第13題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 10,
+              "section": "multiple_choice",
+              "label": "B04 第10題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B05 第11題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B06 第15題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B07 第15題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B09 第16題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 18,
+              "section": "multiple_choice",
+              "label": "B09 第18題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 13,
+              "section": "multiple_choice",
+              "label": "B10 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R08",
+          "title": "SIRS 標準：心跳門檻",
+          "recognition": "SIRS 診斷參考標準何者錯誤；反覆以心跳 80/min 作陷阱。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與四項門檻幾乎逐字相同，排版與符號差異不影響題目身份。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B03 第15題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B04 第11題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 13,
+              "section": "multiple_choice",
+              "label": "B05 第13題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 17,
+              "section": "multiple_choice",
+              "label": "B06 第17題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 17,
+              "section": "multiple_choice",
+              "label": "B07 第17題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 2,
+              "section": "multiple_choice",
+              "label": "B08 第2題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 19,
+              "section": "multiple_choice",
+              "label": "B09 第19題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B10 第15題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R09",
+          "title": "術後復原：不應延緩進食",
+          "recognition": "微創、止痛、延緩進食用高營養點滴、早期下床中，何者不會加速術後復原。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹及四選項逐字相同；B08 同一份考卷甚至出現兩次。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B03 第16題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B04 第12題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 18,
+              "section": "multiple_choice",
+              "label": "B06 第18題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 18,
+              "section": "multiple_choice",
+              "label": "B07 第18題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 1,
+              "section": "multiple_choice",
+              "label": "B08 第1題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B08 第11題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 20,
+              "section": "multiple_choice",
+              "label": "B09 第20題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B10 第16題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R07",
+          "title": "傷害後非主要 inflammatory cytokine",
+          "recognition": "IL-1、IL-6、IL-16、TNF 中，何者不是傷害後主要發炎細胞激素。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹、四個分子與正解一致，僅選項順序變動。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 14,
+              "section": "multiple_choice",
+              "label": "B03 第14題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B05 第12題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B06 第16題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B07 第16題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 7,
+              "section": "multiple_choice",
+              "label": "B08 第7題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 17,
+              "section": "multiple_choice",
+              "label": "B09 第17題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 14,
+              "section": "multiple_choice",
+              "label": "B10 第14題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R01",
+          "title": "英文主訴：年齡格式、症狀持續時間與 chills",
+          "recognition": "選出最適當的英文 chief complaint；反覆使用發燒、畏寒與 27-year-old/chillness 陷阱。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "B03、B04、B05 都是 27 歲男性、fever/chills 與 for/since 的同一組主訴文法陷阱；僅日期、住院措辭與選項順序微調。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 5,
+              "section": "multiple_choice",
+              "label": "B03 第5題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 3,
+              "section": "multiple_choice",
+              "label": "B04 第3題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 5,
+              "section": "multiple_choice",
+              "label": "B05 第5題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "B06 第6題只剩編者註記與一個選項，證據不足；B07 第2題屬新版題組，均未硬併入本群。",
+          "counted": true
+        },
+        {
+          "id": "CL-R10",
+          "title": "Remodeling phase 的關鍵細胞",
+          "recognition": "哪種細胞在傷口 remodeling phase 扮演重要角色。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "英文題幹近逐字相同；選項增減／順序不同但共同正解為 fibroblast。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 14,
+              "section": "multiple_choice",
+              "label": "B05 第14題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B06 第11題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B07 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R11",
+          "title": "Chronic wound 的生理特徵",
+          "recognition": "慢性傷口的增殖、senescent cell、細胞反應、proteinase/growth factor 特徵。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "B05 與 B06 題幹近逐字相同，Low proliferation／senescent cell／Low response／High proteinase 四項完整重用；B06 只多一個選項。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B05 第15題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B06 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "B04 第15題只有 High proteinase 一項逐字相同，其餘為同概念重組，已於二次嚴格稽核移出。",
+          "counted": true
+        },
+        {
+          "id": "CL-R12",
+          "title": "吸入性灼傷的辨識線索",
+          "recognition": "密閉空間、顏面燒傷、沙啞、喘鳴中，何者不是／除外。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹及四個選項逐字或近逐字相同。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 16,
+              "section": "multiple_choice",
+              "label": "B04 第16題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 18,
+              "section": "multiple_choice",
+              "label": "B05 第18題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 22,
+              "section": "multiple_choice",
+              "label": "B06 第22題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "詳解三年均沿用 B 作答，但同時承認四選項在文獻上都可能是線索；屬題目品質問題，不影響「同題重出」判定。",
+          "counted": true
+        },
+        {
+          "id": "CL-R17",
+          "title": "傷口顏色分類：Yellow 不是 adipose tissue",
+          "recognition": "Pink/epithelization、Red/granulation、Yellow/adipose、Black/gangrene 配對何者錯。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與全部配對逐字相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 14,
+              "section": "multiple_choice",
+              "label": "B07 第14題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 10,
+              "section": "multiple_choice",
+              "label": "B09 第10題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B10 第11題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R02",
+          "title": "57 歲、三個月減重 5 公斤：病史欄位歸類",
+          "recognition": "同一位 57 歲病人三個月減重 5 公斤，選最恰當的病史詢問／記錄內容。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "病例年齡、主訴、時間、減重幅度及正解敘述皆相同；僅其他選項有輕微補字。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 6,
+              "section": "multiple_choice",
+              "label": "B03 第6題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 7,
+              "section": "multiple_choice",
+              "label": "B06 第7題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 3,
+              "section": "multiple_choice",
+              "label": "B07 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R03",
+          "title": "TOCC 縮寫辨識",
+          "recognition": "發燒病史需問 TOCC，問縮寫解釋何者錯誤。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與 T/O/C/C 四個辨識目標相同；錯誤選項由 Cough 改為 Overdose，屬同一題的小幅選項替換。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 7,
+              "section": "multiple_choice",
+              "label": "B03 第7題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 4,
+              "section": "multiple_choice",
+              "label": "B04 第4題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 6,
+              "section": "multiple_choice",
+              "label": "B05 第6題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R04",
+          "title": "頭頸部惡性淋巴瘤敘述",
+          "recognition": "頭頸部惡性淋巴瘤何者錯誤：全身淋巴腫大、發燒、FNA、肝脾腫大。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與四個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 7,
+              "section": "multiple_choice",
+              "label": "B05 第7題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 1,
+              "section": "multiple_choice",
+              "label": "B09 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R05",
+          "title": "健康 20 歲疝氣病人的 ASA 分級",
+          "recognition": "20 歲男性、腹股溝疝氣、檢查正常且為長跑健將，問 ASA class。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "病例與全部選項逐字或近逐字相同。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 9,
+              "section": "multiple_choice",
+              "label": "B04 第9題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 8,
+              "section": "multiple_choice",
+              "label": "B09 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R13",
+          "title": "大面積燒傷死亡率估計因素",
+          "recognition": "年齡、TBSA、深度／種類、吸入性灼傷中，何者不納入死亡率估計。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "問法、三個固定因素及錯誤選項位置一致；「深度」與「種類」為細微選項替換。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 17,
+              "section": "multiple_choice",
+              "label": "B05 第17題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 21,
+              "section": "multiple_choice",
+              "label": "B06 第21題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R14",
+          "title": "完整病歷要素的先後順序",
+          "recognition": "Chief complaint → present illness/ROS → past history → physical exam → tests → diagnosis。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與四個完整排序選項相同。B06-MC-05 僅殘留正解選項、題幹及其他選項缺失，故只列未決候選，不納入本群。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 1,
+              "section": "multiple_choice",
+              "label": "B07 第1題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 8,
+              "section": "multiple_choice",
+              "label": "B08 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R15",
+          "title": "傷口保持濕潤與 autodebridement",
+          "recognition": "正確傷口照護知識：保持濕潤可促進自行清創。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與五個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 13,
+              "section": "multiple_choice",
+              "label": "B06 第13題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 9,
+              "section": "multiple_choice",
+              "label": "B10 第9題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R16",
+          "title": "人咬上臂撕裂傷的 healing pattern",
+          "recognition": "人咬造成左上臂嚴重撕裂傷，問 wound healing pattern。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "病例、題幹與四個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B07 第11題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 10,
+              "section": "multiple_choice",
+              "label": "B10 第10題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R18",
+          "title": "Revised Cardiac Risk Index 的非項目",
+          "recognition": "缺血性心臟病、心衰竭、腦血管病史固定，問哪個不是 RCRI 項目。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與前三選項相同；第四選項改寫為 creatinine 錯門檻或肝病，皆要求辨認同一組 RCRI。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 19,
+              "section": "multiple_choice",
+              "label": "B07 第19題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 9,
+              "section": "multiple_choice",
+              "label": "B08 第9題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R19",
+          "title": "術前功能量與中風後延後手術",
+          "recognition": "Functional capacity、MET >4、單腳站立與中風後早期胃癌手術，問何者不當。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹及四個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 20,
+              "section": "multiple_choice",
+              "label": "B06 第20題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 22,
+              "section": "multiple_choice",
+              "label": "B10 第22題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R20",
+          "title": "簡答：以病人為中心的會談",
+          "recognition": "請簡述如何落實／寫出你認為的「以病人為中心的會談」。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "同一開放式簡答題，只有「如何落實」與「你認為」的措辭差異。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 1,
+              "section": "short_answer",
+              "label": "B06 簡答第1題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 1,
+              "section": "short_answer",
+              "label": "B10 簡答第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R21",
+          "title": "病史短版排序：ROS 併入 present illness",
+          "recognition": "Chief complaint、present illness（include ROS）、past history 的正確排序。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與四個選項逐字相同，僅「病例／病歷」用字差異。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 3,
+              "section": "multiple_choice",
+              "label": "B09 第3題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 8,
+              "section": "multiple_choice",
+              "label": "B10 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R22",
+          "title": "Reconstructive ladder 的順序",
+          "recognition": "由簡至繁排列 primary/delayed/secondary intention、skin graft、local flap、free tissue transfer。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹及五個選項逐字相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 11,
+              "section": "multiple_choice",
+              "label": "B09 第11題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B10 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R23",
+          "title": "皮膚生理功能最重要的層次",
+          "recognition": "表皮、真皮（後版加皮下層與筋膜）中，哪層生理功能最重要。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹核心與共同選項相同；B10 僅增加兩個選項。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 12,
+              "section": "multiple_choice",
+              "label": "B09 第12題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 17,
+              "section": "multiple_choice",
+              "label": "B10 第17題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R24",
+          "title": "近圓周深度燒傷的緊急處置",
+          "recognition": "大範圍近圓周深度燒傷、區域血流不穩，問緊急處置。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與選項結構近逐字相同；B09「焦痂切除」與 B10「焦痂切開」為一字差異。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 13,
+              "section": "multiple_choice",
+              "label": "B09 第13題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 18,
+              "section": "multiple_choice",
+              "label": "B10 第18題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "B09 詳解答案與解說明顯接到下一題的 burn shock/輸液內容，與題本不合；重複判定依題本，不依可疑答案。",
+          "counted": true
+        },
+        {
+          "id": "CL-R25",
+          "title": "大面積燒傷休克：血管通透性增加",
+          "recognition": "大面積燒傷導致 shock 的原因為血管／微血管通透性增加。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹、選項角色與答案相同；B10 將「血管」誤寫為「血液」但不改變題意。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 14,
+              "section": "multiple_choice",
+              "label": "B09 第14題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 19,
+              "section": "multiple_choice",
+              "label": "B10 第19題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R26",
+          "title": "燒傷急性傷口處置：冰敷按摩為非",
+          "recognition": "焦痂切開、清創、冰敷按摩、重建手術中，何者不是急性燒傷處置。",
+          "matchType": "題幹／實質選項近同",
+          "basis": "題幹與四個選項逐字或近逐字相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 15,
+              "section": "multiple_choice",
+              "label": "B09 第15題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 20,
+              "section": "multiple_choice",
+              "label": "B10 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R27",
+          "title": "英文主訴新版：中風精確時點與發燒持續時間",
+          "recognition": "slurred speech／clumsy hand 的精確時點，以及 fever＋日期或 chills＋3 days 的三個選項角色重現。",
+          "matchType": "3/4 實質選項重用",
+          "basis": "B07 第2題與 B08 第6題同問最適當 chief complaint；A、B、C 的病例功能與辨識陷阱相同，只有第4個情境替換。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 2,
+              "section": "multiple_choice",
+              "label": "B07 第2題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 6,
+              "section": "multiple_choice",
+              "label": "B08 第6題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "與 CL-R01 的舊版文法題分開計算。",
+          "counted": true
+        },
+        {
+          "id": "CL-E01",
+          "title": "會談以封閉式問題貫穿（錯）",
+          "recognition": "B03 與後年題目的題幹／實質選項近乎相同。",
+          "matchType": "B03 正式納入",
+          "basis": "逐字相同",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 1,
+              "section": "true_false",
+              "label": "B03 是非題 1",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 1,
+              "section": "true_false",
+              "label": "B04 是非題 1",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-E02",
+          "title": "溝通方式與醫療爭議風險相關",
+          "recognition": "B03 與後年題目的題幹／實質選項近乎相同。",
+          "matchType": "B03 正式納入",
+          "basis": "逐字相同",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 2,
+              "section": "true_false",
+              "label": "B03 是非題 2",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 2,
+              "section": "true_false",
+              "label": "B04 是非題 2",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-E03",
+          "title": "問診不應鉅細靡遺逐句記錄",
+          "recognition": "B03 與後年題目的題幹／實質選項近乎相同。",
+          "matchType": "B03 正式納入",
+          "basis": "題幹與四個選項近逐字相同，僅順序變更",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 2,
+              "section": "multiple_choice",
+              "label": "B03 第2題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 2,
+              "section": "multiple_choice",
+              "label": "B05 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-E04",
+          "title": "身體診察敘述（前三選項重用）",
+          "recognition": "B03 與後年題目的題幹／實質選項近乎相同。",
+          "matchType": "B03 正式納入",
+          "basis": "題幹及 A–C 三個主要錯誤選項相同，D 更換為另一正確敘述",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 3,
+              "section": "multiple_choice",
+              "label": "B03 第3題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 3,
+              "section": "multiple_choice",
+              "label": "B05 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        }
+      ],
+      "supplementaryGroups": [],
+      "nonRepeatTopics": [
+        {
+          "id": "CL-N01",
+          "title": "病史詢問、疼痛量化與溝通",
+          "count": 16,
+          "points": [
+            "LQQOPERA 的 Radiation/Quantity",
+            "先開放後封閉、同理且不誘導",
+            "主訴的優先順序與問診目的",
+            "用 ROS 釐清黃疸、下肢水腫鑑別"
+          ],
+          "refs": [
+            "B04-MC-02",
+            "B05-MC-04",
+            "B06-MC-01",
+            "B06-MC-03",
+            "B07-MC-05",
+            "B07-MC-07",
+            "B08-MC-04",
+            "B09-MC-04",
+            "B09-MC-05",
+            "B09-SA-01",
+            "B10-MC-01",
+            "B10-MC-02",
+            "B10-MC-06",
+            "B10-MC-07",
+            "B03-MC-04",
+            "B03-MC-08"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N04",
+          "title": "頭頸部腫塊定位與 unknown primary",
+          "count": 12,
+          "points": [
+            "頸部分區 Level I/II/V 與常見病灶",
+            "thyroglossal duct cyst 與舌骨",
+            "skull base 軟組織優先 MRI",
+            "p16/HPV 與 tonsil、臺灣 NPC vs 美國 tonsil"
+          ],
+          "refs": [
+            "B04-MC-05",
+            "B04-MC-06",
+            "B05-MC-08",
+            "B06-MC-09",
+            "B06-MC-10",
+            "B07-MC-09",
+            "B07-MC-10",
+            "B08-MC-10",
+            "B09-MC-02",
+            "B10-SA-02",
+            "B03-MC-09",
+            "B03-MC-10"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N06",
+          "title": "傷口照護、感染與 partial-thickness healing",
+          "count": 10,
+          "points": [
+            "濕潤但不可浸泡、敷料與清創",
+            "急性撕裂傷縫合",
+            "糖尿病足感染的處置與嚴重度",
+            "淺二度／日曬傷以 re-epithelialization 癒合"
+          ],
+          "refs": [
+            "B04-MC-13",
+            "B04-MC-14",
+            "B05-MC-16",
+            "B06-MC-14",
+            "B07-MC-13",
+            "B08-MC-03",
+            "B09-MC-09",
+            "B04-MC-15",
+            "B03-MC-17",
+            "B03-MC-18"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N05",
+          "title": "術前風險評估與特殊病人準備",
+          "count": 8,
+          "points": [
+            "pack-year",
+            "近期 MI/COPD/腎功能與是否延後手術",
+            "支架後非心臟手術時機",
+            "不同術式的 perioperative stroke 風險",
+            "ESRD 術前透析、Hb 與凝血"
+          ],
+          "refs": [
+            "B04-MC-07",
+            "B04-MC-08",
+            "B06-MC-19",
+            "B07-MC-20",
+            "B09-MC-07",
+            "B10-MC-21",
+            "B03-MC-11",
+            "B03-MC-12"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N03",
+          "title": "身體診察方法與診斷效能",
+          "count": 7,
+          "points": [
+            "inspection/palpation/percussion/auscultation",
+            "聽診器膜面高頻、鐘面低頻",
+            "正常肺叩診 resonance",
+            "敏感度、特異度與似然比"
+          ],
+          "refs": [
+            "B04-MC-01",
+            "B07-MC-06",
+            "B07-MC-08",
+            "B08-MC-05",
+            "B09-MC-06",
+            "B10-MC-03",
+            "B10-MC-04"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N07",
+          "title": "燒傷面積、併發症與支持治療",
+          "count": 7,
+          "points": [
+            "Rule of nines：雙下肢 36% TBSA",
+            "大面積燒傷體液復甦與植皮時機",
+            "myoglobinuria/hematuria 時維持尿量與鹼化尿液"
+          ],
+          "refs": [
+            "B04-MC-17",
+            "B07-MC-21",
+            "B07-MC-22",
+            "B03-MC-19",
+            "B03-MC-20",
+            "B03-MC-21",
+            "B03-MC-22"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N10",
+          "title": "醫學生專業素養與制度下工作",
+          "count": 6,
+          "points": [
+            "未受監督執行尚未學會的導尿，涉及 system-based practice 與病人安全",
+            "醫療隱私、專業素養，以及 cure／relieve／comfort 的醫療角色"
+          ],
+          "refs": [
+            "B05-MC-01",
+            "B03-MC-01",
+            "B03-MC-23",
+            "B03-MC-24",
+            "B03-MC-25",
+            "B03-MC-26"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N08",
+          "title": "發燒與發炎指標",
+          "count": 2,
+          "points": [
+            "CRP/ESR 的來源、時程與非發炎干擾因子",
+            "發燒先找病因，再依臨床情況決定抗生素"
+          ],
+          "refs": [
+            "B08-MC-12",
+            "B08-TF-01"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N09",
+          "title": "肥胖與減重手術",
+          "count": 2,
+          "points": [
+            "病態肥胖的有效治療",
+            "sleeve、gastric bypass、balloon 的限制型／吸收不良型差異與 GERD"
+          ],
+          "refs": [
+            "B05-MC-09",
+            "B05-MC-10"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N11",
+          "title": "意識變化與腦血流自律調節",
+          "count": 2,
+          "points": [
+            "意識障礙原因",
+            "平均動脈壓下降時的全身代償與 cerebral autoregulation"
+          ],
+          "refs": [
+            "B03-MC-27",
+            "B03-MC-28"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        },
+        {
+          "id": "CL-N02",
+          "title": "病歷與主訴書寫的非重複變化題",
+          "count": 1,
+          "points": [
+            "主訴要含症狀與持續時間",
+            "年齡複合形容詞格式",
+            "避免把日期或性別形容詞寫法當成標準主訴"
+          ],
+          "refs": [
+            "B10-MC-05"
+          ],
+          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
+        }
+      ],
+      "exclusions": [
+        {
+          "title": "二次嚴格稽核：舊版主訴群拆分",
+          "reason": "B06 第6題只剩編者註記與 D 選項，改列未決；B07 第2題與 B08 第6題另成新版群，不與 B03–B05 舊版混算。",
+          "refs": [
+            "B06 第6題",
+            "B07 第2題",
+            "B08 第6題"
+          ]
+        },
+        {
+          "title": "二次嚴格稽核：慢性傷口 B04 不合併",
+          "reason": "B04 第15題僅 High proteinase 一項逐字重用，其餘選項是同概念重組；只保留 B05 第15題與 B06 第12題。",
+          "refs": [
+            "B04 第15題",
+            "B05 第15題",
+            "B06 第12題"
+          ]
+        },
+        {
+          "title": "缺題或證據不足，未計",
+          "reason": "原題本明載「題目缺失」，只留下 B「black stools for 1 day」，無法判斷是否與任何年度題目幾乎相同。",
+          "refs": [
+            "B06-MC-02"
+          ]
+        },
+        {
+          "title": "缺題或證據不足，未計",
+          "reason": "原題本明載「題目缺失」，只留下 A「您能指出痛的位置嗎？」；只能辨識為疼痛 location，無法做嚴格跨年比對。",
+          "refs": [
+            "B06-MC-04"
+          ]
+        },
+        {
+          "title": "缺題或證據不足，未計",
+          "reason": "題本原頁明載「題目缺失」，A/B/D 也缺失；僅 C 留下完整病歷排序，詳解亦只說原題缺失。無法證明整題與 B07/B08 幾乎相同。",
+          "refs": [
+            "B06-MC-05"
+          ]
+        },
+        {
+          "title": "缺題或證據不足，未計",
+          "reason": "題幹與 B–D 選項在原題本缺失，只留下「past history 僅記已無需處理疾病」選項；可能與 B07-MC-04 同題，但證據不足。",
+          "refs": [
+            "B06-MC-08"
+          ]
+        },
+        {
+          "title": "缺題或證據不足，未計",
+          "reason": "完整題目可讀，但唯一可能的跨年配對 B06-MC-08 缺題幹與大部分選項，因此保守不列考古。",
+          "refs": [
+            "B07-MC-04"
+          ]
+        },
+        {
+          "title": "答案品質警示",
+          "reason": "B04/B05/B06 吸入性灼傷題的詳解都選 B，卻同時承認密閉空間、顏面燒傷、沙啞、喘鳴皆可能是臨床線索；答案有效性存疑，但題目確實跨年近逐字重出。",
+          "refs": [
+            "CL-R12"
+          ]
+        },
+        {
+          "title": "詳解疑似錯置",
+          "reason": "題本問近圓周深度燒傷的緊急處置；詳解列 B 且解說 burn shock/輸液，明顯像下一題內容。B10-MC-18 為同題且列焦痂切開術。重複判定保留，答案顯示警示。",
+          "refs": [
+            "B09-MC-13"
+          ]
+        },
+        {
+          "title": "近似題刻意不合併",
+          "reason": "B08-MC-06、B10-MC-05 也問英文主訴，但病例與辨識陷阱改動較大，未併 CL-R01。 B09-MC-04 與 B04-TF-01 都涉及 open question，但一題考初問方式、一題是否全程封閉，僅同概念。 B04-MC-17 與 B07-MC-21 都含雙下肢 36% TBSA，但後者主體是整體治療，未視為同題。 B03/B05/B06/B10 多題都涉及傷口濕潤；只有 B06-MC-13 與 B10-MC-09 五選項逐字相同，才併 CL-R15。",
+          "refs": []
+        }
+      ],
+      "methodNotes": [
+        "可比較主分母採 B03–B10 完整年度考卷；B03 原本標為早期佐證，二次稽核後因可恢復原題號而正式納入。",
+        "先正規化全形／半形空白、大小寫、標點與選項順序，再人工比對病例、問句和選項；僅同主題或同一知識點者明確排除。",
+        "正反問可合併，但需保留近乎同一組敘述或選項；單純都在考傷口濕潤、主訴書寫或 open question，不自動合併。",
+        "同一年內重出只有在該 canonical 題型也出現在其他年份時，兩個實例才都計入；同年重複本身不構成『多年考古』。",
+        "二次嚴格稽核後為 31 群／91 題；B06 第6題因原題殘缺，未用編者『考古』標記替代原文證據。"
+      ],
+      "sources": [
+        {
+          "label": "考古題目",
+          "path": "2_臨床醫學/題目/已套B12模板 B11臨床醫學考古題目 Block 1.pdf"
+        },
+        {
+          "label": "考古詳解",
+          "path": "2_臨床醫學/詳解/已套B12模板 B11臨床醫學考古詳解 Block 1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pharmacology",
+      "order": 3,
+      "name": "藥理學",
+      "eyebrow": "PHARMACOLOGY",
+      "accent": "#b17b19",
+      "soft": "#f6edcf",
+      "scope": "B03–B10，共 239 題可判讀題目",
+      "scopeNote": "257 個題號槽中排除 16 題亡佚／殘缺及 B10 兩個明載移除的占位；早期 B99–B02 按章節重編且無原卷題號，只作佐證。",
+      "metrics": {
+        "total": 239,
+        "repeatInstances": 173,
+        "coverage": 72.4,
+        "repeatGroups": 54,
+        "uniqueTypes": 118,
+        "archetypeRate": 45.8,
+        "unresolved": 18,
+        "sameYearCollapsed": 2,
+        "rolling": {
+          "baseline": "B03",
+          "eligible": 199,
+          "hits": 119,
+          "percent": 59.8,
+          "byYear": [
+            {
+              "year": "B03",
+              "hits": null,
+              "rate": null
+            },
+            {
+              "year": "B04",
+              "hits": 11,
+              "rate": 45.8
+            },
+            {
+              "year": "B05",
+              "hits": 25,
+              "rate": 67.6
+            },
+            {
+              "year": "B06",
+              "hits": 21,
+              "rate": 77.8
+            },
+            {
+              "year": "B07",
+              "hits": 13,
+              "rate": 65.0
+            },
+            {
+              "year": "B08",
+              "hits": 16,
+              "rate": 57.1
+            },
+            {
+              "year": "B09",
+              "hits": 14,
+              "rate": 45.2
+            },
+            {
+              "year": "B10",
+              "hits": 19,
+              "rate": 59.4
+            }
+          ]
+        }
+      },
+      "years": [
+        {
+          "year": "B03",
+          "total": 40,
+          "repeat": 30,
+          "coverage": 75.0,
+          "note": "rolling 基線，不計 prior-hit 分母"
+        },
+        {
+          "year": "B04",
+          "total": 24,
+          "repeat": 18,
+          "coverage": 75.0,
+          "note": ""
+        },
+        {
+          "year": "B05",
+          "total": 37,
+          "repeat": 32,
+          "coverage": 86.5,
+          "note": ""
+        },
+        {
+          "year": "B06",
+          "total": 27,
+          "repeat": 22,
+          "coverage": 81.5,
+          "note": "另排除 12 題亡佚／移除"
+        },
+        {
+          "year": "B07",
+          "total": 20,
+          "repeat": 17,
+          "coverage": 85.0,
+          "note": "另排除 1 題亡佚／移除"
+        },
+        {
+          "year": "B08",
+          "total": 28,
+          "repeat": 16,
+          "coverage": 57.1,
+          "note": ""
+        },
+        {
+          "year": "B09",
+          "total": 31,
+          "repeat": 19,
+          "coverage": 61.3,
+          "note": "另排除 3 題亡佚／移除"
+        },
+        {
+          "year": "B10",
+          "total": 32,
+          "repeat": 19,
+          "coverage": 59.4,
+          "note": "另排除 2 題亡佚／移除"
+        }
+      ],
+      "repeatGroups": [
+        {
+          "id": "PHARM-R01",
+          "title": "Partial agonist 的判斷敘述",
+          "recognition": "",
+          "matchType": "選項微調",
+          "basis": "題幹相同，partial agonist 與 full agonist 併用降低 efficacy 的正確敘述保留；只替換一個干擾項。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 5,
+              "label": "B03 第5題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 7,
+              "label": "B05 第7題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 22,
+              "label": "B08 第22題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R02",
+          "title": "同一濃度反應曲線判讀 allosteric agonist",
+          "recognition": "",
+          "matchType": "同圖同問",
+          "basis": "三年均使用同一張 A alone/A+B-C-D-E 濃度反應圖，題幹同問 allosteric agonist，選項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 6,
+              "label": "B03 第6題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 17,
+              "label": "B08 第17題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 13,
+              "label": "B09 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R03",
+          "title": "同一濃度反應曲線判讀 partial agonist",
+          "recognition": "",
+          "matchType": "同圖同問",
+          "basis": "均以同一張 A alone/A+B-C-D-E 曲線問 partial agonist；差異僅排版或承上題寫法。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 7,
+              "label": "B03 第7題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 17,
+              "label": "B05 第17題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 21,
+              "label": "B06 第21題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R04",
+          "title": "Insulin 少量受體即可達 Emax（spare receptor）",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Insulin 只結合少量受體即達最大療效的句子與四個選項相同。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 2,
+              "label": "B04 第2題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 8,
+              "label": "B05 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R05",
+          "title": "吸收、半衰期與大 Vd 血液透析敘述",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "四個吸收／半衰期／Vd-透析敘述逐項相同，只差標點。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 3,
+              "label": "B04 第3題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 9,
+              "label": "B05 第9題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R06",
+          "title": "鹼性藥物吸收與中毒處置敘述",
+          "recognition": "",
+          "matchType": "選項微調",
+          "basis": "題幹、胃部吸收、NaHCO3 與 pKa 三個核心選項相同；一個干擾項被替換。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 4,
+              "label": "B04 第4題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 10,
+              "label": "B05 第10題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 12,
+              "label": "B07 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R07",
+          "title": "Saquinavir 與葡萄柚汁交互作用",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Saquinavir 因肝代謝失活、問何藥併用致毒性的題幹與選項一致。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 7,
+              "label": "B04 第7題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 27,
+              "label": "B06 第27題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R08",
+          "title": "Small therapeutic index 的臨床特性",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Small therapeutic window 的四個臨床敘述相同，僅用 therapeutic index/window 異名。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 8,
+              "label": "B04 第8題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 13,
+              "label": "B05 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R09",
+          "title": "Loading/maintenance dose 反推半衰期",
+          "recognition": "",
+          "matchType": "數值替換",
+          "basis": "皆給 IV loading dose、每日口服 maintenance dose（部分含 F），要求用同一式反推半衰期；只換數字。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 15,
+              "label": "B03 第15題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 9,
+              "label": "B04 第9題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 19,
+              "label": "B05 第19題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 16,
+              "label": "B09 第16題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 15,
+              "label": "B10 第15題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R10",
+          "title": "Probenecid 延長 penicillin G 作用",
+          "recognition": "",
+          "matchType": "選項重排",
+          "basis": "Probenecid+penicillin G 治淋病的病例與四種機轉完全相同，僅選項排序改變。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 11,
+              "label": "B04 第11題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 14,
+              "label": "B05 第14題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 29,
+              "label": "B06 第29題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R11",
+          "title": "Nitroglycerin 舌下錠避免 first-pass effect",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "均問 nitroglycerin 採舌下給藥的原因，核心答案皆為避開 portal first-pass metabolism。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 12,
+              "label": "B04 第12題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 15,
+              "label": "B05 第15題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 9,
+              "label": "B09 第9題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 14,
+              "label": "B10 第14題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R12",
+          "title": "Voltage-gated Na+ blocker 的臨床用途",
+          "recognition": "",
+          "matchType": "單一干擾項替換",
+          "basis": "Na+ channel blocker 用途題保留 anti-arrhythmia、local anesthesia、anti-convulsant 與 none；僅換一個干擾項。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 21,
+              "label": "B03 第21題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 15,
+              "label": "B04 第15題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R13",
+          "title": "插管前鎮靜與肌鬆受體組合",
+          "recognition": "",
+          "matchType": "逐字病例",
+          "basis": "75 歲肺炎低氧需插管的完整病例及五組受體機轉相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 22,
+              "label": "B03 第22題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 16,
+              "label": "B04 第16題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R14",
+          "title": "迷走神經負性變時作用的受體",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "迷走神經增加造成 negative chronotropy 的題幹與五個 receptor 選項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 23,
+              "label": "B03 第23題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 17,
+              "label": "B04 第17題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R15",
+          "title": "Ketamine 麻醉作用為 NMDA receptor inhibition",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Ketamine 麻醉作用機轉與五個 ion-channel/receptor 選項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 24,
+              "label": "B03 第24題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 18,
+              "label": "B04 第18題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R16",
+          "title": "研究 signal transduction 屬 PD 而非 PK",
+          "recognition": "",
+          "matchType": "正反問／題型轉換",
+          "basis": "共同重複『研究 signal transduction 屬 pharmacodynamics，不是 pharmacokinetics』同一句命題；MC、是非與填空互換。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 20,
+              "label": "B03 第20題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 19,
+              "label": "B04 第19題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 1,
+              "label": "B05 第1題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 38,
+              "label": "B06 第38題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R17",
+          "title": "Histone/HDAC/PML-RARα 轉錄敘述",
+          "recognition": "",
+          "matchType": "正反問／選項重排",
+          "basis": "PML-RARα、HDAC inhibitor、steroid receptor 與 histone lysine 的同組敘述反覆重排並翻轉正誤。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 18,
+              "label": "B03 第18題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 20,
+              "label": "B04 第20題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 2,
+              "label": "B05 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R18",
+          "title": "GPCR-Gs-cAMP-phospholamban／平滑肌 MLCK",
+          "recognition": "",
+          "matchType": "選項重排",
+          "basis": "三年均以 GPCR 題組重複 Gs-cAMP-phospholamban、MLCK 與 Gq-IP3 三個完整命題。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 17,
+              "label": "B03 第17題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 21,
+              "label": "B04 第21題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 4,
+              "label": "B05 第4題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R19",
+          "title": "尿滯留治療藥（Bethanechol）",
+          "recognition": "",
+          "matchType": "選項微調",
+          "basis": "均直接問治療尿滯留藥物，Bethanechol 與主要干擾藥重複；B08 改為複選並縮短選項。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 31,
+              "label": "B03 第31題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 22,
+              "label": "B04 第22題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 11,
+              "label": "B06 第11題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 9,
+              "label": "B08 第9題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 18,
+              "label": "B09 第18題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 20,
+              "label": "B10 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R20",
+          "title": "有機磷中毒解毒劑辨識",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "均問何者不是有機磷中毒解毒劑；oxime、atropine、diazepam、neostigmine 四項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 28,
+              "label": "B03 第28題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 23,
+              "label": "B04 第23題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 22,
+              "label": "B05 第22題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 12,
+              "label": "B06 第12題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 19,
+              "label": "B09 第19題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 21,
+              "label": "B10 第21題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R21",
+          "title": "肌肉鬆弛劑／AntiChE 與惡性高熱敘述",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Succinylcholine 惡性高熱、AntiChE 呼吸肌抑制與 MG 的四敘述逐年重複。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 25,
+              "label": "B03 第25題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 24,
+              "label": "B04 第24題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 21,
+              "label": "B05 第21題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 13,
+              "label": "B06 第13題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 17,
+              "label": "B09 第17題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 33,
+              "label": "B10 第33題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R22",
+          "title": "肌肉鬆弛劑的藥物交互作用",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Neomycin、nifedipine、ketamine、lidocaine 四藥選項及『不交互作用』題幹相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 26,
+              "label": "B03 第26題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 23,
+              "label": "B05 第23題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 14,
+              "label": "B06 第14題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 20,
+              "label": "B09 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R23",
+          "title": "Muscarinic antagonist 禁忌症",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Glaucoma、BPH、cognitive impairment、gastric ulcer 的禁忌症題完整重複。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 27,
+              "label": "B03 第27題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 21,
+              "label": "B09 第21題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 3,
+              "label": "B10 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R24",
+          "title": "Muscarinic antagonist 的臨床用途",
+          "recognition": "",
+          "matchType": "勘誤後重出",
+          "basis": "同一 muscarinic antagonist 用途題；B07 只把 B05 的『尿滯留』修正為『尿失禁』。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 24,
+              "label": "B05 第24題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 1,
+              "label": "B07 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R25",
+          "title": "Cholinergic system 突觸前作用位置",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Hemicholinium、vesamicol、botulinum toxin、decamethonium 的 presynaptic-site 題完整重複。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 30,
+              "label": "B03 第30題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 25,
+              "label": "B05 第25題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 16,
+              "label": "B06 第16題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 2,
+              "label": "B07 第2題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 22,
+              "label": "B10 第22題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R26",
+          "title": "Anticholinesterase 的臨床用途",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "AntiChE 適應症五選項相同，均以腸躁症作否定選項。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 26,
+              "label": "B05 第26題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 17,
+              "label": "B06 第17題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 22,
+              "label": "B09 第22題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 24,
+              "label": "B10 第24題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R27",
+          "title": "Anticholinesterase 的副作用",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "AntiChE 副作用題持續使用口乾、腹瀉、心搏過速與以上皆非／皆是的同組選項。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 32,
+              "label": "B03 第32題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 27,
+              "label": "B05 第27題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 18,
+              "label": "B06 第18題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 24,
+              "label": "B09 第24題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 25,
+              "label": "B10 第25題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R28",
+          "title": "低劑量 epinephrine 的血流動力學",
+          "recognition": "",
+          "matchType": "同藥同表",
+          "basis": "同為 10 μg/min epinephrine，SBP/DBP/HR/PVR 五組方向完全相同。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 28,
+              "label": "B05 第28題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 3,
+              "label": "B06 第3題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 13,
+              "label": "B07 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R29",
+          "title": "Norepinephrine 的血流動力學",
+          "recognition": "",
+          "matchType": "同藥同表",
+          "basis": "同為 10 μg/min norepinephrine，SBP/DBP/HR/PVR 五組方向完全相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 33,
+              "label": "B03 第33題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 26,
+              "label": "B08 第26題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R30",
+          "title": "Open-angle glaucoma 誤服藥後急性視力喪失病例",
+          "recognition": "",
+          "matchType": "逐字病例",
+          "basis": "50 歲 open-angle glaucoma 誤服朋友藥後急性視力喪失的病例逐字重出，只微調候選 adrenergic drugs。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 34,
+              "label": "B03 第34題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 29,
+              "label": "B05 第29題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 4,
+              "label": "B06 第4題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 14,
+              "label": "B07 第14題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R31",
+          "title": "花生／黑手黨情境的過敏性休克用藥",
+          "recognition": "",
+          "matchType": "逐字病例",
+          "basis": "黑手黨、共飲威士忌、花生、低血壓與 airway spasm 的長病例逐字重出，答案皆 epinephrine。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 35,
+              "label": "B03 第35題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 30,
+              "label": "B05 第30題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 5,
+              "label": "B06 第5題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 25,
+              "label": "B08 第25題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R32",
+          "title": "孕婦重度高血壓：抑制 NE 釋放的 Gi-cAMP",
+          "recognition": "",
+          "matchType": "逐字病例",
+          "basis": "懷孕第二期 190/100 mmHg、抑制交感末梢 NE 釋放的病例及 G-protein 選項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 36,
+              "label": "B03 第36題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 31,
+              "label": "B05 第31題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 6,
+              "label": "B06 第6題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 5,
+              "label": "B07 第5題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 7,
+              "label": "B08 第7題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R33",
+          "title": "Nonselective β-blocker（propranolol/timolol）作用",
+          "recognition": "",
+          "matchType": "同類藥替換",
+          "basis": "Propranolol/timolol 均為 nonselective β-blocker；renin、aqueous humor、hypoglycemia、bronchial cAMP 四個實質敘述保留。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 37,
+              "label": "B03 第37題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 32,
+              "label": "B05 第32題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 7,
+              "label": "B06 第7題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 5,
+              "label": "B10 第5題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R34",
+          "title": "散瞳眼藥的 α1-Gq-IP3/DAG 機轉",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "NTU 新生健檢點散瞳藥的病例與 cAMP/IP3/Ca2+ 選項逐字重複、僅排序不同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 38,
+              "label": "B03 第38題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 33,
+              "label": "B05 第33題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 8,
+              "label": "B06 第8題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 15,
+              "label": "B07 第15題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 21,
+              "label": "B08 第21題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 18,
+              "label": "B10 第18題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R35",
+          "title": "同一 R1/R2 catecholamine 圖判讀 α／β 親和力",
+          "recognition": "",
+          "matchType": "同圖微改",
+          "basis": "R1/R2 catecholamine 圖、完整英文題幹與排序選項相同；只把判讀目標在 α/β receptor affinity 間切換。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 39,
+              "label": "B03 第39題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 34,
+              "label": "B05 第34題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 9,
+              "label": "B06 第9題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 16,
+              "label": "B07 第16題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 10,
+              "label": "B08 第10題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 4,
+              "label": "B10 第4題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R36",
+          "title": "無高血壓 BPH 病人的 α1-blocker 選擇",
+          "recognition": "",
+          "matchType": "逐字病例",
+          "basis": "有 BPH、低正常血壓的男性病例與候選藥物反覆重出，答案皆 uroselective α1 blocker。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 40,
+              "label": "B03 第40題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 35,
+              "label": "B05 第35題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 10,
+              "label": "B06 第10題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 17,
+              "label": "B07 第17題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R37",
+          "title": "Sodium channel／use-dependent blocker 敘述",
+          "recognition": "",
+          "matchType": "選項微調",
+          "basis": "Sodium channel 命名、phenytoin use-dependence、lidocaine pore block 與濃度梯度四命題相同；晚年只多 self-inactivation。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 1,
+              "label": "B06 第1題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 3,
+              "label": "B07 第3題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 19,
+              "label": "B08 第19題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 34,
+              "label": "B09 第34題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 30,
+              "label": "B10 第30題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R38",
+          "title": "ADME 的學科名稱為 pharmacokinetics",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "『dose/absorption/distribution/metabolism/excretion 的研究稱什麼』題幹與答案選項相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 18,
+              "label": "B07 第18題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 2,
+              "label": "B08 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R39",
+          "title": "酸鹼性藥物的血漿蛋白結合敘述",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Acidic-albumin、basic-glycoprotein、binding sites、free drug、ionized absorption 五敘述同組重出。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 19,
+              "label": "B07 第19題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 5,
+              "label": "B08 第5題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 26,
+              "label": "B09 第26題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R40",
+          "title": "可避免 first-pass effect 的給藥途徑",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "避免 first-pass effect 的 oral/rectal/IV/inhalation/SC 五途徑選項相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 21,
+              "label": "B07 第21題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 13,
+              "label": "B08 第13題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 28,
+              "label": "B09 第28題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R41",
+          "title": "Bioavailability 的影響因子（反問版本）",
+          "recognition": "",
+          "matchType": "正反問",
+          "basis": "Bioavailability 題保留 dose、first-pass effect、route 三個實質選項，改由『不影響』問成『會影響』。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 8,
+              "label": "B03 第8題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 11,
+              "label": "B08 第11題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R42",
+          "title": "改變酸性藥物 Css 的給藥方式（反問版本）",
+          "recognition": "",
+          "matchType": "正反問／選項微調",
+          "basis": "固定每日劑量分次、提高 dose rate、改注射途徑等同組操作，反向詢問提高／不改變酸性藥 Css。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 12,
+              "label": "B05 第12題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 6,
+              "label": "B08 第6題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R43",
+          "title": "酸鹼藥物在十二指腸的吸收排序",
+          "recognition": "",
+          "matchType": "數值微調",
+          "basis": "A/B 酸性與 C/D 鹼性藥在 pH 6 十二指腸的排序題相同，只把 D 的 pKa 8 改為 10 並重排答案。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 16,
+              "label": "B05 第16題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 26,
+              "label": "B06 第26題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 20,
+              "label": "B08 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R44",
+          "title": "Efficacy、potency、TI 與 desensitization 敘述",
+          "recognition": "",
+          "matchType": "選項重排",
+          "basis": "10 mg vs 100 mg 的 efficacy/potency、small TI 個體差與 antagonist desensitization 三命題相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 14,
+              "label": "B03 第14題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 11,
+              "label": "B07 第11題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R45",
+          "title": "影響腎小管分泌的因素",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "均問影響 renal tubular secretion 的因素，脂溶性、帶電性、尿 pH、drug interaction 四項相同。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 9,
+              "label": "B03 第9題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 8,
+              "label": "B07 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R46",
+          "title": "Vd=0.4 L/kg／28 L 的分布特性",
+          "recognition": "",
+          "matchType": "等值數字改寫",
+          "basis": "70 kg 成人的 Vd=0.4 L/kg 即 28 L；題幹與 albumin/ionized/lipid-soluble 選項相同。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 18,
+              "label": "B05 第18題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 9,
+              "label": "B07 第9題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R47",
+          "title": "神經毒氣為 AntiChE 及 pancuronium 非解毒劑",
+          "recognition": "",
+          "matchType": "幾乎逐字",
+          "basis": "Nerve gas 為 AntiChE、atropine 可救治而 pancuronium 不可的三敘述及『以上皆是』相同。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 4,
+              "label": "B07 第4題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 27,
+              "label": "B08 第27題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 23,
+              "label": "B09 第23題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 28,
+              "label": "B10 第28題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R48",
+          "title": "JAK/STAT cytokine receptor（正反問）",
+          "recognition": "",
+          "matchType": "正反問",
+          "basis": "JAK/STAT cytokine 選項有 IL-1、IL-2、TNF 三項相同；由『會引起』翻成『並非』並換一個干擾項。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 3,
+              "label": "B09 第3題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 17,
+              "label": "B10 第17題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R49",
+          "title": "CYP450 代謝量最大的亞型",
+          "recognition": "",
+          "matchType": "逐字",
+          "basis": "四個 CYP450 isoform 選項與『代謝作用最強』題幹完全相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 5,
+              "label": "B09 第5題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 11,
+              "label": "B10 第11題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R50",
+          "title": "肌肉注射的正確敘述",
+          "recognition": "",
+          "matchType": "逐字",
+          "basis": "IM 可否給脂溶／刺激藥、與口服速度及注射體積的四敘述完全相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 10,
+              "label": "B09 第10題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 13,
+              "label": "B10 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R51",
+          "title": "Acetaminophen 主要 glucuronidation",
+          "recognition": "",
+          "matchType": "逐字",
+          "basis": "Acetaminophen 肝臟主要代謝路徑與 hydrolysis/glucuronidation/GSH/reduction 四項完全相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 11,
+              "label": "B09 第11題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 26,
+              "label": "B10 第26題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R52",
+          "title": "IC50 與受體因素的關係",
+          "recognition": "",
+          "matchType": "逐字",
+          "basis": "IC50 與 binding site、affinity、activation、receptor number 的四選項完全相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 14,
+              "label": "B09 第14題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 8,
+              "label": "B10 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R53",
+          "title": "IV／口服 AUC 反推 bioavailability",
+          "recognition": "",
+          "matchType": "數值替換",
+          "basis": "均給同藥 IV/PO dose 與各自 AUC，使用同一公式反推 oral bioavailability；只換口服劑量/AUC。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 13,
+              "label": "B03 第13題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 20,
+              "label": "B05 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PHARM-R54",
+          "title": "Ligand-gated channel 最快、nuclear receptor 最慢",
+          "recognition": "",
+          "matchType": "是非改填空",
+          "basis": "『ligand-gated channel 為 msec、nuclear receptor 為 hour』句子幾乎逐字，次年只挖空 msec。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 3,
+              "label": "B05 第3題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 37,
+              "label": "B06 第37題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        }
+      ],
+      "supplementaryGroups": [],
+      "nonRepeatTopics": [
+        {
+          "id": "PHARM-N01",
+          "title": "新藥開發、臨床試驗與學名藥",
+          "count": 6,
+          "points": [
+            "Phase I-IV 的人數、對象與主要目的",
+            "IND、NDA、上市後監測及各期失敗率",
+            "學名藥的專利期、生物相等性與成分要求"
+          ],
+          "refs": [
+            "B03 第1題",
+            "B03 第2題",
+            "B03 第3題",
+            "B04 第1題",
+            "B05 第5題",
+            "B05 第6題"
+          ],
+          "note": "這些題共同使用臨床試驗分期表，但各自鎖定不同期別或法規敘述，沒有幾乎相同的題幹與選項組合。"
+        },
+        {
+          "id": "PHARM-N02",
+          "title": "受體藥效學與 dose-response 判讀",
+          "count": 9,
+          "points": [
+            "affinity、intrinsic activity、efficacy、potency 與 EC50",
+            "spare receptor 對 receptor occupancy 與 potency 的影響",
+            "desensitization、internalization、β-arrestin 與受體飽和性"
+          ],
+          "refs": [
+            "B03 第4題",
+            "B04 第10題",
+            "B08 第14題",
+            "B09 第1題",
+            "B09 第2題",
+            "B10 第7題",
+            "B10 第9題",
+            "B10 第10題",
+            "B10 第29題"
+          ],
+          "note": "同屬 receptor pharmacology，但問的是不同定義、機轉或曲線參數，未因共享關鍵字而合併。"
+        },
+        {
+          "id": "PHARM-N03",
+          "title": "藥物動力學：吸收、分布、清除與穩定濃度",
+          "count": 16,
+          "points": [
+            "Henderson-Hasselbalch、離子化與胃腸吸收",
+            "Vd、蛋白結合、glomerular filtration、tubular handling 與 dialysis",
+            "半衰期、給藥間隔、Css 與到達 steady state 的時間"
+          ],
+          "refs": [
+            "B03 第10題",
+            "B03 第11題",
+            "B03 第12題",
+            "B04 第5題",
+            "B04 第6題",
+            "B05 第11題",
+            "B06 第32題",
+            "B07 第7題",
+            "B07 第10題",
+            "B08 第12題",
+            "B08 第16題",
+            "B08 第18題",
+            "B08 第23題",
+            "B08 第24題",
+            "B09 第27題",
+            "B10 第16題"
+          ],
+          "note": "B08 Q12/Q23 是同年重複，不構成跨年考古；其餘雖常用同一公式，輸入條件與要求量不同。"
+        },
+        {
+          "id": "PHARM-N04",
+          "title": "肝臟代謝、酵素誘導／抑制與 prodrug",
+          "count": 7,
+          "points": [
+            "CYP450 inducer 與 inhibitor 的藥物清單",
+            "active／inactive metabolite 與 prodrug",
+            "Phase I 氧化還原水解及 Phase II conjugation"
+          ],
+          "refs": [
+            "B03 第16題",
+            "B07 第20題",
+            "B09 第8題",
+            "B09 第12題",
+            "B10 第6題",
+            "B10 第12題",
+            "B10 第32題"
+          ],
+          "note": "B09 Q8/B10 Q12 及 B09 Q12/B10 Q6 雖有相同題幹，實質藥物選項各更換一半，保守視為不同題。"
+        },
+        {
+          "id": "PHARM-N05",
+          "title": "訊息傳遞、ion channel 與 nuclear receptor",
+          "count": 15,
+          "points": [
+            "ligand-gated、voltage-gated、GPCR、JAK/STAT 與 nuclear receptor 的區別",
+            "Gs/Gi/Gq 下游 effector、second messenger 與心肌／平滑肌效應",
+            "PML-RARα、retinoic acid、histone acetylation 與轉錄調控"
+          ],
+          "refs": [
+            "B03 第19題",
+            "B05 第36題",
+            "B05 第37題",
+            "B06 第15題",
+            "B06 第35題",
+            "B06 第36題",
+            "B06 第39題",
+            "B08 第8題",
+            "B08 第15題",
+            "B09 第4題",
+            "B09 第7題",
+            "B09 第33題",
+            "B10 第1題",
+            "B10 第2題",
+            "B10 第27題"
+          ],
+          "note": "開放式問答、單一填空與多選敘述題即使共用機轉，也只有在命題句幾乎逐字時才列考古。"
+        },
+        {
+          "id": "PHARM-N06",
+          "title": "膽鹼系統、麻醉與毒素的個別應用",
+          "count": 6,
+          "points": [
+            "muscarinic／nicotinic antagonist 的治療用途",
+            "ondansetron 的 5-HT3 機轉與 thiopental redistribution",
+            "botulinum toxin 的 SNARE／ACh release 與醫美用途"
+          ],
+          "refs": [
+            "B03 第29題",
+            "B04 第13題",
+            "B04 第14題",
+            "B08 第1題",
+            "B08 第4題",
+            "B08 第28題"
+          ],
+          "note": "藥物或受體不同，且臨床任務不同，未與同章其他題合併。"
+        },
+        {
+          "id": "PHARM-N07",
+          "title": "交感神經藥物的臨床情境",
+          "count": 7,
+          "points": [
+            "α1 blocker 治 BPH／高血壓及 midodrine 治姿勢性低血壓",
+            "過敏性休克的 β2-cAMP 支氣管擴張",
+            "心衰竭 β blocker、升壓劑比較及 β agonist 的眼壓副作用"
+          ],
+          "refs": [
+            "B08 第3題",
+            "B09 第29題",
+            "B09 第30題",
+            "B09 第31題",
+            "B09 第32題",
+            "B10 第19題",
+            "B10 第34題"
+          ],
+          "note": "病例可能用到同一藥物，但問藥物選擇、訊息機轉或副作用的任務不同，因此不算同題。"
+        }
+      ],
+      "exclusions": [
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "都用臨床試驗分期表，但鎖定不同 phase、法規與錯誤敘述；屬同考點，不是同題。",
+          "refs": [
+            "B03 Q1/Q2",
+            "B04 Q1",
+            "B05 Q5"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "都考 Vd 與分布，但數值區間和要求判斷的物性不同；只有 B05 Q18/B07 Q9 彼此達近同題門檻。",
+          "refs": [
+            "B03 Q11",
+            "B05 Q18/B07 Q9",
+            "B08 Q24"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "共同涉及 ligand-gated channel、BZD、TRPV1 或 NMJ，但選項命題大幅重組。",
+          "refs": [
+            "B05 Q37",
+            "B09 Q33",
+            "B10 Q1"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "都用 Gs-cAMP-phospholamban/MLCK；B06 是單一名詞填空、B08 是開放式雙組織機轉題，作答任務不同。",
+          "refs": [
+            "B03 Q17/B04 Q21/B05 Q4",
+            "B06 Q36/Q39",
+            "B08 Q8"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "均談 PML-RARα/HDAC；後兩題分別只填 fusion protein 或問 retinoic acid 治療機轉，非原敘述題。",
+          "refs": [
+            "B03 Q18/B04 Q20/B05 Q2",
+            "B06 Q35",
+            "B08 Q15"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "皆涉及 anaphylaxis；前組問選救命藥，B09 改問 bronchodilation 的 second messenger。",
+          "refs": [
+            "B03 Q35/B05 Q30/B06 Q5/B08 Q25",
+            "B09 Q30"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "皆連結 β2 agonist 與眼壓；前組問誤服何藥，B10 改為吸入 albuterol 後的機轉。",
+          "refs": [
+            "B03 Q34/B05 Q29/B06 Q4/B07 Q14",
+            "B10 Q34"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "前組逐字定義 pharmacokinetics；B10 改問 pharmacodynamics 的相鄰定義，只算同章概念。",
+          "refs": [
+            "B07 Q18/B08 Q2",
+            "B10 Q2"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "前組直接選可避開 first pass 的途徑；B09 Q27 改考 first-pass 定義與發生器官。",
+          "refs": [
+            "B07 Q21/B08 Q13/B09 Q28",
+            "B09 Q27"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "B07 改成 absorption rate 並替換兩個實質選項，未併入 bioavailability 正反問群。",
+          "refs": [
+            "B03 Q8/B08 Q11",
+            "B07 Q7"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "雖同問 CYP inhibitor/inducer，四個藥物中更換兩個，需辨識不同藥物，保守不算同題。",
+          "refs": [
+            "B09 Q8",
+            "B10 Q12"
+          ]
+        },
+        {
+          "title": "同考點但未達同題門檻",
+          "reason": "『代謝物無活性』題幹相同，但四個候選藥替換兩個且正解改變，未達幾乎相同。",
+          "refs": [
+            "B09 Q12",
+            "B10 Q6"
+          ]
+        },
+        {
+          "title": "B06 未納入分母",
+          "reason": "題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。",
+          "refs": [
+            "B06 第2題",
+            "B06 第19題",
+            "B06 第20題",
+            "B06 第22題",
+            "B06 第23題",
+            "B06 第24題",
+            "B06 第25題",
+            "B06 第28題",
+            "B06 第30題",
+            "B06 第31題",
+            "B06 第33題",
+            "B06 第34題"
+          ]
+        },
+        {
+          "title": "B07 未納入分母",
+          "reason": "題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。",
+          "refs": [
+            "B07 第6題"
+          ]
+        },
+        {
+          "title": "B09 未納入分母",
+          "reason": "題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。",
+          "refs": [
+            "B09 第6題",
+            "B09 第15題",
+            "B09 第25題"
+          ]
+        },
+        {
+          "title": "B10 未納入分母",
+          "reason": "題本明載『同第 3/4 題，更新後移除』，視為刪除占位而非實際新題。",
+          "refs": [
+            "B10 第23題",
+            "B10 第31題"
+          ]
+        },
+        {
+          "title": "同年重出，不構成多年考古",
+          "reason": "同一 Vd 計算題在 B08 題本內重複；沒有跨年成員，故不列考古群。",
+          "refs": [
+            "B08 第12題",
+            "B08 第23題"
+          ]
+        },
+        {
+          "title": "同年重出，不構成多年考古",
+          "reason": "同年均挖空 phospholamban；沒有可確認的跨年同題，故只在 unique 題型分母合併。",
+          "refs": [
+            "B06 第36題",
+            "B06 第39題"
+          ]
+        }
+      ],
+      "methodNotes": [
+        "逐年題號以題本頁面為主，再用詳解各年度答案格逐題校正；B03-B07 抽字遺失的左側題號亦由答案格與順序復原。",
+        "主率的分母為 B03-B10 共 239 個可辨識題目實例；16 個亡佚／殘缺題與 B10 兩個明載移除的占位不進分母。",
+        "repeat_instance_rate = 173/239：位於至少含兩個年份之嚴格重複群的題目實例比例，包含該群第一次出現。",
+        "repeat_archetype_rate = 54/118：同一重複群壓成一題型；B08 Q12/Q23、B06 Q36/Q39 各為同年重複，只在 unique 題型分母內合併，不算跨年考古。",
+        "rolling_prior_hit_rate = 119/199：B04-B10 每一可辨識題是否已在更早的 B03-B09 出現；B03 作基線不進 rolling 分母。",
+        "早期 B99-B02 題庫依章節重編，括號常只標年份而無原卷題號，因此僅作人工比對佐證，不進分子、分母或必列的年／題號清單。",
+        "題本明示題目／選項缺失，或只剩編者推測。即使殘存答案像舊題也不據此判為重複。",
+        "題本分別註記『同第3題／同第4題，更新後移除』，不視為實際題目。",
+        "題型分別為是非、填空、問答；只有核心命題句近乎逐字者才併群，其餘按同概念排除。",
+        "已回看題本圖面；可確認使用同一 A alone/A+B-C-D-E 濃度反應曲線。B07 Q6 因圖與選項缺失而排除。"
+      ],
+      "sources": [
+        {
+          "label": "考古題目",
+          "path": "3_藥理學/B11藥理考古題目 block 1.pdf"
+        },
+        {
+          "label": "考古詳解",
+          "path": "3_藥理學/B11藥理考古詳解 block 1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "laboratory",
+      "order": 4,
+      "name": "檢驗醫學",
+      "eyebrow": "LABORATORY MEDICINE",
+      "accent": "#7c5aa6",
+      "soft": "#eee7f6",
+      "scope": "B04–B10 七份可還原原題號的逐年考卷",
+      "scopeNote": "B04-B10 Block 1 逐年題目（早期 B99-B03 分類題僅作佐證，不進主要分母）",
+      "metrics": {
+        "total": 92,
+        "repeatInstances": 63,
+        "coverage": 68.5,
+        "repeatGroups": 21,
+        "uniqueTypes": 50,
+        "archetypeRate": 42.0,
+        "unresolved": 0,
+        "rolling": {
+          "baseline": "B04",
+          "eligible": 85,
+          "hits": 42,
+          "percent": 49.4,
+          "byYear": [
+            {
+              "year": "B04",
+              "hits": null,
+              "rate": null
+            },
+            {
+              "year": "B05",
+              "hits": 2,
+              "rate": 25.0
+            },
+            {
+              "year": "B06",
+              "hits": 4,
+              "rate": 33.3
+            },
+            {
+              "year": "B07",
+              "hits": 6,
+              "rate": 50.0
+            },
+            {
+              "year": "B08",
+              "hits": 2,
+              "rate": 16.7
+            },
+            {
+              "year": "B09",
+              "hits": 11,
+              "rate": 57.9
+            },
+            {
+              "year": "B10",
+              "hits": 17,
+              "rate": 77.3
+            }
+          ]
+        }
+      },
+      "years": [
+        {
+          "year": "B04",
+          "total": 7,
+          "repeat": 4,
+          "coverage": 57.1,
+          "note": "作為逐年完整題號基線；未計 rolling 命中率"
+        },
+        {
+          "year": "B05",
+          "total": 8,
+          "repeat": 3,
+          "coverage": 37.5,
+          "note": ""
+        },
+        {
+          "year": "B06",
+          "total": 12,
+          "repeat": 6,
+          "coverage": 50.0,
+          "note": ""
+        },
+        {
+          "year": "B07",
+          "total": 12,
+          "repeat": 6,
+          "coverage": 50.0,
+          "note": ""
+        },
+        {
+          "year": "B08",
+          "total": 12,
+          "repeat": 10,
+          "coverage": 83.3,
+          "note": ""
+        },
+        {
+          "year": "B09",
+          "total": 19,
+          "repeat": 17,
+          "coverage": 89.5,
+          "note": ""
+        },
+        {
+          "year": "B10",
+          "total": 22,
+          "repeat": 17,
+          "coverage": 77.3,
+          "note": "原 PDF 題號由 7 跳至 11；分母只計實際列出的 22 題"
+        }
+      ],
+      "repeatGroups": [
+        {
+          "id": "lab-r01",
+          "title": "溶血造成偽性高血鉀屬哪個檢驗階段",
+          "recognition": "",
+          "matchType": "原文近同",
+          "basis": "溶血 3+、偽性高血鉀、重新抽血與 pre-analytic/analytic/post-analytic 選項皆保留；B06 僅以案例語句改寫。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 1,
+              "label": "B04 第1題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 3,
+              "label": "B06 第3題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 3,
+              "label": "B07 第3題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 6,
+              "label": "B10 第6題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r02",
+          "title": "POCT 的核心優缺點",
+          "recognition": "",
+          "matchType": "選項重排",
+          "basis": "四個核心敘述（縮短 turnaround time、住院時間、僅限院內、成本較高）反覆重排，正誤問法微調。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 3,
+              "label": "B04 第3題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 2,
+              "label": "B05 第2題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 5,
+              "label": "B06 第5題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 5,
+              "label": "B07 第5題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "B03 分類：重點照護檢驗 Q2",
+            "B02 分類：重點照護檢驗 Q3",
+            "B01/B00 分類：重點照護檢驗 Q5-Q6"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r03",
+          "title": "POCT 對急診 disposition time 研究圖",
+          "recognition": "",
+          "matchType": "正反問改寫",
+          "basis": "同一研究圖、同一組 staff/nurse/junior officer 敘述，僅 correct/incorrect 與組合選項改寫。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 4,
+              "label": "B04 第4題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 3,
+              "label": "B05 第3題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 6,
+              "label": "B06 第6題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 6,
+              "label": "B07 第6題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "B03 分類：重點照護檢驗 Q1",
+            "B02/B01 分類：重點照護檢驗 Q4"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r04",
+          "title": "Pharmacokinetics 的 ADME 組成",
+          "recognition": "",
+          "matchType": "選項微調",
+          "basis": "固定考 absorption、distribution、metabolism、excretion，並以 adverse effect/target-site action 作干擾項。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 4,
+              "label": "B05 第4題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 7,
+              "label": "B06 第7題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 7,
+              "label": "B07 第7題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 9,
+              "label": "B08 第9題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 13,
+              "label": "B09 第13題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 15,
+              "label": "B10 第15題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "B03 分類：藥物濃度監測 Q1",
+            "B02 分類：藥物濃度監測 Q3",
+            "B101-B99 分類：藥物濃度監測 Q5"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r05",
+          "title": "螢光毛細管電泳是否適合 point mutation",
+          "recognition": "",
+          "matchType": "反向命題",
+          "basis": "B09 將 B04 的同一句命題加上 not；詳解亦直接註記與 B04 Q6 對照。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 6,
+              "label": "B04 第6題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 1,
+              "label": "B09 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "B00 分類：分子檢驗學 Q13(L)"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r06",
+          "title": "以 6±2SD 判斷血鉀追蹤是否顯著改變",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "6 mmol/L、隨機誤差 0.06 mmol/L、五個追蹤值與核心選項持續重現；僅選項順序略變。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 4,
+              "label": "B06 第4題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 4,
+              "label": "B07 第4題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 10,
+              "label": "B08 第10題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 8,
+              "label": "B09 第8題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 7,
+              "label": "B10 第7題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r07",
+          "title": "qPCR 特性與放射性污染干擾選項",
+          "recognition": "",
+          "matchType": "正反問改寫",
+          "basis": "五個英文選項逐字重現，只把 most appropriate 改成 inappropriate。",
+          "refs": [
+            {
+              "year": "B06",
+              "number": 9,
+              "label": "B06 第9題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 12,
+              "label": "B07 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r09",
+          "title": "現行常見的 TDM 檢驗方法",
+          "recognition": "",
+          "matchType": "原文重現／反問",
+          "basis": "EIS、CLIA、ELISA、HPLC、MS/MS 五項固定；B10 Q17 改成問「不是」，Q25 再原題重現。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 1,
+              "label": "B08 第1題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 15,
+              "label": "B09 第15題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 17,
+              "label": "B10 第17題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 25,
+              "label": "B10 第25題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r10",
+          "title": "哪種檢體不適用 POCT",
+          "recognition": "",
+          "matchType": "原文重現／單一選項替換",
+          "basis": "血清、尿液、全血等固定選項與相同判斷；B08 Q7 只把一個呼吸道檢體替換為痰液。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 3,
+              "label": "B08 第3題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 9,
+              "label": "B09 第9題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 11,
+              "label": "B10 第11題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "B08 第7題只保留 3/5 選項且改換呼吸道檢體，二次稽核後改列非考古。",
+          "counted": true
+        },
+        {
+          "id": "lab-r11",
+          "title": "哪些感染情境應考慮／必須用 POCT",
+          "recognition": "",
+          "matchType": "限制語改寫",
+          "basis": "流感、HIV、伊波拉、COVID 的整組選項重現；「應考慮」改成「必須」。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 4,
+              "label": "B08 第4題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 11,
+              "label": "B09 第11題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 13,
+              "label": "B10 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r12",
+          "title": "TDM：CYP450 induction、time/concentration dependence、therapeutic index",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "四個敘述與「以上皆是」選項連續三年近乎逐字重現。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 5,
+              "label": "B08 第5題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 16,
+              "label": "B09 第16題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 18,
+              "label": "B10 第18題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r13",
+          "title": "檢驗誤差：random、systematic 與 total analytic error",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "五個品質／誤差敘述連續三年重現，僅殘缺處與標點不同。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 6,
+              "label": "B08 第6題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 7,
+              "label": "B09 第7題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 5,
+              "label": "B10 第5題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r14",
+          "title": "血清－腹水 albumin 差用來判斷 transudate/exudate",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "同一四選一題，僅 serum/albumin/蛋白質的中英寫法略變。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 8,
+              "label": "B08 第8題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 18,
+              "label": "B09 第18題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 20,
+              "label": "B10 第20題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r15",
+          "title": "胸水 pH < 6.5 提示食道破裂",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "抽胸水四個敘述完整重現；B10 詳解直接註記同 B08 Q11。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 11,
+              "label": "B08 第11題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 3,
+              "label": "B10 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r16",
+          "title": "NGS 為何較能偵測低比例／low-copy variant",
+          "recognition": "",
+          "matchType": "中英改寫",
+          "basis": "三題都要求比較 NGS 與 conventional PCR 對低比例變異的無偏性與靈敏度；B09 Q19 幾乎逐字重現 B08。",
+          "refs": [
+            {
+              "year": "B08",
+              "number": 12,
+              "label": "B08 第12題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 3,
+              "label": "B09 第3題",
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 19,
+              "label": "B09 第19題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r17",
+          "title": "5′ UTR 是 exon 還是 intron",
+          "recognition": "",
+          "matchType": "反向命題",
+          "basis": "同一命題將 part of exon 改成 composed by intron，屬明確正反問。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 5,
+              "label": "B09 第5題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 24,
+              "label": "B10 第24題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [
+            "B03/B01 分類：分子檢驗學 Q4",
+            "B00 分類：分子檢驗學 Q13(B)"
+          ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r18",
+          "title": "哪些生物標的可作 POCT",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "SARS-CoV-2、血糖、心臟節律、hCG 與「以上皆是」完整重現。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 10,
+              "label": "B09 第10題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 12,
+              "label": "B10 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r19",
+          "title": "POCT 誰可操作、結果／決策是否需專業人員確認",
+          "recognition": "",
+          "matchType": "選項近同",
+          "basis": "價格、醫院需求、準確性、民眾操作與專業確認五項幾乎完整保留，僅正確選項的限制語微調。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 12,
+              "label": "B09 第12題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 14,
+              "label": "B10 第14題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r20",
+          "title": "哪些臨床案例適合 TDM",
+          "recognition": "",
+          "matchType": "原文重現",
+          "basis": "gentamicin、氣喘、癲癇 steroid、腎移植 tacrolimus、voriconazole 五案例重現，僅拼字修正。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 14,
+              "label": "B09 第14題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 16,
+              "label": "B10 第16題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r21",
+          "title": "哪個因素與 pleural effusion 無關",
+          "recognition": "",
+          "matchType": "中英翻譯",
+          "basis": "lymphatic recovery、vascular permeability、blood-cell count、hydrostatic/osmotic pressure 四項翻成英文後重現。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 17,
+              "label": "B09 第17題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 19,
+              "label": "B10 第19題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r22",
+          "title": "同一 A/B、P1/P2 ROC 圖判讀",
+          "recognition": "",
+          "matchType": "同圖反向敘述",
+          "basis": "圖形、A/B 曲線、P1/P2 與四個判讀面向完全相同，部分 LR 敘述改為反向；B10 詳解明載「同 B09 第六題」。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 6,
+              "label": "B09 第6題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 4,
+              "label": "B10 第4題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        }
+      ],
+      "supplementaryGroups": [],
+      "nonRepeatTopics": [
+        {
+          "id": "LAB-N01",
+          "title": "real-time PCR 的 Ct 定義與倍數計算",
+          "count": 4,
+          "points": [],
+          "refs": [
+            "B06 第11題",
+            "B07 第10題",
+            "B09 第2題",
+            "B10 第2題"
+          ],
+          "note": "同考點但分別問定義、由 10 倍反推 Ct、方向關係與由 ΔCt 求比值，未計為同題。"
+        },
+        {
+          "id": "LAB-N02",
+          "title": "基因結構、exon/intron 與 codon 基礎",
+          "count": 4,
+          "points": [],
+          "refs": [
+            "B04 第5題",
+            "B05 第6題",
+            "B05 第7題",
+            "B06 第10題"
+          ],
+          "note": "題目分別鎖定 promoter、start/stop codon、UTR 與 antisense strand；概念相近但命題不同。"
+        },
+        {
+          "id": "LAB-N03",
+          "title": "突變、染色體易位與分子偵測",
+          "count": 4,
+          "points": [],
+          "refs": [
+            "B04 第7題",
+            "B05 第8題",
+            "B07 第11題",
+            "B10 第1題"
+          ],
+          "note": "涵蓋 BCR-ABL fusion、FLT3-ITD、capillary electrophoresis 適合的突變及染色體位置，不能只因同屬分子檢驗就合併。"
+        },
+        {
+          "id": "LAB-N04",
+          "title": "體腔液 transudate/exudate 判讀",
+          "count": 4,
+          "points": [],
+          "refs": [
+            "B07 第9題",
+            "B08 第2題",
+            "B10 第21題",
+            "B10 第22題"
+          ],
+          "note": "疾病、Light-like 閾值、體腔液綜合敘述各自不同；B07 Q9 與 B10 Q22 只部分呈鏡像，保守排除。"
+        },
+        {
+          "id": "LAB-N05",
+          "title": "TDM 的臨床適用情境",
+          "count": 3,
+          "points": [],
+          "refs": [
+            "B05 第5題",
+            "B06 第8題",
+            "B07 第8題"
+          ],
+          "note": "共同框架是 TDM utility，但每年多數藥物與案例皆更換，屬同概念而非同題。"
+        },
+        {
+          "id": "LAB-N06",
+          "title": "ROC 與檢驗效能判讀（不同圖／不同敘述組）",
+          "count": 3,
+          "points": [],
+          "refs": [
+            "B05 第1題",
+            "B06 第1題",
+            "B07 第1題"
+          ],
+          "note": "皆考 ROC，但曲線數、cut-off 與待判讀關係不同；B07 僅被後續詳解稱為「類似」，因此不併入 B09-B10 同題群。"
+        },
+        {
+          "id": "LAB-N07",
+          "title": "定量與定性檢驗辨認",
+          "count": 2,
+          "points": [],
+          "refs": [
+            "B04 第2題",
+            "B06 第2題"
+          ],
+          "note": "題型相同但 analyte 與判斷項目大幅替換，保守視為不同題。"
+        },
+        {
+          "id": "LAB-N10",
+          "title": "STR 的定義、全名與法醫用途",
+          "count": 2,
+          "points": [],
+          "refs": [
+            "B06 第12題",
+            "B10 第23題"
+          ],
+          "note": "B06 要解釋 STR，B10 只要寫出全名；同術語但作答任務不同，故不算同題。"
+        },
+        {
+          "id": "LAB-N08",
+          "title": "族群組成對 sensitivity 估計的影響",
+          "count": 1,
+          "points": [],
+          "refs": [
+            "B07 第2題"
+          ],
+          "note": ""
+        },
+        {
+          "id": "LAB-N09",
+          "title": "real-time PCR 是否可直接定量 RNA",
+          "count": 1,
+          "points": [],
+          "refs": [
+            "B09 第4題"
+          ],
+          "note": ""
+        },
+        {
+          "id": "LAB-N11",
+          "title": "POCT 可用檢體的變化題",
+          "count": 1,
+          "points": [],
+          "refs": [
+            "B08 第7題"
+          ],
+          "note": "與跨年檢體題只重用 3/5 選項，列入常見考點而非考古。"
+        }
+      ],
+      "exclusions": [
+        {
+          "title": "二次嚴格稽核：STR 題不合併",
+          "reason": "『解釋何為 STR』與『寫出 STR 全名』共享術語，但作答任務不同。",
+          "refs": [
+            "B06 第12題",
+            "B10 第23題"
+          ]
+        },
+        {
+          "title": "二次嚴格稽核：POCT 檢體變化題拆出",
+          "reason": "B08 第7題換掉 saliva／nasopharyngeal swab 並加入『以上皆是』，只剩 3/5 選項重用。",
+          "refs": [
+            "B08 第7題",
+            "B08 第3題",
+            "B09 第9題",
+            "B10 第11題"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "共同問定量檢驗，但列舉 analyte 與選項大幅不同。",
+          "refs": [
+            "B04 Q2",
+            "B06 Q2"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "同為 A/B、P1/P2 ROC 圖族；B07 的待判讀敘述不同，來源詳解也只稱「類似」，不算。",
+          "refs": [
+            "B07 Q1",
+            "B09 Q6/B10 Q4"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "都問 TDM utility，但臨床案例與藥物多數替換。",
+          "refs": [
+            "B05 Q5",
+            "B06 Q8",
+            "B07 Q8"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "同考 Ct，分別要求定義、反推 Ct、方向判斷與計算倍數，不是同題。",
+          "refs": [
+            "B06 Q11",
+            "B07 Q10",
+            "B09 Q2",
+            "B10 Q2"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "transudate/exudate 的反向框架相似，但四個選項只部分鏡像，未達幾乎相同。",
+          "refs": [
+            "B07 Q9",
+            "B10 Q22"
+          ]
+        },
+        {
+          "title": "相近但不是同題",
+          "reason": "都提 BCR-ABL，但一題問 fusion protein，另一題問染色體位置。",
+          "refs": [
+            "B04 Q7",
+            "B10 Q1"
+          ]
+        }
+      ],
+      "methodNotes": [
+        "主分母只採 B04-B10 的逐年歷屆區，因為這一段能逐題還原原始年份與題號。",
+        "重複群須跨至少兩個年份；同年重複版本可隸屬已跨年的群組，但不單獨建立考古群。",
+        "允許完全相同、正反問、中英翻譯、選項重排與非常小的限制語變化；只共用章節、疾病、藥物或公式者不算。",
+        "repeat_instance_rate = 66/92：所有題目實例中，位於跨年重複群者的比例（包含該群第一次出現）。",
+        "repeat_archetype_rate = 22/48：去除同群重複後，曾跨年重出的題型占全部獨立題型的比例。",
+        "rolling_prior_hit_rate = 43/85：B05-B10 每題是否曾在更早的 B04-B09 出現；B04 為基線不進分母。",
+        "B10 原題本的題號由 7 跳至 11，未見 8-10；本分析不補號、不假設缺題。",
+        "B99-B03 分類區常把多年度壓成單一題，且沒有原始整卷題號，故只列分類題號佐證，不納入 92 題分母。",
+        "B09 Q12 的選項排版與下一題題幹黏連，但 B10 Q14 可確認其題意；題號仍可可靠辨識。",
+        "二次嚴格稽核後為 21 群／63 題；STR 任務差異與 B08 POCT 檢體改題均已移出。"
+      ],
+      "sources": [
+        {
+          "label": "考古題目",
+          "path": "4_檢驗醫學/檢驗醫學Block1考古題目_更新.pdf"
+        },
+        {
+          "label": "考古詳解",
+          "path": "4_檢驗醫學/檢驗醫學Block1考古詳解_更新.pdf"
+        }
+      ]
+    }
+  ]
+}

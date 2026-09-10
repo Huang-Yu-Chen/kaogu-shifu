@@ -1,0 +1,1678 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Block 1 嚴格考古地圖</title>
+  <style>
+    :root {
+      --ink: #142a30;
+      --ink-soft: #50666b;
+      --paper: #f6f2e9;
+      --surface: #fffdf8;
+      --surface-2: #eee9de;
+      --line: #d8d2c6;
+      --navy: #173d45;
+      --teal: #2f776f;
+      --rust: #b95e3f;
+      --gold: #b7862e;
+      --ring-track: #ddd8ce;
+      --shadow: 0 8px 26px rgba(20, 42, 48, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 9px;
+      --content: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      background: var(--paper);
+      color: var(--ink);
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+      background:
+        linear-gradient(90deg, rgba(23, 61, 69, 0.035) 1px, transparent 1px) 0 0 / 32px 32px,
+        var(--paper);
+    }
+
+    button, input, select { font: inherit; }
+    button, summary { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid #167c80;
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 999;
+      top: 10px;
+      left: 10px;
+      padding: 8px 12px;
+      color: #fff;
+      background: var(--navy);
+      border-radius: 7px;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(calc(100% - 36px), var(--content));
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 64px 0 58px;
+      color: #f9f7f1;
+      background: var(--navy);
+      border-bottom: 7px solid #d19a47;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      aspect-ratio: 1;
+      right: max(-120px, calc((100vw - var(--content)) / 2 - 170px));
+      top: -208px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 46px rgba(255, 255, 255, 0.035),
+        0 0 0 92px rgba(255, 255, 255, 0.025);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: 56px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #edc27e;
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 14px;
+      font-family: ui-serif, Georgia, "Noto Serif TC", "Songti TC", serif;
+      font-size: clamp(2.45rem, 6vw, 5.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin-bottom: 0;
+      color: #d7e1df;
+      font-size: clamp(1rem, 1.8vw, 1.19rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .hero-action {
+      min-height: 40px;
+      padding: 8px 13px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .hero-action.primary {
+      color: var(--navy);
+      background: #edc27e;
+      border-color: #edc27e;
+    }
+
+    .hero-note {
+      margin: 0;
+      padding: 18px 20px;
+      color: #eff4f2;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-md);
+    }
+
+    .hero-note strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #edc27e;
+      font-size: 0.83rem;
+      letter-spacing: 0.08em;
+    }
+
+    .demo-banner {
+      padding: 10px 18px;
+      color: #573c0d;
+      text-align: center;
+      background: #f2dba9;
+      border-bottom: 1px solid #d8b765;
+      font-weight: 700;
+    }
+
+    .static-fallback {
+      margin-bottom: 52px;
+      padding: 22px;
+      background: #fffaf0;
+      border: 1px solid #d8b765;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .static-fallback[hidden] { display: none; }
+
+    .static-fallback-intro {
+      margin: 0 0 18px;
+      color: #573c0d;
+      font-size: 0.9rem;
+    }
+
+    .static-subject + .static-subject {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .static-subject h2 { font-size: 1.55rem; }
+
+    .static-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .static-metric {
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .static-metric strong,
+    .static-metric span { display: block; }
+    .static-metric strong { font-size: 1.2rem; }
+    .static-metric span { color: var(--ink-soft); font-size: 0.78rem; }
+
+    .static-table-wrap { overflow-x: auto; }
+
+    .static-table {
+      width: 100%;
+      margin: 12px 0;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    .static-table th,
+    .static-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .static-table th { background: #f3efe6; }
+
+    .static-fallback details {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+    }
+
+    .static-fallback summary { cursor: pointer; font-weight: 850; }
+    .static-fallback ol,
+    .static-fallback ul { padding-left: 22px; }
+    .static-fallback li + li { margin-top: 7px; }
+    .static-fallback .static-why { color: var(--ink-soft); }
+
+    main { padding: 52px 0 80px; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      margin-bottom: 5px;
+      color: var(--rust);
+      font-size: 0.77rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: ui-serif, Georgia, "Noto Serif TC", "Songti TC", serif;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .muted { color: var(--ink-soft); }
+    .section-note { max-width: 600px; margin: 0; color: var(--ink-soft); }
+
+    .overview-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .overview-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 152px;
+      padding: 19px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--accent, var(--teal));
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .overview-card .subject-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .overview-card .subject-index {
+      color: var(--accent, var(--teal));
+      font-variant-numeric: tabular-nums;
+    }
+
+    .overview-value {
+      margin-bottom: 5px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 750;
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .overview-value span { font-size: 1rem; letter-spacing: 0; }
+    .overview-caption { margin: 0; color: var(--ink-soft); font-size: 0.82rem; }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .metric-matrix {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    .metric-matrix th,
+    .metric-matrix td {
+      padding: 17px 20px;
+      text-align: left;
+      vertical-align: middle;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric-matrix tr:last-child th,
+    .metric-matrix tr:last-child td { border-bottom: 0; }
+
+    .metric-matrix thead th {
+      color: var(--ink-soft);
+      background: #f3efe6;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+    }
+
+    .subject-cell {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .subject-dot {
+      width: 10px;
+      height: 10px;
+      flex: 0 0 auto;
+      background: var(--accent, var(--teal));
+      border-radius: 50%;
+    }
+
+    .mini-metric {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      min-width: 148px;
+    }
+
+    .mini-track {
+      overflow: hidden;
+      height: 8px;
+      background: var(--ring-track);
+      border-radius: 99px;
+    }
+
+    .mini-fill {
+      width: calc(var(--value, 0) * 1%);
+      height: 100%;
+      background: var(--accent, var(--teal));
+      border-radius: inherit;
+    }
+
+    .mini-number {
+      min-width: 48px;
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric-definitions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0 0;
+    }
+
+    .definition {
+      padding: 15px 17px;
+      background: rgba(255, 253, 248, 0.62);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+    }
+
+    .definition dt { margin-bottom: 3px; font-weight: 850; }
+    .definition dd { margin: 0; color: var(--ink-soft); }
+
+    .subject-navigation {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      margin: 56px 0 26px;
+      padding: 8px;
+      background: rgba(246, 242, 233, 0.96);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(20, 42, 48, 0.08);
+    }
+
+    .tab-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .tab-button {
+      min-height: 49px;
+      padding: 9px 12px;
+      color: var(--ink-soft);
+      background: transparent;
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .tab-button[aria-selected="true"] {
+      color: #fff;
+      background: var(--accent, var(--navy));
+    }
+
+    .subject-panel { --accent: var(--teal); }
+    .subject-panel[hidden] { display: none; }
+
+    .subject-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 23px;
+      padding: 27px 29px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--accent);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .subject-number {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .subject-title { margin-bottom: 8px; }
+    .subject-scope { margin: 0; color: var(--ink-soft); }
+
+    .confidence {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      padding: 6px 10px;
+      color: var(--ink-soft);
+      background: var(--surface-2);
+      border-radius: 999px;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .confidence::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 42px;
+    }
+
+    .panel-card {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .card-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+      margin-bottom: 21px;
+    }
+
+    .card-heading h3 { margin: 0; }
+    .card-heading small { color: var(--ink-soft); }
+
+    .rings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ring-card {
+      min-width: 0;
+      padding: 12px 8px;
+      text-align: center;
+      background: #f7f3eb;
+      border-radius: 13px;
+    }
+
+    .ring {
+      display: grid;
+      width: 91px;
+      max-width: 100%;
+      aspect-ratio: 1;
+      margin: 0 auto 10px;
+      place-items: center;
+      background: conic-gradient(var(--accent) calc(var(--value, 0) * 1%), var(--ring-track) 0);
+      border-radius: 50%;
+    }
+
+    .ring::before {
+      content: "";
+      grid-area: 1 / 1;
+      width: 73%;
+      aspect-ratio: 1;
+      background: #f7f3eb;
+      border-radius: 50%;
+    }
+
+    .ring-value {
+      z-index: 1;
+      grid-area: 1 / 1;
+      font-size: 1rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ring.unavailable {
+      background: repeating-conic-gradient(#d8d2c6 0 8deg, #ebe6dd 8deg 16deg);
+    }
+
+    .ring-label {
+      min-height: 2.7em;
+      margin: 0 0 4px;
+      font-size: 0.79rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .ring-fraction {
+      color: var(--ink-soft);
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .year-chart {
+      display: grid;
+      gap: 12px;
+    }
+
+    .year-row {
+      display: grid;
+      grid-template-columns: 46px minmax(120px, 1fr) 58px 78px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .year-label { font-weight: 900; font-variant-numeric: tabular-nums; }
+
+    .year-track {
+      position: relative;
+      overflow: hidden;
+      height: 13px;
+      background: var(--ring-track);
+      border-radius: 99px;
+    }
+
+    .year-fill {
+      width: calc(var(--value, 0) * 1%);
+      height: 100%;
+      background: var(--accent);
+      border-radius: inherit;
+    }
+
+    .year-rate {
+      text-align: right;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .year-count {
+      color: var(--ink-soft);
+      text-align: right;
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    .year-note {
+      grid-column: 2 / -1;
+      margin-top: -7px;
+      color: var(--ink-soft);
+      font-size: 0.74rem;
+    }
+
+    .empty-state {
+      padding: 22px;
+      color: var(--ink-soft);
+      text-align: center;
+      background: #f5f1e8;
+      border: 1px dashed #c9c1b3;
+      border-radius: var(--radius-md);
+    }
+
+    .content-section { margin-top: 42px; }
+
+    .section-tools {
+      display: grid;
+      grid-template-columns: minmax(230px, 1fr) minmax(145px, auto) auto;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .search-wrap { position: relative; }
+
+    .search-wrap::before {
+      content: "⌕";
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      color: var(--ink-soft);
+      font-size: 1.35rem;
+      transform: translateY(-54%);
+      pointer-events: none;
+    }
+
+    .control {
+      width: 100%;
+      min-height: 46px;
+      padding: 9px 12px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid #bdb5a7;
+      border-radius: 10px;
+    }
+
+    .search-input { padding-left: 40px; }
+
+    .button-group { display: flex; gap: 6px; }
+
+    .quiet-button {
+      min-height: 46px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border: 1px solid #bdb5a7;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .result-status {
+      min-height: 1.5em;
+      margin: -6px 0 10px;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+    }
+
+    .repeat-list { display: grid; gap: 10px; }
+
+    .repeat-group {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius-md);
+      box-shadow: 0 3px 13px rgba(20, 42, 48, 0.045);
+    }
+
+    .repeat-group[hidden] { display: none; }
+
+    .repeat-group summary {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 13px;
+      align-items: center;
+      padding: 17px 19px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .repeat-group summary::-webkit-details-marker { display: none; }
+
+    .group-index {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 50%;
+      place-items: center;
+      font-size: 0.73rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .group-title {
+      display: block;
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .group-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 5px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      color: var(--ink-soft);
+      background: #ebe7dd;
+      border-radius: 999px;
+      font-size: 0.71rem;
+      font-weight: 800;
+    }
+
+    .pill.match {
+      color: var(--accent, var(--teal));
+      background: #f3efe6;
+      border: 1px solid var(--line);
+      color: color-mix(in srgb, var(--accent), #162529 28%);
+      background: color-mix(in srgb, var(--accent) 14%, #fff);
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, #fff);
+    }
+
+    .disclosure-mark {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 11%, #fff);
+      border-radius: 50%;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .disclosure-mark::before { content: "+"; }
+    details[open] .disclosure-mark::before { content: "−"; }
+
+    .group-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(230px, 0.75fr);
+      gap: 24px;
+      padding: 0 19px 20px 66px;
+      border-top: 1px solid var(--line);
+    }
+
+    .group-body section { padding-top: 16px; }
+    .group-body h4 { margin: 0 0 6px; font-size: 0.76rem; letter-spacing: 0.08em; }
+    .group-body p { margin-bottom: 0; color: var(--ink-soft); }
+
+    .group-recognition {
+      margin-bottom: 8px !important;
+      color: var(--ink) !important;
+      font-weight: 700;
+    }
+
+    .group-warning {
+      margin-top: 11px !important;
+      padding: 9px 11px;
+      color: #684714 !important;
+      background: #fbf1d8;
+      border-left: 3px solid #c39234;
+      border-radius: 4px;
+      font-size: 0.82rem;
+    }
+
+    .ref-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ref-chip {
+      display: inline-flex;
+      padding: 5px 9px;
+      color: var(--ink);
+      background: #f2eee5;
+      border: 1px solid #d6cfc1;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 850;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .evidence {
+      margin: 11px 0 0;
+      padding-left: 20px;
+      color: var(--ink-soft);
+      font-size: 0.8rem;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .topic-card {
+      position: relative;
+      min-height: 166px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .topic-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .topic-count {
+      display: inline-flex;
+      min-width: 35px;
+      justify-content: center;
+      padding: 4px 7px;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .topic-note { margin-bottom: 12px; color: var(--ink-soft); font-size: 0.82rem; }
+    .topic-card .ref-chip { padding: 3px 7px; font-size: 0.69rem; }
+
+    .topic-points {
+      margin: 9px 0 12px;
+      padding-left: 1.15rem;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+    }
+
+    .topic-points li + li { margin-top: 3px; }
+
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .boundary-box {
+      padding: 21px;
+      background: #efeae0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .boundary-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .boundary-item {
+      padding: 12px 14px;
+      background: rgba(255, 253, 248, 0.72);
+      border-left: 4px solid #9f8372;
+      border-radius: 8px;
+    }
+
+    .boundary-item strong { display: block; margin-bottom: 2px; }
+    .boundary-item p { margin: 0; color: var(--ink-soft); font-size: 0.82rem; }
+
+    .source-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink-soft);
+      overflow-wrap: anywhere;
+      font-size: 0.82rem;
+    }
+
+    .source-list a {
+      color: var(--navy);
+      font-weight: 750;
+      overflow-wrap: anywhere;
+      text-underline-offset: 3px;
+    }
+
+    .methodology {
+      margin-top: 64px;
+      padding: 31px;
+      color: #edf3f1;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+    }
+
+    .methodology .section-kicker { color: #edc27e; }
+    .methodology h2 { margin-bottom: 20px; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .method-card {
+      padding: 17px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+    }
+
+    .method-card strong { display: block; margin-bottom: 5px; color: #edc27e; }
+    .method-card p { margin: 0; color: #d3dfdc; font-size: 0.87rem; }
+
+    footer {
+      padding: 22px 0 40px;
+      color: var(--ink-soft);
+      font-size: 0.78rem;
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-note { max-width: 620px; }
+      .overview-cards { grid-template-columns: repeat(2, 1fr); }
+      .subject-grid { grid-template-columns: 1fr; }
+      .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .group-body { grid-template-columns: 1fr; gap: 4px; }
+      .method-grid { grid-template-columns: 1fr; }
+      .static-metrics { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 650px) {
+      .shell { width: min(calc(100% - 24px), var(--content)); }
+      .hero { padding: 47px 0 42px; }
+      .hero::after { width: 270px; top: -130px; right: -120px; }
+      main { padding-top: 37px; }
+      .section-heading { display: block; }
+      .section-note { margin-top: 8px; }
+      .overview-cards { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .overview-card { min-height: 136px; padding: 15px; }
+      .overview-value { font-size: 1.9rem; }
+      .metric-definitions { grid-template-columns: 1fr; }
+      .subject-navigation { margin-top: 38px; overflow-x: auto; }
+      .tab-list { display: flex; width: max-content; min-width: 100%; }
+      .tab-button { min-width: 122px; flex: 1; }
+      .subject-header { grid-template-columns: 1fr; gap: 13px; padding: 22px; }
+      .rings { gap: 7px; }
+      .ring { width: 76px; }
+      .ring-card { padding-inline: 4px; }
+      .year-row { grid-template-columns: 42px minmax(90px, 1fr) 54px; }
+      .year-count { display: none; }
+      .year-note { grid-column: 2 / -1; }
+      .section-tools { grid-template-columns: 1fr; }
+      .button-group { display: grid; grid-template-columns: 1fr 1fr; }
+      .repeat-group summary { grid-template-columns: auto minmax(0, 1fr); padding: 15px; }
+      .disclosure-mark { display: none; }
+      .group-body { padding: 0 15px 18px 62px; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .boundary-grid { grid-template-columns: 1fr; }
+      .methodology { padding: 24px 20px; }
+    }
+
+    @media (max-width: 440px) {
+      .overview-cards { grid-template-columns: 1fr; }
+      .overview-card { min-height: 122px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+
+      :root {
+        --paper: #fff;
+        --surface: #fff;
+        --shadow: none;
+      }
+
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: #fff; font-size: 9.5pt; }
+      .shell { width: 100%; }
+      .hero { padding: 18mm 0 11mm; border-bottom-width: 4px; }
+      .hero::after, .hero-actions, .demo-banner, .subject-navigation, .section-tools, .result-status { display: none !important; }
+      .hero-grid { grid-template-columns: 1fr; gap: 8px; }
+      .hero-note { max-width: none; padding: 10px 13px; }
+      main { padding: 10mm 0 0; }
+      .overview-cards { grid-template-columns: repeat(4, 1fr); }
+      .overview-card, .panel-card, .subject-header, .repeat-group { box-shadow: none; }
+      .overview-card { min-height: 0; }
+      .metric-definitions { grid-template-columns: repeat(3, 1fr); }
+      .subject-panel,
+      .subject-panel[hidden] { display: block !important; break-before: page; }
+      .subject-header { margin-top: 0; }
+      .subject-grid { grid-template-columns: 0.95fr 1.05fr; break-inside: avoid; }
+      .content-section { margin-top: 8mm; }
+      .repeat-group { break-inside: avoid; }
+      .repeat-group > .group-body { display: grid !important; }
+      .group-body { grid-template-columns: 1.25fr 0.75fr; }
+      .disclosure-mark { display: none; }
+      .topic-grid { grid-template-columns: repeat(3, 1fr); }
+      .topic-card { min-height: 0; break-inside: avoid; }
+      .boundary-grid { grid-template-columns: 1fr 1fr; }
+      .methodology { break-before: page; }
+      footer { padding-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">NTUMED · B11 archive · Block 1</p>
+        <h1 id="page-title">Block 1<br>嚴格考古地圖</h1>
+        <p class="hero-lead" id="page-subtitle">只收錄幾乎相同、可被前一年度直接認出的題目；同章節、同概念但命題不同者，一律留在非考古考點。</p>
+        <div class="hero-actions" aria-label="頁面工具">
+          <a class="hero-action primary" href="block1-kaogu-data.json" download>下載稽核資料 JSON</a>
+          <button class="hero-action" type="button" id="print-page">列印／另存 PDF</button>
+        </div>
+      </div>
+      <p class="hero-note"><strong>判定底線</strong>允許正反問、選項重排、單一干擾項或中英改寫；核心題幹與實質命題必須近同。</p>
+    </div>
+  </header>
+
+  <div id="demo-banner" class="demo-banner" hidden>目前顯示介面原型示例資料；載入 <code>window.BLOCK1_DATA</code> 後會自動替換。</div>
+
+  <main id="main-content" class="shell" tabindex="-1">
+    <section id="static-fallback" class="static-fallback" aria-label="相容模式完整資料">
+      <p class="static-fallback-intro"><strong>相容模式：</strong>這個檔案檢視器沒有執行互動腳本，因此改列完整靜態資料；數值與下方互動版相同。首個完整年度沒有更早完整考卷可比，往年直接命中率會標示為基準年，而不是缺漏。</p><article class="static-subject"><h2>病理學</h2><p class="muted">B05–B10，共 151 題可判讀題目</p><div class="static-metrics"><div class="static-metric"><strong>45.0%</strong><span>重複實例涵蓋率 · 68 / 151</span></div><div class="static-metric"><strong>25.2%</strong><span>重複題型率 · 28 / 111</span></div><div class="static-metric"><strong>31.5%</strong><span>往年直接命中率 · 40 / 127</span></div></div><div class="static-table-wrap"><table class="static-table"><thead><tr><th>年度</th><th>重複題／題數</th><th>涵蓋率</th><th>往年直接命中</th><th>備註</th></tr></thead><tbody><tr><th scope="row">B05</th><td>8 / 24</td><td>33.3%</td><td>基準年（不列入往年命中率）</td><td>往年直接命中：基準年 B05 不計</td></tr><tr><th scope="row">B06</th><td>19 / 25</td><td>76.0%</td><td>3 / 25 （12.0%）</td><td>往年直接命中 3 / 25（12.0%）；另排除 5 題亡佚／非本次範圍</td></tr><tr><th scope="row">B07</th><td>22 / 33</td><td>66.7%</td><td>21 / 33 （63.6%）</td><td>往年直接命中 21 / 33（63.6%）；另排除 2 題亡佚／非本次範圍</td></tr><tr><th scope="row">B08</th><td>8 / 19</td><td>42.1%</td><td>6 / 19 （31.6%）</td><td>往年直接命中 6 / 19（31.6%）；另排除 1 題亡佚／非本次範圍</td></tr><tr><th scope="row">B09</th><td>6 / 26</td><td>23.1%</td><td>5 / 26 （19.2%）</td><td>往年直接命中 5 / 26（19.2%）</td></tr><tr><th scope="row">B10</th><td>5 / 24</td><td>20.8%</td><td>5 / 24 （20.8%）</td><td>往年直接命中 5 / 24（20.8%）</td></tr></tbody></table></div><details><summary>跨年近同題：28 組（含年份與原題號）</summary><ol><li><strong>autopsy 字義為 see for oneself</strong> <span class="pill match">高度一致</span><br>B05 第4題、B06 第5題、B07 第5題、B08 第3題<br><span class="static-why">Autopsy = see for oneself。；B06/B07/B08 是同義定義題；B05 將 term→definition 反向改成 definition→term，核心命題完全相同。</span></li><li><strong>tuberculosis 的典型壞死型態</strong> <span class="pill match">高度一致</span><br>B06 第10題、B07 第11題、B09 第8題、B10 第4題<br><span class="static-why">Caseous/caseating necrosis。；四題均直接問 TB 對應的壞死型態；B06 題本只保留正確選項，但詳解確認原命題。</span></li><li><strong>解剖病理執業範圍：找出不屬於 anatomical pathology 者</strong> <span class="pill match">高度一致</span><br>B05 第1題、B07 第1題、B08 第1題<br><span class="static-why">Surgical pathology、forensic pathology、cytopathology 屬解剖病理；medical genetics／chemical pathology 為排除項。；三題同為 anatomical pathology 的 except 題，B07 與 B08 題幹、四選項實質相同；B05 僅把 chemical pathology 換成 medical genetics。</span></li><li><strong>病理檢體 gene amplification 的常用偵測法</strong> <span class="pill match">高度一致</span><br>B06 第1題、B07 第2題、B08 第2題<br><span class="static-why">Fluorescent in situ hybridization (FISH)。；三題同問 gene amplification 的最常用方法；正確答案相同，僅替換少數干擾選項。</span></li><li><strong>autophagy：misfolded protein、癌症、神經退化與雙層膜</strong> <span class="pill match">高度一致</span><br>B06 第8題、B07 第8題、B10 第9題<br><span class="static-why">多數 misfolded proteins 由 ubiquitin-proteasome system 清除；autophagosome 為雙層膜。；B06/B07 四選項逐字相同；B10 重排並反向改寫同四個命題（且形成兩個錯誤選項）。</span></li><li><strong>不可逆細胞傷害：plasma membrane rupture</strong> <span class="pill match">高度一致</span><br>B06 第11題、B07 第12題、B09 第6題<br><span class="static-why">Plasma membrane rupture；cell swelling、surface blebbing、myelin figure 可見於 reversible injury。；三題用相同選項組找出不可逆／非可逆變化，僅正反問及形態括註不同。</span></li><li><strong>steatosis 的累積物為 triglyceride</strong> <span class="pill match">高度一致</span><br>B06 第12題、B09 第11題、B10 第10題<br><span class="static-why">Triglyceride。；三題均以 steatosis 搭配 lipofuscin／triglyceride／cholesterol 等相同選項辨識累積物；B09/B10 幾乎逐字相同。</span></li><li><strong>anti-thrombotic factors：Protein C、thrombomodulin、t-PA、heparin-like molecule</strong> <span class="pill match">高度一致</span><br>B05 第20題、B06 第25題、B09 第22題<br><span class="static-why">Protein C、thrombomodulin、t-PA、heparin-like molecules 為抗血栓；tissue factor 促凝。；三題題幹相同，五個實質選項完全相同；B09 只交換第 4/5 項順序。</span></li><li><strong>right heart failure 的 signs/findings 組合題</strong> <span class="pill match">高度一致</span><br>B05 第18題、B06 第23題、B07 第35題<br><span class="static-why">Central venous pressure 上升、肝中央區鬱血/nutmeg liver、下肢 pitting edema；肺水腫/呼吸困難偏左心衰竭。；三題題幹相同，五個命題中四個相同或為同義病理（nutmeg liver = centrizonal congestion），僅更換一個干擾項。</span></li><li><strong>thromboembolism 的結果／病理變化組合題</strong> <span class="pill match">高度一致</span><br>B05 第19題、B07 第34題、B08 第16題<br><span class="static-why">可見 infarction、coagulative necrosis（CNS 可 liquefactive）；caseous necrosis 非栓塞所致，Caisson disease 為 air embolism。；三題題幹同義，五個選項中至少四個逐項相同；B05/B08 五項完全相同，B07 只以 red infarct 替換 white infarct。</span></li><li><strong>hospital autopsy 的根本目的</strong> <span class="pill match">高度一致</span><br>B06 第4題、B07 第4題<br><span class="static-why">Understanding of diseases。；題幹與四個選項逐字相同。</span></li><li><strong>hospital autopsy 必須取得本人或家屬同意</strong> <span class="pill match">高度一致</span><br>B06 第6題、B07 第6題<br><span class="static-why">Consent of the patient/family member。；同一題幹，正確選項僅有單複數及措辭差異。</span></li><li><strong>ferroptosis 的錯誤特徵：non-lytic cell death</strong> <span class="pill match">高度一致</span><br>B06 第7題、B07 第7題<br><span class="static-why">Ferroptosis 與 iron、ROS、膜破裂及發炎相關，因此 non-lytic 為錯。；題幹及四選項完全相同，只把 not a feature 改成 not true。</span></li><li><strong>Annexin V 辨識 apoptotic cell 的 phosphatidylserine</strong> <span class="pill match">高度一致</span><br>B06 第9題、B08 第5題<br><span class="static-why">Phosphatidylserine。；題幹及 Propidium iodide／phosphatidylserine／DAMP／DNA 四選項逐字相同。</span></li><li><strong>Barrett esophagus 的 adaptation 為 metaplasia</strong> <span class="pill match">高度一致</span><br>B05 第6題、B07 第10題<br><span class="static-why">Metaplasia。；題幹與四個 adaptation 選項完全相同，只更換選項順序。</span></li><li><strong>extrinsic apoptosis 不包含 apoptosome</strong> <span class="pill match">高度一致</span><br>B05 第8題、B07 第14題<br><span class="static-why">Apoptosome；FasL、FADD、caspase-8 為 extrinsic pathway。；題幹與四選項完全相同，僅加入 mainly 一字。</span></li><li><strong>白血球 extravasation 的 adhesion-molecule 配對</strong> <span class="pill match">高度一致</span><br>B06 第13題、B07 第15題<br><span class="static-why">Rolling：selectin–sialyl-Lewis X；transmigration：PECAM-1/CD31–CD31。；題幹及四個配對命題逐字相同。</span></li><li><strong>NSAIDs 抑制 cyclooxygenase</strong> <span class="pill match">高度一致</span><br>B06 第14題、B07 第17題<br><span class="static-why">Cyclooxygenase (COX)。；同問 NSAIDs/aspirin 抑制哪個 arachidonic-acid-metabolite 酵素，選項實質相同。</span></li><li><strong>neutrophil extracellular traps (NETs) 的組成與功能</strong> <span class="pill match">高度一致</span><br>B06 第16題、B07 第19題<br><span class="static-why">NETs 是抗菌機制，含 chromatin 與 granule enzymes；與自體免疫／血栓相關，微生物 DNase 可抗 NETs。；題幹與四個敘述逐字相同。</span></li><li><strong>acute inflammation 型態不包含 granulomatous inflammation</strong> <span class="pill match">高度一致</span><br>B06 第18題、B07 第21題<br><span class="static-why">Granulomatous inflammation 屬慢性發炎。；同一 except 題及同一組 suppurative／fibrinous／serous／granulomatous 選項；僅 fibrinous 的 OCR/用字有差。</span></li><li><strong>chronic inflammation 三特徵</strong> <span class="pill match">高度一致</span><br>B06 第19題、B07 第23題<br><span class="static-why">Mononuclear-cell infiltration、tissue destruction、repair/fibrosis。；兩題同以三個慢性發炎特徵及『以上皆是』作答，僅將 tissue destruction 換成 granulomatous inflammation。</span></li><li><strong>M1/M2 macrophage 的活化訊號與功能</strong> <span class="pill match">高度一致</span><br>B06 第20題、B07 第24題<br><span class="static-why">IFN-γ 活化 M1（發炎、殺菌）；IL-4/IL-13 活化 M2（TGF-β、修復）。；兩題以正反問重排同一組 M1/M2 訊號與功能命題。</span></li><li><strong>metastatic calcification 的非常見部位</strong> <span class="pill match">高度一致</span><br>B07 第9題、B08 第6題<br><span class="static-why">Pulmonary artery；常見部位包含胃、腎、肺。；題幹與 stomach／kidney／pulmonary artery／lung 四選項完全相同。</span></li><li><strong>acute inflammation 中 neutrophil 的時間、NET 與殺菌機制</strong> <span class="pill match">高度一致</span><br>B09 第15題、B10 第13題<br><span class="static-why">Neutrophil 可形成 NET，主要以 ROS/MPO 殺菌；iNOS/NO 主要為 macrophage。；題幹與四個選項逐字相同。</span></li><li><strong>hypercoagulability 五項組合題（Prothrombin/Trousseau/CHF/出血疾病）</strong> <span class="pill match">高度一致</span><br>B06 第24題、B07 第30題<br><span class="static-why">Prothrombin mutation、Trousseau syndrome、CHF 會促栓；Bernard-Soulier/vWD 不會，APS 會。；題幹相同，五個命題中四個逐項重用；僅將 vWD 換成 antiphospholipid syndrome。</span></li><li><strong>shock、DIC、arterial thrombosis 的五敘述綜合題</strong> <span class="pill match">高度一致</span><br>B05 第22題、B07 第33題<br><span class="static-why">Shock 可高血糖；大範圍 MI 的 cardiogenic shock 預後差；DIC 可出血；arterial thrombosis 常由 endothelial injury；hypovolemic shock 早期皮膚冷白。；兩題前四個命題幾乎逐字相同，第五項只更換 shock 類型與 warm/cool。</span></li><li><strong>cirrhosis edema、shock ATN、DIC、arterial thrombosis、GLUT-4 綜合題</strong> <span class="pill match">高度一致</span><br>B08 第17題、B09 第24題<br><span class="static-why">Cirrhosis 以 hypoalbuminemia 致 edema；shock 可 ATN；DIC 初期高凝；arterial thrombosis 常見 endothelial injury；GLUT-4 下降促高血糖。；五個命題一一對應；B08 把第 1/5 項以相反方向寫成錯誤敘述，B09 改回正向。</span></li><li><strong>pure left heart failure 的 findings 組合題</strong> <span class="pill match">高度一致</span><br>B08 第18題、B10 第24題<br><span class="static-why">Pulmonary congestion/edema 與 brown induration；CVP 增加、肝中央區鬱血、下肢水腫偏右心衰竭。；兩題均以同一組左右心衰竭病理辨識純左心衰竭；五項逐項同義，僅將 brown induration 改寫為 pulmonary congestion。</span></li></ol></details><details><summary>非考古常見考點：10 類</summary><ul><li><strong>病理解剖與診斷病理實務</strong>：11 題<br><span class="static-why">autopsy 的完整檢查定義、合法場所、時間與呼吸防護；解剖率下降、台大醫院解剖的教學／研究用途與 brain autopsy 目的；蛋白表現以 immunohistochemistry 偵測；pathology 字源</span><br>B05-Q02、B05-Q03、B05-Q05、B06-Q03、B07-Q03、B09-Q01、B09-Q02、B09-Q03、B09-Q04、B10-Q01、B10-Q02</li><li><strong>細胞適應、傷害、死亡與胞內累積</strong>：16 題<br><span class="static-why">cell injury 的 Ca2+ 來源、ROS、膜與胞器形態；apoptosis／necroptosis／pyroptosis／ferroptosis 的核心分子；BAX/BAK、BCL-2、BH3-only sensor 與 unfolded-protein response；hypertrophy／hyperplasia／atrophy，以及 hemosiderin、LC3、sirtuin</span><br>B05-Q07、B05-Q09、B07-Q13、B08-Q04、B08-Q07、B08-Q08、B09-Q05、B09-Q07、B09-Q09、B09-Q10、B09-Q12、B10-Q03、B10-Q05、B10-Q06、B10-Q07、B10-Q08</li><li><strong>急性發炎：血管反應、白血球募集與殺菌</strong>：10 題<br><span class="static-why">vasodilation、permeability、exudate 與血流減慢；integrin/ICAM 所介導的 stable adhesion；phagocyte oxidase、MPO、NO 與 chronic granulomatous disease</span><br>B05-Q10、B05-Q11、B05-Q12、B05-Q13、B05-Q15、B08-Q10、B09-Q13、B10-Q11、B09-Q14、B10-Q12</li><li><strong>發炎介質、先天免疫與全身效應</strong>：8 題<br><span class="static-why">histamine、bradykinin、TNF/IL-1、C3a/C5a 的血管、疼痛、發燒與趨化作用；COX/LOX 產物、lipoxin 與 steroid/NSAID 的作用點；PAMP、eosinophil 與 type-I hypersensitivity/anaphylaxis</span><br>B05-Q14、B07-Q16、B07-Q18、B08-Q09、B08-Q19、B09-Q17、B10-Q14、B10-Q15</li><li><strong>發炎型態、慢性發炎與細胞圖譜</strong>：8 題<br><span class="static-why">serous、fibrinous、suppurative inflammation 與 exudate 的差異；急慢性發炎常見細胞、M1/M2 轉換與病原體造成的反應型態；細菌性腹膜炎為高蛋白、高白血球的 exudate</span><br>B05-Q16、B07-Q25、B07-Q27、B08-Q11、B08-Q12、B09-Q16、B09-Q18、B10-Q18</li><li><strong>肉芽腫性發炎與組織修復</strong>：9 題<br><span class="static-why">granuloma 與 granulation tissue 的辨別；TB 的 Langhans giant cell/caseation；angiogenesis 的 VEGF 與 Dll4/Notch tip–stalk cell 分化；TGF-β、collagen deposition、hypertrophic scar、keloid 與 contraction</span><br>B07-Q22、B07-Q26、B07-Q28、B08-Q13、B08-Q14、B09-Q19、B09-Q20、B10-Q16、B10-Q17</li><li><strong>水腫、充血、肝硬化與心衰竭</strong>：4 題<br><span class="static-why">hydrostatic pressure、hypoalbuminemia、lymphatic obstruction 與 inflammation 的水腫機轉；肝硬化的 portal hypertension、ascites、splenomegaly；右心衰竭的肝鬱血與下肢水腫（B09 題選項集合與重複群差異較大，故保守列非考古）</span><br>B06-Q26、B07-Q31、B09-Q21、B10-Q22</li><li><strong>血栓、栓塞、梗塞與抗凝機制</strong>：12 題<br><span class="static-why">Virchow triad、Factor V Leiden、prothrombin mutation、Trousseau/APS/HIT；Protein C/S、thrombomodulin、TFPI、antithrombin、t-PA 與 PAI/PF4；red/white infarct、Lines of Zahn、fat/air/amniotic embolism 與 saddle embolus</span><br>B05-Q17、B05-Q23、B05-Q24、B06-Q27、B06-Q30、B07-Q32、B08-Q15、B09-Q25、B09-Q26、B10-Q20、B10-Q21、B10-Q23</li><li><strong>休克、DIC 與敗血性休克</strong>：4 題<br><span class="static-why">shock 的 ischemic encephalopathy、diffuse alveolar damage、ATN、centrizonal necrosis；septic shock 的 PAMP/內皮活化、DIC、peripheral pooling、myocardial depression；GLUT-4 受損、insulin resistance 與 stress-hormone gluconeogenesis 所致高血糖</span><br>B05-Q21、B06-Q28、B09-Q23、B10-Q19</li><li><strong>腫瘤與感染病因</strong>：1 題<br><span class="static-why">Helicobacter pylori 與 gastric lymphoma 的關聯。</span><br>B06-Q02</li></ul></details><details><summary>資料範圍與來源</summary><p class="muted">此病理學 PDF 只有 B05-B10 六份完整逐年考卷；PDF 前段『舊考古』為按教師/章節重編的題庫，沒有可恢復的原始年份與原卷題號。 159 個題號槽中另有 8 題亡佚或明示非本次範圍，未放入可判讀分母。</p><ul><li><a href="1_%E7%97%85%E7%90%86%E5%AD%B8/B11%E7%97%85%E7%90%86%E5%AD%B8block%201%E8%80%83%E5%8F%A4%E9%A1%8C%E6%9C%AC.pdf">考古題本</a></li><li><a href="1_%E7%97%85%E7%90%86%E5%AD%B8/B11%E7%97%85%E7%90%86%E5%AD%B8block%201%E8%80%83%E5%8F%A4%E8%A9%B3%E8%A7%A3.pdf">考古詳解</a></li></ul></details></article><article class="static-subject"><h2>臨床醫學</h2><p class="muted">B03–B10，共 164 題可判讀題目</p><div class="static-metrics"><div class="static-metric"><strong>55.5%</strong><span>重複實例涵蓋率 · 91 / 164</span></div><div class="static-metric"><strong>29.8%</strong><span>重複題型率 · 31 / 104</span></div><div class="static-metric"><strong>44.8%</strong><span>往年直接命中率 · 60 / 134</span></div></div><div class="static-table-wrap"><table class="static-table"><thead><tr><th>年度</th><th>重複題／題數</th><th>涵蓋率</th><th>往年直接命中</th><th>備註</th></tr></thead><tbody><tr><th scope="row">B03</th><td>11 / 30</td><td>36.7%</td><td>基準年（不列入往年命中率）</td><td>往年直接命中：基準年 B03 不計；2 題是非＋28 題選擇題</td></tr><tr><th scope="row">B04</th><td>9 / 19</td><td>47.4%</td><td>7 / 19 （36.8%）</td><td>往年直接命中 7 / 19（36.8%）</td></tr><tr><th scope="row">B05</th><td>12 / 18</td><td>66.7%</td><td>8 / 18 （44.4%）</td><td>往年直接命中 8 / 18（44.4%）</td></tr><tr><th scope="row">B06</th><td>12 / 18</td><td>66.7%</td><td>9 / 18 （50.0%）</td><td>往年直接命中 9 / 18（50.0%）；未決 5 題</td></tr><tr><th scope="row">B07</th><td>11 / 21</td><td>52.4%</td><td>6 / 21 （28.6%）</td><td>往年直接命中 6 / 21（28.6%）；未決 1 題</td></tr><tr><th scope="row">B08</th><td>7 / 13</td><td>53.8%</td><td>7 / 13 （53.8%）</td><td>往年直接命中 7 / 13（53.8%）</td></tr><tr><th scope="row">B09</th><td>14 / 21</td><td>66.7%</td><td>8 / 21 （38.1%）</td><td>往年直接命中 8 / 21（38.1%）</td></tr><tr><th scope="row">B10</th><td>15 / 24</td><td>62.5%</td><td>15 / 24 （62.5%）</td><td>往年直接命中 15 / 24（62.5%）</td></tr></tbody></table></div><details><summary>跨年近同題：31 組（含年份與原題號）</summary><ol><li><strong>SIRS 標準：心跳門檻</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第15題、B04 第11題、B05 第13題、B06 第17題、B07 第17題、B08 第2題、B09 第19題、B10 第15題<br><span class="static-why">SIRS 診斷參考標準何者錯誤；反覆以心跳 80/min 作陷阱。；題幹與四項門檻幾乎逐字相同，排版與符號差異不影響題目身份。</span></li><li><strong>侵入性治療後：非 catabolic hormone</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第13題、B04 第10題、B05 第11題、B06 第15題、B07 第15題、B09 第16題、B09 第18題、B10 第13題<br><span class="static-why">Glucagon、growth hormone、cortisol、catecholamine 中何者不是分解代謝賀爾蒙／不會上升。；選項核心固定且正解皆為 growth hormone；「何者非 catabolic」與「侵入性治療後何者不增加」為允許的正反改寫。B10 的 Growth factor 為原題文字變體。</span></li><li><strong>術後復原：不應延緩進食</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第16題、B04 第12題、B06 第18題、B07 第18題、B08 第1題、B08 第11題、B09 第20題、B10 第16題<br><span class="static-why">微創、止痛、延緩進食用高營養點滴、早期下床中，何者不會加速術後復原。；題幹及四選項逐字相同；B08 同一份考卷甚至出現兩次。</span></li><li><strong>傷害後非主要 inflammatory cytokine</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第14題、B05 第12題、B06 第16題、B07 第16題、B08 第7題、B09 第17題、B10 第14題<br><span class="static-why">IL-1、IL-6、IL-16、TNF 中，何者不是傷害後主要發炎細胞激素。；題幹、四個分子與正解一致，僅選項順序變動。</span></li><li><strong>英文主訴：年齡格式、症狀持續時間與 chills</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第5題、B04 第3題、B05 第5題<br><span class="static-why">選出最適當的英文 chief complaint；反覆使用發燒、畏寒與 27-year-old/chillness 陷阱。；B03、B04、B05 都是 27 歲男性、fever/chills 與 for/since 的同一組主訴文法陷阱；僅日期、住院措辭與選項順序微調。</span></li><li><strong>57 歲、三個月減重 5 公斤：病史欄位歸類</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第6題、B06 第7題、B07 第3題<br><span class="static-why">同一位 57 歲病人三個月減重 5 公斤，選最恰當的病史詢問／記錄內容。；病例年齡、主訴、時間、減重幅度及正解敘述皆相同；僅其他選項有輕微補字。</span></li><li><strong>TOCC 縮寫辨識</strong> <span class="pill match">題幹／實質選項近同</span><br>B03 第7題、B04 第4題、B05 第6題<br><span class="static-why">發燒病史需問 TOCC，問縮寫解釋何者錯誤。；題幹與 T/O/C/C 四個辨識目標相同；錯誤選項由 Cough 改為 Overdose，屬同一題的小幅選項替換。</span></li><li><strong>Remodeling phase 的關鍵細胞</strong> <span class="pill match">題幹／實質選項近同</span><br>B05 第14題、B06 第11題、B07 第12題<br><span class="static-why">哪種細胞在傷口 remodeling phase 扮演重要角色。；英文題幹近逐字相同；選項增減／順序不同但共同正解為 fibroblast。</span></li><li><strong>吸入性灼傷的辨識線索</strong> <span class="pill match">題幹／實質選項近同</span><br>B04 第16題、B05 第18題、B06 第22題<br><span class="static-why">密閉空間、顏面燒傷、沙啞、喘鳴中，何者不是／除外。；題幹及四個選項逐字或近逐字相同。</span></li><li><strong>傷口顏色分類：Yellow 不是 adipose tissue</strong> <span class="pill match">題幹／實質選項近同</span><br>B07 第14題、B09 第10題、B10 第11題<br><span class="static-why">Pink/epithelization、Red/granulation、Yellow/adipose、Black/gangrene 配對何者錯。；題幹與全部配對逐字相同。</span></li><li><strong>會談以封閉式問題貫穿（錯）</strong> <span class="pill match">B03 正式納入</span><br>B03 是非題 1、B04 是非題 1<br><span class="static-why">B03 與後年題目的題幹／實質選項近乎相同。；逐字相同</span></li><li><strong>溝通方式與醫療爭議風險相關</strong> <span class="pill match">B03 正式納入</span><br>B03 是非題 2、B04 是非題 2<br><span class="static-why">B03 與後年題目的題幹／實質選項近乎相同。；逐字相同</span></li><li><strong>問診不應鉅細靡遺逐句記錄</strong> <span class="pill match">B03 正式納入</span><br>B03 第2題、B05 第2題<br><span class="static-why">B03 與後年題目的題幹／實質選項近乎相同。；題幹與四個選項近逐字相同，僅順序變更</span></li><li><strong>身體診察敘述（前三選項重用）</strong> <span class="pill match">B03 正式納入</span><br>B03 第3題、B05 第3題<br><span class="static-why">B03 與後年題目的題幹／實質選項近乎相同。；題幹及 A–C 三個主要錯誤選項相同，D 更換為另一正確敘述</span></li><li><strong>頭頸部惡性淋巴瘤敘述</strong> <span class="pill match">題幹／實質選項近同</span><br>B05 第7題、B09 第1題<br><span class="static-why">頭頸部惡性淋巴瘤何者錯誤：全身淋巴腫大、發燒、FNA、肝脾腫大。；題幹與四個選項逐字相同。</span></li><li><strong>健康 20 歲疝氣病人的 ASA 分級</strong> <span class="pill match">題幹／實質選項近同</span><br>B04 第9題、B09 第8題<br><span class="static-why">20 歲男性、腹股溝疝氣、檢查正常且為長跑健將，問 ASA class。；病例與全部選項逐字或近逐字相同。</span></li><li><strong>Chronic wound 的生理特徵</strong> <span class="pill match">題幹／實質選項近同</span><br>B05 第15題、B06 第12題<br><span class="static-why">慢性傷口的增殖、senescent cell、細胞反應、proteinase/growth factor 特徵。；B05 與 B06 題幹近逐字相同，Low proliferation／senescent cell／Low response／High proteinase 四項完整重用；B06 只多一個選項。</span></li><li><strong>大面積燒傷死亡率估計因素</strong> <span class="pill match">題幹／實質選項近同</span><br>B05 第17題、B06 第21題<br><span class="static-why">年齡、TBSA、深度／種類、吸入性灼傷中，何者不納入死亡率估計。；問法、三個固定因素及錯誤選項位置一致；「深度」與「種類」為細微選項替換。</span></li><li><strong>完整病歷要素的先後順序</strong> <span class="pill match">題幹／實質選項近同</span><br>B07 第1題、B08 第8題<br><span class="static-why">Chief complaint → present illness/ROS → past history → physical exam → tests → diagnosis。；題幹與四個完整排序選項相同。B06-MC-05 僅殘留正解選項、題幹及其他選項缺失，故只列未決候選，不納入本群。</span></li><li><strong>傷口保持濕潤與 autodebridement</strong> <span class="pill match">題幹／實質選項近同</span><br>B06 第13題、B10 第9題<br><span class="static-why">正確傷口照護知識：保持濕潤可促進自行清創。；題幹與五個選項逐字相同。</span></li><li><strong>人咬上臂撕裂傷的 healing pattern</strong> <span class="pill match">題幹／實質選項近同</span><br>B07 第11題、B10 第10題<br><span class="static-why">人咬造成左上臂嚴重撕裂傷，問 wound healing pattern。；病例、題幹與四個選項逐字相同。</span></li><li><strong>Revised Cardiac Risk Index 的非項目</strong> <span class="pill match">題幹／實質選項近同</span><br>B07 第19題、B08 第9題<br><span class="static-why">缺血性心臟病、心衰竭、腦血管病史固定，問哪個不是 RCRI 項目。；題幹與前三選項相同；第四選項改寫為 creatinine 錯門檻或肝病，皆要求辨認同一組 RCRI。</span></li><li><strong>術前功能量與中風後延後手術</strong> <span class="pill match">題幹／實質選項近同</span><br>B06 第20題、B10 第22題<br><span class="static-why">Functional capacity、MET &gt;4、單腳站立與中風後早期胃癌手術，問何者不當。；題幹及四個選項逐字相同。</span></li><li><strong>簡答：以病人為中心的會談</strong> <span class="pill match">題幹／實質選項近同</span><br>B06 簡答第1題、B10 簡答第1題<br><span class="static-why">請簡述如何落實／寫出你認為的「以病人為中心的會談」。；同一開放式簡答題，只有「如何落實」與「你認為」的措辭差異。</span></li><li><strong>病史短版排序：ROS 併入 present illness</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第3題、B10 第8題<br><span class="static-why">Chief complaint、present illness（include ROS）、past history 的正確排序。；題幹與四個選項逐字相同，僅「病例／病歷」用字差異。</span></li><li><strong>Reconstructive ladder 的順序</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第11題、B10 第12題<br><span class="static-why">由簡至繁排列 primary/delayed/secondary intention、skin graft、local flap、free tissue transfer。；題幹及五個選項逐字相同。</span></li><li><strong>皮膚生理功能最重要的層次</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第12題、B10 第17題<br><span class="static-why">表皮、真皮（後版加皮下層與筋膜）中，哪層生理功能最重要。；題幹核心與共同選項相同；B10 僅增加兩個選項。</span></li><li><strong>近圓周深度燒傷的緊急處置</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第13題、B10 第18題<br><span class="static-why">大範圍近圓周深度燒傷、區域血流不穩，問緊急處置。；題幹與選項結構近逐字相同；B09「焦痂切除」與 B10「焦痂切開」為一字差異。</span></li><li><strong>大面積燒傷休克：血管通透性增加</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第14題、B10 第19題<br><span class="static-why">大面積燒傷導致 shock 的原因為血管／微血管通透性增加。；題幹、選項角色與答案相同；B10 將「血管」誤寫為「血液」但不改變題意。</span></li><li><strong>燒傷急性傷口處置：冰敷按摩為非</strong> <span class="pill match">題幹／實質選項近同</span><br>B09 第15題、B10 第20題<br><span class="static-why">焦痂切開、清創、冰敷按摩、重建手術中，何者不是急性燒傷處置。；題幹與四個選項逐字或近逐字相同。</span></li><li><strong>英文主訴新版：中風精確時點與發燒持續時間</strong> <span class="pill match">3/4 實質選項重用</span><br>B07 第2題、B08 第6題<br><span class="static-why">slurred speech／clumsy hand 的精確時點，以及 fever＋日期或 chills＋3 days 的三個選項角色重現。；B07 第2題與 B08 第6題同問最適當 chief complaint；A、B、C 的病例功能與辨識陷阱相同，只有第4個情境替換。</span></li></ol></details><details><summary>非考古常見考點：11 類</summary><ul><li><strong>病史詢問、疼痛量化與溝通</strong>：16 題<br><span class="static-why">LQQOPERA 的 Radiation/Quantity；先開放後封閉、同理且不誘導；主訴的優先順序與問診目的；用 ROS 釐清黃疸、下肢水腫鑑別；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-02、B05-MC-04、B06-MC-01、B06-MC-03、B07-MC-05、B07-MC-07、B08-MC-04、B09-MC-04、B09-MC-05、B09-SA-01、B10-MC-01、B10-MC-02、B10-MC-06、B10-MC-07、B03-MC-04、B03-MC-08</li><li><strong>頭頸部腫塊定位與 unknown primary</strong>：12 題<br><span class="static-why">頸部分區 Level I/II/V 與常見病灶；thyroglossal duct cyst 與舌骨；skull base 軟組織優先 MRI；p16/HPV 與 tonsil、臺灣 NPC vs 美國 tonsil；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-05、B04-MC-06、B05-MC-08、B06-MC-09、B06-MC-10、B07-MC-09、B07-MC-10、B08-MC-10、B09-MC-02、B10-SA-02、B03-MC-09、B03-MC-10</li><li><strong>傷口照護、感染與 partial-thickness healing</strong>：10 題<br><span class="static-why">濕潤但不可浸泡、敷料與清創；急性撕裂傷縫合；糖尿病足感染的處置與嚴重度；淺二度／日曬傷以 re-epithelialization 癒合；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-13、B04-MC-14、B05-MC-16、B06-MC-14、B07-MC-13、B08-MC-03、B09-MC-09、B04-MC-15、B03-MC-17、B03-MC-18</li><li><strong>術前風險評估與特殊病人準備</strong>：8 題<br><span class="static-why">pack-year；近期 MI/COPD/腎功能與是否延後手術；支架後非心臟手術時機；不同術式的 perioperative stroke 風險；ESRD 術前透析、Hb 與凝血；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-07、B04-MC-08、B06-MC-19、B07-MC-20、B09-MC-07、B10-MC-21、B03-MC-11、B03-MC-12</li><li><strong>身體診察方法與診斷效能</strong>：7 題<br><span class="static-why">inspection/palpation/percussion/auscultation；聽診器膜面高頻、鐘面低頻；正常肺叩診 resonance；敏感度、特異度與似然比；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-01、B07-MC-06、B07-MC-08、B08-MC-05、B09-MC-06、B10-MC-03、B10-MC-04</li><li><strong>燒傷面積、併發症與支持治療</strong>：7 題<br><span class="static-why">Rule of nines：雙下肢 36% TBSA；大面積燒傷體液復甦與植皮時機；myoglobinuria/hematuria 時維持尿量與鹼化尿液；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B04-MC-17、B07-MC-21、B07-MC-22、B03-MC-19、B03-MC-20、B03-MC-21、B03-MC-22</li><li><strong>醫學生專業素養與制度下工作</strong>：6 題<br><span class="static-why">未受監督執行尚未學會的導尿，涉及 system-based practice 與病人安全；醫療隱私、專業素養，以及 cure／relieve／comfort 的醫療角色；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B05-MC-01、B03-MC-01、B03-MC-23、B03-MC-24、B03-MC-25、B03-MC-26</li><li><strong>發燒與發炎指標</strong>：2 題<br><span class="static-why">CRP/ESR 的來源、時程與非發炎干擾因子；發燒先找病因，再依臨床情況決定抗生素；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B08-MC-12、B08-TF-01</li><li><strong>肥胖與減重手術</strong>：2 題<br><span class="static-why">病態肥胖的有效治療；sleeve、gastric bypass、balloon 的限制型／吸收不良型差異與 GERD；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B05-MC-09、B05-MC-10</li><li><strong>意識變化與腦血流自律調節</strong>：2 題<br><span class="static-why">意識障礙原因；平均動脈壓下降時的全身代償與 cerebral autoregulation；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B03-MC-27、B03-MC-28</li><li><strong>病歷與主訴書寫的非重複變化題</strong>：1 題<br><span class="static-why">主訴要含症狀與持續時間；年齡複合形容詞格式；避免把日期或性別形容詞寫法當成標準主訴；同列只代表讀書主題相同，不代表彼此是考古。</span><br>B10-MC-05</li></ul></details><details><summary>資料範圍與來源</summary><p class="muted">B03 有完整年度、可恢復原題號，因此正式納入；170 個題號槽中有 6 題因原 PDF 題幹／選項不足而另列未決，不進可判讀分母。更早按講次重編且無原卷題號的分類題庫也不進分母。</p><ul><li><a href="2_%E8%87%A8%E5%BA%8A%E9%86%AB%E5%AD%B8/%E9%A1%8C%E7%9B%AE/%E5%B7%B2%E5%A5%97B12%E6%A8%A1%E6%9D%BF%20B11%E8%87%A8%E5%BA%8A%E9%86%AB%E5%AD%B8%E8%80%83%E5%8F%A4%E9%A1%8C%E7%9B%AE%20Block%201.pdf">考古題目</a></li><li><a href="2_%E8%87%A8%E5%BA%8A%E9%86%AB%E5%AD%B8/%E8%A9%B3%E8%A7%A3/%E5%B7%B2%E5%A5%97B12%E6%A8%A1%E6%9D%BF%20B11%E8%87%A8%E5%BA%8A%E9%86%AB%E5%AD%B8%E8%80%83%E5%8F%A4%E8%A9%B3%E8%A7%A3%20Block%201.pdf">考古詳解</a></li></ul></details></article><article class="static-subject"><h2>藥理學</h2><p class="muted">B03–B10，共 239 題可判讀題目</p><div class="static-metrics"><div class="static-metric"><strong>72.4%</strong><span>重複實例涵蓋率 · 173 / 239</span></div><div class="static-metric"><strong>45.8%</strong><span>重複題型率 · 54 / 118</span></div><div class="static-metric"><strong>59.8%</strong><span>往年直接命中率 · 119 / 199</span></div></div><div class="static-table-wrap"><table class="static-table"><thead><tr><th>年度</th><th>重複題／題數</th><th>涵蓋率</th><th>往年直接命中</th><th>備註</th></tr></thead><tbody><tr><th scope="row">B03</th><td>30 / 40</td><td>75.0%</td><td>基準年（不列入往年命中率）</td><td>往年直接命中：基準年 B03 不計；rolling 基線，不計 prior-hit 分母</td></tr><tr><th scope="row">B04</th><td>18 / 24</td><td>75.0%</td><td>11 / 24 （45.8%）</td><td>往年直接命中 11 / 24（45.8%）</td></tr><tr><th scope="row">B05</th><td>32 / 37</td><td>86.5%</td><td>25 / 37 （67.6%）</td><td>往年直接命中 25 / 37（67.6%）</td></tr><tr><th scope="row">B06</th><td>22 / 27</td><td>81.5%</td><td>21 / 27 （77.8%）</td><td>往年直接命中 21 / 27（77.8%）；另排除 12 題亡佚／移除</td></tr><tr><th scope="row">B07</th><td>17 / 20</td><td>85.0%</td><td>13 / 20 （65.0%）</td><td>往年直接命中 13 / 20（65.0%）；另排除 1 題亡佚／移除</td></tr><tr><th scope="row">B08</th><td>16 / 28</td><td>57.1%</td><td>16 / 28 （57.1%）</td><td>往年直接命中 16 / 28（57.1%）</td></tr><tr><th scope="row">B09</th><td>19 / 31</td><td>61.3%</td><td>14 / 31 （45.2%）</td><td>往年直接命中 14 / 31（45.2%）；另排除 3 題亡佚／移除</td></tr><tr><th scope="row">B10</th><td>19 / 32</td><td>59.4%</td><td>19 / 32 （59.4%）</td><td>往年直接命中 19 / 32（59.4%）；另排除 2 題亡佚／移除</td></tr></tbody></table></div><details><summary>跨年近同題：54 組（含年份與原題號）</summary><ol><li><strong>尿滯留治療藥（Bethanechol）</strong> <span class="pill match">選項微調</span><br>B03 第31題、B04 第22題、B06 第11題、B08 第9題、B09 第18題、B10 第20題<br><span class="static-why">均直接問治療尿滯留藥物，Bethanechol 與主要干擾藥重複；B08 改為複選並縮短選項。</span></li><li><strong>有機磷中毒解毒劑辨識</strong> <span class="pill match">幾乎逐字</span><br>B03 第28題、B04 第23題、B05 第22題、B06 第12題、B09 第19題、B10 第21題<br><span class="static-why">均問何者不是有機磷中毒解毒劑；oxime、atropine、diazepam、neostigmine 四項相同。</span></li><li><strong>肌肉鬆弛劑／AntiChE 與惡性高熱敘述</strong> <span class="pill match">幾乎逐字</span><br>B03 第25題、B04 第24題、B05 第21題、B06 第13題、B09 第17題、B10 第33題<br><span class="static-why">Succinylcholine 惡性高熱、AntiChE 呼吸肌抑制與 MG 的四敘述逐年重複。</span></li><li><strong>散瞳眼藥的 α1-Gq-IP3/DAG 機轉</strong> <span class="pill match">幾乎逐字</span><br>B03 第38題、B05 第33題、B06 第8題、B07 第15題、B08 第21題、B10 第18題<br><span class="static-why">NTU 新生健檢點散瞳藥的病例與 cAMP/IP3/Ca2+ 選項逐字重複、僅排序不同。</span></li><li><strong>同一 R1/R2 catecholamine 圖判讀 α／β 親和力</strong> <span class="pill match">同圖微改</span><br>B03 第39題、B05 第34題、B06 第9題、B07 第16題、B08 第10題、B10 第4題<br><span class="static-why">R1/R2 catecholamine 圖、完整英文題幹與排序選項相同；只把判讀目標在 α/β receptor affinity 間切換。</span></li><li><strong>Loading/maintenance dose 反推半衰期</strong> <span class="pill match">數值替換</span><br>B03 第15題、B04 第9題、B05 第19題、B09 第16題、B10 第15題<br><span class="static-why">皆給 IV loading dose、每日口服 maintenance dose（部分含 F），要求用同一式反推半衰期；只換數字。</span></li><li><strong>Cholinergic system 突觸前作用位置</strong> <span class="pill match">幾乎逐字</span><br>B03 第30題、B05 第25題、B06 第16題、B07 第2題、B10 第22題<br><span class="static-why">Hemicholinium、vesamicol、botulinum toxin、decamethonium 的 presynaptic-site 題完整重複。</span></li><li><strong>Anticholinesterase 的副作用</strong> <span class="pill match">幾乎逐字</span><br>B03 第32題、B05 第27題、B06 第18題、B09 第24題、B10 第25題<br><span class="static-why">AntiChE 副作用題持續使用口乾、腹瀉、心搏過速與以上皆非／皆是的同組選項。</span></li><li><strong>孕婦重度高血壓：抑制 NE 釋放的 Gi-cAMP</strong> <span class="pill match">逐字病例</span><br>B03 第36題、B05 第31題、B06 第6題、B07 第5題、B08 第7題<br><span class="static-why">懷孕第二期 190/100 mmHg、抑制交感末梢 NE 釋放的病例及 G-protein 選項相同。</span></li><li><strong>Sodium channel／use-dependent blocker 敘述</strong> <span class="pill match">選項微調</span><br>B06 第1題、B07 第3題、B08 第19題、B09 第34題、B10 第30題<br><span class="static-why">Sodium channel 命名、phenytoin use-dependence、lidocaine pore block 與濃度梯度四命題相同；晚年只多 self-inactivation。</span></li><li><strong>Nitroglycerin 舌下錠避免 first-pass effect</strong> <span class="pill match">幾乎逐字</span><br>B04 第12題、B05 第15題、B09 第9題、B10 第14題<br><span class="static-why">均問 nitroglycerin 採舌下給藥的原因，核心答案皆為避開 portal first-pass metabolism。</span></li><li><strong>研究 signal transduction 屬 PD 而非 PK</strong> <span class="pill match">正反問／題型轉換</span><br>B03 第20題、B04 第19題、B05 第1題、B06 第38題<br><span class="static-why">共同重複『研究 signal transduction 屬 pharmacodynamics，不是 pharmacokinetics』同一句命題；MC、是非與填空互換。</span></li><li><strong>肌肉鬆弛劑的藥物交互作用</strong> <span class="pill match">幾乎逐字</span><br>B03 第26題、B05 第23題、B06 第14題、B09 第20題<br><span class="static-why">Neomycin、nifedipine、ketamine、lidocaine 四藥選項及『不交互作用』題幹相同。</span></li><li><strong>Anticholinesterase 的臨床用途</strong> <span class="pill match">幾乎逐字</span><br>B05 第26題、B06 第17題、B09 第22題、B10 第24題<br><span class="static-why">AntiChE 適應症五選項相同，均以腸躁症作否定選項。</span></li><li><strong>Open-angle glaucoma 誤服藥後急性視力喪失病例</strong> <span class="pill match">逐字病例</span><br>B03 第34題、B05 第29題、B06 第4題、B07 第14題<br><span class="static-why">50 歲 open-angle glaucoma 誤服朋友藥後急性視力喪失的病例逐字重出，只微調候選 adrenergic drugs。</span></li><li><strong>花生／黑手黨情境的過敏性休克用藥</strong> <span class="pill match">逐字病例</span><br>B03 第35題、B05 第30題、B06 第5題、B08 第25題<br><span class="static-why">黑手黨、共飲威士忌、花生、低血壓與 airway spasm 的長病例逐字重出，答案皆 epinephrine。</span></li><li><strong>Nonselective β-blocker（propranolol/timolol）作用</strong> <span class="pill match">同類藥替換</span><br>B03 第37題、B05 第32題、B06 第7題、B10 第5題<br><span class="static-why">Propranolol/timolol 均為 nonselective β-blocker；renin、aqueous humor、hypoglycemia、bronchial cAMP 四個實質敘述保留。</span></li><li><strong>無高血壓 BPH 病人的 α1-blocker 選擇</strong> <span class="pill match">逐字病例</span><br>B03 第40題、B05 第35題、B06 第10題、B07 第17題<br><span class="static-why">有 BPH、低正常血壓的男性病例與候選藥物反覆重出，答案皆 uroselective α1 blocker。</span></li><li><strong>神經毒氣為 AntiChE 及 pancuronium 非解毒劑</strong> <span class="pill match">幾乎逐字</span><br>B07 第4題、B08 第27題、B09 第23題、B10 第28題<br><span class="static-why">Nerve gas 為 AntiChE、atropine 可救治而 pancuronium 不可的三敘述及『以上皆是』相同。</span></li><li><strong>Partial agonist 的判斷敘述</strong> <span class="pill match">選項微調</span><br>B03 第5題、B05 第7題、B08 第22題<br><span class="static-why">題幹相同，partial agonist 與 full agonist 併用降低 efficacy 的正確敘述保留；只替換一個干擾項。</span></li><li><strong>同一濃度反應曲線判讀 allosteric agonist</strong> <span class="pill match">同圖同問</span><br>B03 第6題、B08 第17題、B09 第13題<br><span class="static-why">三年均使用同一張 A alone/A+B-C-D-E 濃度反應圖，題幹同問 allosteric agonist，選項相同。</span></li><li><strong>同一濃度反應曲線判讀 partial agonist</strong> <span class="pill match">同圖同問</span><br>B03 第7題、B05 第17題、B06 第21題<br><span class="static-why">均以同一張 A alone/A+B-C-D-E 曲線問 partial agonist；差異僅排版或承上題寫法。</span></li><li><strong>鹼性藥物吸收與中毒處置敘述</strong> <span class="pill match">選項微調</span><br>B04 第4題、B05 第10題、B07 第12題<br><span class="static-why">題幹、胃部吸收、NaHCO3 與 pKa 三個核心選項相同；一個干擾項被替換。</span></li><li><strong>Probenecid 延長 penicillin G 作用</strong> <span class="pill match">選項重排</span><br>B04 第11題、B05 第14題、B06 第29題<br><span class="static-why">Probenecid+penicillin G 治淋病的病例與四種機轉完全相同，僅選項排序改變。</span></li><li><strong>Histone/HDAC/PML-RARα 轉錄敘述</strong> <span class="pill match">正反問／選項重排</span><br>B03 第18題、B04 第20題、B05 第2題<br><span class="static-why">PML-RARα、HDAC inhibitor、steroid receptor 與 histone lysine 的同組敘述反覆重排並翻轉正誤。</span></li><li><strong>GPCR-Gs-cAMP-phospholamban／平滑肌 MLCK</strong> <span class="pill match">選項重排</span><br>B03 第17題、B04 第21題、B05 第4題<br><span class="static-why">三年均以 GPCR 題組重複 Gs-cAMP-phospholamban、MLCK 與 Gq-IP3 三個完整命題。</span></li><li><strong>Muscarinic antagonist 禁忌症</strong> <span class="pill match">幾乎逐字</span><br>B03 第27題、B09 第21題、B10 第3題<br><span class="static-why">Glaucoma、BPH、cognitive impairment、gastric ulcer 的禁忌症題完整重複。</span></li><li><strong>低劑量 epinephrine 的血流動力學</strong> <span class="pill match">同藥同表</span><br>B05 第28題、B06 第3題、B07 第13題<br><span class="static-why">同為 10 μg/min epinephrine，SBP/DBP/HR/PVR 五組方向完全相同。</span></li><li><strong>酸鹼性藥物的血漿蛋白結合敘述</strong> <span class="pill match">幾乎逐字</span><br>B07 第19題、B08 第5題、B09 第26題<br><span class="static-why">Acidic-albumin、basic-glycoprotein、binding sites、free drug、ionized absorption 五敘述同組重出。</span></li><li><strong>可避免 first-pass effect 的給藥途徑</strong> <span class="pill match">幾乎逐字</span><br>B07 第21題、B08 第13題、B09 第28題<br><span class="static-why">避免 first-pass effect 的 oral/rectal/IV/inhalation/SC 五途徑選項相同。</span></li><li><strong>酸鹼藥物在十二指腸的吸收排序</strong> <span class="pill match">數值微調</span><br>B05 第16題、B06 第26題、B08 第20題<br><span class="static-why">A/B 酸性與 C/D 鹼性藥在 pH 6 十二指腸的排序題相同，只把 D 的 pKa 8 改為 10 並重排答案。</span></li><li><strong>Insulin 少量受體即可達 Emax（spare receptor）</strong> <span class="pill match">幾乎逐字</span><br>B04 第2題、B05 第8題<br><span class="static-why">Insulin 只結合少量受體即達最大療效的句子與四個選項相同。</span></li><li><strong>吸收、半衰期與大 Vd 血液透析敘述</strong> <span class="pill match">幾乎逐字</span><br>B04 第3題、B05 第9題<br><span class="static-why">四個吸收／半衰期／Vd-透析敘述逐項相同，只差標點。</span></li><li><strong>Saquinavir 與葡萄柚汁交互作用</strong> <span class="pill match">幾乎逐字</span><br>B04 第7題、B06 第27題<br><span class="static-why">Saquinavir 因肝代謝失活、問何藥併用致毒性的題幹與選項一致。</span></li><li><strong>Small therapeutic index 的臨床特性</strong> <span class="pill match">幾乎逐字</span><br>B04 第8題、B05 第13題<br><span class="static-why">Small therapeutic window 的四個臨床敘述相同，僅用 therapeutic index/window 異名。</span></li><li><strong>Voltage-gated Na+ blocker 的臨床用途</strong> <span class="pill match">單一干擾項替換</span><br>B03 第21題、B04 第15題<br><span class="static-why">Na+ channel blocker 用途題保留 anti-arrhythmia、local anesthesia、anti-convulsant 與 none；僅換一個干擾項。</span></li><li><strong>插管前鎮靜與肌鬆受體組合</strong> <span class="pill match">逐字病例</span><br>B03 第22題、B04 第16題<br><span class="static-why">75 歲肺炎低氧需插管的完整病例及五組受體機轉相同。</span></li><li><strong>迷走神經負性變時作用的受體</strong> <span class="pill match">幾乎逐字</span><br>B03 第23題、B04 第17題<br><span class="static-why">迷走神經增加造成 negative chronotropy 的題幹與五個 receptor 選項相同。</span></li><li><strong>Ketamine 麻醉作用為 NMDA receptor inhibition</strong> <span class="pill match">幾乎逐字</span><br>B03 第24題、B04 第18題<br><span class="static-why">Ketamine 麻醉作用機轉與五個 ion-channel/receptor 選項相同。</span></li><li><strong>Muscarinic antagonist 的臨床用途</strong> <span class="pill match">勘誤後重出</span><br>B05 第24題、B07 第1題<br><span class="static-why">同一 muscarinic antagonist 用途題；B07 只把 B05 的『尿滯留』修正為『尿失禁』。</span></li><li><strong>Norepinephrine 的血流動力學</strong> <span class="pill match">同藥同表</span><br>B03 第33題、B08 第26題<br><span class="static-why">同為 10 μg/min norepinephrine，SBP/DBP/HR/PVR 五組方向完全相同。</span></li><li><strong>ADME 的學科名稱為 pharmacokinetics</strong> <span class="pill match">幾乎逐字</span><br>B07 第18題、B08 第2題<br><span class="static-why">『dose/absorption/distribution/metabolism/excretion 的研究稱什麼』題幹與答案選項相同。</span></li><li><strong>Bioavailability 的影響因子（反問版本）</strong> <span class="pill match">正反問</span><br>B03 第8題、B08 第11題<br><span class="static-why">Bioavailability 題保留 dose、first-pass effect、route 三個實質選項，改由『不影響』問成『會影響』。</span></li><li><strong>改變酸性藥物 Css 的給藥方式（反問版本）</strong> <span class="pill match">正反問／選項微調</span><br>B05 第12題、B08 第6題<br><span class="static-why">固定每日劑量分次、提高 dose rate、改注射途徑等同組操作，反向詢問提高／不改變酸性藥 Css。</span></li><li><strong>Efficacy、potency、TI 與 desensitization 敘述</strong> <span class="pill match">選項重排</span><br>B03 第14題、B07 第11題<br><span class="static-why">10 mg vs 100 mg 的 efficacy/potency、small TI 個體差與 antagonist desensitization 三命題相同。</span></li><li><strong>影響腎小管分泌的因素</strong> <span class="pill match">幾乎逐字</span><br>B03 第9題、B07 第8題<br><span class="static-why">均問影響 renal tubular secretion 的因素，脂溶性、帶電性、尿 pH、drug interaction 四項相同。</span></li><li><strong>Vd=0.4 L/kg／28 L 的分布特性</strong> <span class="pill match">等值數字改寫</span><br>B05 第18題、B07 第9題<br><span class="static-why">70 kg 成人的 Vd=0.4 L/kg 即 28 L；題幹與 albumin/ionized/lipid-soluble 選項相同。</span></li><li><strong>JAK/STAT cytokine receptor（正反問）</strong> <span class="pill match">正反問</span><br>B09 第3題、B10 第17題<br><span class="static-why">JAK/STAT cytokine 選項有 IL-1、IL-2、TNF 三項相同；由『會引起』翻成『並非』並換一個干擾項。</span></li><li><strong>CYP450 代謝量最大的亞型</strong> <span class="pill match">逐字</span><br>B09 第5題、B10 第11題<br><span class="static-why">四個 CYP450 isoform 選項與『代謝作用最強』題幹完全相同。</span></li><li><strong>肌肉注射的正確敘述</strong> <span class="pill match">逐字</span><br>B09 第10題、B10 第13題<br><span class="static-why">IM 可否給脂溶／刺激藥、與口服速度及注射體積的四敘述完全相同。</span></li><li><strong>Acetaminophen 主要 glucuronidation</strong> <span class="pill match">逐字</span><br>B09 第11題、B10 第26題<br><span class="static-why">Acetaminophen 肝臟主要代謝路徑與 hydrolysis/glucuronidation/GSH/reduction 四項完全相同。</span></li><li><strong>IC50 與受體因素的關係</strong> <span class="pill match">逐字</span><br>B09 第14題、B10 第8題<br><span class="static-why">IC50 與 binding site、affinity、activation、receptor number 的四選項完全相同。</span></li><li><strong>IV／口服 AUC 反推 bioavailability</strong> <span class="pill match">數值替換</span><br>B03 第13題、B05 第20題<br><span class="static-why">均給同藥 IV/PO dose 與各自 AUC，使用同一公式反推 oral bioavailability；只換口服劑量/AUC。</span></li><li><strong>Ligand-gated channel 最快、nuclear receptor 最慢</strong> <span class="pill match">是非改填空</span><br>B05 第3題、B06 第37題<br><span class="static-why">『ligand-gated channel 為 msec、nuclear receptor 為 hour』句子幾乎逐字，次年只挖空 msec。</span></li></ol></details><details><summary>非考古常見考點：7 類</summary><ul><li><strong>新藥開發、臨床試驗與學名藥</strong>：6 題<br><span class="static-why">Phase I-IV 的人數、對象與主要目的；IND、NDA、上市後監測及各期失敗率；學名藥的專利期、生物相等性與成分要求；這些題共同使用臨床試驗分期表，但各自鎖定不同期別或法規敘述，沒有幾乎相同的題幹與選項組合。</span><br>B03 第1題、B03 第2題、B03 第3題、B04 第1題、B05 第5題、B05 第6題</li><li><strong>受體藥效學與 dose-response 判讀</strong>：9 題<br><span class="static-why">affinity、intrinsic activity、efficacy、potency 與 EC50；spare receptor 對 receptor occupancy 與 potency 的影響；desensitization、internalization、β-arrestin 與受體飽和性；同屬 receptor pharmacology，但問的是不同定義、機轉或曲線參數，未因共享關鍵字而合併。</span><br>B03 第4題、B04 第10題、B08 第14題、B09 第1題、B09 第2題、B10 第7題、B10 第9題、B10 第10題、B10 第29題</li><li><strong>藥物動力學：吸收、分布、清除與穩定濃度</strong>：16 題<br><span class="static-why">Henderson-Hasselbalch、離子化與胃腸吸收；Vd、蛋白結合、glomerular filtration、tubular handling 與 dialysis；半衰期、給藥間隔、Css 與到達 steady state 的時間；B08 Q12/Q23 是同年重複，不構成跨年考古；其餘雖常用同一公式，輸入條件與要求量不同。</span><br>B03 第10題、B03 第11題、B03 第12題、B04 第5題、B04 第6題、B05 第11題、B06 第32題、B07 第7題、B07 第10題、B08 第12題、B08 第16題、B08 第18題、B08 第23題、B08 第24題、B09 第27題、B10 第16題</li><li><strong>肝臟代謝、酵素誘導／抑制與 prodrug</strong>：7 題<br><span class="static-why">CYP450 inducer 與 inhibitor 的藥物清單；active／inactive metabolite 與 prodrug；Phase I 氧化還原水解及 Phase II conjugation；B09 Q8/B10 Q12 及 B09 Q12/B10 Q6 雖有相同題幹，實質藥物選項各更換一半，保守視為不同題。</span><br>B03 第16題、B07 第20題、B09 第8題、B09 第12題、B10 第6題、B10 第12題、B10 第32題</li><li><strong>訊息傳遞、ion channel 與 nuclear receptor</strong>：15 題<br><span class="static-why">ligand-gated、voltage-gated、GPCR、JAK/STAT 與 nuclear receptor 的區別；Gs/Gi/Gq 下游 effector、second messenger 與心肌／平滑肌效應；PML-RARα、retinoic acid、histone acetylation 與轉錄調控；開放式問答、單一填空與多選敘述題即使共用機轉，也只有在命題句幾乎逐字時才列考古。</span><br>B03 第19題、B05 第36題、B05 第37題、B06 第15題、B06 第35題、B06 第36題、B06 第39題、B08 第8題、B08 第15題、B09 第4題、B09 第7題、B09 第33題、B10 第1題、B10 第2題、B10 第27題</li><li><strong>膽鹼系統、麻醉與毒素的個別應用</strong>：6 題<br><span class="static-why">muscarinic／nicotinic antagonist 的治療用途；ondansetron 的 5-HT3 機轉與 thiopental redistribution；botulinum toxin 的 SNARE／ACh release 與醫美用途；藥物或受體不同，且臨床任務不同，未與同章其他題合併。</span><br>B03 第29題、B04 第13題、B04 第14題、B08 第1題、B08 第4題、B08 第28題</li><li><strong>交感神經藥物的臨床情境</strong>：7 題<br><span class="static-why">α1 blocker 治 BPH／高血壓及 midodrine 治姿勢性低血壓；過敏性休克的 β2-cAMP 支氣管擴張；心衰竭 β blocker、升壓劑比較及 β agonist 的眼壓副作用；病例可能用到同一藥物，但問藥物選擇、訊息機轉或副作用的任務不同，因此不算同題。</span><br>B08 第3題、B09 第29題、B09 第30題、B09 第31題、B09 第32題、B10 第19題、B10 第34題</li></ul></details><details><summary>資料範圍與來源</summary><p class="muted">257 個題號槽中排除 16 題亡佚／殘缺及 B10 兩個明載移除的占位；早期 B99–B02 按章節重編且無原卷題號，只作佐證。</p><ul><li><a href="3_%E8%97%A5%E7%90%86%E5%AD%B8/B11%E8%97%A5%E7%90%86%E8%80%83%E5%8F%A4%E9%A1%8C%E7%9B%AE%20block%201.pdf">考古題目</a></li><li><a href="3_%E8%97%A5%E7%90%86%E5%AD%B8/B11%E8%97%A5%E7%90%86%E8%80%83%E5%8F%A4%E8%A9%B3%E8%A7%A3%20block%201.pdf">考古詳解</a></li></ul></details></article><article class="static-subject"><h2>檢驗醫學</h2><p class="muted">B04–B10 七份可還原原題號的逐年考卷</p><div class="static-metrics"><div class="static-metric"><strong>68.5%</strong><span>重複實例涵蓋率 · 63 / 92</span></div><div class="static-metric"><strong>42.0%</strong><span>重複題型率 · 21 / 50</span></div><div class="static-metric"><strong>49.4%</strong><span>往年直接命中率 · 42 / 85</span></div></div><div class="static-table-wrap"><table class="static-table"><thead><tr><th>年度</th><th>重複題／題數</th><th>涵蓋率</th><th>往年直接命中</th><th>備註</th></tr></thead><tbody><tr><th scope="row">B04</th><td>4 / 7</td><td>57.1%</td><td>基準年（不列入往年命中率）</td><td>往年直接命中：基準年 B04 不計；作為逐年完整題號基線；未計 rolling 命中率</td></tr><tr><th scope="row">B05</th><td>3 / 8</td><td>37.5%</td><td>2 / 8 （25.0%）</td><td>往年直接命中 2 / 8（25.0%）</td></tr><tr><th scope="row">B06</th><td>6 / 12</td><td>50.0%</td><td>4 / 12 （33.3%）</td><td>往年直接命中 4 / 12（33.3%）</td></tr><tr><th scope="row">B07</th><td>6 / 12</td><td>50.0%</td><td>6 / 12 （50.0%）</td><td>往年直接命中 6 / 12（50.0%）</td></tr><tr><th scope="row">B08</th><td>10 / 12</td><td>83.3%</td><td>2 / 12 （16.7%）</td><td>往年直接命中 2 / 12（16.7%）</td></tr><tr><th scope="row">B09</th><td>17 / 19</td><td>89.5%</td><td>11 / 19 （57.9%）</td><td>往年直接命中 11 / 19（57.9%）</td></tr><tr><th scope="row">B10</th><td>17 / 22</td><td>77.3%</td><td>17 / 22 （77.3%）</td><td>往年直接命中 17 / 22（77.3%）；原 PDF 題號由 7 跳至 11；分母只計實際列出的 22 題</td></tr></tbody></table></div><details><summary>跨年近同題：21 組（含年份與原題號）</summary><ol><li><strong>Pharmacokinetics 的 ADME 組成</strong> <span class="pill match">選項微調</span><br>B05 第4題、B06 第7題、B07 第7題、B08 第9題、B09 第13題、B10 第15題<br><span class="static-why">固定考 absorption、distribution、metabolism、excretion，並以 adverse effect/target-site action 作干擾項。</span></li><li><strong>以 6±2SD 判斷血鉀追蹤是否顯著改變</strong> <span class="pill match">原文重現</span><br>B06 第4題、B07 第4題、B08 第10題、B09 第8題、B10 第7題<br><span class="static-why">6 mmol/L、隨機誤差 0.06 mmol/L、五個追蹤值與核心選項持續重現；僅選項順序略變。</span></li><li><strong>溶血造成偽性高血鉀屬哪個檢驗階段</strong> <span class="pill match">原文近同</span><br>B04 第1題、B06 第3題、B07 第3題、B10 第6題<br><span class="static-why">溶血 3+、偽性高血鉀、重新抽血與 pre-analytic/analytic/post-analytic 選項皆保留；B06 僅以案例語句改寫。</span></li><li><strong>POCT 的核心優缺點</strong> <span class="pill match">選項重排</span><br>B04 第3題、B05 第2題、B06 第5題、B07 第5題<br><span class="static-why">四個核心敘述（縮短 turnaround time、住院時間、僅限院內、成本較高）反覆重排，正誤問法微調。</span></li><li><strong>POCT 對急診 disposition time 研究圖</strong> <span class="pill match">正反問改寫</span><br>B04 第4題、B05 第3題、B06 第6題、B07 第6題<br><span class="static-why">同一研究圖、同一組 staff/nurse/junior officer 敘述，僅 correct/incorrect 與組合選項改寫。</span></li><li><strong>現行常見的 TDM 檢驗方法</strong> <span class="pill match">原文重現／反問</span><br>B08 第1題、B09 第15題、B10 第17題、B10 第25題<br><span class="static-why">EIS、CLIA、ELISA、HPLC、MS/MS 五項固定；B10 Q17 改成問「不是」，Q25 再原題重現。</span></li><li><strong>哪種檢體不適用 POCT</strong> <span class="pill match">原文重現／單一選項替換</span><br>B08 第3題、B09 第9題、B10 第11題<br><span class="static-why">血清、尿液、全血等固定選項與相同判斷；B08 Q7 只把一個呼吸道檢體替換為痰液。</span></li><li><strong>哪些感染情境應考慮／必須用 POCT</strong> <span class="pill match">限制語改寫</span><br>B08 第4題、B09 第11題、B10 第13題<br><span class="static-why">流感、HIV、伊波拉、COVID 的整組選項重現；「應考慮」改成「必須」。</span></li><li><strong>TDM：CYP450 induction、time/concentration dependence、therapeutic index</strong> <span class="pill match">原文重現</span><br>B08 第5題、B09 第16題、B10 第18題<br><span class="static-why">四個敘述與「以上皆是」選項連續三年近乎逐字重現。</span></li><li><strong>檢驗誤差：random、systematic 與 total analytic error</strong> <span class="pill match">原文重現</span><br>B08 第6題、B09 第7題、B10 第5題<br><span class="static-why">五個品質／誤差敘述連續三年重現，僅殘缺處與標點不同。</span></li><li><strong>血清－腹水 albumin 差用來判斷 transudate/exudate</strong> <span class="pill match">原文重現</span><br>B08 第8題、B09 第18題、B10 第20題<br><span class="static-why">同一四選一題，僅 serum/albumin/蛋白質的中英寫法略變。</span></li><li><strong>NGS 為何較能偵測低比例／low-copy variant</strong> <span class="pill match">中英改寫</span><br>B08 第12題、B09 第3題、B09 第19題<br><span class="static-why">三題都要求比較 NGS 與 conventional PCR 對低比例變異的無偏性與靈敏度；B09 Q19 幾乎逐字重現 B08。</span></li><li><strong>螢光毛細管電泳是否適合 point mutation</strong> <span class="pill match">反向命題</span><br>B04 第6題、B09 第1題<br><span class="static-why">B09 將 B04 的同一句命題加上 not；詳解亦直接註記與 B04 Q6 對照。</span></li><li><strong>qPCR 特性與放射性污染干擾選項</strong> <span class="pill match">正反問改寫</span><br>B06 第9題、B07 第12題<br><span class="static-why">五個英文選項逐字重現，只把 most appropriate 改成 inappropriate。</span></li><li><strong>胸水 pH &lt; 6.5 提示食道破裂</strong> <span class="pill match">原文重現</span><br>B08 第11題、B10 第3題<br><span class="static-why">抽胸水四個敘述完整重現；B10 詳解直接註記同 B08 Q11。</span></li><li><strong>5′ UTR 是 exon 還是 intron</strong> <span class="pill match">反向命題</span><br>B09 第5題、B10 第24題<br><span class="static-why">同一命題將 part of exon 改成 composed by intron，屬明確正反問。</span></li><li><strong>哪些生物標的可作 POCT</strong> <span class="pill match">原文重現</span><br>B09 第10題、B10 第12題<br><span class="static-why">SARS-CoV-2、血糖、心臟節律、hCG 與「以上皆是」完整重現。</span></li><li><strong>POCT 誰可操作、結果／決策是否需專業人員確認</strong> <span class="pill match">選項近同</span><br>B09 第12題、B10 第14題<br><span class="static-why">價格、醫院需求、準確性、民眾操作與專業確認五項幾乎完整保留，僅正確選項的限制語微調。</span></li><li><strong>哪些臨床案例適合 TDM</strong> <span class="pill match">原文重現</span><br>B09 第14題、B10 第16題<br><span class="static-why">gentamicin、氣喘、癲癇 steroid、腎移植 tacrolimus、voriconazole 五案例重現，僅拼字修正。</span></li><li><strong>哪個因素與 pleural effusion 無關</strong> <span class="pill match">中英翻譯</span><br>B09 第17題、B10 第19題<br><span class="static-why">lymphatic recovery、vascular permeability、blood-cell count、hydrostatic/osmotic pressure 四項翻成英文後重現。</span></li><li><strong>同一 A/B、P1/P2 ROC 圖判讀</strong> <span class="pill match">同圖反向敘述</span><br>B09 第6題、B10 第4題<br><span class="static-why">圖形、A/B 曲線、P1/P2 與四個判讀面向完全相同，部分 LR 敘述改為反向；B10 詳解明載「同 B09 第六題」。</span></li></ol></details><details><summary>非考古常見考點：11 類</summary><ul><li><strong>real-time PCR 的 Ct 定義與倍數計算</strong>：4 題<br><span class="static-why">同考點但分別問定義、由 10 倍反推 Ct、方向關係與由 ΔCt 求比值，未計為同題。</span><br>B06 第11題、B07 第10題、B09 第2題、B10 第2題</li><li><strong>基因結構、exon/intron 與 codon 基礎</strong>：4 題<br><span class="static-why">題目分別鎖定 promoter、start/stop codon、UTR 與 antisense strand；概念相近但命題不同。</span><br>B04 第5題、B05 第6題、B05 第7題、B06 第10題</li><li><strong>突變、染色體易位與分子偵測</strong>：4 題<br><span class="static-why">涵蓋 BCR-ABL fusion、FLT3-ITD、capillary electrophoresis 適合的突變及染色體位置，不能只因同屬分子檢驗就合併。</span><br>B04 第7題、B05 第8題、B07 第11題、B10 第1題</li><li><strong>體腔液 transudate/exudate 判讀</strong>：4 題<br><span class="static-why">疾病、Light-like 閾值、體腔液綜合敘述各自不同；B07 Q9 與 B10 Q22 只部分呈鏡像，保守排除。</span><br>B07 第9題、B08 第2題、B10 第21題、B10 第22題</li><li><strong>TDM 的臨床適用情境</strong>：3 題<br><span class="static-why">共同框架是 TDM utility，但每年多數藥物與案例皆更換，屬同概念而非同題。</span><br>B05 第5題、B06 第8題、B07 第8題</li><li><strong>ROC 與檢驗效能判讀（不同圖／不同敘述組）</strong>：3 題<br><span class="static-why">皆考 ROC，但曲線數、cut-off 與待判讀關係不同；B07 僅被後續詳解稱為「類似」，因此不併入 B09-B10 同題群。</span><br>B05 第1題、B06 第1題、B07 第1題</li><li><strong>定量與定性檢驗辨認</strong>：2 題<br><span class="static-why">題型相同但 analyte 與判斷項目大幅替換，保守視為不同題。</span><br>B04 第2題、B06 第2題</li><li><strong>STR 的定義、全名與法醫用途</strong>：2 題<br><span class="static-why">B06 要解釋 STR，B10 只要寫出全名；同術語但作答任務不同，故不算同題。</span><br>B06 第12題、B10 第23題</li><li><strong>族群組成對 sensitivity 估計的影響</strong>：1 題<br>B07 第2題</li><li><strong>real-time PCR 是否可直接定量 RNA</strong>：1 題<br>B09 第4題</li><li><strong>POCT 可用檢體的變化題</strong>：1 題<br><span class="static-why">與跨年檢體題只重用 3/5 選項，列入常見考點而非考古。</span><br>B08 第7題</li></ul></details><details><summary>資料範圍與來源</summary><p class="muted">B04-B10 Block 1 逐年題目（早期 B99-B03 分類題僅作佐證，不進主要分母）</p><ul><li><a href="4_%E6%AA%A2%E9%A9%97%E9%86%AB%E5%AD%B8/%E6%AA%A2%E9%A9%97%E9%86%AB%E5%AD%B8Block1%E8%80%83%E5%8F%A4%E9%A1%8C%E7%9B%AE_%E6%9B%B4%E6%96%B0.pdf">考古題目</a></li><li><a href="4_%E6%AA%A2%E9%A9%97%E9%86%AB%E5%AD%B8/%E6%AA%A2%E9%A9%97%E9%86%AB%E5%AD%B8Block1%E8%80%83%E5%8F%A4%E8%A9%B3%E8%A7%A3_%E6%9B%B4%E6%96%B0.pdf">考古詳解</a></li></ul></details></article>
+    </section>
+
+    <section aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Overview</p>
+          <h2 id="overview-title">四科一眼比較</h2>
+        </div>
+        <p class="section-note">三種比例回答不同問題，分母不能混用。詳細年份範圍與缺卷狀況請見各科。</p>
+      </div>
+
+      <div id="overview-cards" class="overview-cards"></div>
+
+      <div class="matrix-wrap" tabindex="0" role="region" aria-label="四科三項考古率比較表">
+        <table class="metric-matrix">
+          <thead>
+            <tr>
+              <th scope="col">科目</th>
+              <th scope="col">重複實例涵蓋率</th>
+              <th scope="col">重複題型率</th>
+              <th scope="col">往年直接命中率</th>
+            </tr>
+          </thead>
+          <tbody id="overview-matrix"></tbody>
+        </table>
+      </div>
+
+      <dl class="metric-definitions">
+        <div class="definition">
+          <dt>重複實例涵蓋率</dt>
+          <dd>落在跨年重複群的題目實例 ÷ 全部可比較題目；同題第一次出現也計入。</dd>
+        </div>
+        <div class="definition">
+          <dt>重複題型率</dt>
+          <dd>曾跨年重複的 canonical 題型 ÷ 去重後的全部題型。</dd>
+        </div>
+        <div class="definition">
+          <dt>往年直接命中率</dt>
+          <dd>某年可由更早完整考卷直接認出的題目 ÷ 該年題數；首個完整年度不進分母。</dd>
+        </div>
+      </dl>
+    </section>
+
+    <nav class="subject-navigation" aria-label="選擇科目">
+      <div id="subject-tabs" class="tab-list" role="tablist" aria-label="Block 1 四科"></div>
+    </nav>
+
+    <div id="subject-panels"></div>
+
+    <section class="methodology" aria-labelledby="methodology-title">
+      <p class="section-kicker">Method</p>
+      <h2 id="methodology-title">如何讀這份整理</h2>
+      <div class="method-grid">
+        <article class="method-card">
+          <strong>1 · 先還原題目實例</strong>
+          <p>逐年保留年份與原題號；只有教師／章節重編、無法還原原卷題號的舊題庫，只能作佐證，不放進主要分母。</p>
+        </article>
+        <article class="method-card">
+          <strong>2 · 再做嚴格逐項比對</strong>
+          <p>核心題幹、作答目標與多數實質選項需相同或同義。正反問與選項順序不影響判定。</p>
+        </article>
+        <article class="method-card">
+          <strong>3 · 概念相近保守排除</strong>
+          <p>只共享疾病、章節、公式或技術者不算考古，改列為「非考古常見考點」，避免把讀過概念誤當成直接命中。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span id="updated-at"></span> · 本頁為離線單檔，無外部字型、CDN 或動畫；可直接以瀏覽器列印。
+  </footer>
+
+  <script>
+    window.BLOCK1_DATA = {"meta":{"title":"Block 1 嚴格考古地圖","subtitle":"只收錄跨年幾乎相同、可直接認出的題目；同章節、同概念但命題不同者，一律留在非考古考點。","updatedAt":"2026-09-10"},"subjects":[{"id":"pathology","name":"病理學","shortName":"病理","color":"#c4573f","scope":"B05–B10，共 151 題可判讀題目","scopeNote":"此病理學 PDF 只有 B05-B10 六份完整逐年考卷；PDF 前段『舊考古』為按教師/章節重編的題庫，沒有可恢復的原始年份與原卷題號。 159 個題號槽中另有 8 題亡佚或明示非本次範圍，未放入可判讀分母。","confidence":"高信心 · 排除 8 題無法嚴格比對","metrics":{"repeatInstance":{"value":45.0,"numerator":68,"denominator":151},"repeatType":{"value":25.2,"numerator":28,"denominator":111},"priorHit":{"value":31.5,"numerator":40,"denominator":127}},"years":[{"year":"B05","total":24,"repeat":8,"repeatRate":33.3,"priorHits":null,"priorHitRate":null,"note":"往年直接命中：基準年 B05 不計"},{"year":"B06","total":25,"repeat":19,"repeatRate":76.0,"priorHits":3,"priorHitRate":12.0,"note":"往年直接命中 3 / 25（12.0%）；另排除 5 題亡佚／非本次範圍"},{"year":"B07","total":33,"repeat":22,"repeatRate":66.7,"priorHits":21,"priorHitRate":63.6,"note":"往年直接命中 21 / 33（63.6%）；另排除 2 題亡佚／非本次範圍"},{"year":"B08","total":19,"repeat":8,"repeatRate":42.1,"priorHits":6,"priorHitRate":31.6,"note":"往年直接命中 6 / 19（31.6%）；另排除 1 題亡佚／非本次範圍"},{"year":"B09","total":26,"repeat":6,"repeatRate":23.1,"priorHits":5,"priorHitRate":19.2,"note":"往年直接命中 5 / 26（19.2%）"},{"year":"B10","total":24,"repeat":5,"repeatRate":20.8,"priorHits":5,"priorHitRate":20.8,"note":"往年直接命中 5 / 24（20.8%）"}],"repeatGroups":[{"id":"PATH-R03","title":"autopsy 字義為 see for oneself","matchType":"高度一致","recognition":"Autopsy = see for oneself。","why":"B06/B07/B08 是同義定義題；B05 將 term→definition 反向改成 definition→term，核心命題完全相同。","warning":"","refs":[{"year":"B05","q":4,"label":"B05 第4題","page":43},{"year":"B06","q":5,"label":"B06 第5題","page":49},{"year":"B07","q":5,"label":"B07 第5題","page":54},{"year":"B08","q":3,"label":"B08 第3題","page":61}],"earlierEvidence":["舊考古／吳木榮老師－病理解剖 Q22（不納入率）"]},{"id":"PATH-R09","title":"tuberculosis 的典型壞死型態","matchType":"高度一致","recognition":"Caseous/caseating necrosis。","why":"四題均直接問 TB 對應的壞死型態；B06 題本只保留正確選項，但詳解確認原命題。","warning":"","refs":[{"year":"B06","q":10,"label":"B06 第10題","page":50},{"year":"B07","q":11,"label":"B07 第11題","page":55},{"year":"B09","q":8,"label":"B09 第8題","page":66},{"year":"B10","q":4,"label":"B10 第4題","page":71}],"earlierEvidence":[]},{"id":"PATH-R01","title":"解剖病理執業範圍：找出不屬於 anatomical pathology 者","matchType":"高度一致","recognition":"Surgical pathology、forensic pathology、cytopathology 屬解剖病理；medical genetics／chemical pathology 為排除項。","why":"三題同為 anatomical pathology 的 except 題，B07 與 B08 題幹、四選項實質相同；B05 僅把 chemical pathology 換成 medical genetics。","warning":"","refs":[{"year":"B05","q":1,"label":"B05 第1題","page":43},{"year":"B07","q":1,"label":"B07 第1題","page":54},{"year":"B08","q":1,"label":"B08 第1題","page":61}],"earlierEvidence":["舊考古／鄭永銘老師－緒論 Q2（不納入率的分母或分子）"]},{"id":"PATH-R05","title":"病理檢體 gene amplification 的常用偵測法","matchType":"高度一致","recognition":"Fluorescent in situ hybridization (FISH)。","why":"三題同問 gene amplification 的最常用方法；正確答案相同，僅替換少數干擾選項。","warning":"","refs":[{"year":"B06","q":1,"label":"B06 第1題","page":49},{"year":"B07","q":2,"label":"B07 第2題","page":54},{"year":"B08","q":2,"label":"B08 第2題","page":61}],"earlierEvidence":[]},{"id":"PATH-R07","title":"autophagy：misfolded protein、癌症、神經退化與雙層膜","matchType":"高度一致","recognition":"多數 misfolded proteins 由 ubiquitin-proteasome system 清除；autophagosome 為雙層膜。","why":"B06/B07 四選項逐字相同；B10 重排並反向改寫同四個命題（且形成兩個錯誤選項）。","warning":"","refs":[{"year":"B06","q":8,"label":"B06 第8題","page":50},{"year":"B07","q":8,"label":"B07 第8題","page":55},{"year":"B10","q":9,"label":"B10 第9題","page":71}],"earlierEvidence":[]},{"id":"PATH-R10","title":"不可逆細胞傷害：plasma membrane rupture","matchType":"高度一致","recognition":"Plasma membrane rupture；cell swelling、surface blebbing、myelin figure 可見於 reversible injury。","why":"三題用相同選項組找出不可逆／非可逆變化，僅正反問及形態括註不同。","warning":"","refs":[{"year":"B06","q":11,"label":"B06 第11題","page":50},{"year":"B07","q":12,"label":"B07 第12題","page":55},{"year":"B09","q":6,"label":"B09 第6題","page":65}],"earlierEvidence":["舊考古／袁章祖老師－細胞病理 Q34（不納入率）"]},{"id":"PATH-R11","title":"steatosis 的累積物為 triglyceride","matchType":"高度一致","recognition":"Triglyceride。","why":"三題均以 steatosis 搭配 lipofuscin／triglyceride／cholesterol 等相同選項辨識累積物；B09/B10 幾乎逐字相同。","warning":"","refs":[{"year":"B06","q":12,"label":"B06 第12題","page":50},{"year":"B09","q":11,"label":"B09 第11題","page":66},{"year":"B10","q":10,"label":"B10 第10題","page":72}],"earlierEvidence":[]},{"id":"PATH-R23","title":"anti-thrombotic factors：Protein C、thrombomodulin、t-PA、heparin-like molecule","matchType":"高度一致","recognition":"Protein C、thrombomodulin、t-PA、heparin-like molecules 為抗血栓；tissue factor 促凝。","why":"三題題幹相同，五個實質選項完全相同；B09 只交換第 4/5 項順序。","warning":"","refs":[{"year":"B05","q":20,"label":"B05 第20題","page":46},{"year":"B06","q":25,"label":"B06 第25題","page":53},{"year":"B09","q":22,"label":"B09 第22題","page":68}],"earlierEvidence":[]},{"id":"PATH-R25","title":"right heart failure 的 signs/findings 組合題","matchType":"高度一致","recognition":"Central venous pressure 上升、肝中央區鬱血/nutmeg liver、下肢 pitting edema；肺水腫/呼吸困難偏左心衰竭。","why":"三題題幹相同，五個命題中四個相同或為同義病理（nutmeg liver = centrizonal congestion），僅更換一個干擾項。","warning":"","refs":[{"year":"B05","q":18,"label":"B05 第18題","page":46},{"year":"B06","q":23,"label":"B06 第23題","page":52},{"year":"B07","q":35,"label":"B07 第35題","page":60}],"earlierEvidence":["舊考古／連晃駿老師－血行動力學 Q15（不納入率）"]},{"id":"PATH-R26","title":"thromboembolism 的結果／病理變化組合題","matchType":"高度一致","recognition":"可見 infarction、coagulative necrosis（CNS 可 liquefactive）；caseous necrosis 非栓塞所致，Caisson disease 為 air embolism。","why":"三題題幹同義，五個選項中至少四個逐項相同；B05/B08 五項完全相同，B07 只以 red infarct 替換 white infarct。","warning":"","refs":[{"year":"B05","q":19,"label":"B05 第19題","page":46},{"year":"B07","q":34,"label":"B07 第34題","page":59},{"year":"B08","q":16,"label":"B08 第16題","page":63}],"earlierEvidence":["舊考古／連晃駿老師－血行動力學 Q20（不納入率）"]},{"id":"PATH-R02","title":"hospital autopsy 的根本目的","matchType":"高度一致","recognition":"Understanding of diseases。","why":"題幹與四個選項逐字相同。","warning":"","refs":[{"year":"B06","q":4,"label":"B06 第4題","page":49},{"year":"B07","q":4,"label":"B07 第4題","page":54}],"earlierEvidence":[]},{"id":"PATH-R04","title":"hospital autopsy 必須取得本人或家屬同意","matchType":"高度一致","recognition":"Consent of the patient/family member。","why":"同一題幹，正確選項僅有單複數及措辭差異。","warning":"","refs":[{"year":"B06","q":6,"label":"B06 第6題","page":49},{"year":"B07","q":6,"label":"B07 第6題","page":54}],"earlierEvidence":["舊考古／吳木榮老師－病理解剖 Q7、Q12（不納入率）"]},{"id":"PATH-R06","title":"ferroptosis 的錯誤特徵：non-lytic cell death","matchType":"高度一致","recognition":"Ferroptosis 與 iron、ROS、膜破裂及發炎相關，因此 non-lytic 為錯。","why":"題幹及四選項完全相同，只把 not a feature 改成 not true。","warning":"","refs":[{"year":"B06","q":7,"label":"B06 第7題","page":50},{"year":"B07","q":7,"label":"B07 第7題","page":55}],"earlierEvidence":[]},{"id":"PATH-R08","title":"Annexin V 辨識 apoptotic cell 的 phosphatidylserine","matchType":"高度一致","recognition":"Phosphatidylserine。","why":"題幹及 Propidium iodide／phosphatidylserine／DAMP／DNA 四選項逐字相同。","warning":"","refs":[{"year":"B06","q":9,"label":"B06 第9題","page":50},{"year":"B08","q":5,"label":"B08 第5題","page":61}],"earlierEvidence":[]},{"id":"PATH-R12","title":"Barrett esophagus 的 adaptation 為 metaplasia","matchType":"高度一致","recognition":"Metaplasia。","why":"題幹與四個 adaptation 選項完全相同，只更換選項順序。","warning":"","refs":[{"year":"B05","q":6,"label":"B05 第6題","page":43},{"year":"B07","q":10,"label":"B07 第10題","page":55}],"earlierEvidence":["舊考古／袁章祖老師－細胞病理 Q49（不納入率）"]},{"id":"PATH-R13","title":"extrinsic apoptosis 不包含 apoptosome","matchType":"高度一致","recognition":"Apoptosome；FasL、FADD、caspase-8 為 extrinsic pathway。","why":"題幹與四選項完全相同，僅加入 mainly 一字。","warning":"","refs":[{"year":"B05","q":8,"label":"B05 第8題","page":44},{"year":"B07","q":14,"label":"B07 第14題","page":56}],"earlierEvidence":["舊考古／袁章祖老師－細胞病理 Q51（不納入率）"]},{"id":"PATH-R14","title":"白血球 extravasation 的 adhesion-molecule 配對","matchType":"高度一致","recognition":"Rolling：selectin–sialyl-Lewis X；transmigration：PECAM-1/CD31–CD31。","why":"題幹及四個配對命題逐字相同。","warning":"","refs":[{"year":"B06","q":13,"label":"B06 第13題","page":50},{"year":"B07","q":15,"label":"B07 第15題","page":56}],"earlierEvidence":[]},{"id":"PATH-R15","title":"NSAIDs 抑制 cyclooxygenase","matchType":"高度一致","recognition":"Cyclooxygenase (COX)。","why":"同問 NSAIDs/aspirin 抑制哪個 arachidonic-acid-metabolite 酵素，選項實質相同。","warning":"","refs":[{"year":"B06","q":14,"label":"B06 第14題","page":51},{"year":"B07","q":17,"label":"B07 第17題","page":56}],"earlierEvidence":["舊考古／謝明書老師－急慢性發炎 Q10（不納入率）"]},{"id":"PATH-R16","title":"neutrophil extracellular traps (NETs) 的組成與功能","matchType":"高度一致","recognition":"NETs 是抗菌機制，含 chromatin 與 granule enzymes；與自體免疫／血栓相關，微生物 DNase 可抗 NETs。","why":"題幹與四個敘述逐字相同。","warning":"","refs":[{"year":"B06","q":16,"label":"B06 第16題","page":51},{"year":"B07","q":19,"label":"B07 第19題","page":56}],"earlierEvidence":["舊考古／謝明書老師－急慢性發炎 Q18（不納入率）"]},{"id":"PATH-R17","title":"acute inflammation 型態不包含 granulomatous inflammation","matchType":"高度一致","recognition":"Granulomatous inflammation 屬慢性發炎。","why":"同一 except 題及同一組 suppurative／fibrinous／serous／granulomatous 選項；僅 fibrinous 的 OCR/用字有差。","warning":"","refs":[{"year":"B06","q":18,"label":"B06 第18題","page":51},{"year":"B07","q":21,"label":"B07 第21題","page":57}],"earlierEvidence":["舊考古／謝明書老師－急慢性發炎 Q17（不納入率）"]},{"id":"PATH-R18","title":"chronic inflammation 三特徵","matchType":"高度一致","recognition":"Mononuclear-cell infiltration、tissue destruction、repair/fibrosis。","why":"兩題同以三個慢性發炎特徵及『以上皆是』作答，僅將 tissue destruction 換成 granulomatous inflammation。","warning":"","refs":[{"year":"B06","q":19,"label":"B06 第19題","page":51},{"year":"B07","q":23,"label":"B07 第23題","page":57}],"earlierEvidence":["舊考古／謝明書老師－急慢性發炎 Q16（不納入率）"]},{"id":"PATH-R19","title":"M1/M2 macrophage 的活化訊號與功能","matchType":"高度一致","recognition":"IFN-γ 活化 M1（發炎、殺菌）；IL-4/IL-13 活化 M2（TGF-β、修復）。","why":"兩題以正反問重排同一組 M1/M2 訊號與功能命題。","warning":"","refs":[{"year":"B06","q":20,"label":"B06 第20題","page":51},{"year":"B07","q":24,"label":"B07 第24題","page":57}],"earlierEvidence":[]},{"id":"PATH-R20","title":"metastatic calcification 的非常見部位","matchType":"高度一致","recognition":"Pulmonary artery；常見部位包含胃、腎、肺。","why":"題幹與 stomach／kidney／pulmonary artery／lung 四選項完全相同。","warning":"","refs":[{"year":"B07","q":9,"label":"B07 第9題","page":55},{"year":"B08","q":6,"label":"B08 第6題","page":61}],"earlierEvidence":["舊考古／袁章祖老師－細胞病理 Q40（不納入率）"]},{"id":"PATH-R22","title":"acute inflammation 中 neutrophil 的時間、NET 與殺菌機制","matchType":"高度一致","recognition":"Neutrophil 可形成 NET，主要以 ROS/MPO 殺菌；iNOS/NO 主要為 macrophage。","why":"題幹與四個選項逐字相同。","warning":"","refs":[{"year":"B09","q":15,"label":"B09 第15題","page":67},{"year":"B10","q":13,"label":"B10 第13題","page":72}],"earlierEvidence":[]},{"id":"PATH-R24","title":"hypercoagulability 五項組合題（Prothrombin/Trousseau/CHF/出血疾病）","matchType":"高度一致","recognition":"Prothrombin mutation、Trousseau syndrome、CHF 會促栓；Bernard-Soulier/vWD 不會，APS 會。","why":"題幹相同，五個命題中四個逐項重用；僅將 vWD 換成 antiphospholipid syndrome。","warning":"","refs":[{"year":"B06","q":24,"label":"B06 第24題","page":52},{"year":"B07","q":30,"label":"B07 第30題","page":58}],"earlierEvidence":["舊考古／連晃駿老師－血行動力學 Q16、Q17（不納入率）"]},{"id":"PATH-R27","title":"shock、DIC、arterial thrombosis 的五敘述綜合題","matchType":"高度一致","recognition":"Shock 可高血糖；大範圍 MI 的 cardiogenic shock 預後差；DIC 可出血；arterial thrombosis 常由 endothelial injury；hypovolemic shock 早期皮膚冷白。","why":"兩題前四個命題幾乎逐字相同，第五項只更換 shock 類型與 warm/cool。","warning":"","refs":[{"year":"B05","q":22,"label":"B05 第22題","page":47},{"year":"B07","q":33,"label":"B07 第33題","page":59}],"earlierEvidence":["舊考古／連晃駿老師－血行動力學 Q22（不納入率）"]},{"id":"PATH-R28","title":"cirrhosis edema、shock ATN、DIC、arterial thrombosis、GLUT-4 綜合題","matchType":"高度一致","recognition":"Cirrhosis 以 hypoalbuminemia 致 edema；shock 可 ATN；DIC 初期高凝；arterial thrombosis 常見 endothelial injury；GLUT-4 下降促高血糖。","why":"五個命題一一對應；B08 把第 1/5 項以相反方向寫成錯誤敘述，B09 改回正向。","warning":"","refs":[{"year":"B08","q":17,"label":"B08 第17題","page":64},{"year":"B09","q":24,"label":"B09 第24題","page":69}],"earlierEvidence":[]},{"id":"PATH-R29","title":"pure left heart failure 的 findings 組合題","matchType":"高度一致","recognition":"Pulmonary congestion/edema 與 brown induration；CVP 增加、肝中央區鬱血、下肢水腫偏右心衰竭。","why":"兩題均以同一組左右心衰竭病理辨識純左心衰竭；五項逐項同義，僅將 brown induration 改寫為 pulmonary congestion。","warning":"","refs":[{"year":"B08","q":18,"label":"B08 第18題","page":64},{"year":"B10","q":24,"label":"B10 第24題","page":74}],"earlierEvidence":["舊考古／連晃駿老師－血行動力學 Q14（不納入率）"]}],"nonRepeatTopics":[{"topic":"病理解剖與診斷病理實務","count":11,"points":["autopsy 的完整檢查定義、合法場所、時間與呼吸防護","解剖率下降、台大醫院解剖的教學／研究用途與 brain autopsy 目的","蛋白表現以 immunohistochemistry 偵測；pathology 字源"],"refs":["B05-Q02","B05-Q03","B05-Q05","B06-Q03","B07-Q03","B09-Q01","B09-Q02","B09-Q03","B09-Q04","B10-Q01","B10-Q02"],"note":""},{"topic":"細胞適應、傷害、死亡與胞內累積","count":16,"points":["cell injury 的 Ca2+ 來源、ROS、膜與胞器形態","apoptosis／necroptosis／pyroptosis／ferroptosis 的核心分子","BAX/BAK、BCL-2、BH3-only sensor 與 unfolded-protein response","hypertrophy／hyperplasia／atrophy，以及 hemosiderin、LC3、sirtuin"],"refs":["B05-Q07","B05-Q09","B07-Q13","B08-Q04","B08-Q07","B08-Q08","B09-Q05","B09-Q07","B09-Q09","B09-Q10","B09-Q12","B10-Q03","B10-Q05","B10-Q06","B10-Q07","B10-Q08"],"note":""},{"topic":"急性發炎：血管反應、白血球募集與殺菌","count":10,"points":["vasodilation、permeability、exudate 與血流減慢","integrin/ICAM 所介導的 stable adhesion","phagocyte oxidase、MPO、NO 與 chronic granulomatous disease"],"refs":["B05-Q10","B05-Q11","B05-Q12","B05-Q13","B05-Q15","B08-Q10","B09-Q13","B10-Q11","B09-Q14","B10-Q12"],"note":""},{"topic":"發炎介質、先天免疫與全身效應","count":8,"points":["histamine、bradykinin、TNF/IL-1、C3a/C5a 的血管、疼痛、發燒與趨化作用","COX/LOX 產物、lipoxin 與 steroid/NSAID 的作用點","PAMP、eosinophil 與 type-I hypersensitivity/anaphylaxis"],"refs":["B05-Q14","B07-Q16","B07-Q18","B08-Q09","B08-Q19","B09-Q17","B10-Q14","B10-Q15"],"note":""},{"topic":"發炎型態、慢性發炎與細胞圖譜","count":8,"points":["serous、fibrinous、suppurative inflammation 與 exudate 的差異","急慢性發炎常見細胞、M1/M2 轉換與病原體造成的反應型態","細菌性腹膜炎為高蛋白、高白血球的 exudate"],"refs":["B05-Q16","B07-Q25","B07-Q27","B08-Q11","B08-Q12","B09-Q16","B09-Q18","B10-Q18"],"note":""},{"topic":"肉芽腫性發炎與組織修復","count":9,"points":["granuloma 與 granulation tissue 的辨別；TB 的 Langhans giant cell/caseation","angiogenesis 的 VEGF 與 Dll4/Notch tip–stalk cell 分化","TGF-β、collagen deposition、hypertrophic scar、keloid 與 contraction"],"refs":["B07-Q22","B07-Q26","B07-Q28","B08-Q13","B08-Q14","B09-Q19","B09-Q20","B10-Q16","B10-Q17"],"note":""},{"topic":"水腫、充血、肝硬化與心衰竭","count":4,"points":["hydrostatic pressure、hypoalbuminemia、lymphatic obstruction 與 inflammation 的水腫機轉","肝硬化的 portal hypertension、ascites、splenomegaly","右心衰竭的肝鬱血與下肢水腫（B09 題選項集合與重複群差異較大，故保守列非考古）"],"refs":["B06-Q26","B07-Q31","B09-Q21","B10-Q22"],"note":""},{"topic":"血栓、栓塞、梗塞與抗凝機制","count":12,"points":["Virchow triad、Factor V Leiden、prothrombin mutation、Trousseau/APS/HIT","Protein C/S、thrombomodulin、TFPI、antithrombin、t-PA 與 PAI/PF4","red/white infarct、Lines of Zahn、fat/air/amniotic embolism 與 saddle embolus"],"refs":["B05-Q17","B05-Q23","B05-Q24","B06-Q27","B06-Q30","B07-Q32","B08-Q15","B09-Q25","B09-Q26","B10-Q20","B10-Q21","B10-Q23"],"note":""},{"topic":"休克、DIC 與敗血性休克","count":4,"points":["shock 的 ischemic encephalopathy、diffuse alveolar damage、ATN、centrizonal necrosis","septic shock 的 PAMP/內皮活化、DIC、peripheral pooling、myocardial depression","GLUT-4 受損、insulin resistance 與 stress-hormone gluconeogenesis 所致高血糖"],"refs":["B05-Q21","B06-Q28","B09-Q23","B10-Q19"],"note":""},{"topic":"腫瘤與感染病因","count":1,"points":["Helicobacter pylori 與 gastric lymphoma 的關聯。"],"refs":["B06-Q02"],"note":""}],"boundaryExclusions":[{"title":"二次嚴格稽核：白血球遷移題不合併","why":"B09 第14題與 B10 第12題僅 Rolling/selectin、Adhesion/integrin 兩項相同；其餘兩項換成不同機制，未達『幾乎同題』。","refs":["B09 第14題","B10 第12題"]},{"title":"原檔缺題，保守不判","why":"題本/詳解明示題幹或選項缺失；雖有些殘存答案看似對應其他年度（例如 Dll4/Notch），仍不據此判為重複。","refs":["B06-Q15","B06-Q17","B06-Q21","B06-Q22","B06-Q29","B07-Q20","B07-Q29"]},{"title":"編者重建題，不作同題依據","why":"題幹由共筆編者依舊題推測重建，非完整原題；保守列非考古。","refs":["B06-Q26","B06-Q27","B06-Q28"]},{"title":"答案欄有歧義","why":"B05-Q05 的答案欄與詳解對 decline of autopsy 的敘述有張力；B10-Q09 詳解判 A/D 皆錯。這些不影響重複判定，但網頁不宜呈現單一無保留答案。","refs":["B05-Q05","B10-Q09"]},{"title":"原題選項不完整","why":"B07-Q35 缺作答組合選項、B10-Q15 只存一個選項、B10-Q22 有兩個選項亡佚；仍依可見題幹/命題保留於分母。","refs":["B07-Q35","B10-Q15","B10-Q22"]},{"title":"同章節但未達近乎相同","why":"這些題與已列群或彼此共享同一章節/選項池，但實質命題重疊不足 75%，故按使用者的嚴格定義排除，不灌高考古率。","refs":["B07-Q32","B08-Q15","B10-Q23","B05-Q17","B09-Q26","B10-Q21","B09-Q21","B09-Q25","B10-Q20","B06-Q26","B10-Q22","B06-Q28","B09-Q23","B10-Q19"]},{"title":"無年份舊題庫只作佐證","why":"『舊考古』共含緒論3、病理解剖23、細胞病理51、急慢性發炎32、組織修復30、血行動力學25 個分類題；因無原始年份，不進 159 題分母與 70 題分子。","refs":[]}],"sourceFiles":[{"label":"考古題本","path":"1_病理學/B11病理學block 1考古題本.pdf"},{"label":"考古詳解","path":"1_病理學/B11病理學block 1考古詳解.pdf"}]},{"id":"clinical","name":"臨床醫學","shortName":"臨床","color":"#287a78","scope":"B03–B10，共 164 題可判讀題目","scopeNote":"B03 有完整年度、可恢復原題號，因此正式納入；170 個題號槽中有 6 題因原 PDF 題幹／選項不足而另列未決，不進可判讀分母。更早按講次重編且無原卷題號的分類題庫也不進分母。","confidence":"高信心 · 排除 6 題無法嚴格比對","metrics":{"repeatInstance":{"value":55.5,"numerator":91,"denominator":164},"repeatType":{"value":29.8,"numerator":31,"denominator":104},"priorHit":{"value":44.8,"numerator":60,"denominator":134}},"years":[{"year":"B03","total":30,"repeat":11,"repeatRate":36.7,"priorHits":null,"priorHitRate":null,"note":"往年直接命中：基準年 B03 不計；2 題是非＋28 題選擇題"},{"year":"B04","total":19,"repeat":9,"repeatRate":47.4,"priorHits":7,"priorHitRate":36.8,"note":"往年直接命中 7 / 19（36.8%）"},{"year":"B05","total":18,"repeat":12,"repeatRate":66.7,"priorHits":8,"priorHitRate":44.4,"note":"往年直接命中 8 / 18（44.4%）"},{"year":"B06","total":18,"repeat":12,"repeatRate":66.7,"priorHits":9,"priorHitRate":50.0,"note":"往年直接命中 9 / 18（50.0%）；未決 5 題"},{"year":"B07","total":21,"repeat":11,"repeatRate":52.4,"priorHits":6,"priorHitRate":28.6,"note":"往年直接命中 6 / 21（28.6%）；未決 1 題"},{"year":"B08","total":13,"repeat":7,"repeatRate":53.8,"priorHits":7,"priorHitRate":53.8,"note":"往年直接命中 7 / 13（53.8%）"},{"year":"B09","total":21,"repeat":14,"repeatRate":66.7,"priorHits":8,"priorHitRate":38.1,"note":"往年直接命中 8 / 21（38.1%）"},{"year":"B10","total":24,"repeat":15,"repeatRate":62.5,"priorHits":15,"priorHitRate":62.5,"note":"往年直接命中 15 / 24（62.5%）"}],"repeatGroups":[{"id":"CL-R08","title":"SIRS 標準：心跳門檻","matchType":"題幹／實質選項近同","recognition":"SIRS 診斷參考標準何者錯誤；反覆以心跳 80/min 作陷阱。","why":"題幹與四項門檻幾乎逐字相同，排版與符號差異不影響題目身份。","warning":"","refs":[{"year":"B03","q":15,"label":"B03 第15題"},{"year":"B04","q":11,"label":"B04 第11題"},{"year":"B05","q":13,"label":"B05 第13題"},{"year":"B06","q":17,"label":"B06 第17題"},{"year":"B07","q":17,"label":"B07 第17題"},{"year":"B08","q":2,"label":"B08 第2題"},{"year":"B09","q":19,"label":"B09 第19題"},{"year":"B10","q":15,"label":"B10 第15題"}],"earlierEvidence":[]},{"id":"CL-R06","title":"侵入性治療後：非 catabolic hormone","matchType":"題幹／實質選項近同","recognition":"Glucagon、growth hormone、cortisol、catecholamine 中何者不是分解代謝賀爾蒙／不會上升。","why":"選項核心固定且正解皆為 growth hormone；「何者非 catabolic」與「侵入性治療後何者不增加」為允許的正反改寫。B10 的 Growth factor 為原題文字變體。","warning":"","refs":[{"year":"B03","q":13,"label":"B03 第13題"},{"year":"B04","q":10,"label":"B04 第10題"},{"year":"B05","q":11,"label":"B05 第11題"},{"year":"B06","q":15,"label":"B06 第15題"},{"year":"B07","q":15,"label":"B07 第15題"},{"year":"B09","q":16,"label":"B09 第16題"},{"year":"B09","q":18,"label":"B09 第18題"},{"year":"B10","q":13,"label":"B10 第13題"}],"earlierEvidence":[]},{"id":"CL-R09","title":"術後復原：不應延緩進食","matchType":"題幹／實質選項近同","recognition":"微創、止痛、延緩進食用高營養點滴、早期下床中，何者不會加速術後復原。","why":"題幹及四選項逐字相同；B08 同一份考卷甚至出現兩次。","warning":"","refs":[{"year":"B03","q":16,"label":"B03 第16題"},{"year":"B04","q":12,"label":"B04 第12題"},{"year":"B06","q":18,"label":"B06 第18題"},{"year":"B07","q":18,"label":"B07 第18題"},{"year":"B08","q":1,"label":"B08 第1題"},{"year":"B08","q":11,"label":"B08 第11題"},{"year":"B09","q":20,"label":"B09 第20題"},{"year":"B10","q":16,"label":"B10 第16題"}],"earlierEvidence":[]},{"id":"CL-R07","title":"傷害後非主要 inflammatory cytokine","matchType":"題幹／實質選項近同","recognition":"IL-1、IL-6、IL-16、TNF 中，何者不是傷害後主要發炎細胞激素。","why":"題幹、四個分子與正解一致，僅選項順序變動。","warning":"","refs":[{"year":"B03","q":14,"label":"B03 第14題"},{"year":"B05","q":12,"label":"B05 第12題"},{"year":"B06","q":16,"label":"B06 第16題"},{"year":"B07","q":16,"label":"B07 第16題"},{"year":"B08","q":7,"label":"B08 第7題"},{"year":"B09","q":17,"label":"B09 第17題"},{"year":"B10","q":14,"label":"B10 第14題"}],"earlierEvidence":[]},{"id":"CL-R01","title":"英文主訴：年齡格式、症狀持續時間與 chills","matchType":"題幹／實質選項近同","recognition":"選出最適當的英文 chief complaint；反覆使用發燒、畏寒與 27-year-old/chillness 陷阱。","why":"B03、B04、B05 都是 27 歲男性、fever/chills 與 for/since 的同一組主訴文法陷阱；僅日期、住院措辭與選項順序微調。","warning":"B06 第6題只剩編者註記與一個選項，證據不足；B07 第2題屬新版題組，均未硬併入本群。","refs":[{"year":"B03","q":5,"label":"B03 第5題"},{"year":"B04","q":3,"label":"B04 第3題"},{"year":"B05","q":5,"label":"B05 第5題"}],"earlierEvidence":[]},{"id":"CL-R02","title":"57 歲、三個月減重 5 公斤：病史欄位歸類","matchType":"題幹／實質選項近同","recognition":"同一位 57 歲病人三個月減重 5 公斤，選最恰當的病史詢問／記錄內容。","why":"病例年齡、主訴、時間、減重幅度及正解敘述皆相同；僅其他選項有輕微補字。","warning":"","refs":[{"year":"B03","q":6,"label":"B03 第6題"},{"year":"B06","q":7,"label":"B06 第7題"},{"year":"B07","q":3,"label":"B07 第3題"}],"earlierEvidence":[]},{"id":"CL-R03","title":"TOCC 縮寫辨識","matchType":"題幹／實質選項近同","recognition":"發燒病史需問 TOCC，問縮寫解釋何者錯誤。","why":"題幹與 T/O/C/C 四個辨識目標相同；錯誤選項由 Cough 改為 Overdose，屬同一題的小幅選項替換。","warning":"","refs":[{"year":"B03","q":7,"label":"B03 第7題"},{"year":"B04","q":4,"label":"B04 第4題"},{"year":"B05","q":6,"label":"B05 第6題"}],"earlierEvidence":[]},{"id":"CL-R10","title":"Remodeling phase 的關鍵細胞","matchType":"題幹／實質選項近同","recognition":"哪種細胞在傷口 remodeling phase 扮演重要角色。","why":"英文題幹近逐字相同；選項增減／順序不同但共同正解為 fibroblast。","warning":"","refs":[{"year":"B05","q":14,"label":"B05 第14題"},{"year":"B06","q":11,"label":"B06 第11題"},{"year":"B07","q":12,"label":"B07 第12題"}],"earlierEvidence":[]},{"id":"CL-R12","title":"吸入性灼傷的辨識線索","matchType":"題幹／實質選項近同","recognition":"密閉空間、顏面燒傷、沙啞、喘鳴中，何者不是／除外。","why":"題幹及四個選項逐字或近逐字相同。","warning":"詳解三年均沿用 B 作答，但同時承認四選項在文獻上都可能是線索；屬題目品質問題，不影響「同題重出」判定。","refs":[{"year":"B04","q":16,"label":"B04 第16題"},{"year":"B05","q":18,"label":"B05 第18題"},{"year":"B06","q":22,"label":"B06 第22題"}],"earlierEvidence":[]},{"id":"CL-R17","title":"傷口顏色分類：Yellow 不是 adipose tissue","matchType":"題幹／實質選項近同","recognition":"Pink/epithelization、Red/granulation、Yellow/adipose、Black/gangrene 配對何者錯。","why":"題幹與全部配對逐字相同。","warning":"","refs":[{"year":"B07","q":14,"label":"B07 第14題"},{"year":"B09","q":10,"label":"B09 第10題"},{"year":"B10","q":11,"label":"B10 第11題"}],"earlierEvidence":[]},{"id":"CL-E01","title":"會談以封閉式問題貫穿（錯）","matchType":"B03 正式納入","recognition":"B03 與後年題目的題幹／實質選項近乎相同。","why":"逐字相同","warning":"","refs":[{"year":"B03","q":1,"label":"B03 是非題 1"},{"year":"B04","q":1,"label":"B04 是非題 1"}],"earlierEvidence":[]},{"id":"CL-E02","title":"溝通方式與醫療爭議風險相關","matchType":"B03 正式納入","recognition":"B03 與後年題目的題幹／實質選項近乎相同。","why":"逐字相同","warning":"","refs":[{"year":"B03","q":2,"label":"B03 是非題 2"},{"year":"B04","q":2,"label":"B04 是非題 2"}],"earlierEvidence":[]},{"id":"CL-E03","title":"問診不應鉅細靡遺逐句記錄","matchType":"B03 正式納入","recognition":"B03 與後年題目的題幹／實質選項近乎相同。","why":"題幹與四個選項近逐字相同，僅順序變更","warning":"","refs":[{"year":"B03","q":2,"label":"B03 第2題"},{"year":"B05","q":2,"label":"B05 第2題"}],"earlierEvidence":[]},{"id":"CL-E04","title":"身體診察敘述（前三選項重用）","matchType":"B03 正式納入","recognition":"B03 與後年題目的題幹／實質選項近乎相同。","why":"題幹及 A–C 三個主要錯誤選項相同，D 更換為另一正確敘述","warning":"","refs":[{"year":"B03","q":3,"label":"B03 第3題"},{"year":"B05","q":3,"label":"B05 第3題"}],"earlierEvidence":[]},{"id":"CL-R04","title":"頭頸部惡性淋巴瘤敘述","matchType":"題幹／實質選項近同","recognition":"頭頸部惡性淋巴瘤何者錯誤：全身淋巴腫大、發燒、FNA、肝脾腫大。","why":"題幹與四個選項逐字相同。","warning":"","refs":[{"year":"B05","q":7,"label":"B05 第7題"},{"year":"B09","q":1,"label":"B09 第1題"}],"earlierEvidence":[]},{"id":"CL-R05","title":"健康 20 歲疝氣病人的 ASA 分級","matchType":"題幹／實質選項近同","recognition":"20 歲男性、腹股溝疝氣、檢查正常且為長跑健將，問 ASA class。","why":"病例與全部選項逐字或近逐字相同。","warning":"","refs":[{"year":"B04","q":9,"label":"B04 第9題"},{"year":"B09","q":8,"label":"B09 第8題"}],"earlierEvidence":[]},{"id":"CL-R11","title":"Chronic wound 的生理特徵","matchType":"題幹／實質選項近同","recognition":"慢性傷口的增殖、senescent cell、細胞反應、proteinase/growth factor 特徵。","why":"B05 與 B06 題幹近逐字相同，Low proliferation／senescent cell／Low response／High proteinase 四項完整重用；B06 只多一個選項。","warning":"B04 第15題只有 High proteinase 一項逐字相同，其餘為同概念重組，已於二次嚴格稽核移出。","refs":[{"year":"B05","q":15,"label":"B05 第15題"},{"year":"B06","q":12,"label":"B06 第12題"}],"earlierEvidence":[]},{"id":"CL-R13","title":"大面積燒傷死亡率估計因素","matchType":"題幹／實質選項近同","recognition":"年齡、TBSA、深度／種類、吸入性灼傷中，何者不納入死亡率估計。","why":"問法、三個固定因素及錯誤選項位置一致；「深度」與「種類」為細微選項替換。","warning":"","refs":[{"year":"B05","q":17,"label":"B05 第17題"},{"year":"B06","q":21,"label":"B06 第21題"}],"earlierEvidence":[]},{"id":"CL-R14","title":"完整病歷要素的先後順序","matchType":"題幹／實質選項近同","recognition":"Chief complaint → present illness/ROS → past history → physical exam → tests → diagnosis。","why":"題幹與四個完整排序選項相同。B06-MC-05 僅殘留正解選項、題幹及其他選項缺失，故只列未決候選，不納入本群。","warning":"","refs":[{"year":"B07","q":1,"label":"B07 第1題"},{"year":"B08","q":8,"label":"B08 第8題"}],"earlierEvidence":[]},{"id":"CL-R15","title":"傷口保持濕潤與 autodebridement","matchType":"題幹／實質選項近同","recognition":"正確傷口照護知識：保持濕潤可促進自行清創。","why":"題幹與五個選項逐字相同。","warning":"","refs":[{"year":"B06","q":13,"label":"B06 第13題"},{"year":"B10","q":9,"label":"B10 第9題"}],"earlierEvidence":[]},{"id":"CL-R16","title":"人咬上臂撕裂傷的 healing pattern","matchType":"題幹／實質選項近同","recognition":"人咬造成左上臂嚴重撕裂傷，問 wound healing pattern。","why":"病例、題幹與四個選項逐字相同。","warning":"","refs":[{"year":"B07","q":11,"label":"B07 第11題"},{"year":"B10","q":10,"label":"B10 第10題"}],"earlierEvidence":[]},{"id":"CL-R18","title":"Revised Cardiac Risk Index 的非項目","matchType":"題幹／實質選項近同","recognition":"缺血性心臟病、心衰竭、腦血管病史固定，問哪個不是 RCRI 項目。","why":"題幹與前三選項相同；第四選項改寫為 creatinine 錯門檻或肝病，皆要求辨認同一組 RCRI。","warning":"","refs":[{"year":"B07","q":19,"label":"B07 第19題"},{"year":"B08","q":9,"label":"B08 第9題"}],"earlierEvidence":[]},{"id":"CL-R19","title":"術前功能量與中風後延後手術","matchType":"題幹／實質選項近同","recognition":"Functional capacity、MET >4、單腳站立與中風後早期胃癌手術，問何者不當。","why":"題幹及四個選項逐字相同。","warning":"","refs":[{"year":"B06","q":20,"label":"B06 第20題"},{"year":"B10","q":22,"label":"B10 第22題"}],"earlierEvidence":[]},{"id":"CL-R20","title":"簡答：以病人為中心的會談","matchType":"題幹／實質選項近同","recognition":"請簡述如何落實／寫出你認為的「以病人為中心的會談」。","why":"同一開放式簡答題，只有「如何落實」與「你認為」的措辭差異。","warning":"","refs":[{"year":"B06","q":1,"label":"B06 簡答第1題"},{"year":"B10","q":1,"label":"B10 簡答第1題"}],"earlierEvidence":[]},{"id":"CL-R21","title":"病史短版排序：ROS 併入 present illness","matchType":"題幹／實質選項近同","recognition":"Chief complaint、present illness（include ROS）、past history 的正確排序。","why":"題幹與四個選項逐字相同，僅「病例／病歷」用字差異。","warning":"","refs":[{"year":"B09","q":3,"label":"B09 第3題"},{"year":"B10","q":8,"label":"B10 第8題"}],"earlierEvidence":[]},{"id":"CL-R22","title":"Reconstructive ladder 的順序","matchType":"題幹／實質選項近同","recognition":"由簡至繁排列 primary/delayed/secondary intention、skin graft、local flap、free tissue transfer。","why":"題幹及五個選項逐字相同。","warning":"","refs":[{"year":"B09","q":11,"label":"B09 第11題"},{"year":"B10","q":12,"label":"B10 第12題"}],"earlierEvidence":[]},{"id":"CL-R23","title":"皮膚生理功能最重要的層次","matchType":"題幹／實質選項近同","recognition":"表皮、真皮（後版加皮下層與筋膜）中，哪層生理功能最重要。","why":"題幹核心與共同選項相同；B10 僅增加兩個選項。","warning":"","refs":[{"year":"B09","q":12,"label":"B09 第12題"},{"year":"B10","q":17,"label":"B10 第17題"}],"earlierEvidence":[]},{"id":"CL-R24","title":"近圓周深度燒傷的緊急處置","matchType":"題幹／實質選項近同","recognition":"大範圍近圓周深度燒傷、區域血流不穩，問緊急處置。","why":"題幹與選項結構近逐字相同；B09「焦痂切除」與 B10「焦痂切開」為一字差異。","warning":"B09 詳解答案與解說明顯接到下一題的 burn shock/輸液內容，與題本不合；重複判定依題本，不依可疑答案。","refs":[{"year":"B09","q":13,"label":"B09 第13題"},{"year":"B10","q":18,"label":"B10 第18題"}],"earlierEvidence":[]},{"id":"CL-R25","title":"大面積燒傷休克：血管通透性增加","matchType":"題幹／實質選項近同","recognition":"大面積燒傷導致 shock 的原因為血管／微血管通透性增加。","why":"題幹、選項角色與答案相同；B10 將「血管」誤寫為「血液」但不改變題意。","warning":"","refs":[{"year":"B09","q":14,"label":"B09 第14題"},{"year":"B10","q":19,"label":"B10 第19題"}],"earlierEvidence":[]},{"id":"CL-R26","title":"燒傷急性傷口處置：冰敷按摩為非","matchType":"題幹／實質選項近同","recognition":"焦痂切開、清創、冰敷按摩、重建手術中，何者不是急性燒傷處置。","why":"題幹與四個選項逐字或近逐字相同。","warning":"","refs":[{"year":"B09","q":15,"label":"B09 第15題"},{"year":"B10","q":20,"label":"B10 第20題"}],"earlierEvidence":[]},{"id":"CL-R27","title":"英文主訴新版：中風精確時點與發燒持續時間","matchType":"3/4 實質選項重用","recognition":"slurred speech／clumsy hand 的精確時點，以及 fever＋日期或 chills＋3 days 的三個選項角色重現。","why":"B07 第2題與 B08 第6題同問最適當 chief complaint；A、B、C 的病例功能與辨識陷阱相同，只有第4個情境替換。","warning":"與 CL-R01 的舊版文法題分開計算。","refs":[{"year":"B07","q":2,"label":"B07 第2題"},{"year":"B08","q":6,"label":"B08 第6題"}],"earlierEvidence":[]}],"nonRepeatTopics":[{"topic":"病史詢問、疼痛量化與溝通","count":16,"points":["LQQOPERA 的 Radiation/Quantity","先開放後封閉、同理且不誘導","主訴的優先順序與問診目的","用 ROS 釐清黃疸、下肢水腫鑑別"],"refs":["B04-MC-02","B05-MC-04","B06-MC-01","B06-MC-03","B07-MC-05","B07-MC-07","B08-MC-04","B09-MC-04","B09-MC-05","B09-SA-01","B10-MC-01","B10-MC-02","B10-MC-06","B10-MC-07","B03-MC-04","B03-MC-08"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"頭頸部腫塊定位與 unknown primary","count":12,"points":["頸部分區 Level I/II/V 與常見病灶","thyroglossal duct cyst 與舌骨","skull base 軟組織優先 MRI","p16/HPV 與 tonsil、臺灣 NPC vs 美國 tonsil"],"refs":["B04-MC-05","B04-MC-06","B05-MC-08","B06-MC-09","B06-MC-10","B07-MC-09","B07-MC-10","B08-MC-10","B09-MC-02","B10-SA-02","B03-MC-09","B03-MC-10"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"傷口照護、感染與 partial-thickness healing","count":10,"points":["濕潤但不可浸泡、敷料與清創","急性撕裂傷縫合","糖尿病足感染的處置與嚴重度","淺二度／日曬傷以 re-epithelialization 癒合"],"refs":["B04-MC-13","B04-MC-14","B05-MC-16","B06-MC-14","B07-MC-13","B08-MC-03","B09-MC-09","B04-MC-15","B03-MC-17","B03-MC-18"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"術前風險評估與特殊病人準備","count":8,"points":["pack-year","近期 MI/COPD/腎功能與是否延後手術","支架後非心臟手術時機","不同術式的 perioperative stroke 風險","ESRD 術前透析、Hb 與凝血"],"refs":["B04-MC-07","B04-MC-08","B06-MC-19","B07-MC-20","B09-MC-07","B10-MC-21","B03-MC-11","B03-MC-12"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"身體診察方法與診斷效能","count":7,"points":["inspection/palpation/percussion/auscultation","聽診器膜面高頻、鐘面低頻","正常肺叩診 resonance","敏感度、特異度與似然比"],"refs":["B04-MC-01","B07-MC-06","B07-MC-08","B08-MC-05","B09-MC-06","B10-MC-03","B10-MC-04"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"燒傷面積、併發症與支持治療","count":7,"points":["Rule of nines：雙下肢 36% TBSA","大面積燒傷體液復甦與植皮時機","myoglobinuria/hematuria 時維持尿量與鹼化尿液"],"refs":["B04-MC-17","B07-MC-21","B07-MC-22","B03-MC-19","B03-MC-20","B03-MC-21","B03-MC-22"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"醫學生專業素養與制度下工作","count":6,"points":["未受監督執行尚未學會的導尿，涉及 system-based practice 與病人安全","醫療隱私、專業素養，以及 cure／relieve／comfort 的醫療角色"],"refs":["B05-MC-01","B03-MC-01","B03-MC-23","B03-MC-24","B03-MC-25","B03-MC-26"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"發燒與發炎指標","count":2,"points":["CRP/ESR 的來源、時程與非發炎干擾因子","發燒先找病因，再依臨床情況決定抗生素"],"refs":["B08-MC-12","B08-TF-01"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"肥胖與減重手術","count":2,"points":["病態肥胖的有效治療","sleeve、gastric bypass、balloon 的限制型／吸收不良型差異與 GERD"],"refs":["B05-MC-09","B05-MC-10"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"意識變化與腦血流自律調節","count":2,"points":["意識障礙原因","平均動脈壓下降時的全身代償與 cerebral autoregulation"],"refs":["B03-MC-27","B03-MC-28"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"},{"topic":"病歷與主訴書寫的非重複變化題","count":1,"points":["主訴要含症狀與持續時間","年齡複合形容詞格式","避免把日期或性別形容詞寫法當成標準主訴"],"refs":["B10-MC-05"],"note":"同列只代表讀書主題相同，不代表彼此是考古。"}],"boundaryExclusions":[{"title":"二次嚴格稽核：舊版主訴群拆分","why":"B06 第6題只剩編者註記與 D 選項，改列未決；B07 第2題與 B08 第6題另成新版群，不與 B03–B05 舊版混算。","refs":["B06 第6題","B07 第2題","B08 第6題"]},{"title":"二次嚴格稽核：慢性傷口 B04 不合併","why":"B04 第15題僅 High proteinase 一項逐字重用，其餘選項是同概念重組；只保留 B05 第15題與 B06 第12題。","refs":["B04 第15題","B05 第15題","B06 第12題"]},{"title":"缺題或證據不足，未計","why":"原題本明載「題目缺失」，只留下 B「black stools for 1 day」，無法判斷是否與任何年度題目幾乎相同。","refs":["B06-MC-02"]},{"title":"缺題或證據不足，未計","why":"原題本明載「題目缺失」，只留下 A「您能指出痛的位置嗎？」；只能辨識為疼痛 location，無法做嚴格跨年比對。","refs":["B06-MC-04"]},{"title":"缺題或證據不足，未計","why":"題本原頁明載「題目缺失」，A/B/D 也缺失；僅 C 留下完整病歷排序，詳解亦只說原題缺失。無法證明整題與 B07/B08 幾乎相同。","refs":["B06-MC-05"]},{"title":"缺題或證據不足，未計","why":"題幹與 B–D 選項在原題本缺失，只留下「past history 僅記已無需處理疾病」選項；可能與 B07-MC-04 同題，但證據不足。","refs":["B06-MC-08"]},{"title":"缺題或證據不足，未計","why":"完整題目可讀，但唯一可能的跨年配對 B06-MC-08 缺題幹與大部分選項，因此保守不列考古。","refs":["B07-MC-04"]},{"title":"答案品質警示","why":"B04/B05/B06 吸入性灼傷題的詳解都選 B，卻同時承認密閉空間、顏面燒傷、沙啞、喘鳴皆可能是臨床線索；答案有效性存疑，但題目確實跨年近逐字重出。","refs":["CL-R12"]},{"title":"詳解疑似錯置","why":"題本問近圓周深度燒傷的緊急處置；詳解列 B 且解說 burn shock/輸液，明顯像下一題內容。B10-MC-18 為同題且列焦痂切開術。重複判定保留，答案顯示警示。","refs":["B09-MC-13"]},{"title":"近似題刻意不合併","why":"B08-MC-06、B10-MC-05 也問英文主訴，但病例與辨識陷阱改動較大，未併 CL-R01。 B09-MC-04 與 B04-TF-01 都涉及 open question，但一題考初問方式、一題是否全程封閉，僅同概念。 B04-MC-17 與 B07-MC-21 都含雙下肢 36% TBSA，但後者主體是整體治療，未視為同題。 B03/B05/B06/B10 多題都涉及傷口濕潤；只有 B06-MC-13 與 B10-MC-09 五選項逐字相同，才併 CL-R15。","refs":[]}],"sourceFiles":[{"label":"考古題目","path":"2_臨床醫學/題目/已套B12模板 B11臨床醫學考古題目 Block 1.pdf"},{"label":"考古詳解","path":"2_臨床醫學/詳解/已套B12模板 B11臨床醫學考古詳解 Block 1.pdf"}]},{"id":"pharmacology","name":"藥理學","shortName":"藥理","color":"#b17b19","scope":"B03–B10，共 239 題可判讀題目","scopeNote":"257 個題號槽中排除 16 題亡佚／殘缺及 B10 兩個明載移除的占位；早期 B99–B02 按章節重編且無原卷題號，只作佐證。","confidence":"高信心 · 排除 18 題無法嚴格比對","metrics":{"repeatInstance":{"value":72.4,"numerator":173,"denominator":239},"repeatType":{"value":45.8,"numerator":54,"denominator":118},"priorHit":{"value":59.8,"numerator":119,"denominator":199}},"years":[{"year":"B03","total":40,"repeat":30,"repeatRate":75.0,"priorHits":null,"priorHitRate":null,"note":"往年直接命中：基準年 B03 不計；rolling 基線，不計 prior-hit 分母"},{"year":"B04","total":24,"repeat":18,"repeatRate":75.0,"priorHits":11,"priorHitRate":45.8,"note":"往年直接命中 11 / 24（45.8%）"},{"year":"B05","total":37,"repeat":32,"repeatRate":86.5,"priorHits":25,"priorHitRate":67.6,"note":"往年直接命中 25 / 37（67.6%）"},{"year":"B06","total":27,"repeat":22,"repeatRate":81.5,"priorHits":21,"priorHitRate":77.8,"note":"往年直接命中 21 / 27（77.8%）；另排除 12 題亡佚／移除"},{"year":"B07","total":20,"repeat":17,"repeatRate":85.0,"priorHits":13,"priorHitRate":65.0,"note":"往年直接命中 13 / 20（65.0%）；另排除 1 題亡佚／移除"},{"year":"B08","total":28,"repeat":16,"repeatRate":57.1,"priorHits":16,"priorHitRate":57.1,"note":"往年直接命中 16 / 28（57.1%）"},{"year":"B09","total":31,"repeat":19,"repeatRate":61.3,"priorHits":14,"priorHitRate":45.2,"note":"往年直接命中 14 / 31（45.2%）；另排除 3 題亡佚／移除"},{"year":"B10","total":32,"repeat":19,"repeatRate":59.4,"priorHits":19,"priorHitRate":59.4,"note":"往年直接命中 19 / 32（59.4%）；另排除 2 題亡佚／移除"}],"repeatGroups":[{"id":"PHARM-R19","title":"尿滯留治療藥（Bethanechol）","matchType":"選項微調","recognition":"","why":"均直接問治療尿滯留藥物，Bethanechol 與主要干擾藥重複；B08 改為複選並縮短選項。","warning":"","refs":[{"year":"B03","q":31,"label":"B03 第31題"},{"year":"B04","q":22,"label":"B04 第22題"},{"year":"B06","q":11,"label":"B06 第11題"},{"year":"B08","q":9,"label":"B08 第9題"},{"year":"B09","q":18,"label":"B09 第18題"},{"year":"B10","q":20,"label":"B10 第20題"}],"earlierEvidence":[]},{"id":"PHARM-R20","title":"有機磷中毒解毒劑辨識","matchType":"幾乎逐字","recognition":"","why":"均問何者不是有機磷中毒解毒劑；oxime、atropine、diazepam、neostigmine 四項相同。","warning":"","refs":[{"year":"B03","q":28,"label":"B03 第28題"},{"year":"B04","q":23,"label":"B04 第23題"},{"year":"B05","q":22,"label":"B05 第22題"},{"year":"B06","q":12,"label":"B06 第12題"},{"year":"B09","q":19,"label":"B09 第19題"},{"year":"B10","q":21,"label":"B10 第21題"}],"earlierEvidence":[]},{"id":"PHARM-R21","title":"肌肉鬆弛劑／AntiChE 與惡性高熱敘述","matchType":"幾乎逐字","recognition":"","why":"Succinylcholine 惡性高熱、AntiChE 呼吸肌抑制與 MG 的四敘述逐年重複。","warning":"","refs":[{"year":"B03","q":25,"label":"B03 第25題"},{"year":"B04","q":24,"label":"B04 第24題"},{"year":"B05","q":21,"label":"B05 第21題"},{"year":"B06","q":13,"label":"B06 第13題"},{"year":"B09","q":17,"label":"B09 第17題"},{"year":"B10","q":33,"label":"B10 第33題"}],"earlierEvidence":[]},{"id":"PHARM-R34","title":"散瞳眼藥的 α1-Gq-IP3/DAG 機轉","matchType":"幾乎逐字","recognition":"","why":"NTU 新生健檢點散瞳藥的病例與 cAMP/IP3/Ca2+ 選項逐字重複、僅排序不同。","warning":"","refs":[{"year":"B03","q":38,"label":"B03 第38題"},{"year":"B05","q":33,"label":"B05 第33題"},{"year":"B06","q":8,"label":"B06 第8題"},{"year":"B07","q":15,"label":"B07 第15題"},{"year":"B08","q":21,"label":"B08 第21題"},{"year":"B10","q":18,"label":"B10 第18題"}],"earlierEvidence":[]},{"id":"PHARM-R35","title":"同一 R1/R2 catecholamine 圖判讀 α／β 親和力","matchType":"同圖微改","recognition":"","why":"R1/R2 catecholamine 圖、完整英文題幹與排序選項相同；只把判讀目標在 α/β receptor affinity 間切換。","warning":"","refs":[{"year":"B03","q":39,"label":"B03 第39題"},{"year":"B05","q":34,"label":"B05 第34題"},{"year":"B06","q":9,"label":"B06 第9題"},{"year":"B07","q":16,"label":"B07 第16題"},{"year":"B08","q":10,"label":"B08 第10題"},{"year":"B10","q":4,"label":"B10 第4題"}],"earlierEvidence":[]},{"id":"PHARM-R09","title":"Loading/maintenance dose 反推半衰期","matchType":"數值替換","recognition":"","why":"皆給 IV loading dose、每日口服 maintenance dose（部分含 F），要求用同一式反推半衰期；只換數字。","warning":"","refs":[{"year":"B03","q":15,"label":"B03 第15題"},{"year":"B04","q":9,"label":"B04 第9題"},{"year":"B05","q":19,"label":"B05 第19題"},{"year":"B09","q":16,"label":"B09 第16題"},{"year":"B10","q":15,"label":"B10 第15題"}],"earlierEvidence":[]},{"id":"PHARM-R25","title":"Cholinergic system 突觸前作用位置","matchType":"幾乎逐字","recognition":"","why":"Hemicholinium、vesamicol、botulinum toxin、decamethonium 的 presynaptic-site 題完整重複。","warning":"","refs":[{"year":"B03","q":30,"label":"B03 第30題"},{"year":"B05","q":25,"label":"B05 第25題"},{"year":"B06","q":16,"label":"B06 第16題"},{"year":"B07","q":2,"label":"B07 第2題"},{"year":"B10","q":22,"label":"B10 第22題"}],"earlierEvidence":[]},{"id":"PHARM-R27","title":"Anticholinesterase 的副作用","matchType":"幾乎逐字","recognition":"","why":"AntiChE 副作用題持續使用口乾、腹瀉、心搏過速與以上皆非／皆是的同組選項。","warning":"","refs":[{"year":"B03","q":32,"label":"B03 第32題"},{"year":"B05","q":27,"label":"B05 第27題"},{"year":"B06","q":18,"label":"B06 第18題"},{"year":"B09","q":24,"label":"B09 第24題"},{"year":"B10","q":25,"label":"B10 第25題"}],"earlierEvidence":[]},{"id":"PHARM-R32","title":"孕婦重度高血壓：抑制 NE 釋放的 Gi-cAMP","matchType":"逐字病例","recognition":"","why":"懷孕第二期 190/100 mmHg、抑制交感末梢 NE 釋放的病例及 G-protein 選項相同。","warning":"","refs":[{"year":"B03","q":36,"label":"B03 第36題"},{"year":"B05","q":31,"label":"B05 第31題"},{"year":"B06","q":6,"label":"B06 第6題"},{"year":"B07","q":5,"label":"B07 第5題"},{"year":"B08","q":7,"label":"B08 第7題"}],"earlierEvidence":[]},{"id":"PHARM-R37","title":"Sodium channel／use-dependent blocker 敘述","matchType":"選項微調","recognition":"","why":"Sodium channel 命名、phenytoin use-dependence、lidocaine pore block 與濃度梯度四命題相同；晚年只多 self-inactivation。","warning":"","refs":[{"year":"B06","q":1,"label":"B06 第1題"},{"year":"B07","q":3,"label":"B07 第3題"},{"year":"B08","q":19,"label":"B08 第19題"},{"year":"B09","q":34,"label":"B09 第34題"},{"year":"B10","q":30,"label":"B10 第30題"}],"earlierEvidence":[]},{"id":"PHARM-R11","title":"Nitroglycerin 舌下錠避免 first-pass effect","matchType":"幾乎逐字","recognition":"","why":"均問 nitroglycerin 採舌下給藥的原因，核心答案皆為避開 portal first-pass metabolism。","warning":"","refs":[{"year":"B04","q":12,"label":"B04 第12題"},{"year":"B05","q":15,"label":"B05 第15題"},{"year":"B09","q":9,"label":"B09 第9題"},{"year":"B10","q":14,"label":"B10 第14題"}],"earlierEvidence":[]},{"id":"PHARM-R16","title":"研究 signal transduction 屬 PD 而非 PK","matchType":"正反問／題型轉換","recognition":"","why":"共同重複『研究 signal transduction 屬 pharmacodynamics，不是 pharmacokinetics』同一句命題；MC、是非與填空互換。","warning":"","refs":[{"year":"B03","q":20,"label":"B03 第20題"},{"year":"B04","q":19,"label":"B04 第19題"},{"year":"B05","q":1,"label":"B05 第1題"},{"year":"B06","q":38,"label":"B06 第38題"}],"earlierEvidence":[]},{"id":"PHARM-R22","title":"肌肉鬆弛劑的藥物交互作用","matchType":"幾乎逐字","recognition":"","why":"Neomycin、nifedipine、ketamine、lidocaine 四藥選項及『不交互作用』題幹相同。","warning":"","refs":[{"year":"B03","q":26,"label":"B03 第26題"},{"year":"B05","q":23,"label":"B05 第23題"},{"year":"B06","q":14,"label":"B06 第14題"},{"year":"B09","q":20,"label":"B09 第20題"}],"earlierEvidence":[]},{"id":"PHARM-R26","title":"Anticholinesterase 的臨床用途","matchType":"幾乎逐字","recognition":"","why":"AntiChE 適應症五選項相同，均以腸躁症作否定選項。","warning":"","refs":[{"year":"B05","q":26,"label":"B05 第26題"},{"year":"B06","q":17,"label":"B06 第17題"},{"year":"B09","q":22,"label":"B09 第22題"},{"year":"B10","q":24,"label":"B10 第24題"}],"earlierEvidence":[]},{"id":"PHARM-R30","title":"Open-angle glaucoma 誤服藥後急性視力喪失病例","matchType":"逐字病例","recognition":"","why":"50 歲 open-angle glaucoma 誤服朋友藥後急性視力喪失的病例逐字重出，只微調候選 adrenergic drugs。","warning":"","refs":[{"year":"B03","q":34,"label":"B03 第34題"},{"year":"B05","q":29,"label":"B05 第29題"},{"year":"B06","q":4,"label":"B06 第4題"},{"year":"B07","q":14,"label":"B07 第14題"}],"earlierEvidence":[]},{"id":"PHARM-R31","title":"花生／黑手黨情境的過敏性休克用藥","matchType":"逐字病例","recognition":"","why":"黑手黨、共飲威士忌、花生、低血壓與 airway spasm 的長病例逐字重出，答案皆 epinephrine。","warning":"","refs":[{"year":"B03","q":35,"label":"B03 第35題"},{"year":"B05","q":30,"label":"B05 第30題"},{"year":"B06","q":5,"label":"B06 第5題"},{"year":"B08","q":25,"label":"B08 第25題"}],"earlierEvidence":[]},{"id":"PHARM-R33","title":"Nonselective β-blocker（propranolol/timolol）作用","matchType":"同類藥替換","recognition":"","why":"Propranolol/timolol 均為 nonselective β-blocker；renin、aqueous humor、hypoglycemia、bronchial cAMP 四個實質敘述保留。","warning":"","refs":[{"year":"B03","q":37,"label":"B03 第37題"},{"year":"B05","q":32,"label":"B05 第32題"},{"year":"B06","q":7,"label":"B06 第7題"},{"year":"B10","q":5,"label":"B10 第5題"}],"earlierEvidence":[]},{"id":"PHARM-R36","title":"無高血壓 BPH 病人的 α1-blocker 選擇","matchType":"逐字病例","recognition":"","why":"有 BPH、低正常血壓的男性病例與候選藥物反覆重出，答案皆 uroselective α1 blocker。","warning":"","refs":[{"year":"B03","q":40,"label":"B03 第40題"},{"year":"B05","q":35,"label":"B05 第35題"},{"year":"B06","q":10,"label":"B06 第10題"},{"year":"B07","q":17,"label":"B07 第17題"}],"earlierEvidence":[]},{"id":"PHARM-R47","title":"神經毒氣為 AntiChE 及 pancuronium 非解毒劑","matchType":"幾乎逐字","recognition":"","why":"Nerve gas 為 AntiChE、atropine 可救治而 pancuronium 不可的三敘述及『以上皆是』相同。","warning":"","refs":[{"year":"B07","q":4,"label":"B07 第4題"},{"year":"B08","q":27,"label":"B08 第27題"},{"year":"B09","q":23,"label":"B09 第23題"},{"year":"B10","q":28,"label":"B10 第28題"}],"earlierEvidence":[]},{"id":"PHARM-R01","title":"Partial agonist 的判斷敘述","matchType":"選項微調","recognition":"","why":"題幹相同，partial agonist 與 full agonist 併用降低 efficacy 的正確敘述保留；只替換一個干擾項。","warning":"","refs":[{"year":"B03","q":5,"label":"B03 第5題"},{"year":"B05","q":7,"label":"B05 第7題"},{"year":"B08","q":22,"label":"B08 第22題"}],"earlierEvidence":[]},{"id":"PHARM-R02","title":"同一濃度反應曲線判讀 allosteric agonist","matchType":"同圖同問","recognition":"","why":"三年均使用同一張 A alone/A+B-C-D-E 濃度反應圖，題幹同問 allosteric agonist，選項相同。","warning":"","refs":[{"year":"B03","q":6,"label":"B03 第6題"},{"year":"B08","q":17,"label":"B08 第17題"},{"year":"B09","q":13,"label":"B09 第13題"}],"earlierEvidence":[]},{"id":"PHARM-R03","title":"同一濃度反應曲線判讀 partial agonist","matchType":"同圖同問","recognition":"","why":"均以同一張 A alone/A+B-C-D-E 曲線問 partial agonist；差異僅排版或承上題寫法。","warning":"","refs":[{"year":"B03","q":7,"label":"B03 第7題"},{"year":"B05","q":17,"label":"B05 第17題"},{"year":"B06","q":21,"label":"B06 第21題"}],"earlierEvidence":[]},{"id":"PHARM-R06","title":"鹼性藥物吸收與中毒處置敘述","matchType":"選項微調","recognition":"","why":"題幹、胃部吸收、NaHCO3 與 pKa 三個核心選項相同；一個干擾項被替換。","warning":"","refs":[{"year":"B04","q":4,"label":"B04 第4題"},{"year":"B05","q":10,"label":"B05 第10題"},{"year":"B07","q":12,"label":"B07 第12題"}],"earlierEvidence":[]},{"id":"PHARM-R10","title":"Probenecid 延長 penicillin G 作用","matchType":"選項重排","recognition":"","why":"Probenecid+penicillin G 治淋病的病例與四種機轉完全相同，僅選項排序改變。","warning":"","refs":[{"year":"B04","q":11,"label":"B04 第11題"},{"year":"B05","q":14,"label":"B05 第14題"},{"year":"B06","q":29,"label":"B06 第29題"}],"earlierEvidence":[]},{"id":"PHARM-R17","title":"Histone/HDAC/PML-RARα 轉錄敘述","matchType":"正反問／選項重排","recognition":"","why":"PML-RARα、HDAC inhibitor、steroid receptor 與 histone lysine 的同組敘述反覆重排並翻轉正誤。","warning":"","refs":[{"year":"B03","q":18,"label":"B03 第18題"},{"year":"B04","q":20,"label":"B04 第20題"},{"year":"B05","q":2,"label":"B05 第2題"}],"earlierEvidence":[]},{"id":"PHARM-R18","title":"GPCR-Gs-cAMP-phospholamban／平滑肌 MLCK","matchType":"選項重排","recognition":"","why":"三年均以 GPCR 題組重複 Gs-cAMP-phospholamban、MLCK 與 Gq-IP3 三個完整命題。","warning":"","refs":[{"year":"B03","q":17,"label":"B03 第17題"},{"year":"B04","q":21,"label":"B04 第21題"},{"year":"B05","q":4,"label":"B05 第4題"}],"earlierEvidence":[]},{"id":"PHARM-R23","title":"Muscarinic antagonist 禁忌症","matchType":"幾乎逐字","recognition":"","why":"Glaucoma、BPH、cognitive impairment、gastric ulcer 的禁忌症題完整重複。","warning":"","refs":[{"year":"B03","q":27,"label":"B03 第27題"},{"year":"B09","q":21,"label":"B09 第21題"},{"year":"B10","q":3,"label":"B10 第3題"}],"earlierEvidence":[]},{"id":"PHARM-R28","title":"低劑量 epinephrine 的血流動力學","matchType":"同藥同表","recognition":"","why":"同為 10 μg/min epinephrine，SBP/DBP/HR/PVR 五組方向完全相同。","warning":"","refs":[{"year":"B05","q":28,"label":"B05 第28題"},{"year":"B06","q":3,"label":"B06 第3題"},{"year":"B07","q":13,"label":"B07 第13題"}],"earlierEvidence":[]},{"id":"PHARM-R39","title":"酸鹼性藥物的血漿蛋白結合敘述","matchType":"幾乎逐字","recognition":"","why":"Acidic-albumin、basic-glycoprotein、binding sites、free drug、ionized absorption 五敘述同組重出。","warning":"","refs":[{"year":"B07","q":19,"label":"B07 第19題"},{"year":"B08","q":5,"label":"B08 第5題"},{"year":"B09","q":26,"label":"B09 第26題"}],"earlierEvidence":[]},{"id":"PHARM-R40","title":"可避免 first-pass effect 的給藥途徑","matchType":"幾乎逐字","recognition":"","why":"避免 first-pass effect 的 oral/rectal/IV/inhalation/SC 五途徑選項相同。","warning":"","refs":[{"year":"B07","q":21,"label":"B07 第21題"},{"year":"B08","q":13,"label":"B08 第13題"},{"year":"B09","q":28,"label":"B09 第28題"}],"earlierEvidence":[]},{"id":"PHARM-R43","title":"酸鹼藥物在十二指腸的吸收排序","matchType":"數值微調","recognition":"","why":"A/B 酸性與 C/D 鹼性藥在 pH 6 十二指腸的排序題相同，只把 D 的 pKa 8 改為 10 並重排答案。","warning":"","refs":[{"year":"B05","q":16,"label":"B05 第16題"},{"year":"B06","q":26,"label":"B06 第26題"},{"year":"B08","q":20,"label":"B08 第20題"}],"earlierEvidence":[]},{"id":"PHARM-R04","title":"Insulin 少量受體即可達 Emax（spare receptor）","matchType":"幾乎逐字","recognition":"","why":"Insulin 只結合少量受體即達最大療效的句子與四個選項相同。","warning":"","refs":[{"year":"B04","q":2,"label":"B04 第2題"},{"year":"B05","q":8,"label":"B05 第8題"}],"earlierEvidence":[]},{"id":"PHARM-R05","title":"吸收、半衰期與大 Vd 血液透析敘述","matchType":"幾乎逐字","recognition":"","why":"四個吸收／半衰期／Vd-透析敘述逐項相同，只差標點。","warning":"","refs":[{"year":"B04","q":3,"label":"B04 第3題"},{"year":"B05","q":9,"label":"B05 第9題"}],"earlierEvidence":[]},{"id":"PHARM-R07","title":"Saquinavir 與葡萄柚汁交互作用","matchType":"幾乎逐字","recognition":"","why":"Saquinavir 因肝代謝失活、問何藥併用致毒性的題幹與選項一致。","warning":"","refs":[{"year":"B04","q":7,"label":"B04 第7題"},{"year":"B06","q":27,"label":"B06 第27題"}],"earlierEvidence":[]},{"id":"PHARM-R08","title":"Small therapeutic index 的臨床特性","matchType":"幾乎逐字","recognition":"","why":"Small therapeutic window 的四個臨床敘述相同，僅用 therapeutic index/window 異名。","warning":"","refs":[{"year":"B04","q":8,"label":"B04 第8題"},{"year":"B05","q":13,"label":"B05 第13題"}],"earlierEvidence":[]},{"id":"PHARM-R12","title":"Voltage-gated Na+ blocker 的臨床用途","matchType":"單一干擾項替換","recognition":"","why":"Na+ channel blocker 用途題保留 anti-arrhythmia、local anesthesia、anti-convulsant 與 none；僅換一個干擾項。","warning":"","refs":[{"year":"B03","q":21,"label":"B03 第21題"},{"year":"B04","q":15,"label":"B04 第15題"}],"earlierEvidence":[]},{"id":"PHARM-R13","title":"插管前鎮靜與肌鬆受體組合","matchType":"逐字病例","recognition":"","why":"75 歲肺炎低氧需插管的完整病例及五組受體機轉相同。","warning":"","refs":[{"year":"B03","q":22,"label":"B03 第22題"},{"year":"B04","q":16,"label":"B04 第16題"}],"earlierEvidence":[]},{"id":"PHARM-R14","title":"迷走神經負性變時作用的受體","matchType":"幾乎逐字","recognition":"","why":"迷走神經增加造成 negative chronotropy 的題幹與五個 receptor 選項相同。","warning":"","refs":[{"year":"B03","q":23,"label":"B03 第23題"},{"year":"B04","q":17,"label":"B04 第17題"}],"earlierEvidence":[]},{"id":"PHARM-R15","title":"Ketamine 麻醉作用為 NMDA receptor inhibition","matchType":"幾乎逐字","recognition":"","why":"Ketamine 麻醉作用機轉與五個 ion-channel/receptor 選項相同。","warning":"","refs":[{"year":"B03","q":24,"label":"B03 第24題"},{"year":"B04","q":18,"label":"B04 第18題"}],"earlierEvidence":[]},{"id":"PHARM-R24","title":"Muscarinic antagonist 的臨床用途","matchType":"勘誤後重出","recognition":"","why":"同一 muscarinic antagonist 用途題；B07 只把 B05 的『尿滯留』修正為『尿失禁』。","warning":"","refs":[{"year":"B05","q":24,"label":"B05 第24題"},{"year":"B07","q":1,"label":"B07 第1題"}],"earlierEvidence":[]},{"id":"PHARM-R29","title":"Norepinephrine 的血流動力學","matchType":"同藥同表","recognition":"","why":"同為 10 μg/min norepinephrine，SBP/DBP/HR/PVR 五組方向完全相同。","warning":"","refs":[{"year":"B03","q":33,"label":"B03 第33題"},{"year":"B08","q":26,"label":"B08 第26題"}],"earlierEvidence":[]},{"id":"PHARM-R38","title":"ADME 的學科名稱為 pharmacokinetics","matchType":"幾乎逐字","recognition":"","why":"『dose/absorption/distribution/metabolism/excretion 的研究稱什麼』題幹與答案選項相同。","warning":"","refs":[{"year":"B07","q":18,"label":"B07 第18題"},{"year":"B08","q":2,"label":"B08 第2題"}],"earlierEvidence":[]},{"id":"PHARM-R41","title":"Bioavailability 的影響因子（反問版本）","matchType":"正反問","recognition":"","why":"Bioavailability 題保留 dose、first-pass effect、route 三個實質選項，改由『不影響』問成『會影響』。","warning":"","refs":[{"year":"B03","q":8,"label":"B03 第8題"},{"year":"B08","q":11,"label":"B08 第11題"}],"earlierEvidence":[]},{"id":"PHARM-R42","title":"改變酸性藥物 Css 的給藥方式（反問版本）","matchType":"正反問／選項微調","recognition":"","why":"固定每日劑量分次、提高 dose rate、改注射途徑等同組操作，反向詢問提高／不改變酸性藥 Css。","warning":"","refs":[{"year":"B05","q":12,"label":"B05 第12題"},{"year":"B08","q":6,"label":"B08 第6題"}],"earlierEvidence":[]},{"id":"PHARM-R44","title":"Efficacy、potency、TI 與 desensitization 敘述","matchType":"選項重排","recognition":"","why":"10 mg vs 100 mg 的 efficacy/potency、small TI 個體差與 antagonist desensitization 三命題相同。","warning":"","refs":[{"year":"B03","q":14,"label":"B03 第14題"},{"year":"B07","q":11,"label":"B07 第11題"}],"earlierEvidence":[]},{"id":"PHARM-R45","title":"影響腎小管分泌的因素","matchType":"幾乎逐字","recognition":"","why":"均問影響 renal tubular secretion 的因素，脂溶性、帶電性、尿 pH、drug interaction 四項相同。","warning":"","refs":[{"year":"B03","q":9,"label":"B03 第9題"},{"year":"B07","q":8,"label":"B07 第8題"}],"earlierEvidence":[]},{"id":"PHARM-R46","title":"Vd=0.4 L/kg／28 L 的分布特性","matchType":"等值數字改寫","recognition":"","why":"70 kg 成人的 Vd=0.4 L/kg 即 28 L；題幹與 albumin/ionized/lipid-soluble 選項相同。","warning":"","refs":[{"year":"B05","q":18,"label":"B05 第18題"},{"year":"B07","q":9,"label":"B07 第9題"}],"earlierEvidence":[]},{"id":"PHARM-R48","title":"JAK/STAT cytokine receptor（正反問）","matchType":"正反問","recognition":"","why":"JAK/STAT cytokine 選項有 IL-1、IL-2、TNF 三項相同；由『會引起』翻成『並非』並換一個干擾項。","warning":"","refs":[{"year":"B09","q":3,"label":"B09 第3題"},{"year":"B10","q":17,"label":"B10 第17題"}],"earlierEvidence":[]},{"id":"PHARM-R49","title":"CYP450 代謝量最大的亞型","matchType":"逐字","recognition":"","why":"四個 CYP450 isoform 選項與『代謝作用最強』題幹完全相同。","warning":"","refs":[{"year":"B09","q":5,"label":"B09 第5題"},{"year":"B10","q":11,"label":"B10 第11題"}],"earlierEvidence":[]},{"id":"PHARM-R50","title":"肌肉注射的正確敘述","matchType":"逐字","recognition":"","why":"IM 可否給脂溶／刺激藥、與口服速度及注射體積的四敘述完全相同。","warning":"","refs":[{"year":"B09","q":10,"label":"B09 第10題"},{"year":"B10","q":13,"label":"B10 第13題"}],"earlierEvidence":[]},{"id":"PHARM-R51","title":"Acetaminophen 主要 glucuronidation","matchType":"逐字","recognition":"","why":"Acetaminophen 肝臟主要代謝路徑與 hydrolysis/glucuronidation/GSH/reduction 四項完全相同。","warning":"","refs":[{"year":"B09","q":11,"label":"B09 第11題"},{"year":"B10","q":26,"label":"B10 第26題"}],"earlierEvidence":[]},{"id":"PHARM-R52","title":"IC50 與受體因素的關係","matchType":"逐字","recognition":"","why":"IC50 與 binding site、affinity、activation、receptor number 的四選項完全相同。","warning":"","refs":[{"year":"B09","q":14,"label":"B09 第14題"},{"year":"B10","q":8,"label":"B10 第8題"}],"earlierEvidence":[]},{"id":"PHARM-R53","title":"IV／口服 AUC 反推 bioavailability","matchType":"數值替換","recognition":"","why":"均給同藥 IV/PO dose 與各自 AUC，使用同一公式反推 oral bioavailability；只換口服劑量/AUC。","warning":"","refs":[{"year":"B03","q":13,"label":"B03 第13題"},{"year":"B05","q":20,"label":"B05 第20題"}],"earlierEvidence":[]},{"id":"PHARM-R54","title":"Ligand-gated channel 最快、nuclear receptor 最慢","matchType":"是非改填空","recognition":"","why":"『ligand-gated channel 為 msec、nuclear receptor 為 hour』句子幾乎逐字，次年只挖空 msec。","warning":"","refs":[{"year":"B05","q":3,"label":"B05 第3題"},{"year":"B06","q":37,"label":"B06 第37題"}],"earlierEvidence":[]}],"nonRepeatTopics":[{"topic":"新藥開發、臨床試驗與學名藥","count":6,"points":["Phase I-IV 的人數、對象與主要目的","IND、NDA、上市後監測及各期失敗率","學名藥的專利期、生物相等性與成分要求"],"refs":["B03 第1題","B03 第2題","B03 第3題","B04 第1題","B05 第5題","B05 第6題"],"note":"這些題共同使用臨床試驗分期表，但各自鎖定不同期別或法規敘述，沒有幾乎相同的題幹與選項組合。"},{"topic":"受體藥效學與 dose-response 判讀","count":9,"points":["affinity、intrinsic activity、efficacy、potency 與 EC50","spare receptor 對 receptor occupancy 與 potency 的影響","desensitization、internalization、β-arrestin 與受體飽和性"],"refs":["B03 第4題","B04 第10題","B08 第14題","B09 第1題","B09 第2題","B10 第7題","B10 第9題","B10 第10題","B10 第29題"],"note":"同屬 receptor pharmacology，但問的是不同定義、機轉或曲線參數，未因共享關鍵字而合併。"},{"topic":"藥物動力學：吸收、分布、清除與穩定濃度","count":16,"points":["Henderson-Hasselbalch、離子化與胃腸吸收","Vd、蛋白結合、glomerular filtration、tubular handling 與 dialysis","半衰期、給藥間隔、Css 與到達 steady state 的時間"],"refs":["B03 第10題","B03 第11題","B03 第12題","B04 第5題","B04 第6題","B05 第11題","B06 第32題","B07 第7題","B07 第10題","B08 第12題","B08 第16題","B08 第18題","B08 第23題","B08 第24題","B09 第27題","B10 第16題"],"note":"B08 Q12/Q23 是同年重複，不構成跨年考古；其餘雖常用同一公式，輸入條件與要求量不同。"},{"topic":"肝臟代謝、酵素誘導／抑制與 prodrug","count":7,"points":["CYP450 inducer 與 inhibitor 的藥物清單","active／inactive metabolite 與 prodrug","Phase I 氧化還原水解及 Phase II conjugation"],"refs":["B03 第16題","B07 第20題","B09 第8題","B09 第12題","B10 第6題","B10 第12題","B10 第32題"],"note":"B09 Q8/B10 Q12 及 B09 Q12/B10 Q6 雖有相同題幹，實質藥物選項各更換一半，保守視為不同題。"},{"topic":"訊息傳遞、ion channel 與 nuclear receptor","count":15,"points":["ligand-gated、voltage-gated、GPCR、JAK/STAT 與 nuclear receptor 的區別","Gs/Gi/Gq 下游 effector、second messenger 與心肌／平滑肌效應","PML-RARα、retinoic acid、histone acetylation 與轉錄調控"],"refs":["B03 第19題","B05 第36題","B05 第37題","B06 第15題","B06 第35題","B06 第36題","B06 第39題","B08 第8題","B08 第15題","B09 第4題","B09 第7題","B09 第33題","B10 第1題","B10 第2題","B10 第27題"],"note":"開放式問答、單一填空與多選敘述題即使共用機轉，也只有在命題句幾乎逐字時才列考古。"},{"topic":"膽鹼系統、麻醉與毒素的個別應用","count":6,"points":["muscarinic／nicotinic antagonist 的治療用途","ondansetron 的 5-HT3 機轉與 thiopental redistribution","botulinum toxin 的 SNARE／ACh release 與醫美用途"],"refs":["B03 第29題","B04 第13題","B04 第14題","B08 第1題","B08 第4題","B08 第28題"],"note":"藥物或受體不同，且臨床任務不同，未與同章其他題合併。"},{"topic":"交感神經藥物的臨床情境","count":7,"points":["α1 blocker 治 BPH／高血壓及 midodrine 治姿勢性低血壓","過敏性休克的 β2-cAMP 支氣管擴張","心衰竭 β blocker、升壓劑比較及 β agonist 的眼壓副作用"],"refs":["B08 第3題","B09 第29題","B09 第30題","B09 第31題","B09 第32題","B10 第19題","B10 第34題"],"note":"病例可能用到同一藥物，但問藥物選擇、訊息機轉或副作用的任務不同，因此不算同題。"}],"boundaryExclusions":[{"title":"同考點但未達同題門檻","why":"都用臨床試驗分期表，但鎖定不同 phase、法規與錯誤敘述；屬同考點，不是同題。","refs":["B03 Q1/Q2","B04 Q1","B05 Q5"]},{"title":"同考點但未達同題門檻","why":"都考 Vd 與分布，但數值區間和要求判斷的物性不同；只有 B05 Q18/B07 Q9 彼此達近同題門檻。","refs":["B03 Q11","B05 Q18/B07 Q9","B08 Q24"]},{"title":"同考點但未達同題門檻","why":"共同涉及 ligand-gated channel、BZD、TRPV1 或 NMJ，但選項命題大幅重組。","refs":["B05 Q37","B09 Q33","B10 Q1"]},{"title":"同考點但未達同題門檻","why":"都用 Gs-cAMP-phospholamban/MLCK；B06 是單一名詞填空、B08 是開放式雙組織機轉題，作答任務不同。","refs":["B03 Q17/B04 Q21/B05 Q4","B06 Q36/Q39","B08 Q8"]},{"title":"同考點但未達同題門檻","why":"均談 PML-RARα/HDAC；後兩題分別只填 fusion protein 或問 retinoic acid 治療機轉，非原敘述題。","refs":["B03 Q18/B04 Q20/B05 Q2","B06 Q35","B08 Q15"]},{"title":"同考點但未達同題門檻","why":"皆涉及 anaphylaxis；前組問選救命藥，B09 改問 bronchodilation 的 second messenger。","refs":["B03 Q35/B05 Q30/B06 Q5/B08 Q25","B09 Q30"]},{"title":"同考點但未達同題門檻","why":"皆連結 β2 agonist 與眼壓；前組問誤服何藥，B10 改為吸入 albuterol 後的機轉。","refs":["B03 Q34/B05 Q29/B06 Q4/B07 Q14","B10 Q34"]},{"title":"同考點但未達同題門檻","why":"前組逐字定義 pharmacokinetics；B10 改問 pharmacodynamics 的相鄰定義，只算同章概念。","refs":["B07 Q18/B08 Q2","B10 Q2"]},{"title":"同考點但未達同題門檻","why":"前組直接選可避開 first pass 的途徑；B09 Q27 改考 first-pass 定義與發生器官。","refs":["B07 Q21/B08 Q13/B09 Q28","B09 Q27"]},{"title":"同考點但未達同題門檻","why":"B07 改成 absorption rate 並替換兩個實質選項，未併入 bioavailability 正反問群。","refs":["B03 Q8/B08 Q11","B07 Q7"]},{"title":"同考點但未達同題門檻","why":"雖同問 CYP inhibitor/inducer，四個藥物中更換兩個，需辨識不同藥物，保守不算同題。","refs":["B09 Q8","B10 Q12"]},{"title":"同考點但未達同題門檻","why":"『代謝物無活性』題幹相同，但四個候選藥替換兩個且正解改變，未達幾乎相同。","refs":["B09 Q12","B10 Q6"]},{"title":"B06 未納入分母","why":"題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。","refs":["B06 第2題","B06 第19題","B06 第20題","B06 第22題","B06 第23題","B06 第24題","B06 第25題","B06 第28題","B06 第30題","B06 第31題","B06 第33題","B06 第34題"]},{"title":"B07 未納入分母","why":"題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。","refs":["B07 第6題"]},{"title":"B09 未納入分母","why":"題幹或大部分選項亡佚／僅由編者猜測，無法做嚴格逐項比對。","refs":["B09 第6題","B09 第15題","B09 第25題"]},{"title":"B10 未納入分母","why":"題本明載『同第 3/4 題，更新後移除』，視為刪除占位而非實際新題。","refs":["B10 第23題","B10 第31題"]},{"title":"同年重出，不構成多年考古","why":"同一 Vd 計算題在 B08 題本內重複；沒有跨年成員，故不列考古群。","refs":["B08 第12題","B08 第23題"]},{"title":"同年重出，不構成多年考古","why":"同年均挖空 phospholamban；沒有可確認的跨年同題，故只在 unique 題型分母合併。","refs":["B06 第36題","B06 第39題"]}],"sourceFiles":[{"label":"考古題目","path":"3_藥理學/B11藥理考古題目 block 1.pdf"},{"label":"考古詳解","path":"3_藥理學/B11藥理考古詳解 block 1.pdf"}]},{"id":"laboratory","name":"檢驗醫學","shortName":"檢驗","color":"#7c5aa6","scope":"B04–B10 七份可還原原題號的逐年考卷","scopeNote":"B04-B10 Block 1 逐年題目（早期 B99-B03 分類題僅作佐證，不進主要分母）","confidence":"高信心","metrics":{"repeatInstance":{"value":68.5,"numerator":63,"denominator":92},"repeatType":{"value":42.0,"numerator":21,"denominator":50},"priorHit":{"value":49.4,"numerator":42,"denominator":85}},"years":[{"year":"B04","total":7,"repeat":4,"repeatRate":57.1,"priorHits":null,"priorHitRate":null,"note":"往年直接命中：基準年 B04 不計；作為逐年完整題號基線；未計 rolling 命中率"},{"year":"B05","total":8,"repeat":3,"repeatRate":37.5,"priorHits":2,"priorHitRate":25.0,"note":"往年直接命中 2 / 8（25.0%）"},{"year":"B06","total":12,"repeat":6,"repeatRate":50.0,"priorHits":4,"priorHitRate":33.3,"note":"往年直接命中 4 / 12（33.3%）"},{"year":"B07","total":12,"repeat":6,"repeatRate":50.0,"priorHits":6,"priorHitRate":50.0,"note":"往年直接命中 6 / 12（50.0%）"},{"year":"B08","total":12,"repeat":10,"repeatRate":83.3,"priorHits":2,"priorHitRate":16.7,"note":"往年直接命中 2 / 12（16.7%）"},{"year":"B09","total":19,"repeat":17,"repeatRate":89.5,"priorHits":11,"priorHitRate":57.9,"note":"往年直接命中 11 / 19（57.9%）"},{"year":"B10","total":22,"repeat":17,"repeatRate":77.3,"priorHits":17,"priorHitRate":77.3,"note":"往年直接命中 17 / 22（77.3%）；原 PDF 題號由 7 跳至 11；分母只計實際列出的 22 題"}],"repeatGroups":[{"id":"lab-r04","title":"Pharmacokinetics 的 ADME 組成","matchType":"選項微調","recognition":"","why":"固定考 absorption、distribution、metabolism、excretion，並以 adverse effect/target-site action 作干擾項。","warning":"","refs":[{"year":"B05","q":4,"label":"B05 第4題"},{"year":"B06","q":7,"label":"B06 第7題"},{"year":"B07","q":7,"label":"B07 第7題"},{"year":"B08","q":9,"label":"B08 第9題"},{"year":"B09","q":13,"label":"B09 第13題"},{"year":"B10","q":15,"label":"B10 第15題"}],"earlierEvidence":["B03 分類：藥物濃度監測 Q1","B02 分類：藥物濃度監測 Q3","B101-B99 分類：藥物濃度監測 Q5"]},{"id":"lab-r06","title":"以 6±2SD 判斷血鉀追蹤是否顯著改變","matchType":"原文重現","recognition":"","why":"6 mmol/L、隨機誤差 0.06 mmol/L、五個追蹤值與核心選項持續重現；僅選項順序略變。","warning":"","refs":[{"year":"B06","q":4,"label":"B06 第4題"},{"year":"B07","q":4,"label":"B07 第4題"},{"year":"B08","q":10,"label":"B08 第10題"},{"year":"B09","q":8,"label":"B09 第8題"},{"year":"B10","q":7,"label":"B10 第7題"}],"earlierEvidence":[]},{"id":"lab-r01","title":"溶血造成偽性高血鉀屬哪個檢驗階段","matchType":"原文近同","recognition":"","why":"溶血 3+、偽性高血鉀、重新抽血與 pre-analytic/analytic/post-analytic 選項皆保留；B06 僅以案例語句改寫。","warning":"","refs":[{"year":"B04","q":1,"label":"B04 第1題"},{"year":"B06","q":3,"label":"B06 第3題"},{"year":"B07","q":3,"label":"B07 第3題"},{"year":"B10","q":6,"label":"B10 第6題"}],"earlierEvidence":[]},{"id":"lab-r02","title":"POCT 的核心優缺點","matchType":"選項重排","recognition":"","why":"四個核心敘述（縮短 turnaround time、住院時間、僅限院內、成本較高）反覆重排，正誤問法微調。","warning":"","refs":[{"year":"B04","q":3,"label":"B04 第3題"},{"year":"B05","q":2,"label":"B05 第2題"},{"year":"B06","q":5,"label":"B06 第5題"},{"year":"B07","q":5,"label":"B07 第5題"}],"earlierEvidence":["B03 分類：重點照護檢驗 Q2","B02 分類：重點照護檢驗 Q3","B01/B00 分類：重點照護檢驗 Q5-Q6"]},{"id":"lab-r03","title":"POCT 對急診 disposition time 研究圖","matchType":"正反問改寫","recognition":"","why":"同一研究圖、同一組 staff/nurse/junior officer 敘述，僅 correct/incorrect 與組合選項改寫。","warning":"","refs":[{"year":"B04","q":4,"label":"B04 第4題"},{"year":"B05","q":3,"label":"B05 第3題"},{"year":"B06","q":6,"label":"B06 第6題"},{"year":"B07","q":6,"label":"B07 第6題"}],"earlierEvidence":["B03 分類：重點照護檢驗 Q1","B02/B01 分類：重點照護檢驗 Q4"]},{"id":"lab-r09","title":"現行常見的 TDM 檢驗方法","matchType":"原文重現／反問","recognition":"","why":"EIS、CLIA、ELISA、HPLC、MS/MS 五項固定；B10 Q17 改成問「不是」，Q25 再原題重現。","warning":"","refs":[{"year":"B08","q":1,"label":"B08 第1題"},{"year":"B09","q":15,"label":"B09 第15題"},{"year":"B10","q":17,"label":"B10 第17題"},{"year":"B10","q":25,"label":"B10 第25題"}],"earlierEvidence":[]},{"id":"lab-r10","title":"哪種檢體不適用 POCT","matchType":"原文重現／單一選項替換","recognition":"","why":"血清、尿液、全血等固定選項與相同判斷；B08 Q7 只把一個呼吸道檢體替換為痰液。","warning":"B08 第7題只保留 3/5 選項且改換呼吸道檢體，二次稽核後改列非考古。","refs":[{"year":"B08","q":3,"label":"B08 第3題"},{"year":"B09","q":9,"label":"B09 第9題"},{"year":"B10","q":11,"label":"B10 第11題"}],"earlierEvidence":[]},{"id":"lab-r11","title":"哪些感染情境應考慮／必須用 POCT","matchType":"限制語改寫","recognition":"","why":"流感、HIV、伊波拉、COVID 的整組選項重現；「應考慮」改成「必須」。","warning":"","refs":[{"year":"B08","q":4,"label":"B08 第4題"},{"year":"B09","q":11,"label":"B09 第11題"},{"year":"B10","q":13,"label":"B10 第13題"}],"earlierEvidence":[]},{"id":"lab-r12","title":"TDM：CYP450 induction、time/concentration dependence、therapeutic index","matchType":"原文重現","recognition":"","why":"四個敘述與「以上皆是」選項連續三年近乎逐字重現。","warning":"","refs":[{"year":"B08","q":5,"label":"B08 第5題"},{"year":"B09","q":16,"label":"B09 第16題"},{"year":"B10","q":18,"label":"B10 第18題"}],"earlierEvidence":[]},{"id":"lab-r13","title":"檢驗誤差：random、systematic 與 total analytic error","matchType":"原文重現","recognition":"","why":"五個品質／誤差敘述連續三年重現，僅殘缺處與標點不同。","warning":"","refs":[{"year":"B08","q":6,"label":"B08 第6題"},{"year":"B09","q":7,"label":"B09 第7題"},{"year":"B10","q":5,"label":"B10 第5題"}],"earlierEvidence":[]},{"id":"lab-r14","title":"血清－腹水 albumin 差用來判斷 transudate/exudate","matchType":"原文重現","recognition":"","why":"同一四選一題，僅 serum/albumin/蛋白質的中英寫法略變。","warning":"","refs":[{"year":"B08","q":8,"label":"B08 第8題"},{"year":"B09","q":18,"label":"B09 第18題"},{"year":"B10","q":20,"label":"B10 第20題"}],"earlierEvidence":[]},{"id":"lab-r16","title":"NGS 為何較能偵測低比例／low-copy variant","matchType":"中英改寫","recognition":"","why":"三題都要求比較 NGS 與 conventional PCR 對低比例變異的無偏性與靈敏度；B09 Q19 幾乎逐字重現 B08。","warning":"","refs":[{"year":"B08","q":12,"label":"B08 第12題"},{"year":"B09","q":3,"label":"B09 第3題"},{"year":"B09","q":19,"label":"B09 第19題"}],"earlierEvidence":[]},{"id":"lab-r05","title":"螢光毛細管電泳是否適合 point mutation","matchType":"反向命題","recognition":"","why":"B09 將 B04 的同一句命題加上 not；詳解亦直接註記與 B04 Q6 對照。","warning":"","refs":[{"year":"B04","q":6,"label":"B04 第6題"},{"year":"B09","q":1,"label":"B09 第1題"}],"earlierEvidence":["B00 分類：分子檢驗學 Q13(L)"]},{"id":"lab-r07","title":"qPCR 特性與放射性污染干擾選項","matchType":"正反問改寫","recognition":"","why":"五個英文選項逐字重現，只把 most appropriate 改成 inappropriate。","warning":"","refs":[{"year":"B06","q":9,"label":"B06 第9題"},{"year":"B07","q":12,"label":"B07 第12題"}],"earlierEvidence":[]},{"id":"lab-r15","title":"胸水 pH < 6.5 提示食道破裂","matchType":"原文重現","recognition":"","why":"抽胸水四個敘述完整重現；B10 詳解直接註記同 B08 Q11。","warning":"","refs":[{"year":"B08","q":11,"label":"B08 第11題"},{"year":"B10","q":3,"label":"B10 第3題"}],"earlierEvidence":[]},{"id":"lab-r17","title":"5′ UTR 是 exon 還是 intron","matchType":"反向命題","recognition":"","why":"同一命題將 part of exon 改成 composed by intron，屬明確正反問。","warning":"","refs":[{"year":"B09","q":5,"label":"B09 第5題"},{"year":"B10","q":24,"label":"B10 第24題"}],"earlierEvidence":["B03/B01 分類：分子檢驗學 Q4","B00 分類：分子檢驗學 Q13(B)"]},{"id":"lab-r18","title":"哪些生物標的可作 POCT","matchType":"原文重現","recognition":"","why":"SARS-CoV-2、血糖、心臟節律、hCG 與「以上皆是」完整重現。","warning":"","refs":[{"year":"B09","q":10,"label":"B09 第10題"},{"year":"B10","q":12,"label":"B10 第12題"}],"earlierEvidence":[]},{"id":"lab-r19","title":"POCT 誰可操作、結果／決策是否需專業人員確認","matchType":"選項近同","recognition":"","why":"價格、醫院需求、準確性、民眾操作與專業確認五項幾乎完整保留，僅正確選項的限制語微調。","warning":"","refs":[{"year":"B09","q":12,"label":"B09 第12題"},{"year":"B10","q":14,"label":"B10 第14題"}],"earlierEvidence":[]},{"id":"lab-r20","title":"哪些臨床案例適合 TDM","matchType":"原文重現","recognition":"","why":"gentamicin、氣喘、癲癇 steroid、腎移植 tacrolimus、voriconazole 五案例重現，僅拼字修正。","warning":"","refs":[{"year":"B09","q":14,"label":"B09 第14題"},{"year":"B10","q":16,"label":"B10 第16題"}],"earlierEvidence":[]},{"id":"lab-r21","title":"哪個因素與 pleural effusion 無關","matchType":"中英翻譯","recognition":"","why":"lymphatic recovery、vascular permeability、blood-cell count、hydrostatic/osmotic pressure 四項翻成英文後重現。","warning":"","refs":[{"year":"B09","q":17,"label":"B09 第17題"},{"year":"B10","q":19,"label":"B10 第19題"}],"earlierEvidence":[]},{"id":"lab-r22","title":"同一 A/B、P1/P2 ROC 圖判讀","matchType":"同圖反向敘述","recognition":"","why":"圖形、A/B 曲線、P1/P2 與四個判讀面向完全相同，部分 LR 敘述改為反向；B10 詳解明載「同 B09 第六題」。","warning":"","refs":[{"year":"B09","q":6,"label":"B09 第6題"},{"year":"B10","q":4,"label":"B10 第4題"}],"earlierEvidence":[]}],"nonRepeatTopics":[{"topic":"real-time PCR 的 Ct 定義與倍數計算","count":4,"points":[],"refs":["B06 第11題","B07 第10題","B09 第2題","B10 第2題"],"note":"同考點但分別問定義、由 10 倍反推 Ct、方向關係與由 ΔCt 求比值，未計為同題。"},{"topic":"基因結構、exon/intron 與 codon 基礎","count":4,"points":[],"refs":["B04 第5題","B05 第6題","B05 第7題","B06 第10題"],"note":"題目分別鎖定 promoter、start/stop codon、UTR 與 antisense strand；概念相近但命題不同。"},{"topic":"突變、染色體易位與分子偵測","count":4,"points":[],"refs":["B04 第7題","B05 第8題","B07 第11題","B10 第1題"],"note":"涵蓋 BCR-ABL fusion、FLT3-ITD、capillary electrophoresis 適合的突變及染色體位置，不能只因同屬分子檢驗就合併。"},{"topic":"體腔液 transudate/exudate 判讀","count":4,"points":[],"refs":["B07 第9題","B08 第2題","B10 第21題","B10 第22題"],"note":"疾病、Light-like 閾值、體腔液綜合敘述各自不同；B07 Q9 與 B10 Q22 只部分呈鏡像，保守排除。"},{"topic":"TDM 的臨床適用情境","count":3,"points":[],"refs":["B05 第5題","B06 第8題","B07 第8題"],"note":"共同框架是 TDM utility，但每年多數藥物與案例皆更換，屬同概念而非同題。"},{"topic":"ROC 與檢驗效能判讀（不同圖／不同敘述組）","count":3,"points":[],"refs":["B05 第1題","B06 第1題","B07 第1題"],"note":"皆考 ROC，但曲線數、cut-off 與待判讀關係不同；B07 僅被後續詳解稱為「類似」，因此不併入 B09-B10 同題群。"},{"topic":"定量與定性檢驗辨認","count":2,"points":[],"refs":["B04 第2題","B06 第2題"],"note":"題型相同但 analyte 與判斷項目大幅替換，保守視為不同題。"},{"topic":"STR 的定義、全名與法醫用途","count":2,"points":[],"refs":["B06 第12題","B10 第23題"],"note":"B06 要解釋 STR，B10 只要寫出全名；同術語但作答任務不同，故不算同題。"},{"topic":"族群組成對 sensitivity 估計的影響","count":1,"points":[],"refs":["B07 第2題"],"note":""},{"topic":"real-time PCR 是否可直接定量 RNA","count":1,"points":[],"refs":["B09 第4題"],"note":""},{"topic":"POCT 可用檢體的變化題","count":1,"points":[],"refs":["B08 第7題"],"note":"與跨年檢體題只重用 3/5 選項，列入常見考點而非考古。"}],"boundaryExclusions":[{"title":"二次嚴格稽核：STR 題不合併","why":"『解釋何為 STR』與『寫出 STR 全名』共享術語，但作答任務不同。","refs":["B06 第12題","B10 第23題"]},{"title":"二次嚴格稽核：POCT 檢體變化題拆出","why":"B08 第7題換掉 saliva／nasopharyngeal swab 並加入『以上皆是』，只剩 3/5 選項重用。","refs":["B08 第7題","B08 第3題","B09 第9題","B10 第11題"]},{"title":"相近但不是同題","why":"共同問定量檢驗，但列舉 analyte 與選項大幅不同。","refs":["B04 Q2","B06 Q2"]},{"title":"相近但不是同題","why":"同為 A/B、P1/P2 ROC 圖族；B07 的待判讀敘述不同，來源詳解也只稱「類似」，不算。","refs":["B07 Q1","B09 Q6/B10 Q4"]},{"title":"相近但不是同題","why":"都問 TDM utility，但臨床案例與藥物多數替換。","refs":["B05 Q5","B06 Q8","B07 Q8"]},{"title":"相近但不是同題","why":"同考 Ct，分別要求定義、反推 Ct、方向判斷與計算倍數，不是同題。","refs":["B06 Q11","B07 Q10","B09 Q2","B10 Q2"]},{"title":"相近但不是同題","why":"transudate/exudate 的反向框架相似，但四個選項只部分鏡像，未達幾乎相同。","refs":["B07 Q9","B10 Q22"]},{"title":"相近但不是同題","why":"都提 BCR-ABL，但一題問 fusion protein，另一題問染色體位置。","refs":["B04 Q7","B10 Q1"]}],"sourceFiles":[{"label":"考古題目","path":"4_檢驗醫學/檢驗醫學Block1考古題目_更新.pdf"},{"label":"考古詳解","path":"4_檢驗醫學/檢驗醫學Block1考古詳解_更新.pdf"}]}]};
+
+    /*
+      Expected normalized schema:
+      window.BLOCK1_DATA = {
+        meta: { title, subtitle, updatedAt, isFallback? },
+        subjects: [{
+          id, name, shortName?, color?, scope, scopeNote?, confidence?,
+          metrics: {
+            repeatInstance: { value, numerator, denominator, label? },
+            repeatType:     { value, numerator, denominator, label? },
+            priorHit:       { value, numerator, denominator, label? }
+          },
+          years: [{ year, total, repeat, repeatRate, priorHits?, priorHitRate?, note? }],
+          repeatGroups: [{ id, title, matchType, why, refs:[{year,q,label?}], earlierEvidence?:[] }],
+          nonRepeatTopics: [{ topic, count, refs:[{year,q,label?}], note? }],
+          boundaryExclusions: [{ title, why, refs?:[{year,q,label?}] }],
+          sourceFiles: ["relative/or/absolute/path.pdf"]
+        }]
+      };
+      Metric values are percentages (0–100). Null means unavailable, never zero.
+    */
+
+    (() => {
+      "use strict";
+
+      const FALLBACK = {
+        meta: { title: 'Block 1 嚴格考古地圖', subtitle: '資料載入失敗。', updatedAt: '', isFallback: true },
+        subjects: []
+      };
+
+      const rawData = window.BLOCK1_DATA || FALLBACK;
+      const usingFallback = !window.BLOCK1_DATA || Boolean(rawData.meta?.isFallback);
+      const metricLabels = {
+        repeatInstance: "重複實例涵蓋率",
+        repeatType: "重複題型率",
+        priorHit: "往年直接命中率"
+      };
+
+      const escapeHTML = (value) => String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+      const safeColor = (value) => /^#[0-9a-f]{6}$/i.test(value || "") ? value : "#2f776f";
+      const safeSubjectId = (value) => /^[a-z0-9_-]+$/i.test(String(value || "")) ? String(value) : "";
+      const clampPercent = (value) => value == null || Number.isNaN(Number(value))
+        ? null
+        : Math.max(0, Math.min(100, Number(value)));
+
+      function normalizeMetric(metric) {
+        if (metric == null) return { value: null, numerator: null, denominator: null };
+        if (typeof metric === "number") return { value: clampPercent(metric), numerator: null, denominator: null };
+        let value = metric.value ?? metric.percent ?? metric.rate ?? null;
+        if (value != null && Number(value) >= 0 && Number(value) <= 1 && metric.percent == null && metric.value == null) {
+          value = Number(value) * 100;
+        }
+        return {
+          value: clampPercent(value),
+          numerator: metric.numerator ?? metric.num ?? null,
+          denominator: metric.denominator ?? metric.denom ?? null,
+          label: metric.label ?? null
+        };
+      }
+
+      function normalizeSubject(subject, index) {
+        const metrics = subject.metrics || {};
+        return {
+          ...subject,
+          index: index + 1,
+          id: subject.id || `subject-${index + 1}`,
+          color: safeColor(subject.color),
+          shortName: subject.shortName || subject.name,
+          metrics: {
+            repeatInstance: normalizeMetric(metrics.repeatInstance),
+            repeatType: normalizeMetric(metrics.repeatType),
+            priorHit: normalizeMetric(metrics.priorHit)
+          },
+          years: Array.isArray(subject.years) ? subject.years : [],
+          repeatGroups: Array.isArray(subject.repeatGroups) ? subject.repeatGroups : [],
+          nonRepeatTopics: Array.isArray(subject.nonRepeatTopics) ? subject.nonRepeatTopics : [],
+          boundaryExclusions: Array.isArray(subject.boundaryExclusions) ? subject.boundaryExclusions : [],
+          sourceFiles: Array.isArray(subject.sourceFiles) ? subject.sourceFiles : []
+        };
+      }
+
+      const data = {
+        meta: rawData.meta || {},
+        subjects: (rawData.subjects || []).map(normalizeSubject)
+      };
+
+      function formatPercent(value) {
+        const safe = clampPercent(value);
+        return safe == null ? "—" : `${safe.toFixed(1)}%`;
+      }
+
+      function fraction(metric) {
+        return metric.numerator == null || metric.denominator == null
+          ? "分母未提供"
+          : `${metric.numerator} / ${metric.denominator}`;
+      }
+
+      function refLabel(ref) {
+        if (typeof ref === "string") return ref;
+        if (ref?.label) return ref.label;
+        const q = ref?.q ?? ref?.question ?? ref?.questionNumber;
+        return q == null ? String(ref?.year || "") : `${ref.year} 第 ${q} 題`;
+      }
+
+      function renderRefList(refs) {
+        if (!refs?.length) return '<span class="muted">未提供題號</span>';
+        return `<ul class="ref-list">${refs.map(ref => `<li class="ref-chip">${escapeHTML(refLabel(ref))}</li>`).join("")}</ul>`;
+      }
+
+      function renderMiniMetric(metric, color) {
+        const value = metric.value ?? 0;
+        const label = metric.value == null ? "資料不足" : formatPercent(metric.value);
+        return `
+          <div class="mini-metric" style="--accent:${color};--value:${value}" aria-label="${escapeHTML(label)}">
+            <div class="mini-track" aria-hidden="true"><div class="mini-fill"></div></div>
+            <span class="mini-number">${label}</span>
+          </div>`;
+      }
+
+      function renderOverview() {
+        const cards = document.getElementById("overview-cards");
+        const matrix = document.getElementById("overview-matrix");
+
+        cards.innerHTML = data.subjects.map(subject => {
+          const metric = subject.metrics.repeatInstance;
+          return `
+            <article class="overview-card" style="--accent:${subject.color}">
+              <div class="subject-label">
+                <span>${escapeHTML(subject.name)}</span>
+                <span class="subject-index">0${subject.index}</span>
+              </div>
+              <div class="overview-value">${metric.value == null ? "—" : metric.value.toFixed(1)}${metric.value == null ? "" : "<span>%</span>"}</div>
+              <p class="overview-caption">重複實例涵蓋率 · ${escapeHTML(fraction(metric))}</p>
+            </article>`;
+        }).join("");
+
+        matrix.innerHTML = data.subjects.map(subject => `
+          <tr>
+            <th scope="row">
+              <span class="subject-cell" style="--accent:${subject.color}">
+                <span class="subject-dot" aria-hidden="true"></span>${escapeHTML(subject.name)}
+              </span>
+            </th>
+            <td>${renderMiniMetric(subject.metrics.repeatInstance, subject.color)}</td>
+            <td>${renderMiniMetric(subject.metrics.repeatType, subject.color)}</td>
+            <td>${renderMiniMetric(subject.metrics.priorHit, subject.color)}</td>
+          </tr>`).join("");
+      }
+
+      function renderRing(key, metric, color) {
+        const value = metric.value ?? 0;
+        const readable = metric.value == null ? `${metricLabels[key]}資料不足` : `${metricLabels[key]} ${formatPercent(metric.value)}，${fraction(metric)}`;
+        return `
+          <div class="ring-card">
+            <div class="ring ${metric.value == null ? "unavailable" : ""}" style="--value:${value};--accent:${color}" role="img" aria-label="${escapeHTML(readable)}">
+              <span class="ring-value">${formatPercent(metric.value)}</span>
+            </div>
+            <p class="ring-label">${metricLabels[key]}</p>
+            <span class="ring-fraction">${escapeHTML(fraction(metric))}</span>
+          </div>`;
+      }
+
+      function getYearRate(year) {
+        const value = year.repeatRate ?? year.coverageRate ?? year.repeat_instance_rate_percent ?? year.repeatInstanceRate;
+        if (value != null) return clampPercent(Number(value) <= 1 ? Number(value) * 100 : value);
+        const repeated = year.repeat ?? year.repeatInstances ?? year.repeat_instance_count;
+        const total = year.total ?? year.questionCount ?? year.question_count;
+        return repeated != null && total ? clampPercent(repeated / total * 100) : null;
+      }
+
+      function renderYears(subject) {
+        if (!subject.years.length) return '<div class="empty-state">尚未匯入逐年統計。</div>';
+        return `<div class="year-chart">${subject.years.map(year => {
+          const total = year.total ?? year.questionCount ?? year.question_count ?? "—";
+          const repeated = year.repeat ?? year.repeatInstances ?? year.repeat_instance_count ?? "—";
+          const rate = getYearRate(year);
+          const label = `${year.year}：${formatPercent(rate)}，${repeated}/${total} 題屬重複群`;
+          return `
+            <div class="year-row" role="img" aria-label="${escapeHTML(label)}">
+              <span class="year-label">${escapeHTML(year.year)}</span>
+              <div class="year-track" aria-hidden="true"><div class="year-fill" style="--value:${rate ?? 0}"></div></div>
+              <span class="year-rate">${formatPercent(rate)}</span>
+              <span class="year-count">${escapeHTML(repeated)} / ${escapeHTML(total)} 題</span>
+              ${year.note ? `<span class="year-note">${escapeHTML(year.note)}</span>` : ""}
+            </div>`;
+        }).join("")}</div>`;
+      }
+
+      function renderRepeatGroups(subject) {
+        if (!subject.repeatGroups.length) return '<div class="empty-state">尚未匯入跨年重複群。</div>';
+        return subject.repeatGroups.map((group, index) => {
+          const evidence = group.earlierEvidence || group.earlier_evidence || [];
+          const distinctYears = new Set((group.refs || []).map(ref => ref.year)).size;
+          const searchable = [group.title, group.matchType, group.recognition, group.why, group.warning, ...(group.refs || []).map(refLabel), ...evidence].join(" ");
+          return `
+            <details class="repeat-group" data-match="${escapeHTML(group.matchType || "未分類")}" data-search="${escapeHTML(searchable.toLowerCase())}">
+              <summary>
+                <span class="group-index">${String(index + 1).padStart(2, "0")}</span>
+                <span>
+                  <span class="group-title">${escapeHTML(group.title)}</span>
+                  <span class="group-meta">
+                    <span class="pill match">${escapeHTML(group.matchType || "近同題")}</span>
+                    <span class="pill">${distinctYears} 個年度</span>
+                    <span class="pill">${group.refs?.length || 0} 個題目實例</span>
+                  </span>
+                </span>
+                <span class="disclosure-mark" aria-hidden="true"></span>
+              </summary>
+              <div class="group-body">
+                <section>
+                  <h4>判定依據</h4>
+                  ${group.recognition ? `<p class="group-recognition">辨識核心：${escapeHTML(group.recognition)}</p>` : ""}
+                  <p>${escapeHTML(group.why || "未提供判定說明。")}</p>
+                  ${evidence.length ? `<ul class="evidence">${evidence.map(item => `<li>${escapeHTML(item)}</li>`).join("")}</ul>` : ""}
+                  ${group.warning ? `<p class="group-warning">注意：${escapeHTML(group.warning)}</p>` : ""}
+                </section>
+                <section>
+                  <h4>年份與原題號</h4>
+                  ${renderRefList(group.refs)}
+                </section>
+              </div>
+            </details>`;
+        }).join("");
+      }
+
+      function renderTopics(subject) {
+        if (!subject.nonRepeatTopics.length) return '<div class="empty-state">尚未匯入非考古考點。</div>';
+        const topics = [...subject.nonRepeatTopics].sort((a, b) => (b.count || 0) - (a.count || 0));
+        return `<div class="topic-grid">${topics.map(topic => `
+          <article class="topic-card">
+            <div class="topic-topline">
+              <h3>${escapeHTML(topic.topic || topic.title)}</h3>
+              <span class="topic-count">${escapeHTML(topic.count ?? topic.refs?.length ?? "—")} 題</span>
+            </div>
+            ${topic.points?.length ? `<ul class="topic-points">${topic.points.map(point => `<li>${escapeHTML(point)}</li>`).join("")}</ul>` : ""}
+            ${topic.note ? `<p class="topic-note">${escapeHTML(topic.note)}</p>` : ""}
+            ${renderRefList(topic.refs)}
+          </article>`).join("")}</div>`;
+      }
+
+      function renderBoundary(subject) {
+        const items = subject.boundaryExclusions.length
+          ? `<ul class="boundary-list">${subject.boundaryExclusions.map(item => `
+              <li class="boundary-item">
+                <strong>${escapeHTML(item.title)}</strong>
+                <p>${escapeHTML(item.why || item.note || "")}</p>
+                ${item.refs?.length ? `<div style="margin-top:8px">${renderRefList(item.refs)}</div>` : ""}
+              </li>`).join("")}</ul>`
+          : '<div class="empty-state">此科尚未匯入個別邊界案例。</div>';
+        const sources = subject.sourceFiles.length
+          ? `<ul class="source-list">${subject.sourceFiles.map(file => {
+              const path = typeof file === "string" ? file : file.path;
+              const label = typeof file === "string" ? file : (file.label || file.path);
+              return `<li><a href="${encodeURI(path).replace(/"/g, '%22')}" target="_blank" rel="noopener">${escapeHTML(label)}</a></li>`;
+            }).join("")}</ul>`
+          : '<p class="muted">尚未匯入來源路徑。</p>';
+
+        return `
+          <div class="boundary-grid">
+            <div class="boundary-box">
+              <h3>保守排除案例</h3>
+              ${items}
+            </div>
+            <div class="boundary-box">
+              <h3>資料範圍與來源</h3>
+              ${subject.scopeNote ? `<p class="muted">${escapeHTML(subject.scopeNote)}</p>` : ""}
+              ${sources}
+            </div>
+          </div>`;
+      }
+
+      function renderSubjectPanel(subject) {
+        const matchTypes = [...new Set(subject.repeatGroups.map(group => group.matchType).filter(Boolean))].sort();
+        return `
+          <section id="panel-${escapeHTML(subject.id)}" class="subject-panel" role="tabpanel" aria-labelledby="tab-${escapeHTML(subject.id)}" style="--accent:${subject.color}" hidden>
+            <header class="subject-header">
+              <div>
+                <span class="subject-number">SUBJECT ${String(subject.index).padStart(2, "0")}</span>
+                <h2 class="subject-title">${escapeHTML(subject.name)}</h2>
+                <p class="subject-scope">${escapeHTML(subject.scope || "未提供比較範圍")}</p>
+              </div>
+              <span class="confidence">${escapeHTML(subject.confidence || "未標示信心")}</span>
+            </header>
+
+            <div class="subject-grid">
+              <section class="panel-card" aria-labelledby="metrics-${escapeHTML(subject.id)}">
+                <div class="card-heading">
+                  <h3 id="metrics-${escapeHTML(subject.id)}">三種考古率</h3>
+                  <small>分母各自獨立</small>
+                </div>
+                <div class="rings">
+                  ${renderRing("repeatInstance", subject.metrics.repeatInstance, subject.color)}
+                  ${renderRing("repeatType", subject.metrics.repeatType, subject.color)}
+                  ${renderRing("priorHit", subject.metrics.priorHit, subject.color)}
+                </div>
+              </section>
+
+              <section class="panel-card" aria-labelledby="years-${escapeHTML(subject.id)}">
+                <div class="card-heading">
+                  <h3 id="years-${escapeHTML(subject.id)}">逐年重複實例涵蓋率</h3>
+                  <small>條長＝該年涵蓋率</small>
+                </div>
+                ${renderYears(subject)}
+              </section>
+            </div>
+
+            <section class="content-section" aria-labelledby="repeat-title-${escapeHTML(subject.id)}">
+              <div class="section-heading">
+                <div>
+                  <p class="section-kicker">Strict repeats</p>
+                  <h2 id="repeat-title-${escapeHTML(subject.id)}">跨年近同題</h2>
+                </div>
+                <p class="section-note">展開每組可核對判定理由，以及精確年份與原題號。</p>
+              </div>
+              ${subject.repeatGroups.length ? `
+                <div class="section-tools" data-tools-for="${escapeHTML(subject.id)}">
+                  <label class="search-wrap">
+                    <span class="sr-only">搜尋${escapeHTML(subject.name)}重複題</span>
+                    <input class="control search-input" type="search" autocomplete="off" placeholder="搜尋題目、年份、題號或判定依據…" data-search-for="${escapeHTML(subject.id)}">
+                  </label>
+                  <label>
+                    <span class="sr-only">依比對類型篩選</span>
+                    <select class="control" data-filter-for="${escapeHTML(subject.id)}">
+                      <option value="">全部比對類型</option>
+                      ${matchTypes.map(type => `<option value="${escapeHTML(type)}">${escapeHTML(type)}</option>`).join("")}
+                    </select>
+                  </label>
+                  <div class="button-group">
+                    <button class="quiet-button" type="button" data-expand-for="${escapeHTML(subject.id)}">全部展開</button>
+                    <button class="quiet-button" type="button" data-collapse-for="${escapeHTML(subject.id)}">全部收合</button>
+                  </div>
+                </div>
+                <p class="result-status" data-status-for="${escapeHTML(subject.id)}" aria-live="polite"></p>` : ""}
+              <div class="repeat-list" data-groups-for="${escapeHTML(subject.id)}">
+                ${renderRepeatGroups(subject)}
+              </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="topics-title-${escapeHTML(subject.id)}">
+              <div class="section-heading">
+                <div>
+                  <p class="section-kicker">Beyond repeats</p>
+                  <h2 id="topics-title-${escapeHTML(subject.id)}">非考古常見考點</h2>
+                </div>
+                <p class="section-note">這些題目常出現，但命題不夠接近，不能當成直接考古命中。</p>
+              </div>
+              ${renderTopics(subject)}
+            </section>
+
+            <section class="content-section" aria-labelledby="boundary-title-${escapeHTML(subject.id)}">
+              <div class="section-heading">
+                <div>
+                  <p class="section-kicker">Audit trail</p>
+                  <h2 id="boundary-title-${escapeHTML(subject.id)}">邊界與資料範圍</h2>
+                </div>
+              </div>
+              ${renderBoundary(subject)}
+            </section>
+          </section>`;
+      }
+
+      function renderSubjects() {
+        const tabs = document.getElementById("subject-tabs");
+        const panels = document.getElementById("subject-panels");
+        tabs.innerHTML = data.subjects.map(subject => `
+          <button id="tab-${escapeHTML(subject.id)}" class="tab-button" type="button" role="tab"
+            aria-selected="false" aria-controls="panel-${escapeHTML(subject.id)}" tabindex="-1"
+            data-tab="${escapeHTML(subject.id)}" style="--accent:${subject.color}">
+            ${String(subject.index).padStart(2, "0")} · ${escapeHTML(subject.shortName)}
+          </button>`).join("");
+        panels.innerHTML = data.subjects.map(renderSubjectPanel).join("");
+      }
+
+      function activateTab(id, { focus = false, updateHash = true } = {}) {
+        const tabs = [...document.querySelectorAll('[role="tab"][data-tab]')];
+        const requested = tabs.find(tab => tab.dataset.tab === id) || tabs[0];
+        if (!requested) return;
+
+        tabs.forEach(tab => {
+          const active = tab === requested;
+          tab.setAttribute("aria-selected", String(active));
+          tab.tabIndex = active ? 0 : -1;
+          const panel = document.getElementById(tab.getAttribute("aria-controls"));
+          if (panel) panel.hidden = !active;
+        });
+
+        if (focus) requested.focus();
+        if (updateHash && history.replaceState) {
+          try {
+            history.replaceState(null, "", `#${requested.dataset.tab}`);
+          } catch (_) {
+            // Some local-file previews forbid History API writes. Tab switching
+            // must keep working even when the URL hash cannot be updated.
+          }
+        }
+      }
+
+      function filterGroups(subjectId) {
+        const safeId = safeSubjectId(subjectId);
+        if (!safeId) return;
+        const input = document.querySelector(`[data-search-for="${safeId}"]`);
+        const select = document.querySelector(`[data-filter-for="${safeId}"]`);
+        const groups = [...document.querySelectorAll(`[data-groups-for="${safeId}"] .repeat-group`)];
+        const query = (input?.value || "").trim().toLowerCase();
+        const type = select?.value || "";
+        let visible = 0;
+
+        groups.forEach(group => {
+          const matchesText = !query || group.dataset.search.includes(query);
+          const matchesType = !type || group.dataset.match === type;
+          group.hidden = !(matchesText && matchesType);
+          if (!group.hidden) visible += 1;
+        });
+
+        const status = document.querySelector(`[data-status-for="${safeId}"]`);
+        if (status) status.textContent = query || type ? `顯示 ${visible} / ${groups.length} 組` : `共 ${groups.length} 組嚴格考古`;
+      }
+
+      function bindInteractions() {
+        document.getElementById("print-page")?.addEventListener("click", () => window.print());
+        const tabList = document.getElementById("subject-tabs");
+        tabList.addEventListener("click", event => {
+          const tab = event.target.closest('[role="tab"]');
+          if (tab) activateTab(tab.dataset.tab, { focus: true });
+        });
+
+        tabList.addEventListener("keydown", event => {
+          const tabs = [...tabList.querySelectorAll('[role="tab"]')];
+          const current = tabs.indexOf(document.activeElement);
+          if (current < 0) return;
+          let next = current;
+          if (event.key === "ArrowRight") next = (current + 1) % tabs.length;
+          else if (event.key === "ArrowLeft") next = (current - 1 + tabs.length) % tabs.length;
+          else if (event.key === "Home") next = 0;
+          else if (event.key === "End") next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          activateTab(tabs[next].dataset.tab, { focus: true });
+        });
+
+        data.subjects.forEach(subject => {
+          const safeId = safeSubjectId(subject.id);
+          if (!safeId) return;
+          const input = document.querySelector(`[data-search-for="${safeId}"]`);
+          const select = document.querySelector(`[data-filter-for="${safeId}"]`);
+          input?.addEventListener("input", () => filterGroups(subject.id));
+          select?.addEventListener("change", () => filterGroups(subject.id));
+
+          document.querySelector(`[data-expand-for="${safeId}"]`)?.addEventListener("click", () => {
+            document.querySelectorAll(`[data-groups-for="${safeId}"] .repeat-group:not([hidden])`).forEach(group => { group.open = true; });
+          });
+          document.querySelector(`[data-collapse-for="${safeId}"]`)?.addEventListener("click", () => {
+            document.querySelectorAll(`[data-groups-for="${safeId}"] .repeat-group`).forEach(group => { group.open = false; });
+          });
+          filterGroups(subject.id);
+        });
+      }
+
+      let printState = [];
+      window.addEventListener("beforeprint", () => {
+        printState = [...document.querySelectorAll(".repeat-group")].map(group => group.open);
+        document.querySelectorAll(".repeat-group").forEach(group => { group.open = true; });
+      });
+      window.addEventListener("afterprint", () => {
+        document.querySelectorAll(".repeat-group").forEach((group, index) => { group.open = Boolean(printState[index]); });
+      });
+
+      document.title = data.meta.title || FALLBACK.meta.title;
+      document.getElementById("page-title").innerHTML = escapeHTML(data.meta.title || FALLBACK.meta.title).replace("Block 1 ", "Block 1<br>");
+      document.getElementById("page-subtitle").textContent = data.meta.subtitle || FALLBACK.meta.subtitle;
+      document.getElementById("updated-at").textContent = data.meta.updatedAt ? `整理更新：${data.meta.updatedAt}` : "";
+      document.getElementById("demo-banner").hidden = !usingFallback;
+
+      renderOverview();
+      renderSubjects();
+      let initial = location.hash.slice(1);
+      try { initial = decodeURIComponent(initial); } catch (_) { initial = ""; }
+      activateTab(data.subjects.some(subject => subject.id === initial) ? initial : data.subjects[0]?.id, { updateHash: false });
+      bindInteractions();
+      document.getElementById("static-fallback").hidden = true;
+    })();
+  </script>
+</body>
+</html>
