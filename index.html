@@ -132,32 +132,6 @@
       font-size: clamp(1rem, 1.8vw, 1.19rem);
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 22px;
-    }
-
-    .hero-action {
-      min-height: 40px;
-      padding: 8px 13px;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 9px;
-      cursor: pointer;
-      font-size: 0.82rem;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .hero-action.primary {
-      color: var(--navy);
-      background: #edc27e;
-      border-color: #edc27e;
-    }
-
     .hero-note {
       margin: 0;
       padding: 18px 20px;
@@ -1063,7 +1037,7 @@
       body { background: #fff; font-size: 9.5pt; }
       .shell { width: 100%; }
       .hero { padding: 18mm 0 11mm; border-bottom-width: 4px; }
-      .hero::after, .hero-actions, .demo-banner, .subject-navigation, .section-tools, .result-status { display: none !important; }
+      .hero::after, .demo-banner, .subject-navigation, .section-tools, .result-status { display: none !important; }
       .hero-grid { grid-template-columns: 1fr; gap: 8px; }
       .hero-note { max-width: none; padding: 10px 13px; }
       main { padding: 10mm 0 0; }
@@ -1097,10 +1071,6 @@
         <p class="eyebrow">NTUMED · B11 archive · Block 1</p>
         <h1 id="page-title">Block 1<br>嚴格考古地圖</h1>
         <p class="hero-lead" id="page-subtitle">只收錄幾乎相同、可被前一年度直接認出的題目；同章節、同概念但命題不同者，一律留在非考古考點。</p>
-        <div class="hero-actions" aria-label="頁面工具">
-          <a class="hero-action primary" href="block1-kaogu-data.json" download>下載稽核資料 JSON</a>
-          <button class="hero-action" type="button" id="print-page">列印／另存 PDF</button>
-        </div>
       </div>
       <p class="hero-note"><strong>判定底線</strong>允許正反問、選項重排、單一干擾項或中英改寫；核心題幹與實質命題必須近同。</p>
     </div>
@@ -1611,7 +1581,6 @@
       }
 
       function bindInteractions() {
-        document.getElementById("print-page")?.addEventListener("click", () => window.print());
         const tabList = document.getElementById("subject-tabs");
         tabList.addEventListener("click", event => {
           const tab = event.target.closest('[role="tab"]');
