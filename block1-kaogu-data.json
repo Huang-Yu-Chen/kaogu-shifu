@@ -1,7 +1,7 @@
 {
-  "title": "Block 1 嚴格考古地圖",
-  "updated": "2026-09-10",
-  "definition": "跨不同年份，題幹與實質選項幾乎相同才算；正反問、選項重排與微小措辭差異可合併。只考同概念、疾病或章節不算。",
+  "title": "考古師父",
+  "updated": "2026-10-10",
+  "definition": "跨不同年份、問同一件事且作答格式相同才算；正反問、選項重排、中英改寫，以及逐年輪換 2–3 個選項者可合併。只共享概念、章節或選項池不算。",
   "metricDefinitions": {
     "coverage": "重複實例涵蓋率：所有可比較題目中，位於至少一個跨年同題群的題目比例；包含該群第一次出現。",
     "archetype": "重複題型率：把同一群折成一個 canonical 題型後，曾跨年重出的題型占全部獨立題型的比例。",
@@ -15,21 +15,21 @@
       "eyebrow": "PATHOLOGY",
       "accent": "#c4573f",
       "soft": "#f7e7e1",
-      "scope": "B05–B10，共 151 題可判讀題目",
-      "scopeNote": "此病理學 PDF 只有 B05-B10 六份完整逐年考卷；PDF 前段『舊考古』為按教師/章節重編的題庫，沒有可恢復的原始年份與原卷題號。 159 個題號槽中另有 8 題亡佚或明示非本次範圍，未放入可判讀分母。",
+      "scope": "B05–B11，共 175 題可判讀題目",
+      "scopeNote": "B12 版題本新增 B11 第一次區段考（25 個題號槽、24 題可判讀）；B05–B10 已逐題比對舊版，內容相同。184 個題號槽中 9 題亡佚或明示非本次範圍，不進可判讀分母。前段『舊考古』為按教師／章節重編的題庫，沒有原始年份與原卷題號，只作佐證。",
       "metrics": {
-        "total": 151,
-        "repeatInstances": 68,
-        "coverage": 45.0,
-        "repeatGroups": 28,
-        "uniqueTypes": 111,
-        "archetypeRate": 25.2,
-        "unresolved": 8,
+        "total": 175,
+        "repeatInstances": 98,
+        "coverage": 56.0,
+        "repeatGroups": 36,
+        "uniqueTypes": 113,
+        "archetypeRate": 31.9,
+        "unresolved": 9,
         "rolling": {
           "baseline": "B05",
-          "eligible": 127,
-          "hits": 40,
-          "percent": 31.5,
+          "eligible": 151,
+          "hits": 62,
+          "percent": 41.1,
           "byYear": [
             {
               "year": "B05",
@@ -38,28 +38,33 @@
             },
             {
               "year": "B06",
-              "hits": 3,
-              "rate": 12.0
+              "hits": 4,
+              "rate": 16.0
             },
             {
               "year": "B07",
-              "hits": 21,
-              "rate": 63.6
+              "hits": 22,
+              "rate": 66.7
             },
             {
               "year": "B08",
-              "hits": 6,
-              "rate": 31.6
+              "hits": 7,
+              "rate": 36.8
             },
             {
               "year": "B09",
-              "hits": 5,
-              "rate": 19.2
+              "hits": 9,
+              "rate": 34.6
             },
             {
               "year": "B10",
-              "hits": 5,
-              "rate": 20.8
+              "hits": 10,
+              "rate": 41.7
+            },
+            {
+              "year": "B11",
+              "hits": 10,
+              "rate": 41.7
             }
           ]
         }
@@ -68,8 +73,8 @@
         {
           "year": "B05",
           "total": 24,
-          "repeat": 8,
-          "coverage": 33.3,
+          "repeat": 9,
+          "coverage": 37.5,
           "note": ""
         },
         {
@@ -82,30 +87,37 @@
         {
           "year": "B07",
           "total": 33,
-          "repeat": 22,
-          "coverage": 66.7,
+          "repeat": 23,
+          "coverage": 69.7,
           "note": "另排除 2 題亡佚／非本次範圍"
         },
         {
           "year": "B08",
           "total": 19,
-          "repeat": 8,
-          "coverage": 42.1,
+          "repeat": 9,
+          "coverage": 47.4,
           "note": "另排除 1 題亡佚／非本次範圍"
         },
         {
           "year": "B09",
           "total": 26,
-          "repeat": 6,
-          "coverage": 23.1,
+          "repeat": 14,
+          "coverage": 53.8,
           "note": ""
         },
         {
           "year": "B10",
           "total": 24,
-          "repeat": 5,
-          "coverage": 20.8,
+          "repeat": 14,
+          "coverage": 58.3,
           "note": ""
+        },
+        {
+          "year": "B11",
+          "total": 24,
+          "repeat": 10,
+          "coverage": 41.7,
+          "note": "填充 1 題＋選擇 24 題；選擇第6題亡佚"
         }
       ],
       "repeatGroups": [
@@ -113,28 +125,35 @@
           "id": "PATH-R01",
           "title": "解剖病理執業範圍：找出不屬於 anatomical pathology 者",
           "recognition": "Surgical pathology、forensic pathology、cytopathology 屬解剖病理；medical genetics／chemical pathology 為排除項。",
-          "matchType": "高度一致",
+          "matchType": "同命題輪換選項",
           "basis": "三題同為 anatomical pathology 的 except 題，B07 與 B08 題幹、四選項實質相同；B05 僅把 chemical pathology 換成 medical genetics。",
           "refs": [
             {
               "year": "B05",
               "number": 1,
+              "part": "mc",
               "label": "B05 第1題",
-              "page": 43,
               "counted": true
             },
             {
               "year": "B07",
               "number": 1,
+              "part": "mc",
               "label": "B07 第1題",
-              "page": 54,
               "counted": true
             },
             {
               "year": "B08",
               "number": 1,
+              "part": "mc",
               "label": "B08 第1題",
-              "page": 61,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 1,
+              "part": "mc",
+              "label": "B09 第1題",
               "counted": true
             }
           ],
@@ -154,15 +173,15 @@
             {
               "year": "B06",
               "number": 4,
+              "part": "mc",
               "label": "B06 第4題",
-              "page": 49,
               "counted": true
             },
             {
               "year": "B07",
               "number": 4,
+              "part": "mc",
               "label": "B07 第4題",
-              "page": 54,
               "counted": true
             }
           ],
@@ -180,29 +199,29 @@
             {
               "year": "B05",
               "number": 4,
+              "part": "mc",
               "label": "B05 第4題",
-              "page": 43,
               "counted": true
             },
             {
               "year": "B06",
               "number": 5,
+              "part": "mc",
               "label": "B06 第5題",
-              "page": 49,
               "counted": true
             },
             {
               "year": "B07",
               "number": 5,
+              "part": "mc",
               "label": "B07 第5題",
-              "page": 54,
               "counted": true
             },
             {
               "year": "B08",
               "number": 3,
+              "part": "mc",
               "label": "B08 第3題",
-              "page": 61,
               "counted": true
             }
           ],
@@ -222,15 +241,15 @@
             {
               "year": "B06",
               "number": 6,
+              "part": "mc",
               "label": "B06 第6題",
-              "page": 49,
               "counted": true
             },
             {
               "year": "B07",
               "number": 6,
+              "part": "mc",
               "label": "B07 第6題",
-              "page": 54,
               "counted": true
             }
           ],
@@ -250,22 +269,22 @@
             {
               "year": "B06",
               "number": 1,
+              "part": "mc",
               "label": "B06 第1題",
-              "page": 49,
               "counted": true
             },
             {
               "year": "B07",
               "number": 2,
+              "part": "mc",
               "label": "B07 第2題",
-              "page": 54,
               "counted": true
             },
             {
               "year": "B08",
               "number": 2,
+              "part": "mc",
               "label": "B08 第2題",
-              "page": 61,
               "counted": true
             }
           ],
@@ -283,15 +302,15 @@
             {
               "year": "B06",
               "number": 7,
+              "part": "mc",
               "label": "B06 第7題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B07",
               "number": 7,
+              "part": "mc",
               "label": "B07 第7題",
-              "page": 55,
               "counted": true
             }
           ],
@@ -309,22 +328,22 @@
             {
               "year": "B06",
               "number": 8,
+              "part": "mc",
               "label": "B06 第8題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B07",
               "number": 8,
+              "part": "mc",
               "label": "B07 第8題",
-              "page": 55,
               "counted": true
             },
             {
               "year": "B10",
               "number": 9,
+              "part": "mc",
               "label": "B10 第9題",
-              "page": 71,
               "counted": true
             }
           ],
@@ -342,15 +361,15 @@
             {
               "year": "B06",
               "number": 9,
+              "part": "mc",
               "label": "B06 第9題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B08",
               "number": 5,
+              "part": "mc",
               "label": "B08 第5題",
-              "page": 61,
               "counted": true
             }
           ],
@@ -368,29 +387,29 @@
             {
               "year": "B06",
               "number": 10,
+              "part": "mc",
               "label": "B06 第10題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B07",
               "number": 11,
+              "part": "mc",
               "label": "B07 第11題",
-              "page": 55,
               "counted": true
             },
             {
               "year": "B09",
               "number": 8,
+              "part": "mc",
               "label": "B09 第8題",
-              "page": 66,
               "counted": true
             },
             {
               "year": "B10",
               "number": 4,
+              "part": "mc",
               "label": "B10 第4題",
-              "page": 71,
               "counted": true
             }
           ],
@@ -408,22 +427,22 @@
             {
               "year": "B06",
               "number": 11,
+              "part": "mc",
               "label": "B06 第11題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B07",
               "number": 12,
+              "part": "mc",
               "label": "B07 第12題",
-              "page": 55,
               "counted": true
             },
             {
               "year": "B09",
               "number": 6,
+              "part": "mc",
               "label": "B09 第6題",
-              "page": 65,
               "counted": true
             }
           ],
@@ -443,22 +462,22 @@
             {
               "year": "B06",
               "number": 12,
+              "part": "mc",
               "label": "B06 第12題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B09",
               "number": 11,
+              "part": "mc",
               "label": "B09 第11題",
-              "page": 66,
               "counted": true
             },
             {
               "year": "B10",
               "number": 10,
+              "part": "mc",
               "label": "B10 第10題",
-              "page": 72,
               "counted": true
             }
           ],
@@ -476,15 +495,15 @@
             {
               "year": "B05",
               "number": 6,
+              "part": "mc",
               "label": "B05 第6題",
-              "page": 43,
               "counted": true
             },
             {
               "year": "B07",
               "number": 10,
+              "part": "mc",
               "label": "B07 第10題",
-              "page": 55,
               "counted": true
             }
           ],
@@ -504,15 +523,15 @@
             {
               "year": "B05",
               "number": 8,
+              "part": "mc",
               "label": "B05 第8題",
-              "page": 44,
               "counted": true
             },
             {
               "year": "B07",
               "number": 14,
+              "part": "mc",
               "label": "B07 第14題",
-              "page": 56,
               "counted": true
             }
           ],
@@ -532,15 +551,15 @@
             {
               "year": "B06",
               "number": 13,
+              "part": "mc",
               "label": "B06 第13題",
-              "page": 50,
               "counted": true
             },
             {
               "year": "B07",
               "number": 15,
+              "part": "mc",
               "label": "B07 第15題",
-              "page": 56,
               "counted": true
             }
           ],
@@ -558,15 +577,15 @@
             {
               "year": "B06",
               "number": 14,
+              "part": "mc",
               "label": "B06 第14題",
-              "page": 51,
               "counted": true
             },
             {
               "year": "B07",
               "number": 17,
+              "part": "mc",
               "label": "B07 第17題",
-              "page": 56,
               "counted": true
             }
           ],
@@ -586,15 +605,15 @@
             {
               "year": "B06",
               "number": 16,
+              "part": "mc",
               "label": "B06 第16題",
-              "page": 51,
               "counted": true
             },
             {
               "year": "B07",
               "number": 19,
+              "part": "mc",
               "label": "B07 第19題",
-              "page": 56,
               "counted": true
             }
           ],
@@ -614,15 +633,15 @@
             {
               "year": "B06",
               "number": 18,
+              "part": "mc",
               "label": "B06 第18題",
-              "page": 51,
               "counted": true
             },
             {
               "year": "B07",
               "number": 21,
+              "part": "mc",
               "label": "B07 第21題",
-              "page": 57,
               "counted": true
             }
           ],
@@ -642,15 +661,15 @@
             {
               "year": "B06",
               "number": 19,
+              "part": "mc",
               "label": "B06 第19題",
-              "page": 51,
               "counted": true
             },
             {
               "year": "B07",
               "number": 23,
+              "part": "mc",
               "label": "B07 第23題",
-              "page": 57,
               "counted": true
             }
           ],
@@ -670,15 +689,15 @@
             {
               "year": "B06",
               "number": 20,
+              "part": "mc",
               "label": "B06 第20題",
-              "page": 51,
               "counted": true
             },
             {
               "year": "B07",
               "number": 24,
+              "part": "mc",
               "label": "B07 第24題",
-              "page": 57,
               "counted": true
             }
           ],
@@ -696,15 +715,15 @@
             {
               "year": "B07",
               "number": 9,
+              "part": "mc",
               "label": "B07 第9題",
-              "page": 55,
               "counted": true
             },
             {
               "year": "B08",
               "number": 6,
+              "part": "mc",
               "label": "B08 第6題",
-              "page": 61,
               "counted": true
             }
           ],
@@ -724,15 +743,15 @@
             {
               "year": "B09",
               "number": 15,
+              "part": "mc",
               "label": "B09 第15題",
-              "page": 67,
               "counted": true
             },
             {
               "year": "B10",
               "number": 13,
+              "part": "mc",
               "label": "B10 第13題",
-              "page": 72,
               "counted": true
             }
           ],
@@ -744,28 +763,56 @@
           "id": "PATH-R23",
           "title": "anti-thrombotic factors：Protein C、thrombomodulin、t-PA、heparin-like molecule",
           "recognition": "Protein C、thrombomodulin、t-PA、heparin-like molecules 為抗血栓；tissue factor 促凝。",
-          "matchType": "高度一致",
+          "matchType": "同命題輪換選項",
           "basis": "三題題幹相同，五個實質選項完全相同；B09 只交換第 4/5 項順序。",
           "refs": [
             {
               "year": "B05",
               "number": 20,
+              "part": "mc",
               "label": "B05 第20題",
-              "page": 46,
               "counted": true
             },
             {
               "year": "B06",
               "number": 25,
+              "part": "mc",
               "label": "B06 第25題",
-              "page": 53,
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 32,
+              "part": "mc",
+              "label": "B07 第32題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 15,
+              "part": "mc",
+              "label": "B08 第15題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 22,
+              "part": "mc",
               "label": "B09 第22題",
-              "page": 68,
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 23,
+              "part": "mc",
+              "label": "B10 第23題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 23,
+              "part": "mc",
+              "label": "B11 第23題",
               "counted": true
             }
           ],
@@ -777,21 +824,49 @@
           "id": "PATH-R24",
           "title": "hypercoagulability 五項組合題（Prothrombin/Trousseau/CHF/出血疾病）",
           "recognition": "Prothrombin mutation、Trousseau syndrome、CHF 會促栓；Bernard-Soulier/vWD 不會，APS 會。",
-          "matchType": "高度一致",
+          "matchType": "同命題輪換選項",
           "basis": "題幹相同，五個命題中四個逐項重用；僅將 vWD 換成 antiphospholipid syndrome。",
           "refs": [
             {
+              "year": "B05",
+              "number": 17,
+              "part": "mc",
+              "label": "B05 第17題",
+              "counted": true
+            },
+            {
               "year": "B06",
               "number": 24,
+              "part": "mc",
               "label": "B06 第24題",
-              "page": 52,
               "counted": true
             },
             {
               "year": "B07",
               "number": 30,
+              "part": "mc",
               "label": "B07 第30題",
-              "page": 58,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 26,
+              "part": "mc",
+              "label": "B09 第26題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 21,
+              "part": "mc",
+              "label": "B10 第21題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 21,
+              "part": "mc",
+              "label": "B11 第21題",
               "counted": true
             }
           ],
@@ -805,28 +880,35 @@
           "id": "PATH-R25",
           "title": "right heart failure 的 signs/findings 組合題",
           "recognition": "Central venous pressure 上升、肝中央區鬱血/nutmeg liver、下肢 pitting edema；肺水腫/呼吸困難偏左心衰竭。",
-          "matchType": "高度一致",
+          "matchType": "同命題輪換選項",
           "basis": "三題題幹相同，五個命題中四個相同或為同義病理（nutmeg liver = centrizonal congestion），僅更換一個干擾項。",
           "refs": [
             {
               "year": "B05",
               "number": 18,
+              "part": "mc",
               "label": "B05 第18題",
-              "page": 46,
               "counted": true
             },
             {
               "year": "B06",
               "number": 23,
+              "part": "mc",
               "label": "B06 第23題",
-              "page": 52,
               "counted": true
             },
             {
               "year": "B07",
               "number": 35,
+              "part": "mc",
               "label": "B07 第35題",
-              "page": 60,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 21,
+              "part": "mc",
+              "label": "B09 第21題",
               "counted": true
             }
           ],
@@ -840,28 +922,49 @@
           "id": "PATH-R26",
           "title": "thromboembolism 的結果／病理變化組合題",
           "recognition": "可見 infarction、coagulative necrosis（CNS 可 liquefactive）；caseous necrosis 非栓塞所致，Caisson disease 為 air embolism。",
-          "matchType": "高度一致",
+          "matchType": "同命題輪換選項",
           "basis": "三題題幹同義，五個選項中至少四個逐項相同；B05/B08 五項完全相同，B07 只以 red infarct 替換 white infarct。",
           "refs": [
             {
               "year": "B05",
               "number": 19,
+              "part": "mc",
               "label": "B05 第19題",
-              "page": 46,
               "counted": true
             },
             {
               "year": "B07",
               "number": 34,
+              "part": "mc",
               "label": "B07 第34題",
-              "page": 59,
               "counted": true
             },
             {
               "year": "B08",
               "number": 16,
+              "part": "mc",
               "label": "B08 第16題",
-              "page": 63,
+              "counted": true
+            },
+            {
+              "year": "B09",
+              "number": 25,
+              "part": "mc",
+              "label": "B09 第25題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 20,
+              "part": "mc",
+              "label": "B10 第20題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 20,
+              "part": "mc",
+              "label": "B11 第20題",
               "counted": true
             }
           ],
@@ -881,15 +984,15 @@
             {
               "year": "B05",
               "number": 22,
+              "part": "mc",
               "label": "B05 第22題",
-              "page": 47,
               "counted": true
             },
             {
               "year": "B07",
               "number": 33,
+              "part": "mc",
               "label": "B07 第33題",
-              "page": 59,
               "counted": true
             }
           ],
@@ -909,15 +1012,15 @@
             {
               "year": "B08",
               "number": 17,
+              "part": "mc",
               "label": "B08 第17題",
-              "page": 64,
               "counted": true
             },
             {
               "year": "B09",
               "number": 24,
+              "part": "mc",
               "label": "B09 第24題",
-              "page": 69,
               "counted": true
             }
           ],
@@ -935,21 +1038,236 @@
             {
               "year": "B08",
               "number": 18,
+              "part": "mc",
               "label": "B08 第18題",
-              "page": 64,
               "counted": true
             },
             {
               "year": "B10",
               "number": 24,
+              "part": "mc",
               "label": "B10 第24題",
-              "page": 74,
               "counted": true
             }
           ],
           "earlierEvidence": [
             "舊考古／連晃駿老師－血行動力學 Q14（不納入率）"
           ],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R21",
+          "title": "白血球穿越血管：margination／rolling／adhesion／diapedesis／chemotaxis",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "題幹逐字相同；rolling（selectin）與 adhesion（integrin）兩敘述逐字重用，另兩項輪換。原於二次嚴格稽核移出，放寬標準後收回。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 14,
+              "part": "mc",
+              "label": "B09 第14題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 12,
+              "part": "mc",
+              "label": "B10 第12題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R30",
+          "title": "septic shock 的 pathogenesis 五項組合題",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "三年同問 septic shock 的 pathogenesis；B10 與 B11 的 PAMP、GLUT-4、insulin resistance 三項逐字相同，其餘為同位置換分子。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 23,
+              "part": "mc",
+              "label": "B09 第23題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 19,
+              "part": "mc",
+              "label": "B10 第19題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 19,
+              "part": "mc",
+              "label": "B11 第19題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R31",
+          "title": "edema 的成因組合題",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "同問 edema 成因、同為五項組合題；CHF、filaria、venous thrombosis 三項相同。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 22,
+              "part": "mc",
+              "label": "B10 第22題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 22,
+              "part": "mc",
+              "label": "B11 第22題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R32",
+          "title": "pathology 字源：patho- 與 -ology 的意思",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "兩年皆以填充方式要求寫出 patho- 與 -ology 的字義。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 1,
+              "part": "mc",
+              "label": "B10 第1題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 1,
+              "part": "fill",
+              "label": "B11 填充第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R33",
+          "title": "病理解剖流程與權責的敘述題",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "題幹同為病理解剖敘述判斷，四選項中三項逐字相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 4,
+              "part": "mc",
+              "label": "B09 第4題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 1,
+              "part": "mc",
+              "label": "B11 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R34",
+          "title": "brain autopsy 的目的",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "B10 問目的、B11 問何者錯誤，屬完整命題正反翻轉；三個目的選項同義重用。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 2,
+              "part": "mc",
+              "label": "B10 第2題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 2,
+              "part": "mc",
+              "label": "B11 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R35",
+          "title": "組織修復：新生血管＋纖維母細胞＋疏鬆間質",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "四選項（granulation tissue／granuloma／hypertrophic scar／keloid）完全相同，答案相同。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 19,
+              "part": "mc",
+              "label": "B09 第19題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 17,
+              "part": "mc",
+              "label": "B11 第17題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "PATH-R36",
+          "title": "疤痕超出原傷口界線且不消退",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "四選項相同、順序不同，答案相同；兩年皆以術後疤痕超出傷口範圍、膠原蛋白過多描述。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 16,
+              "part": "mc",
+              "label": "B10 第16題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 18,
+              "part": "mc",
+              "label": "B11 第18題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
           "warning": "",
           "counted": true
         }
@@ -959,31 +1277,27 @@
         {
           "id": "PATH-N01",
           "title": "病理解剖與診斷病理實務",
-          "count": 11,
+          "count": 7,
           "points": [
             "autopsy 的完整檢查定義、合法場所、時間與呼吸防護",
             "解剖率下降、台大醫院解剖的教學／研究用途與 brain autopsy 目的",
             "蛋白表現以 immunohistochemistry 偵測；pathology 字源"
           ],
           "refs": [
-            "B05-Q02",
-            "B05-Q03",
-            "B05-Q05",
-            "B06-Q03",
-            "B07-Q03",
-            "B09-Q01",
-            "B09-Q02",
-            "B09-Q03",
-            "B09-Q04",
-            "B10-Q01",
-            "B10-Q02"
+            "B05 第2題",
+            "B05 第3題",
+            "B05 第5題",
+            "B06 第3題",
+            "B07 第3題",
+            "B09 第2題",
+            "B09 第3題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N02",
           "title": "細胞適應、傷害、死亡與胞內累積",
-          "count": 16,
+          "count": 23,
           "points": [
             "cell injury 的 Ca2+ 來源、ROS、膜與胞器形態",
             "apoptosis／necroptosis／pyroptosis／ferroptosis 的核心分子",
@@ -991,168 +1305,166 @@
             "hypertrophy／hyperplasia／atrophy，以及 hemosiderin、LC3、sirtuin"
           ],
           "refs": [
-            "B05-Q07",
-            "B05-Q09",
-            "B07-Q13",
-            "B08-Q04",
-            "B08-Q07",
-            "B08-Q08",
-            "B09-Q05",
-            "B09-Q07",
-            "B09-Q09",
-            "B09-Q10",
-            "B09-Q12",
-            "B10-Q03",
-            "B10-Q05",
-            "B10-Q06",
-            "B10-Q07",
-            "B10-Q08"
+            "B05 第7題",
+            "B05 第9題",
+            "B07 第13題",
+            "B08 第4題",
+            "B08 第7題",
+            "B08 第8題",
+            "B09 第5題",
+            "B09 第7題",
+            "B09 第9題",
+            "B09 第10題",
+            "B09 第12題",
+            "B10 第3題",
+            "B10 第5題",
+            "B10 第6題",
+            "B10 第7題",
+            "B10 第8題",
+            "B11 第3題",
+            "B11 第4題",
+            "B11 第5題",
+            "B11 第7題",
+            "B11 第8題",
+            "B11 第9題",
+            "B11 第10題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N03",
           "title": "急性發炎：血管反應、白血球募集與殺菌",
-          "count": 10,
+          "count": 11,
           "points": [
             "vasodilation、permeability、exudate 與血流減慢",
             "integrin/ICAM 所介導的 stable adhesion",
             "phagocyte oxidase、MPO、NO 與 chronic granulomatous disease"
           ],
           "refs": [
-            "B05-Q10",
-            "B05-Q11",
-            "B05-Q12",
-            "B05-Q13",
-            "B05-Q15",
-            "B08-Q10",
-            "B09-Q13",
-            "B10-Q11",
-            "B09-Q14",
-            "B10-Q12"
+            "B05 第10題",
+            "B05 第11題",
+            "B05 第12題",
+            "B05 第13題",
+            "B05 第15題",
+            "B08 第10題",
+            "B09 第13題",
+            "B10 第11題",
+            "B11 第11題",
+            "B11 第12題",
+            "B11 第14題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N04",
           "title": "發炎介質、先天免疫與全身效應",
-          "count": 8,
+          "count": 9,
           "points": [
             "histamine、bradykinin、TNF/IL-1、C3a/C5a 的血管、疼痛、發燒與趨化作用",
             "COX/LOX 產物、lipoxin 與 steroid/NSAID 的作用點",
             "PAMP、eosinophil 與 type-I hypersensitivity/anaphylaxis"
           ],
           "refs": [
-            "B05-Q14",
-            "B07-Q16",
-            "B07-Q18",
-            "B08-Q09",
-            "B08-Q19",
-            "B09-Q17",
-            "B10-Q14",
-            "B10-Q15"
+            "B05 第14題",
+            "B07 第16題",
+            "B07 第18題",
+            "B08 第9題",
+            "B08 第19題",
+            "B09 第17題",
+            "B10 第14題",
+            "B10 第15題",
+            "B11 第13題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N05",
           "title": "發炎型態、慢性發炎與細胞圖譜",
-          "count": 8,
+          "count": 9,
           "points": [
             "serous、fibrinous、suppurative inflammation 與 exudate 的差異",
             "急慢性發炎常見細胞、M1/M2 轉換與病原體造成的反應型態",
             "細菌性腹膜炎為高蛋白、高白血球的 exudate"
           ],
           "refs": [
-            "B05-Q16",
-            "B07-Q25",
-            "B07-Q27",
-            "B08-Q11",
-            "B08-Q12",
-            "B09-Q16",
-            "B09-Q18",
-            "B10-Q18"
+            "B05 第16題",
+            "B07 第25題",
+            "B07 第27題",
+            "B08 第11題",
+            "B08 第12題",
+            "B09 第16題",
+            "B09 第18題",
+            "B10 第18題",
+            "B11 第15題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N06",
           "title": "肉芽腫性發炎與組織修復",
-          "count": 9,
+          "count": 8,
           "points": [
             "granuloma 與 granulation tissue 的辨別；TB 的 Langhans giant cell/caseation",
             "angiogenesis 的 VEGF 與 Dll4/Notch tip–stalk cell 分化",
             "TGF-β、collagen deposition、hypertrophic scar、keloid 與 contraction"
           ],
           "refs": [
-            "B07-Q22",
-            "B07-Q26",
-            "B07-Q28",
-            "B08-Q13",
-            "B08-Q14",
-            "B09-Q19",
-            "B09-Q20",
-            "B10-Q16",
-            "B10-Q17"
+            "B07 第22題",
+            "B07 第26題",
+            "B07 第28題",
+            "B08 第13題",
+            "B08 第14題",
+            "B09 第20題",
+            "B10 第17題",
+            "B11 第16題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N07",
           "title": "水腫、充血、肝硬化與心衰竭",
-          "count": 4,
+          "count": 2,
           "points": [
             "hydrostatic pressure、hypoalbuminemia、lymphatic obstruction 與 inflammation 的水腫機轉",
             "肝硬化的 portal hypertension、ascites、splenomegaly",
             "右心衰竭的肝鬱血與下肢水腫（B09 題選項集合與重複群差異較大，故保守列非考古）"
           ],
           "refs": [
-            "B06-Q26",
-            "B07-Q31",
-            "B09-Q21",
-            "B10-Q22"
+            "B06 第26題",
+            "B07 第31題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N08",
           "title": "血栓、栓塞、梗塞與抗凝機制",
-          "count": 12,
+          "count": 5,
           "points": [
             "Virchow triad、Factor V Leiden、prothrombin mutation、Trousseau/APS/HIT",
             "Protein C/S、thrombomodulin、TFPI、antithrombin、t-PA 與 PAI/PF4",
             "red/white infarct、Lines of Zahn、fat/air/amniotic embolism 與 saddle embolus"
           ],
           "refs": [
-            "B05-Q17",
-            "B05-Q23",
-            "B05-Q24",
-            "B06-Q27",
-            "B06-Q30",
-            "B07-Q32",
-            "B08-Q15",
-            "B09-Q25",
-            "B09-Q26",
-            "B10-Q20",
-            "B10-Q21",
-            "B10-Q23"
+            "B05 第23題",
+            "B05 第24題",
+            "B06 第27題",
+            "B06 第30題",
+            "B11 第24題"
           ],
           "note": ""
         },
         {
           "id": "PATH-N09",
           "title": "休克、DIC 與敗血性休克",
-          "count": 4,
+          "count": 2,
           "points": [
             "shock 的 ischemic encephalopathy、diffuse alveolar damage、ATN、centrizonal necrosis",
             "septic shock 的 PAMP/內皮活化、DIC、peripheral pooling、myocardial depression",
             "GLUT-4 受損、insulin resistance 與 stress-hormone gluconeogenesis 所致高血糖"
           ],
           "refs": [
-            "B05-Q21",
-            "B06-Q28",
-            "B09-Q23",
-            "B10-Q19"
+            "B05 第21題",
+            "B06 第28題"
           ],
           "note": ""
         },
@@ -1164,83 +1476,70 @@
             "Helicobacter pylori 與 gastric lymphoma 的關聯。"
           ],
           "refs": [
-            "B06-Q02"
+            "B06 第2題"
           ],
           "note": ""
         }
       ],
       "exclusions": [
         {
-          "title": "二次嚴格稽核：白血球遷移題不合併",
-          "reason": "B09 第14題與 B10 第12題僅 Rolling/selectin、Adhesion/integrin 兩項相同；其餘兩項換成不同機制，未達『幾乎同題』。",
-          "refs": [
-            "B09 第14題",
-            "B10 第12題"
-          ]
-        },
-        {
           "title": "原檔缺題，保守不判",
           "reason": "題本/詳解明示題幹或選項缺失；雖有些殘存答案看似對應其他年度（例如 Dll4/Notch），仍不據此判為重複。",
           "refs": [
-            "B06-Q15",
-            "B06-Q17",
-            "B06-Q21",
-            "B06-Q22",
-            "B06-Q29",
-            "B07-Q20",
-            "B07-Q29"
+            "B06 第15題",
+            "B06 第17題",
+            "B06 第21題",
+            "B06 第22題",
+            "B06 第29題",
+            "B07 第20題",
+            "B07 第29題"
           ]
         },
         {
           "title": "編者重建題，不作同題依據",
           "reason": "題幹由共筆編者依舊題推測重建，非完整原題；保守列非考古。",
           "refs": [
-            "B06-Q26",
-            "B06-Q27",
-            "B06-Q28"
+            "B06 第26題",
+            "B06 第27題",
+            "B06 第28題"
           ]
         },
         {
           "title": "答案欄有歧義",
           "reason": "B05-Q05 的答案欄與詳解對 decline of autopsy 的敘述有張力；B10-Q09 詳解判 A/D 皆錯。這些不影響重複判定，但網頁不宜呈現單一無保留答案。",
           "refs": [
-            "B05-Q05",
-            "B10-Q09"
+            "B05 第5題",
+            "B10 第9題"
           ]
         },
         {
           "title": "原題選項不完整",
           "reason": "B07-Q35 缺作答組合選項、B10-Q15 只存一個選項、B10-Q22 有兩個選項亡佚；仍依可見題幹/命題保留於分母。",
           "refs": [
-            "B07-Q35",
-            "B10-Q15",
-            "B10-Q22"
+            "B07 第35題",
+            "B10 第15題",
+            "B10 第22題"
           ]
         },
         {
-          "title": "同章節但未達近乎相同",
-          "reason": "這些題與已列群或彼此共享同一章節/選項池，但實質命題重疊不足 75%，故按使用者的嚴格定義排除，不灌高考古率。",
+          "title": "放寬標準後仍不收的近似題",
+          "reason": "原按 75% 實質選項門檻排除的題目，放寬標準後已收入 PATH-R23／R24／R25／R26／R30／R31。只剩 B06 第26、28題：題幹為共筆編者依舊題推測重建，非原題，不作同題依據。",
           "refs": [
-            "B07-Q32",
-            "B08-Q15",
-            "B10-Q23",
-            "B05-Q17",
-            "B09-Q26",
-            "B10-Q21",
-            "B09-Q21",
-            "B09-Q25",
-            "B10-Q20",
-            "B06-Q26",
-            "B10-Q22",
-            "B06-Q28",
-            "B09-Q23",
-            "B10-Q19"
+            "B06 第26題",
+            "B06 第28題"
           ]
         },
         {
           "title": "無年份舊題庫只作佐證",
-          "reason": "『舊考古』共含緒論3、病理解剖23、細胞病理51、急慢性發炎32、組織修復30、血行動力學25 個分類題；因無原始年份，不進 159 題分母與 70 題分子。",
+          "reason": "『舊考古』共含緒論3、病理解剖23、細胞病理51、急慢性發炎32、組織修復30、血行動力學25 個分類題；因無原始年份與原卷題號，不進逐年分母與分子。",
           "refs": []
+        },
+        {
+          "title": "B11 原卷亡佚，不進分母",
+          "reason": "填充 1 題＋選擇 24 題；選擇第6題亡佚；題本只寫「亡佚」，無可判讀內容。",
+          "refs": [
+            "B11 第6題"
+          ]
         }
       ],
       "methodNotes": [
@@ -1248,17 +1547,20 @@
         "先用 pdfplumber 逐頁抽字，再將疑似重複群回看題本原文，並以詳解的答案與理由核對命題是否相同。",
         "只有不同明確年份的重複才進 repeat_groups；同一年內或只在無年份『舊考古』出現者不列入考古率。",
         "『舊考古』只作早期佐證，引用格式為章節/分類題號；絕不把分類題號偽裝成原卷題號。",
-        "所有 159 個逐年題目實例均且僅被分到一個重複群或一個非重複主題，coverage assertion 已通過。",
-        "二次嚴格稽核另移除 PATH-R21；頁面指標已按 28 群／68 題重算。"
+        "放寬標準：題幹問同一件事、維持同一作答格式者視為同題，即使各年輪換 2–3 個實質選項；完整命題正反翻轉亦視為同題。只共享章節或選項池、或同一組選項配不同臨床情境者，仍不算。",
+        "標示「同命題輪換選項」的題群依放寬標準成立；其餘為題幹／選項近乎相同。",
+        "所有 175 題可判讀題目均且僅分到一個考古群或一個非考古主題（建置時檢查）。"
       ],
       "sources": [
         {
-          "label": "考古題本",
-          "path": "1_病理學/B11病理學block 1考古題本.pdf"
+          "path": "1_病理學/B12病理學甲block 1考古題本.pdf",
+          "kind": "questions",
+          "edition": "B12"
         },
         {
-          "label": "考古詳解",
-          "path": "1_病理學/B11病理學block 1考古詳解.pdf"
+          "path": "1_病理學/B12病理學甲block 1考古詳解.pdf",
+          "kind": "explanations",
+          "edition": "B12"
         }
       ]
     },
@@ -1269,21 +1571,21 @@
       "eyebrow": "CLINICAL MEDICINE",
       "accent": "#287a78",
       "soft": "#dff1ee",
-      "scope": "B03–B10，共 164 題可判讀題目",
-      "scopeNote": "B03 有完整年度、可恢復原題號，因此正式納入；170 個題號槽中有 6 題因原 PDF 題幹／選項不足而另列未決，不進可判讀分母。更早按講次重編且無原卷題號的分類題庫也不進分母。",
+      "scope": "B03–B11，共 186 題可判讀題目",
+      "scopeNote": "B12 版題本新增 B11 第一次區段考（23 個題號槽、22 題可判讀）；B03–B10 已逐題比對舊版，內容相同。B03 有完整年度、可恢復原題號，因此正式納入。193 個題號槽中 7 題因原 PDF 題幹／選項不足或亡佚而另列未決，不進可判讀分母。更早按講次重編且無原卷題號的分類題庫也不進分母。",
       "metrics": {
-        "total": 164,
-        "repeatInstances": 91,
-        "coverage": 55.5,
-        "repeatGroups": 31,
-        "uniqueTypes": 104,
-        "archetypeRate": 29.8,
-        "unresolved": 6,
+        "total": 186,
+        "repeatInstances": 114,
+        "coverage": 61.3,
+        "repeatGroups": 37,
+        "uniqueTypes": 109,
+        "archetypeRate": 33.9,
+        "unresolved": 7,
         "rolling": {
           "baseline": "B03",
-          "eligible": 134,
-          "hits": 60,
-          "percent": 44.8,
+          "eligible": 156,
+          "hits": 77,
+          "percent": 49.4,
           "byYear": [
             {
               "year": "B03",
@@ -1292,13 +1594,13 @@
             },
             {
               "year": "B04",
-              "hits": 7,
-              "rate": 36.8
+              "hits": 8,
+              "rate": 42.1
             },
             {
               "year": "B05",
-              "hits": 8,
-              "rate": 44.4
+              "hits": 10,
+              "rate": 55.6
             },
             {
               "year": "B06",
@@ -1324,6 +1626,11 @@
               "year": "B10",
               "hits": 15,
               "rate": 62.5
+            },
+            {
+              "year": "B11",
+              "hits": 14,
+              "rate": 63.6
             }
           ]
         }
@@ -1332,22 +1639,22 @@
         {
           "year": "B03",
           "total": 30,
-          "repeat": 11,
-          "coverage": 36.7,
+          "repeat": 12,
+          "coverage": 40.0,
           "note": "2 題是非＋28 題選擇題"
         },
         {
           "year": "B04",
           "total": 19,
-          "repeat": 9,
-          "coverage": 47.4,
+          "repeat": 12,
+          "coverage": 63.2,
           "note": ""
         },
         {
           "year": "B05",
           "total": 18,
-          "repeat": 12,
-          "coverage": 66.7,
+          "repeat": 13,
+          "coverage": 72.2,
           "note": ""
         },
         {
@@ -1374,16 +1681,23 @@
         {
           "year": "B09",
           "total": 21,
-          "repeat": 14,
-          "coverage": 66.7,
+          "repeat": 15,
+          "coverage": 71.4,
           "note": ""
         },
         {
           "year": "B10",
           "total": 24,
-          "repeat": 15,
-          "coverage": 62.5,
+          "repeat": 18,
+          "coverage": 75.0,
           "note": ""
+        },
+        {
+          "year": "B11",
+          "total": 22,
+          "repeat": 14,
+          "coverage": 63.6,
+          "note": "選擇 22 題＋手寫 1 題；選擇第11題亡佚"
         }
       ],
       "repeatGroups": [
@@ -1397,57 +1711,64 @@
             {
               "year": "B03",
               "number": 13,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第13題",
               "counted": true
             },
             {
               "year": "B04",
               "number": 10,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第10題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第11題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第15題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第15題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第16題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 18,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第18題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 13,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第13題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 13,
+              "part": "mc",
+              "label": "B11 第13題",
               "counted": true
             }
           ],
@@ -1465,57 +1786,64 @@
             {
               "year": "B03",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第15題",
               "counted": true
             },
             {
               "year": "B04",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第11題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 13,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第13題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 17,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第17題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 17,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第17題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 2,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第2題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 19,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第19題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第15題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 15,
+              "part": "mc",
+              "label": "B11 第15題",
               "counted": true
             }
           ],
@@ -1533,57 +1861,64 @@
             {
               "year": "B03",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第16題",
               "counted": true
             },
             {
               "year": "B04",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第12題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 18,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第18題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 18,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第18題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 1,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第1題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第11題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 20,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第20題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第16題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 16,
+              "part": "mc",
+              "label": "B11 第16題",
               "counted": true
             }
           ],
@@ -1601,50 +1936,57 @@
             {
               "year": "B03",
               "number": 14,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第14題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第12題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第16題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第16題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 7,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第7題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 17,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第17題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 14,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第14題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 14,
+              "part": "mc",
+              "label": "B11 第14題",
               "counted": true
             }
           ],
@@ -1662,21 +2004,21 @@
             {
               "year": "B03",
               "number": 5,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第5題",
               "counted": true
             },
             {
               "year": "B04",
               "number": 3,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第3題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 5,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第5題",
               "counted": true
             }
@@ -1695,22 +2037,29 @@
             {
               "year": "B05",
               "number": 14,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第14題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第11題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第12題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 10,
+              "part": "mc",
+              "label": "B11 第10題",
               "counted": true
             }
           ],
@@ -1722,20 +2071,27 @@
           "id": "CL-R11",
           "title": "Chronic wound 的生理特徵",
           "recognition": "慢性傷口的增殖、senescent cell、細胞反應、proteinase/growth factor 特徵。",
-          "matchType": "題幹／實質選項近同",
+          "matchType": "同命題輪換選項",
           "basis": "B05 與 B06 題幹近逐字相同，Low proliferation／senescent cell／Low response／High proteinase 四項完整重用；B06 只多一個選項。",
           "refs": [
             {
+              "year": "B04",
+              "number": 15,
+              "part": "mc",
+              "label": "B04 第15題",
+              "counted": true
+            },
+            {
               "year": "B05",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第15題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第12題",
               "counted": true
             }
@@ -1754,21 +2110,21 @@
             {
               "year": "B04",
               "number": 16,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第16題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 18,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第18題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 22,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第22題",
               "counted": true
             }
@@ -1787,21 +2143,21 @@
             {
               "year": "B07",
               "number": 14,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第14題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 10,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第10題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第11題",
               "counted": true
             }
@@ -1820,21 +2176,21 @@
             {
               "year": "B03",
               "number": 6,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第6題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 7,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第7題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 3,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第3題",
               "counted": true
             }
@@ -1853,21 +2209,21 @@
             {
               "year": "B03",
               "number": 7,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第7題",
               "counted": true
             },
             {
               "year": "B04",
               "number": 4,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第4題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 6,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第6題",
               "counted": true
             }
@@ -1886,14 +2242,14 @@
             {
               "year": "B05",
               "number": 7,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第7題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 1,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第1題",
               "counted": true
             }
@@ -1912,14 +2268,14 @@
             {
               "year": "B04",
               "number": 9,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B04 第9題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 8,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第8題",
               "counted": true
             }
@@ -1938,14 +2294,14 @@
             {
               "year": "B05",
               "number": 17,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第17題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 21,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第21題",
               "counted": true
             }
@@ -1964,14 +2320,14 @@
             {
               "year": "B07",
               "number": 1,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第1題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 8,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第8題",
               "counted": true
             }
@@ -1990,15 +2346,22 @@
             {
               "year": "B06",
               "number": 13,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第13題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 9,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第9題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 12,
+              "part": "mc",
+              "label": "B11 第12題",
               "counted": true
             }
           ],
@@ -2016,14 +2379,14 @@
             {
               "year": "B07",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第11題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 10,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第10題",
               "counted": true
             }
@@ -2042,14 +2405,14 @@
             {
               "year": "B07",
               "number": 19,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第19題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 9,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第9題",
               "counted": true
             }
@@ -2068,14 +2431,14 @@
             {
               "year": "B06",
               "number": 20,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B06 第20題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 22,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第22題",
               "counted": true
             }
@@ -2094,15 +2457,15 @@
             {
               "year": "B06",
               "number": 1,
-              "section": "short_answer",
+              "part": "wr",
               "label": "B06 簡答第1題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 1,
-              "section": "short_answer",
-              "label": "B10 簡答第1題",
+              "part": "wr",
+              "label": "B10 問答第1題",
               "counted": true
             }
           ],
@@ -2120,15 +2483,22 @@
             {
               "year": "B09",
               "number": 3,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第3題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 8,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第8題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 4,
+              "part": "mc",
+              "label": "B11 第4題",
               "counted": true
             }
           ],
@@ -2146,14 +2516,14 @@
             {
               "year": "B09",
               "number": 11,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第11題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第12題",
               "counted": true
             }
@@ -2172,15 +2542,22 @@
             {
               "year": "B09",
               "number": 12,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第12題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 17,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第17題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 17,
+              "part": "mc",
+              "label": "B11 第17題",
               "counted": true
             }
           ],
@@ -2198,14 +2575,14 @@
             {
               "year": "B09",
               "number": 13,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第13題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 18,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第18題",
               "counted": true
             }
@@ -2224,15 +2601,22 @@
             {
               "year": "B09",
               "number": 14,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第14題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 19,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第19題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 20,
+              "part": "mc",
+              "label": "B11 第20題",
               "counted": true
             }
           ],
@@ -2250,14 +2634,14 @@
             {
               "year": "B09",
               "number": 15,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B09 第15題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 20,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B10 第20題",
               "counted": true
             }
@@ -2276,14 +2660,14 @@
             {
               "year": "B07",
               "number": 2,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B07 第2題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 6,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B08 第6題",
               "counted": true
             }
@@ -2302,14 +2686,14 @@
             {
               "year": "B03",
               "number": 1,
-              "section": "true_false",
+              "part": "tf",
               "label": "B03 是非題 1",
               "counted": true
             },
             {
               "year": "B04",
               "number": 1,
-              "section": "true_false",
+              "part": "tf",
               "label": "B04 是非題 1",
               "counted": true
             }
@@ -2328,14 +2712,14 @@
             {
               "year": "B03",
               "number": 2,
-              "section": "true_false",
+              "part": "tf",
               "label": "B03 是非題 2",
               "counted": true
             },
             {
               "year": "B04",
               "number": 2,
-              "section": "true_false",
+              "part": "tf",
               "label": "B04 是非題 2",
               "counted": true
             }
@@ -2354,14 +2738,14 @@
             {
               "year": "B03",
               "number": 2,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第2題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 2,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第2題",
               "counted": true
             }
@@ -2380,15 +2764,178 @@
             {
               "year": "B03",
               "number": 3,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B03 第3題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 3,
-              "section": "multiple_choice",
+              "part": "mc",
               "label": "B05 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R28",
+          "title": "英文主訴第三版：胸痛 10 分鐘、右臉腫痛 3 天",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "兩年四個病例選項近乎逐字相同；與 CL-R01 舊版、CL-R27 新版的病例組不同，分開計算。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 5,
+              "part": "mc",
+              "label": "B10 第5題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 1,
+              "part": "mc",
+              "label": "B11 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R29",
+          "title": "25 歲女性皮膚變黃七天：哪些 review of system 有助鑑別",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "題幹、五個 ROS 敘述與組合選項近乎逐字相同。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 6,
+              "part": "mc",
+              "label": "B10 第6題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 2,
+              "part": "mc",
+              "label": "B11 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R30",
+          "title": "60 歲男性雙下肢水腫兩週：哪些問診有助診斷",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "題幹、五個問診敘述與組合選項逐字相同。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 7,
+              "part": "mc",
+              "label": "B10 第7題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 3,
+              "part": "mc",
+              "label": "B11 第3題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R31",
+          "title": "懷疑 skull base soft tissue tumor 時的影像檢查",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "題幹改寫，四選項（MRI／CT／超音波／血管攝影）相同。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 6,
+              "part": "mc",
+              "label": "B04 第6題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 8,
+              "part": "mc",
+              "label": "B11 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R32",
+          "title": "海灘曬傷遵循哪一種 wound healing",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "同一曬傷情境、四選項相同、答案相同（與人咬傷的 CL-R16 為不同情境，分開）。",
+          "refs": [
+            {
+              "year": "B09",
+              "number": 9,
+              "part": "mc",
+              "label": "B09 第9題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 9,
+              "part": "mc",
+              "label": "B11 第9題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "CL-R33",
+          "title": "理想敷料／傷口照護的目的：何者為非",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "三年同問敷料／傷口照護目的何者錯誤、同為四選一；選項圍繞保持乾燥、濕潤、修復與擴創輪換。",
+          "refs": [
+            {
+              "year": "B03",
+              "number": 18,
+              "part": "mc",
+              "label": "B03 第18題",
+              "counted": true
+            },
+            {
+              "year": "B04",
+              "number": 13,
+              "part": "mc",
+              "label": "B04 第13題",
+              "counted": true
+            },
+            {
+              "year": "B05",
+              "number": 16,
+              "part": "mc",
+              "label": "B05 第16題",
               "counted": true
             }
           ],
@@ -2410,22 +2957,22 @@
             "用 ROS 釐清黃疸、下肢水腫鑑別"
           ],
           "refs": [
-            "B04-MC-02",
-            "B05-MC-04",
-            "B06-MC-01",
-            "B06-MC-03",
-            "B07-MC-05",
-            "B07-MC-07",
-            "B08-MC-04",
-            "B09-MC-04",
-            "B09-MC-05",
-            "B09-SA-01",
-            "B10-MC-01",
-            "B10-MC-02",
-            "B10-MC-06",
-            "B10-MC-07",
-            "B03-MC-04",
-            "B03-MC-08"
+            "B04 第2題",
+            "B05 第4題",
+            "B06 第1題",
+            "B06 第3題",
+            "B07 第5題",
+            "B07 第7題",
+            "B08 第4題",
+            "B09 第4題",
+            "B09 第5題",
+            "B09 問答第1題",
+            "B10 第1題",
+            "B10 第2題",
+            "B03 第4題",
+            "B03 第8題",
+            "B11 第5題",
+            "B11 第6題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
@@ -2440,25 +2987,25 @@
             "p16/HPV 與 tonsil、臺灣 NPC vs 美國 tonsil"
           ],
           "refs": [
-            "B04-MC-05",
-            "B04-MC-06",
-            "B05-MC-08",
-            "B06-MC-09",
-            "B06-MC-10",
-            "B07-MC-09",
-            "B07-MC-10",
-            "B08-MC-10",
-            "B09-MC-02",
-            "B10-SA-02",
-            "B03-MC-09",
-            "B03-MC-10"
+            "B04 第5題",
+            "B05 第8題",
+            "B06 第9題",
+            "B06 第10題",
+            "B07 第9題",
+            "B07 第10題",
+            "B08 第10題",
+            "B09 第2題",
+            "B10 問答第2題",
+            "B03 第9題",
+            "B03 第10題",
+            "B11 第7題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
         {
           "id": "CL-N06",
           "title": "傷口照護、感染與 partial-thickness healing",
-          "count": 10,
+          "count": 5,
           "points": [
             "濕潤但不可浸泡、敷料與清創",
             "急性撕裂傷縫合",
@@ -2466,23 +3013,18 @@
             "淺二度／日曬傷以 re-epithelialization 癒合"
           ],
           "refs": [
-            "B04-MC-13",
-            "B04-MC-14",
-            "B05-MC-16",
-            "B06-MC-14",
-            "B07-MC-13",
-            "B08-MC-03",
-            "B09-MC-09",
-            "B04-MC-15",
-            "B03-MC-17",
-            "B03-MC-18"
+            "B04 第14題",
+            "B06 第14題",
+            "B07 第13題",
+            "B08 第3題",
+            "B03 第17題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
         {
           "id": "CL-N05",
           "title": "術前風險評估與特殊病人準備",
-          "count": 8,
+          "count": 10,
           "points": [
             "pack-year",
             "近期 MI/COPD/腎功能與是否延後手術",
@@ -2491,14 +3033,16 @@
             "ESRD 術前透析、Hb 與凝血"
           ],
           "refs": [
-            "B04-MC-07",
-            "B04-MC-08",
-            "B06-MC-19",
-            "B07-MC-20",
-            "B09-MC-07",
-            "B10-MC-21",
-            "B03-MC-11",
-            "B03-MC-12"
+            "B04 第7題",
+            "B04 第8題",
+            "B06 第19題",
+            "B07 第20題",
+            "B09 第7題",
+            "B10 第21題",
+            "B03 第11題",
+            "B03 第12題",
+            "B11 第21題",
+            "B11 第22題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
@@ -2513,51 +3057,54 @@
             "敏感度、特異度與似然比"
           ],
           "refs": [
-            "B04-MC-01",
-            "B07-MC-06",
-            "B07-MC-08",
-            "B08-MC-05",
-            "B09-MC-06",
-            "B10-MC-03",
-            "B10-MC-04"
+            "B04 第1題",
+            "B07 第6題",
+            "B07 第8題",
+            "B08 第5題",
+            "B09 第6題",
+            "B10 第3題",
+            "B10 第4題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
         {
           "id": "CL-N07",
           "title": "燒傷面積、併發症與支持治療",
-          "count": 7,
+          "count": 9,
           "points": [
             "Rule of nines：雙下肢 36% TBSA",
             "大面積燒傷體液復甦與植皮時機",
             "myoglobinuria/hematuria 時維持尿量與鹼化尿液"
           ],
           "refs": [
-            "B04-MC-17",
-            "B07-MC-21",
-            "B07-MC-22",
-            "B03-MC-19",
-            "B03-MC-20",
-            "B03-MC-21",
-            "B03-MC-22"
+            "B04 第17題",
+            "B07 第21題",
+            "B07 第22題",
+            "B03 第19題",
+            "B03 第20題",
+            "B03 第21題",
+            "B03 第22題",
+            "B11 第18題",
+            "B11 第19題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
         {
           "id": "CL-N10",
           "title": "醫學生專業素養與制度下工作",
-          "count": 6,
+          "count": 7,
           "points": [
             "未受監督執行尚未學會的導尿，涉及 system-based practice 與病人安全",
             "醫療隱私、專業素養，以及 cure／relieve／comfort 的醫療角色"
           ],
           "refs": [
-            "B05-MC-01",
-            "B03-MC-01",
-            "B03-MC-23",
-            "B03-MC-24",
-            "B03-MC-25",
-            "B03-MC-26"
+            "B05 第1題",
+            "B03 第1題",
+            "B03 第23題",
+            "B03 第24題",
+            "B03 第25題",
+            "B03 第26題",
+            "B11 手寫第1題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
@@ -2570,8 +3117,8 @@
             "發燒先找病因，再依臨床情況決定抗生素"
           ],
           "refs": [
-            "B08-MC-12",
-            "B08-TF-01"
+            "B08 第12題",
+            "B08 是非題 1"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
@@ -2584,8 +3131,8 @@
             "sleeve、gastric bypass、balloon 的限制型／吸收不良型差異與 GERD"
           ],
           "refs": [
-            "B05-MC-09",
-            "B05-MC-10"
+            "B05 第9題",
+            "B05 第10題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         },
@@ -2598,22 +3145,8 @@
             "平均動脈壓下降時的全身代償與 cerebral autoregulation"
           ],
           "refs": [
-            "B03-MC-27",
-            "B03-MC-28"
-          ],
-          "note": "同列只代表讀書主題相同，不代表彼此是考古。"
-        },
-        {
-          "id": "CL-N02",
-          "title": "病歷與主訴書寫的非重複變化題",
-          "count": 1,
-          "points": [
-            "主訴要含症狀與持續時間",
-            "年齡複合形容詞格式",
-            "避免把日期或性別形容詞寫法當成標準主訴"
-          ],
-          "refs": [
-            "B10-MC-05"
+            "B03 第27題",
+            "B03 第28題"
           ],
           "note": "同列只代表讀書主題相同，不代表彼此是考古。"
         }
@@ -2629,47 +3162,38 @@
           ]
         },
         {
-          "title": "二次嚴格稽核：慢性傷口 B04 不合併",
-          "reason": "B04 第15題僅 High proteinase 一項逐字重用，其餘選項是同概念重組；只保留 B05 第15題與 B06 第12題。",
-          "refs": [
-            "B04 第15題",
-            "B05 第15題",
-            "B06 第12題"
-          ]
-        },
-        {
           "title": "缺題或證據不足，未計",
           "reason": "原題本明載「題目缺失」，只留下 B「black stools for 1 day」，無法判斷是否與任何年度題目幾乎相同。",
           "refs": [
-            "B06-MC-02"
+            "B06 第2題"
           ]
         },
         {
           "title": "缺題或證據不足，未計",
           "reason": "原題本明載「題目缺失」，只留下 A「您能指出痛的位置嗎？」；只能辨識為疼痛 location，無法做嚴格跨年比對。",
           "refs": [
-            "B06-MC-04"
+            "B06 第4題"
           ]
         },
         {
           "title": "缺題或證據不足，未計",
           "reason": "題本原頁明載「題目缺失」，A/B/D 也缺失；僅 C 留下完整病歷排序，詳解亦只說原題缺失。無法證明整題與 B07/B08 幾乎相同。",
           "refs": [
-            "B06-MC-05"
+            "B06 第5題"
           ]
         },
         {
           "title": "缺題或證據不足，未計",
           "reason": "題幹與 B–D 選項在原題本缺失，只留下「past history 僅記已無需處理疾病」選項；可能與 B07-MC-04 同題，但證據不足。",
           "refs": [
-            "B06-MC-08"
+            "B06 第8題"
           ]
         },
         {
           "title": "缺題或證據不足，未計",
           "reason": "完整題目可讀，但唯一可能的跨年配對 B06-MC-08 缺題幹與大部分選項，因此保守不列考古。",
           "refs": [
-            "B07-MC-04"
+            "B07 第4題"
           ]
         },
         {
@@ -2683,30 +3207,40 @@
           "title": "詳解疑似錯置",
           "reason": "題本問近圓周深度燒傷的緊急處置；詳解列 B 且解說 burn shock/輸液，明顯像下一題內容。B10-MC-18 為同題且列焦痂切開術。重複判定保留，答案顯示警示。",
           "refs": [
-            "B09-MC-13"
+            "B09 第13題"
           ]
         },
         {
           "title": "近似題刻意不合併",
-          "reason": "B08-MC-06、B10-MC-05 也問英文主訴，但病例與辨識陷阱改動較大，未併 CL-R01。 B09-MC-04 與 B04-TF-01 都涉及 open question，但一題考初問方式、一題是否全程封閉，僅同概念。 B04-MC-17 與 B07-MC-21 都含雙下肢 36% TBSA，但後者主體是整體治療，未視為同題。 B03/B05/B06/B10 多題都涉及傷口濕潤；只有 B06-MC-13 與 B10-MC-09 五選項逐字相同，才併 CL-R15。",
+          "reason": "B09 第4題與 B04 是非題1 都涉及 open question，但一題考初問方式、一題問是否全程封閉，只是同概念。B04 第17題問兩下肢燒傷面積，B07 第21題問兩下肢燒傷處置何者錯誤，題幹目的不同。（B10 第5題已與 B11 第1題成 CL-R28；B03 第18題、B04 第13題、B05 第16題已成 CL-R33。）",
           "refs": []
+        },
+        {
+          "title": "B11 原卷亡佚，不進分母",
+          "reason": "選擇 22 題＋手寫 1 題；選擇第11題亡佚；題本只寫「亡佚」，無可判讀內容。",
+          "refs": [
+            "B11 第11題"
+          ]
         }
       ],
       "methodNotes": [
         "可比較主分母採 B03–B10 完整年度考卷；B03 原本標為早期佐證，二次稽核後因可恢復原題號而正式納入。",
         "先正規化全形／半形空白、大小寫、標點與選項順序，再人工比對病例、問句和選項；僅同主題或同一知識點者明確排除。",
-        "正反問可合併，但需保留近乎同一組敘述或選項；單純都在考傷口濕潤、主訴書寫或 open question，不自動合併。",
         "同一年內重出只有在該 canonical 題型也出現在其他年份時，兩個實例才都計入；同年重複本身不構成『多年考古』。",
-        "二次嚴格稽核後為 31 群／91 題；B06 第6題因原題殘缺，未用編者『考古』標記替代原文證據。"
+        "放寬標準：題幹問同一件事、維持同一作答格式者視為同題，即使各年輪換 2–3 個實質選項；完整命題正反翻轉亦視為同題。只共享章節或選項池、或同一組選項配不同臨床情境者，仍不算。",
+        "標示「同命題輪換選項」的題群依放寬標準成立；其餘為題幹／選項近乎相同。",
+        "所有 186 題可判讀題目均且僅分到一個考古群或一個非考古主題（建置時檢查）。"
       ],
       "sources": [
         {
-          "label": "考古題目",
-          "path": "2_臨床醫學/題目/已套B12模板 B11臨床醫學考古題目 Block 1.pdf"
+          "path": "2_臨床醫學/B12臨床醫學考古題目 Block 1.pdf",
+          "kind": "questions",
+          "edition": "B12"
         },
         {
-          "label": "考古詳解",
-          "path": "2_臨床醫學/詳解/已套B12模板 B11臨床醫學考古詳解 Block 1.pdf"
+          "path": "2_臨床醫學/B12臨床醫學考古詳解 Block 1.pdf",
+          "kind": "explanations",
+          "edition": "B12"
         }
       ]
     },
@@ -2718,7 +3252,7 @@
       "accent": "#b17b19",
       "soft": "#f6edcf",
       "scope": "B03–B10，共 239 題可判讀題目",
-      "scopeNote": "257 個題號槽中排除 16 題亡佚／殘缺及 B10 兩個明載移除的占位；早期 B99–B02 按章節重編且無原卷題號，只作佐證。",
+      "scopeNote": "257 個題號槽中排除 16 題亡佚／殘缺及 B10 兩個明載移除的占位；早期 B99–B02 按章節重編且無原卷題號，只作佐證。 藥理學尚未依放寬標準重新稽核，仍採嚴格標準（至少 75% 實質選項相同），與其他三科相比考古率可能偏低；B12 版題本是否新增 B11 也尚未納入。",
       "metrics": {
         "total": 239,
         "repeatInstances": 173,
@@ -4874,21 +5408,21 @@
       "eyebrow": "LABORATORY MEDICINE",
       "accent": "#7c5aa6",
       "soft": "#eee7f6",
-      "scope": "B04–B10 七份可還原原題號的逐年考卷",
-      "scopeNote": "B04-B10 Block 1 逐年題目（早期 B99-B03 分類題僅作佐證，不進主要分母）",
+      "scope": "B04–B11，共 111 題可判讀題目",
+      "scopeNote": "B12 版題本新增 B11 第一次區段考（19 題）；B04–B09 與舊版逐題比對相同，B10 恢復原卷題號 1–25（見下方說明）。早期 B99–B03 分類題把多年度壓成單一題、沒有原卷題號，只作佐證，不進分母。",
       "metrics": {
-        "total": 92,
-        "repeatInstances": 63,
-        "coverage": 68.5,
-        "repeatGroups": 21,
-        "uniqueTypes": 50,
-        "archetypeRate": 42.0,
+        "total": 111,
+        "repeatInstances": 90,
+        "coverage": 81.1,
+        "repeatGroups": 26,
+        "uniqueTypes": 47,
+        "archetypeRate": 55.3,
         "unresolved": 0,
         "rolling": {
           "baseline": "B04",
-          "eligible": 85,
-          "hits": 42,
-          "percent": 49.4,
+          "eligible": 104,
+          "hits": 63,
+          "percent": 60.6,
           "byYear": [
             {
               "year": "B04",
@@ -4902,13 +5436,13 @@
             },
             {
               "year": "B06",
-              "hits": 4,
-              "rate": 33.3
+              "hits": 7,
+              "rate": 58.3
             },
             {
               "year": "B07",
-              "hits": 6,
-              "rate": 50.0
+              "hits": 7,
+              "rate": 58.3
             },
             {
               "year": "B08",
@@ -4917,13 +5451,18 @@
             },
             {
               "year": "B09",
-              "hits": 11,
-              "rate": 57.9
+              "hits": 12,
+              "rate": 63.2
             },
             {
               "year": "B10",
-              "hits": 17,
-              "rate": 77.3
+              "hits": 18,
+              "rate": 81.8
+            },
+            {
+              "year": "B11",
+              "hits": 15,
+              "rate": 78.9
             }
           ]
         }
@@ -4932,36 +5471,36 @@
         {
           "year": "B04",
           "total": 7,
-          "repeat": 4,
-          "coverage": 57.1,
+          "repeat": 5,
+          "coverage": 71.4,
           "note": "作為逐年完整題號基線；未計 rolling 命中率"
         },
         {
           "year": "B05",
           "total": 8,
-          "repeat": 3,
-          "coverage": 37.5,
+          "repeat": 5,
+          "coverage": 62.5,
           "note": ""
         },
         {
           "year": "B06",
           "total": 12,
-          "repeat": 6,
-          "coverage": 50.0,
+          "repeat": 9,
+          "coverage": 75.0,
           "note": ""
         },
         {
           "year": "B07",
           "total": 12,
-          "repeat": 6,
-          "coverage": 50.0,
+          "repeat": 9,
+          "coverage": 75.0,
           "note": ""
         },
         {
           "year": "B08",
           "total": 12,
-          "repeat": 10,
-          "coverage": 83.3,
+          "repeat": 11,
+          "coverage": 91.7,
           "note": ""
         },
         {
@@ -4974,9 +5513,16 @@
         {
           "year": "B10",
           "total": 22,
-          "repeat": 17,
-          "coverage": 77.3,
+          "repeat": 19,
+          "coverage": 86.4,
           "note": "原 PDF 題號由 7 跳至 11；分母只計實際列出的 22 題"
+        },
+        {
+          "year": "B11",
+          "total": 19,
+          "repeat": 15,
+          "coverage": 78.9,
+          "note": ""
         }
       ],
       "repeatGroups": [
@@ -4990,25 +5536,36 @@
             {
               "year": "B04",
               "number": 1,
+              "part": "mc",
               "label": "B04 第1題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 3,
+              "part": "mc",
               "label": "B06 第3題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 3,
+              "part": "mc",
               "label": "B07 第3題",
               "counted": true
             },
             {
               "year": "B10",
-              "number": 6,
-              "label": "B10 第6題",
+              "number": 9,
+              "part": "mc",
+              "label": "B10 第9題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 3,
+              "part": "mc",
+              "label": "B11 第3題",
               "counted": true
             }
           ],
@@ -5026,24 +5583,28 @@
             {
               "year": "B04",
               "number": 3,
+              "part": "mc",
               "label": "B04 第3題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 2,
+              "part": "mc",
               "label": "B05 第2題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 5,
+              "part": "mc",
               "label": "B06 第5題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 5,
+              "part": "mc",
               "label": "B07 第5題",
               "counted": true
             }
@@ -5066,24 +5627,28 @@
             {
               "year": "B04",
               "number": 4,
+              "part": "mc",
               "label": "B04 第4題",
               "counted": true
             },
             {
               "year": "B05",
               "number": 3,
+              "part": "mc",
               "label": "B05 第3題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 6,
+              "part": "mc",
               "label": "B06 第6題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 6,
+              "part": "mc",
               "label": "B07 第6題",
               "counted": true
             }
@@ -5105,36 +5670,42 @@
             {
               "year": "B05",
               "number": 4,
+              "part": "mc",
               "label": "B05 第4題",
               "counted": true
             },
             {
               "year": "B06",
               "number": 7,
+              "part": "mc",
               "label": "B06 第7題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 7,
+              "part": "mc",
               "label": "B07 第7題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 9,
+              "part": "mc",
               "label": "B08 第9題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 13,
+              "part": "mc",
               "label": "B09 第13題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 15,
+              "part": "mc",
               "label": "B10 第15題",
               "counted": true
             }
@@ -5157,13 +5728,22 @@
             {
               "year": "B04",
               "number": 6,
+              "part": "mc",
               "label": "B04 第6題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 1,
+              "part": "mc",
               "label": "B09 第1題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 16,
+              "part": "mc",
+              "label": "B11 第16題",
               "counted": true
             }
           ],
@@ -5183,31 +5763,43 @@
             {
               "year": "B06",
               "number": 4,
+              "part": "mc",
               "label": "B06 第4題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 4,
+              "part": "mc",
               "label": "B07 第4題",
               "counted": true
             },
             {
               "year": "B08",
               "number": 10,
+              "part": "mc",
               "label": "B08 第10題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 8,
+              "part": "mc",
               "label": "B09 第8題",
               "counted": true
             },
             {
               "year": "B10",
-              "number": 7,
-              "label": "B10 第7題",
+              "number": 10,
+              "part": "mc",
+              "label": "B10 第10題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 4,
+              "part": "mc",
+              "label": "B11 第4題",
               "counted": true
             }
           ],
@@ -5225,13 +5817,22 @@
             {
               "year": "B06",
               "number": 9,
+              "part": "mc",
               "label": "B06 第9題",
               "counted": true
             },
             {
               "year": "B07",
               "number": 12,
+              "part": "mc",
               "label": "B07 第12題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 18,
+              "part": "mc",
+              "label": "B11 第18題",
               "counted": true
             }
           ],
@@ -5249,25 +5850,36 @@
             {
               "year": "B08",
               "number": 1,
+              "part": "mc",
               "label": "B08 第1題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 15,
+              "part": "mc",
               "label": "B09 第15題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 17,
+              "part": "mc",
               "label": "B10 第17題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 25,
+              "part": "mc",
               "label": "B10 第25題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 10,
+              "part": "mc",
+              "label": "B11 第10題",
               "counted": true
             }
           ],
@@ -5279,25 +5891,42 @@
           "id": "lab-r10",
           "title": "哪種檢體不適用 POCT",
           "recognition": "",
-          "matchType": "原文重現／單一選項替換",
+          "matchType": "同命題輪換選項",
           "basis": "血清、尿液、全血等固定選項與相同判斷；B08 Q7 只把一個呼吸道檢體替換為痰液。",
           "refs": [
             {
               "year": "B08",
               "number": 3,
+              "part": "mc",
               "label": "B08 第3題",
+              "counted": true
+            },
+            {
+              "year": "B08",
+              "number": 7,
+              "part": "mc",
+              "label": "B08 第7題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 9,
+              "part": "mc",
               "label": "B09 第9題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 11,
+              "part": "mc",
               "label": "B10 第11題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 5,
+              "part": "mc",
+              "label": "B11 第5題",
               "counted": true
             }
           ],
@@ -5315,19 +5944,29 @@
             {
               "year": "B08",
               "number": 4,
+              "part": "mc",
               "label": "B08 第4題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 11,
+              "part": "mc",
               "label": "B09 第11題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 13,
+              "part": "mc",
               "label": "B10 第13題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 7,
+              "part": "mc",
+              "label": "B11 第7題",
               "counted": true
             }
           ],
@@ -5345,19 +5984,29 @@
             {
               "year": "B08",
               "number": 5,
+              "part": "mc",
               "label": "B08 第5題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 16,
+              "part": "mc",
               "label": "B09 第16題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 18,
+              "part": "mc",
               "label": "B10 第18題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 11,
+              "part": "mc",
+              "label": "B11 第11題",
               "counted": true
             }
           ],
@@ -5375,19 +6024,29 @@
             {
               "year": "B08",
               "number": 6,
+              "part": "mc",
               "label": "B08 第6題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 7,
+              "part": "mc",
               "label": "B09 第7題",
               "counted": true
             },
             {
               "year": "B10",
-              "number": 5,
-              "label": "B10 第5題",
+              "number": 8,
+              "part": "mc",
+              "label": "B10 第8題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 2,
+              "part": "mc",
+              "label": "B11 第2題",
               "counted": true
             }
           ],
@@ -5405,18 +6064,21 @@
             {
               "year": "B08",
               "number": 8,
+              "part": "mc",
               "label": "B08 第8題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 18,
+              "part": "mc",
               "label": "B09 第18題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 20,
+              "part": "mc",
               "label": "B10 第20題",
               "counted": true
             }
@@ -5435,13 +6097,15 @@
             {
               "year": "B08",
               "number": 11,
+              "part": "mc",
               "label": "B08 第11題",
               "counted": true
             },
             {
               "year": "B10",
-              "number": 3,
-              "label": "B10 第3題",
+              "number": 5,
+              "part": "mc",
+              "label": "B10 第5題",
               "counted": true
             }
           ],
@@ -5459,18 +6123,21 @@
             {
               "year": "B08",
               "number": 12,
+              "part": "mc",
               "label": "B08 第12題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 3,
+              "part": "mc",
               "label": "B09 第3題",
               "counted": true
             },
             {
               "year": "B09",
               "number": 19,
+              "part": "mc",
               "label": "B09 第19題",
               "counted": true
             }
@@ -5489,12 +6156,14 @@
             {
               "year": "B09",
               "number": 5,
+              "part": "mc",
               "label": "B09 第5題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 24,
+              "part": "mc",
               "label": "B10 第24題",
               "counted": true
             }
@@ -5516,13 +6185,22 @@
             {
               "year": "B09",
               "number": 10,
+              "part": "mc",
               "label": "B09 第10題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 12,
+              "part": "mc",
               "label": "B10 第12題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 6,
+              "part": "mc",
+              "label": "B11 第6題",
               "counted": true
             }
           ],
@@ -5540,13 +6218,22 @@
             {
               "year": "B09",
               "number": 12,
+              "part": "mc",
               "label": "B09 第12題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 14,
+              "part": "mc",
               "label": "B10 第14題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 8,
+              "part": "mc",
+              "label": "B11 第8題",
               "counted": true
             }
           ],
@@ -5564,13 +6251,22 @@
             {
               "year": "B09",
               "number": 14,
+              "part": "mc",
               "label": "B09 第14題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 16,
+              "part": "mc",
               "label": "B10 第16題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 9,
+              "part": "mc",
+              "label": "B11 第9題",
               "counted": true
             }
           ],
@@ -5588,12 +6284,14 @@
             {
               "year": "B09",
               "number": 17,
+              "part": "mc",
               "label": "B09 第17題",
               "counted": true
             },
             {
               "year": "B10",
               "number": 19,
+              "part": "mc",
               "label": "B10 第19題",
               "counted": true
             }
@@ -5606,19 +6304,179 @@
           "id": "lab-r22",
           "title": "同一 A/B、P1/P2 ROC 圖判讀",
           "recognition": "",
-          "matchType": "同圖反向敘述",
+          "matchType": "同命題輪換選項",
           "basis": "圖形、A/B 曲線、P1/P2 與四個判讀面向完全相同，部分 LR 敘述改為反向；B10 詳解明載「同 B09 第六題」。",
           "refs": [
             {
+              "year": "B07",
+              "number": 1,
+              "part": "mc",
+              "label": "B07 第1題",
+              "counted": true
+            },
+            {
               "year": "B09",
               "number": 6,
+              "part": "mc",
               "label": "B09 第6題",
               "counted": true
             },
             {
               "year": "B10",
-              "number": 4,
-              "label": "B10 第4題",
+              "number": 7,
+              "part": "mc",
+              "label": "B10 第7題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 1,
+              "part": "mc",
+              "label": "B11 第1題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r23",
+          "title": "寫出 STR 的全名",
+          "recognition": "",
+          "matchType": "題幹／選項近同",
+          "basis": "同一作答任務（寫出 STR 全名），B10 英文、B11 中文。B06 第12題要求解釋 STR，任務不同，未併入。",
+          "refs": [
+            {
+              "year": "B10",
+              "number": 23,
+              "part": "mc",
+              "label": "B10 第23題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 19,
+              "part": "mc",
+              "label": "B11 第19題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r24",
+          "title": "胸水 transudate／exudate 的實驗室判別標準",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "三年同考胸水 protein 比 0.5、LDH 比 0.6 等判別標準；B07 問 transudate、B10 問 exudate、B11 正向問，屬正反翻轉與選項輪換。",
+          "refs": [
+            {
+              "year": "B07",
+              "number": 9,
+              "part": "mc",
+              "label": "B07 第9題",
+              "counted": true
+            },
+            {
+              "year": "B10",
+              "number": 22,
+              "part": "mc",
+              "label": "B10 第22題",
+              "counted": true
+            },
+            {
+              "year": "B11",
+              "number": 13,
+              "part": "mc",
+              "label": "B11 第13題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r25",
+          "title": "TDM 的 clinical utility 組合題",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "三年題幹近乎逐字相同（Clinically utility of TDM includes），臨床用途選項輪換；epilepsy in pregnancy、tacrolimus 移植後兩項三年皆有。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 5,
+              "part": "mc",
+              "label": "B05 第5題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 8,
+              "part": "mc",
+              "label": "B06 第8題",
+              "counted": true
+            },
+            {
+              "year": "B07",
+              "number": 8,
+              "part": "mc",
+              "label": "B07 第8題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r26",
+          "title": "哪些是定量檢驗",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "同問哪些為定量檢驗、同為五項組合；血鉀、心電圖、C 型肝炎陰性三項對應。",
+          "refs": [
+            {
+              "year": "B04",
+              "number": 2,
+              "part": "mc",
+              "label": "B04 第2題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 2,
+              "part": "mc",
+              "label": "B06 第2題",
+              "counted": true
+            }
+          ],
+          "earlierEvidence": [],
+          "warning": "",
+          "counted": true
+        },
+        {
+          "id": "lab-r27",
+          "title": "四種檢驗方法 ROC 圖的敘述判讀",
+          "recognition": "",
+          "matchType": "同命題輪換選項",
+          "basis": "同一四方法、P1/P2 閾值的圖，五個敘述輪換（曲線種類、最佳方法、screening、PPV／NPV）。與兩方法圖的 lab-r22 分開。",
+          "refs": [
+            {
+              "year": "B05",
+              "number": 1,
+              "part": "mc",
+              "label": "B05 第1題",
+              "counted": true
+            },
+            {
+              "year": "B06",
+              "number": 1,
+              "part": "mc",
+              "label": "B06 第1題",
               "counted": true
             }
           ],
@@ -5658,72 +6516,38 @@
         {
           "id": "LAB-N03",
           "title": "突變、染色體易位與分子偵測",
-          "count": 4,
+          "count": 5,
           "points": [],
           "refs": [
             "B04 第7題",
             "B05 第8題",
             "B07 第11題",
-            "B10 第1題"
+            "B10 第1題",
+            "B11 第17題"
           ],
           "note": "涵蓋 BCR-ABL fusion、FLT3-ITD、capillary electrophoresis 適合的突變及染色體位置，不能只因同屬分子檢驗就合併。"
         },
         {
           "id": "LAB-N04",
           "title": "體腔液 transudate/exudate 判讀",
-          "count": 4,
+          "count": 5,
           "points": [],
           "refs": [
-            "B07 第9題",
             "B08 第2題",
             "B10 第21題",
-            "B10 第22題"
+            "B11 第12題",
+            "B11 第14題",
+            "B11 第15題"
           ],
           "note": "疾病、Light-like 閾值、體腔液綜合敘述各自不同；B07 Q9 與 B10 Q22 只部分呈鏡像，保守排除。"
         },
         {
-          "id": "LAB-N05",
-          "title": "TDM 的臨床適用情境",
-          "count": 3,
-          "points": [],
-          "refs": [
-            "B05 第5題",
-            "B06 第8題",
-            "B07 第8題"
-          ],
-          "note": "共同框架是 TDM utility，但每年多數藥物與案例皆更換，屬同概念而非同題。"
-        },
-        {
-          "id": "LAB-N06",
-          "title": "ROC 與檢驗效能判讀（不同圖／不同敘述組）",
-          "count": 3,
-          "points": [],
-          "refs": [
-            "B05 第1題",
-            "B06 第1題",
-            "B07 第1題"
-          ],
-          "note": "皆考 ROC，但曲線數、cut-off 與待判讀關係不同；B07 僅被後續詳解稱為「類似」，因此不併入 B09-B10 同題群。"
-        },
-        {
-          "id": "LAB-N07",
-          "title": "定量與定性檢驗辨認",
-          "count": 2,
-          "points": [],
-          "refs": [
-            "B04 第2題",
-            "B06 第2題"
-          ],
-          "note": "題型相同但 analyte 與判斷項目大幅替換，保守視為不同題。"
-        },
-        {
           "id": "LAB-N10",
           "title": "STR 的定義、全名與法醫用途",
-          "count": 2,
+          "count": 1,
           "points": [],
           "refs": [
-            "B06 第12題",
-            "B10 第23題"
+            "B06 第12題"
           ],
           "note": "B06 要解釋 STR，B10 只要寫出全名；同術語但作答任務不同，故不算同題。"
         },
@@ -5746,109 +6570,64 @@
             "B09 第4題"
           ],
           "note": ""
-        },
-        {
-          "id": "LAB-N11",
-          "title": "POCT 可用檢體的變化題",
-          "count": 1,
-          "points": [],
-          "refs": [
-            "B08 第7題"
-          ],
-          "note": "與跨年檢體題只重用 3/5 選項，列入常見考點而非考古。"
         }
       ],
       "exclusions": [
         {
-          "title": "二次嚴格稽核：STR 題不合併",
-          "reason": "『解釋何為 STR』與『寫出 STR 全名』共享術語，但作答任務不同。",
+          "title": "B10 第3、4、6題為臨床醫學題，不計入檢驗分母",
+          "reason": "B12 版題本恢復 B10 原卷題號 1–25（舊版刪去這三題後只重編前半，才有「由 7 跳至 11」）。這三題為病歷書寫順序、皮膚分層與 ESRD 術前準備，第6題與臨床醫學 B10 第21題逐字相同，故沿用舊版分母 22 題，只更正題號。",
+          "refs": [
+            "B10 第3題",
+            "B10 第4題",
+            "B10 第6題"
+          ]
+        },
+        {
+          "title": "STR：解釋與寫全名分開",
+          "reason": "B06 第12題要求解釋何為 STR，B10 第23題與 B11 第19題要求寫出全名；作答任務不同，B06 不併入 lab-r23。",
           "refs": [
             "B06 第12題",
-            "B10 第23題"
-          ]
-        },
-        {
-          "title": "二次嚴格稽核：POCT 檢體變化題拆出",
-          "reason": "B08 第7題換掉 saliva／nasopharyngeal swab 並加入『以上皆是』，只剩 3/5 選項重用。",
-          "refs": [
-            "B08 第7題",
-            "B08 第3題",
-            "B09 第9題",
-            "B10 第11題"
-          ]
-        },
-        {
-          "title": "相近但不是同題",
-          "reason": "共同問定量檢驗，但列舉 analyte 與選項大幅不同。",
-          "refs": [
-            "B04 Q2",
-            "B06 Q2"
-          ]
-        },
-        {
-          "title": "相近但不是同題",
-          "reason": "同為 A/B、P1/P2 ROC 圖族；B07 的待判讀敘述不同，來源詳解也只稱「類似」，不算。",
-          "refs": [
-            "B07 Q1",
-            "B09 Q6/B10 Q4"
-          ]
-        },
-        {
-          "title": "相近但不是同題",
-          "reason": "都問 TDM utility，但臨床案例與藥物多數替換。",
-          "refs": [
-            "B05 Q5",
-            "B06 Q8",
-            "B07 Q8"
+            "B10 第23題",
+            "B11 第19題"
           ]
         },
         {
           "title": "相近但不是同題",
           "reason": "同考 Ct，分別要求定義、反推 Ct、方向判斷與計算倍數，不是同題。",
           "refs": [
-            "B06 Q11",
-            "B07 Q10",
-            "B09 Q2",
-            "B10 Q2"
-          ]
-        },
-        {
-          "title": "相近但不是同題",
-          "reason": "transudate/exudate 的反向框架相似，但四個選項只部分鏡像，未達幾乎相同。",
-          "refs": [
-            "B07 Q9",
-            "B10 Q22"
+            "B06 第11題",
+            "B07 第10題",
+            "B09 第2題",
+            "B10 第2題"
           ]
         },
         {
           "title": "相近但不是同題",
           "reason": "都提 BCR-ABL，但一題問 fusion protein，另一題問染色體位置。",
           "refs": [
-            "B04 Q7",
-            "B10 Q1"
+            "B04 第7題",
+            "B10 第1題"
           ]
         }
       ],
       "methodNotes": [
-        "主分母只採 B04-B10 的逐年歷屆區，因為這一段能逐題還原原始年份與題號。",
         "重複群須跨至少兩個年份；同年重複版本可隸屬已跨年的群組，但不單獨建立考古群。",
         "允許完全相同、正反問、中英翻譯、選項重排與非常小的限制語變化；只共用章節、疾病、藥物或公式者不算。",
-        "repeat_instance_rate = 66/92：所有題目實例中，位於跨年重複群者的比例（包含該群第一次出現）。",
-        "repeat_archetype_rate = 22/48：去除同群重複後，曾跨年重出的題型占全部獨立題型的比例。",
-        "rolling_prior_hit_rate = 43/85：B05-B10 每題是否曾在更早的 B04-B09 出現；B04 為基線不進分母。",
-        "B10 原題本的題號由 7 跳至 11，未見 8-10；本分析不補號、不假設缺題。",
-        "B99-B03 分類區常把多年度壓成單一題，且沒有原始整卷題號，故只列分類題號佐證，不納入 92 題分母。",
         "B09 Q12 的選項排版與下一題題幹黏連，但 B10 Q14 可確認其題意；題號仍可可靠辨識。",
-        "二次嚴格稽核後為 21 群／63 題；STR 任務差異與 B08 POCT 檢體改題均已移出。"
+        "放寬標準：題幹問同一件事、維持同一作答格式者視為同題，即使各年輪換 2–3 個實質選項；完整命題正反翻轉亦視為同題。只共享章節或選項池、或同一組選項配不同臨床情境者，仍不算。",
+        "標示「同命題輪換選項」的題群依放寬標準成立；其餘為題幹／選項近乎相同。",
+        "所有 111 題可判讀題目均且僅分到一個考古群或一個非考古主題（建置時檢查）。"
       ],
       "sources": [
         {
-          "label": "考古題目",
-          "path": "4_檢驗醫學/檢驗醫學Block1考古題目_更新.pdf"
+          "path": "4_檢驗醫學/B12檢驗醫學Block1考古題目完稿.pdf",
+          "kind": "questions",
+          "edition": "B12"
         },
         {
-          "label": "考古詳解",
-          "path": "4_檢驗醫學/檢驗醫學Block1考古詳解_更新.pdf"
+          "path": "4_檢驗醫學/B12檢驗醫學Block1考古詳解完稿.pdf",
+          "kind": "explanations",
+          "edition": "B12"
         }
       ]
     }
